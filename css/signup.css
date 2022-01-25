@@ -1,0 +1,201 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(219, 217, 217);
+}
+.sec {
+  height: 100vh;
+}
+.intro-section {
+  font-family: poppins;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
+  /* margin-top: 50px; */
+  height: 80%;
+}
+.title {
+  font-size: 46px;
+  font-family: poppins;
+  color: rgba(51, 47, 47, 1);
+  margin: 20px 0px;
+}
+.title-description {
+  color: rgba(77, 77, 77, 1);
+  font-weight: normal;
+  font-size: 26px;
+  width: 45%;
+}
+.intro-btn {
+  text-decoration: none;
+  font-family: poppins;
+  font-weight: bold;
+  color: rgba(51, 47, 47, 1);
+  border: 2px solid rgba(51, 47, 47, 1);
+  border-radius: 8px;
+  width: 150px;
+  height: 50px;
+  font-size: 18px;
+  margin: 20px 0px;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 181, 162, 0.849),
+    rgba(152, 203, 255, 0.897)
+  );
+  transition: 500ms;
+}
+.intro-btn:hover {
+  cursor: pointer;
+  box-shadow: 0px 3px 25px rgba(51, 47, 47, 1);
+}
+.intro-svg {
+  display: flex;
+  justify-content: right;
+}
+.tour-svg {
+  height: 80%;
+  width: 80%;
+}
+.wave img {
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  left: 0px;
+  bottom: 0px;
+  margin: 0px;
+  padding: 0px;
+}
+.sec2 {
+  height: 100vh;
+  background-image: url(./images/signbg.jpg);
+  background-size: cover;
+  font-family: poppins;
+  color: white;
+}
+.input-box {
+  color: rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: column;
+}
+.input-box,
+.input-btn,
+.login-link,
+.form-title,
+.login-options {
+  margin: auto;
+  width: 70%;
+}
+.sign-form {
+  margin: 10px;
+  padding: 25px 0px;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(144, 144, 144, 0.924),
+    rgba(164, 164, 164, 0)
+  );
+  border: 2px solid black;
+  width: 400px;
+  height: 540px;
+  border-radius: 15px;
+}
+input {
+  background-color: rgba(196, 196, 196, 1);
+  border: none;
+  padding: 2px;
+}
+.google,
+.facebook {
+  width: 40px;
+  height: 40px;
+}
+.login-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 65%;
+}
+.login-options > * {
+  margin: 10px 0px;
+}
+.login-link a {
+  color: rgba(0, 255, 133, 1);
+  text-decoration: none;
+}
+.input-btn input {
+  width: 100%;
+  margin: 24px 0px;
+  height: 32px;
+  font-family: poppins;
+  border-radius: 7px;
+  color: white;
+  background-color: rgba(0, 255, 133, 1);
+  cursor: pointer;
+}
+.form-container {
+  border: 2px solid black;
+  display: inline-block;
+  border-radius: 21px;
+  background-color: rgba(241, 241, 241, 0.1);
+  box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.657);
+  position: relative;
+  left: 8%;
+  top: 5%;
+}
+.form-title {
+  background: -webkit-radial-gradient(
+    rgba(72, 61, 194, 1),
+    rgba(198, 34, 63, 1)
+  );
+  text-align: center;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 40px;
+  font-weight: bolder;
+  font-family: poppins;
+}
+@media screen and (min-width: 1600px) {
+  .title {
+    font-size: 80px;
+  }
+  .title-description {
+    font-size: 46px;
+    width: 50%;
+  }
+  .tour-svg {
+    width: 700px;
+    height: 700px;
+  }
+  .intro-btn {
+    width: 270px;
+    height: 80px;
+    font-size: 30px;
+  }
+  .sign-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 700px;
+    height: 920px;
+    font-size: xx-large;
+  }
+  input {
+    padding: 4px;
+    height: 30px;
+  }
+  .login-link {
+    font-size: 30px;
+  }
+  .input-btn input {
+    height: 60%;
+    font-size: 30px;
+  }
+  .form-title {
+    font-size: 56px;
+  }
+}
