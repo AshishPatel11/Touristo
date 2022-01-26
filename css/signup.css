@@ -201,3 +201,18 @@ input {
     font-size: 56px;
   }
 } */
+@media screen and (max-width: 1000px) {
+  .title {
+    font-size: 38px;
+  }
+  .title-description {
+    font-size: 22px;
+  }
+  .intro-btn {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 830px) {
+  body {
+  }
+}
