@@ -3,7 +3,11 @@
   padding: 0;
   box-sizing: border-box;
 }
-.logo-img,
+.logo-img {
+  height: 70px;
+  width: 70px;
+  cursor: pointer;
+}
 .profile {
   height: 55px;
   width: 55px;

@@ -213,4 +213,46 @@ input {
   }
 }
 @media screen and (max-width: 830px) {
+  .title {
+    font-size: 30px;
+  }
+  .title-description {
+    font-size: 18px;
+  }
+  .intro-btn input {
+    font-size: 12px;
+    width: 40%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .intro-section {
+    flex-direction: column;
+    align-items: self-end;
+    width: 100%;
+    margin: 0%;
+  }
+  .wave img {
+    display: none;
+    pointer-events: none;
+  }
+  .intro-svg {
+    align-self: center;
+    justify-content: center;
+  }
+  .title {
+    text-align: start;
+  }
+  .title-description {
+    text-align: center;
+  }
+  .tour-svg {
+    height: 70%;
+    width: 70%;
+  }
+  .intro-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+  }
 }
