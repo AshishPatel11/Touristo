@@ -27,7 +27,7 @@
   margin: auto;
   display: flex;
   align-items: center;
-  height: 80px;
+  height: 14vh;
 }
 .logo {
   font-family: poppins, sans-serif;
@@ -61,21 +61,87 @@
   transform: scale(1.2);
   text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.25);
 }
-/* @media screen and (min-width: 1600px) {
-  .navbar {
-    height: 150px;
+
+.burger div{
+  height: 3px;
+  width: 22px;
+  margin: 4px;
+  transition: all 0.3s ease;
+  background-color: rgba(97, 80, 80);
+}
+
+.burger{
+  display: none;
+}
+
+.burger{
+  cursor: pointer;
+}
+
+/* Burger menu css */
+
+@media screen and (max-width : 700px){
+
+  body{
+    overflow-x: hidden;
   }
-  .logo {
-    font-size: 60px;
-    letter-spacing: 20px;
-    text-shadow: 0px 6px 16px rgba(0, 0, 0, 0.3);
+
+  .profile{
+    display: none;
+    cursor: none;
   }
-  .logo-img,
-  .profile {
-    height: 110px;
-    width: 110px;
+
+  .nav-ul{
+    position: absolute;
+    right: 0px;
+    height: 86vh;
+    top: 14vh;
+    background-image: linear-gradient(
+      to top,
+      rgb(152, 203, 255, 0.840),
+      rgba(255, 181, 162, 0.840)
+    );
+    /* display: flex; */
+    width: 50%;
+    box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.25);
+    flex-direction: column;
+    align-items: center;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
   }
-  .nav-option a {
-    font-size: 42px;
+  
+  .nav-ul li{
+    opacity: 0;
   }
-} */
+
+  .burger{
+    display: block;
+  }
+}
+
+.nav-active{
+  transform: translateX(0%);
+}
+
+@keyframes nav-optionFade{
+  from{
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.toggle .line1{
+  transform: rotate(-45deg) translate(-5px,5px);
+}
+
+.toggle .line2{
+  opacity: 0;
+}
+
+.toggle .line3{
+  transform: rotate(45deg) translate(-5px,-5px);
+}
