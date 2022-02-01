@@ -26,7 +26,7 @@
   position: fixed;
   top: 0px;
   z-index: 10;
-  background-color: #7a706e;
+  background-color: rgba(51, 47, 47, 1);
 }
 .navbar {
   width: 90%;
@@ -74,7 +74,7 @@
   width: 22px;
   margin: 4px;
   transition: all 0.3s ease;
-  background-color: rgba(97, 80, 80);
+  background-color: rgb(255, 255, 255);
 }
 
 .burger {
@@ -86,7 +86,7 @@
 }
 
 /* Burger menu css */
-
+/* ......................................responsive design below👇 ...................................... */
 @media screen and (max-width: 700px) {
   body {
     overflow-x: hidden;
@@ -102,11 +102,7 @@
     right: 0px;
     height: 88vh;
     top: 12vh;
-    background-image: linear-gradient(
-      to top,
-      rgb(152, 203, 255, 0.84),
-      rgba(255, 181, 162, 0.84)
-    );
+    background-color: rgba(51, 47, 47, 1);
     /* display: flex; */
     width: 30%;
     box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.25);
