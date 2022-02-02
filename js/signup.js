@@ -19,6 +19,3 @@ const navSlide = () => {
 }
 navSlide();
 // ...............................................👇animation👇............................................
-
-let controller = new scrollMagic.Controller();
-let timeline = new timelineMax();   
