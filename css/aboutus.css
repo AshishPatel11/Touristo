@@ -1,0 +1,38 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+img {
+  height: 700px;
+  width: 1536px;
+  display: flex;
+  position: absolute;
+}
+.imges {
+  height: 700px;
+  width: 1536px;
+  transform: skewY(-6deg);
+  background-color: rgb(255, 255, 255);
+}
+.igi {
+  height: 600px;
+  width: 1536px;
+  background-color: rgba(66, 62, 62, 0.308);
+  position: relative;
+}
+h1 {
+  position: relative;
+  transform: skewY(6deg);
+  padding-top: 200px;
+  font-family: poppins, sans-serif;
+  margin-left: 50px;
+}
+p {
+  margin-left: 50px;
+  margin-right: 50px;
+  font-size: 25px;
+  position: relative;
+  transform: skewY(6deg);
+  margin-top: 50px;
+  font-family: poppins, sans-serif;
+}
