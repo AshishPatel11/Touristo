@@ -21,4 +21,4 @@ navSlide();
 // ...............................................👇animation👇............................................
 
 let controller = new scrollMagic.Controller();
-let timeline = new timelineMax();
+let timeline = new timelineMax();   
