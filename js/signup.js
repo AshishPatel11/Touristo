@@ -17,5 +17,8 @@ const navSlide = () => {
         burger.classList.toggle('toggle');
     });
 }
-
 navSlide();
+// ...............................................👇animation👇............................................
+
+let controller = new scrollMagic.Controller();
+let timeline = new timelineMax();
