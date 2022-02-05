@@ -2,6 +2,10 @@
   margin: 0%;
   padding: 0%;
 }
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
 .igm {
   height: 1200px;
   width: 1519px;
@@ -18,15 +22,12 @@
   position: absolute;
 }
 .imges {
-  height: 700px;
   position: relative;
-  width: 1519px;
   transform: skewY(-14deg);
   background-color: rgb(165, 159, 159);
 }
 .imges1 {
   height: 200px;
-  width: 1519px;
   transform: skewY(-14deg);
 }
 .igi {
