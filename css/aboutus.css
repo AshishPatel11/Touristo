@@ -27,6 +27,7 @@
 .imges1 {
   height: 200px;
   width: 1519px;
+  display: inline-flex;
   transform: skewY(-14deg);
 }
 .igi {
@@ -71,5 +72,5 @@ h1 {
 }
 .ph {
   height: 200px;
-  width: 300px;
+  width: 304px;
 }
