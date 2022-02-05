@@ -5,6 +5,7 @@
 .igm {
   height: 1200px;
   width: 1519px;
+
   display: flex;
   position: absolute;
 }
