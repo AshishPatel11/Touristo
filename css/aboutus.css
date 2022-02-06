@@ -8,32 +8,36 @@ body {
   width: 100vw;
   overflow-x: hidden;
 }
-.img-cointainer {
-  height: 1200px;
+.img-container {
+  background-image: url(./images/tour1.jpg);
+  background-size: cover;
+  height: 150vh;
   width: 100vw;
-  display: flex;
+  z-index: -7;
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: center;
 }
 .img-logo {
   height: 400px;
   width: 450px;
   filter: drop-shadow(9px 9px 10px rgb(255, 217, 0));
-  margin-top: 150px;
-  margin-left: 34%;
-  position: absolute;
+  margin-top: 100px;
 }
 .about-cont {
-  position: absolute;
-  height: 650px;
+  height: 750px;
   transform: skewY(-14deg);
   background-color: rgb(255, 255, 255);
 }
 .imges {
   height: 250px;
-  width: 1519px;
-  position: absolute;
-  padding-top: 590px;
-  display: inline-flex;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 250px;
+  object-fit: cover;
   transform: skewY(-14deg);
 }
 .img-box {
@@ -47,9 +51,9 @@ p {
   margin-left: 280px;
   margin-right: 280px;
   font-size: 22px;
-  position: relative;
   transform: skewY(14deg);
   margin-top: 5px;
+  font-weight: 500;
   font-family: poppins, sans-serif;
 }
 
@@ -71,21 +75,37 @@ h1 {
   padding-top: 180px;
   font-family: Georgia, sans-serif;
 }
-.ph {
-  height: 200px;
-  width: 100vw;
+.ig1 {
+  background-image: url(./images/ph1.jpg);
+  background-size: cover;
+}
+.ig2 {
+  background-image: url(./images/ph2.jpg);
+  background-size: cover;
+}
+.ig3 {
+  background-image: url(./images/ph3.jpg);
+  background-size: cover;
+}
+.ig4 {
+  background-image: url(./images/ph4.jpg);
+  background-size: cover;
+}
+.ig5 {
+  background-image: url(./images/ph5.jpg);
+  background-size: cover;
 }
 .mamber {
   height: 700px;
-  width: 1519px;
-  margin-top: 860px;
+  width: 100vw;
+  /* margin-top: 860px; */
   background-color: rgb(255, 255, 255);
   transform: skewY(-14deg);
   position: relative;
 }
 .client {
   height: 700px;
-  width: 1519px;
+  width: 100vw;
   margin-top: 0px;
   background-color: rgb(122, 122, 122);
   transform: skewY(-14deg);
