@@ -1,15 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;500;600;800;900&display=swap");
 * {
   margin: 0%;
   padding: 0%;
 }
 body {
-  width: 100%;
+  width: 100vw;
   overflow-x: hidden;
 }
 .igm {
   height: 1200px;
-  width: 1519px;
-
+  width: 100vw;
   display: flex;
   position: absolute;
 }
@@ -28,13 +29,14 @@ body {
 }
 .imges1 {
   height: 200px;
-  width: 1519px;
-  display: inline-flex;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 10vw 10vw 10vw 10vw 10vw;
   transform: skewY(-14deg);
 }
 .igi {
   height: 700px;
-  width: 1519px;
+  width: 100vw;
   transform: skewY(-14deg);
   position: relative;
 }
@@ -74,5 +76,5 @@ h1 {
 }
 .ph {
   height: 200px;
-  width: 304px;
+  width: 100vw;
 }
