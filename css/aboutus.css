@@ -48,8 +48,8 @@ body {
 }
 
 p {
-  margin-left: 280px;
-  margin-right: 280px;
+  width: 60%;
+  margin: 0px auto;
   font-size: 22px;
   transform: skewY(14deg);
   margin-top: 5px;
@@ -61,8 +61,8 @@ p {
   margin-top: 7px;
 }
 h2 {
-  margin-left: 280px;
-  margin-top: 10px;
+  width: 60%;
+  margin: 50px auto;
   transform: skewY(14deg);
   font-size: 25px;
   font-family: poppins, sans-serif;
@@ -70,9 +70,10 @@ h2 {
 h1 {
   position: relative;
   font-size: 45px;
-  margin-left: 280px;
   transform: skewY(14deg);
   padding-top: 180px;
+  width: 60%;
+  margin: 50px auto;
   font-family: Georgia, sans-serif;
 }
 .ig1 {
@@ -98,7 +99,6 @@ h1 {
 .mamber {
   height: 700px;
   width: 100vw;
-  /* margin-top: 860px; */
   background-color: rgb(255, 255, 255);
   transform: skewY(-14deg);
   position: relative;
