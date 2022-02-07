@@ -1,7 +1,6 @@
 {
   "name": "touristo",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,5 +18,7 @@
   "dependencies": {
     "@dogstudio/highway": "^2.2.1",
     "gsap": "^3.9.1"
-  }
+  },
+  "devDependencies": {},
+  "description": ""
 }
