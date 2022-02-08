@@ -116,3 +116,12 @@ tl9.fromTo(".nav-container", { y: 10 }, {
 tl10.to(".nav-option a", {
     color: "rgb(255, 255, 255)"
 });
+// ...............................................page transition...............................................
+import highway from "@dogstudio/highway";
+import Fade from "./transition";
+
+const H = new highway.Core({
+    transition: {
+        default: Fade
+    }
+});

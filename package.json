@@ -19,6 +19,5 @@
     "@dogstudio/highway": "^2.2.1",
     "gsap": "^3.9.1"
   },
-  "devDependencies": {},
   "description": ""
 }
