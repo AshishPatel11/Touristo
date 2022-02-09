@@ -91,6 +91,14 @@ let tl10 = gsap.timeline({
         scrub: 1,
     }
 });
+let tl11 = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.nav-container',
+        start: '0%',
+        end: '1%',
+        scrub: 1,
+    }
+});
 let tl3 = gsap.timeline({
     scrollTrigger: {
         trigger: '.nav-container',
@@ -116,4 +124,5 @@ tl9.fromTo(".nav-container", { y: 10 }, {
 tl10.to(".nav-option a", {
     color: "rgb(255, 255, 255)"
 });
+tl11.to(".burger div", {backgroundColor:"rgb(255, 255, 255)"})
 // ...............................................page transition...............................................
