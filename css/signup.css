@@ -10,7 +10,6 @@ body {
 }
 .sec {
   height: 100vh;
-  /* margin-top: 12vh; */
 }
 .intro-section {
   font-family: poppins, sans-serif;
@@ -19,7 +18,6 @@ body {
   justify-content: space-between;
   width: 90%;
   margin: auto;
-  /* margin-top: 50px; */
   height: 80%;
 }
 .title {
@@ -151,8 +149,8 @@ input {
   box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.657);
   position: relative;
   left: 8%;
-  top: 9%;
-  transform: scale(0.85);
+  top: 15%;
+  transform: scale(0.95);
 }
 .form-title {
   background: -webkit-radial-gradient(
@@ -217,8 +215,8 @@ input {
     text-align: center;
   }
   .tour-svg {
-    height: 70%;
-    width: 70%;
+    height: 90%;
+    width: 90%;
   }
   .intro-text {
     display: flex;
