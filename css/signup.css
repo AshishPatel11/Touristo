@@ -72,11 +72,14 @@ body {
   padding: 0px;
 }
 .sec2 {
-  height: 100vh;
+  height: 100%;
   background-image: url(./images/signbg.jpg);
   background-size: cover;
   font-family: poppins;
   color: white;
+}
+#login {
+  height: 100vh;
 }
 .input-box {
   color: rgba(255, 255, 255, 1);
@@ -223,5 +226,8 @@ input {
     flex-direction: column;
     align-items: center;
     align-self: center;
+  }
+  .sec {
+    height: auto;
   }
 }
