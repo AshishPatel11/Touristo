@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/nav.css">
     <!--Linked the CSS File for navbar-->
+    <link rel="stylesheet" href="css/loading.css">
+
     <link rel="stylesheet" href="/css/fonts/fonts.css">
     <!--Linked Fonts CSS File-->
     <link rel="stylesheet" href="./css/signup.css">
@@ -22,7 +24,7 @@
                 <img src="./css/images/logo.png" class="logo-img" alt="">
                 <h1 class="logo">Touristo</h1>
                 <ul class="nav-ul">
-                    <li class="nav-option"><a href="signup.html#signup">SignUp</a></li>
+                    <li class="nav-option"><a href="signup.php" id="login">SignUp</a></li>
                     <li class="nav-option"><a href="#">Help?</a></li>
 
                 </ul>
@@ -280,7 +282,7 @@
                     </div>
                     <div class="login-link">
                         <label for="login">Don't have an account?</label>
-                        <a href="signup.html">SignUp</a>
+                        <a href="signup.php">SignUp</a>
                     </div>
                     <div class="login-options">
                         <p>Or login With</p>
@@ -296,6 +298,8 @@
     <script src="./js/ScrollTrigger.min.js"></script>
     <!--linked the scrollTrigger javascript file-->
     <script src="./js/signup.js"></script>
+    <script src="/js/loader.js"></script>
+
 </body>
 
 </html>

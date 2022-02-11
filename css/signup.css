@@ -137,7 +137,7 @@ input {
   height: 32px;
   font-family: poppins;
   border-radius: 7px;
-  color: white;
+  color: rgb(85, 85, 85);
   background-color: rgba(0, 255, 133, 1);
   cursor: pointer;
 }
@@ -168,6 +168,14 @@ input {
 .login-form {
   top: 45%;
   transform: translateY(-50%);
+}
+
+.err{
+  color: red;
+}
+
+.err{
+  background-color: red;
 }
 /* ......................................responsive design below👇 ...................................... */
 @media screen and (max-width: 1000px) {

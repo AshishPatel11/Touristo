@@ -4,25 +4,26 @@
   margin: 0px;
   padding: 0px;
 }
-<<<<<<< HEAD
+
 img {
   height: 100%;
   width: 90%;
-=======
+}
+
 body {
   width: 100vw;
   overflow-x: hidden;
 }
-<<<<<<< HEAD
+
 .igm {
   height: 1200px;
   width: 1519px;
 
->>>>>>> d2f537de69d3c8397d6dbe2445a5f12e4fe4fd35
+
   display: flex;
   position: absolute;
-  
-=======
+}
+
 .img-container {
   background-image: url(./images/tour1.jpg);
   background-size: cover;
@@ -34,7 +35,7 @@ body {
   flex-direction: column;
   justify-content: left;
   align-items: center;
->>>>>>> 75f86152d821d38670661a6aade1e9e063ac6ae7
+
 }
 .img-logo {
   height: 400px;
