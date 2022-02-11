@@ -151,8 +151,7 @@ include 'signupBackend.php';
             <form class="sign-form" action="signup.php" method="post">
                 <h1 class="form-title">Regisration</h1>
                 <div class="input-box">
-                    <!-- <label for="name">Name</label>
-                    <span class="err"></span> -->
+                    <label for="name">Name</label>
                     <input type="text" name="name" id="name" required>
                 </div>
                 <div class="input-box">

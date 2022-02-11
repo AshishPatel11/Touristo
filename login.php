@@ -1,3 +1,9 @@
+<?php
+
+include 'loginBackend.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -265,7 +271,7 @@
     </section><!--End of the introduction section-->
         <section class="sec2" id="login"><!--The second section which contains the Login Form-->
             <div class="form-container login-form">
-                <form class="sign-form" action="login.php">
+                <form class="sign-form" action="login.php" method="POST">
                     <h1 class="form-title">Login</h1>
                     <div class="input-box">
                         <label for="email">E-mail</label>
