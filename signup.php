@@ -14,9 +14,12 @@ include './php/signupBackend.php';
     <!--Linked the CSS File for navbar-->
     <link rel="stylesheet" href="/css/fonts/fonts.css">
     <!--Linked Fonts CSS File-->
+    <!-- Linked the googles icon from web👇 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="./css/signup.css">
     <link rel="stylesheet" href="css/loading.css">
-    <link rel="shortcut icon" href="./css/images/logo_title.png"><!--Linked the icon image will apear in title bar-->
+    <link rel="shortcut icon" href="./css/images/logo_title.png">
+    <!--Linked the icon image will apear in title bar-->
 
     <!--Linked the CSS file for signup page-->
     <title>Signup</title>
@@ -24,26 +27,26 @@ include './php/signupBackend.php';
 
 <body class="main">
 
-    <section class="sec">
-        <div class="nav-container">
-            <!--Division which will contain the navbar-->
-            <nav class="navbar">
-                <img src="./css/images/logo.png" class="logo-img" alt="">
-                <h1 class="logo">Touristo</h1>
-                <ul class="nav-ul">
-                    <li class="nav-option"><a href="login.php#login">Login</a></li>
-                    <li class="nav-option"><a href="#">Help?</a></li>
+    <div class="nav-container">
+        <!--Division which will contain the navbar-->
+        <nav class="navbar">
+            <img src="./css/images/logo.png" class="logo-img" alt="">
+            <h1 class="logo">Touristo</h1>
+            <ul class="nav-ul">
+                <li class="nav-option"><a href="login.php#login">Login</a></li>
+                <li class="nav-option"><a href="#">Help?</a></li>
 
-                </ul>
-                <img src="./css/images/profile.png" alt="" class="profile">
-                <!-- Burger menu -->
-                <div class="burger">
-                    <div class="line1"></div>
-                    <div class="line2"></div>
-                    <div class="line3"></div>
-                </div>
-            </nav>
-        </div>
+            </ul>
+            <img src="./css/images/profile.png" alt="" class="profile">
+            <!-- Burger menu -->
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </div>
+    <section class="sec">
         <div class="intro-section">
             <div class="intro-text">
                 <h1 class="title">Welcome To Touristo</h1>
@@ -152,21 +155,22 @@ include './php/signupBackend.php';
                 <div class="input-box">
                     <label for="name">Name</label>
                     <input type="text" name="name" id="name" required>
+                    <span class="err"><?php echo "$nameerr"; ?></span>
                 </div>
                 <div class="input-box">
                     <label for="email">E-mail</label>
                     <input type="email" name="email" id="email" required>
                 </div>
                 <div class="input-box"><label for="contact">Phone No.</label>
-                <!-- <span class="err"></span> -->
                     <input type="text" name="contact" id="contact" required>
+                    <span class="err"><?php echo "$numerr"; ?></span>
                 </div>
                 <div class="input-box"><label for="passwd">Password</label>
-                <!-- <span class="err"></span> -->
                     <input type="password" name="passwd" id="passwd" required>
                 </div>
                 <div class="input-box"><label for="cpasswd">Confirm Password</label>
                     <input type="password" name="cpasswd" id="cpasswd" required>
+                    <span class="err"><?php echo "$passerr"; ?></span>
                 </div>
                 <div class="input-box"><label for="otp">Enter OTP</label>
                     <input type="password" name="otp" id="otp" required>

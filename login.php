@@ -20,26 +20,26 @@ include './php/loginBackend.php';
 </head>
 
 <body>
-    <section class="sec"><!--The first section which contains the introduction-->
-        <div class="nav-container">
-            <!--Division which will contain the navbar-->
-            <nav class="navbar">
-                <img src="./css/images/logo.png" class="logo-img" alt="">
-                <h1 class="logo">Touristo</h1>
-                <ul class="nav-ul">
-                    <li class="nav-option"><a href="signup.php" id="login">SignUp</a></li>
-                    <li class="nav-option"><a href="#">Help?</a></li>
+    <div class="nav-container">
+        <!--Division which will contain the navbar-->
+        <nav class="navbar">
+            <img src="./css/images/logo.png" class="logo-img" alt="">
+            <h1 class="logo">Touristo</h1>
+            <ul class="nav-ul">
+                <li class="nav-option"><a href="signup.php" id="login">SignUp</a></li>
+                <li class="nav-option"><a href="#">Help?</a></li>
 
-                </ul>
-                <img src="./css/images/profile.png" alt="" class="profile">
-                <!-- Burger menu -->
-                <div class="burger">
-                    <div class="line1"></div>
-                    <div class="line2"></div>
-                    <div class="line3"></div>
-                </div>
-            </nav>
-        </div>
+            </ul>
+            <img src="./css/images/profile.png" alt="" class="profile">
+            <!-- Burger menu -->
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </div>
+    <section class="sec"><!--The first section which contains the introduction-->
         <div class="intro-section">
             <div class="intro-text">
                 <h1 class="title">Welcome To Touristo</h1>

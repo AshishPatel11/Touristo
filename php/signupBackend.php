@@ -1,18 +1,38 @@
 <?php
 include 'connection.php';
-
+$nameerr="";
+$numerr="";
+$passerr="";
 if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
+    echo
+    "<style>
+        .sec{
+            display:none;
+            pointer-events:none;
+        }
+        .nav-container{
+            transform:translateY(-10px);
+            background-color: #332f2f;
+            color: rgb(255, 255, 255);
+        }
+        .nav-option a{
+            color: rgb(255, 255, 255);
+        }
+        .burger div{
+            background-color: rgb(255, 255, 255);
+        }
+    </style>";
     if(!preg_match("/^[a-zA-Z ]*$/",$_POST['name'])){
-        echo "Invalid Name";
+        $nameerr= "<i class=material-icons>warning</i>Invalid Name!";
     }
     else{
         if(!preg_match("/^[0-9]{10}+$/",$_POST['contact'])){
-            $nameerr = "Invalid Phone Number";
+            $numerr = "<i class=material-icons>warning</i>Phone Number Must Be 10 Digits!";
         }
         else{
             if($_POST['passwd'] != $_POST['cpasswd']){
-                echo "Passwords are not Same";
+                $passerr = "<i class=material-icons>warning</i>Passwords Did Not Matched!";
             }
             else{
 

@@ -6,11 +6,21 @@
   padding: 0;
   box-sizing: border-box;
 }
+.material-icons{
+  margin: 0;
+  padding: 0;
+  transform: translateY(2px);
+}
 body {
   background-image: radial-gradient(rgb(219, 217, 217), rgb(248, 248, 248));
 }
+.err{
+  color: rgb(255, 17, 17);
+  font-weight: 600;
+  font-size: 15px;
+}
 .sec {
-  height: 100vh;
+  height: 90vh;
 }
 .intro-section {
   font-family: poppins, sans-serif;
