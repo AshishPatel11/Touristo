@@ -17,6 +17,7 @@ include 'signupBackend.php';
     <!--Linked Fonts CSS File-->
     <link rel="stylesheet" href="./css/signup.css">
     <link rel="stylesheet" href="css/loading.css">
+    <link rel="shortcut icon" href="./css/images/logo_title.png"><!--Linked the icon image will apear in title bar-->
 
     <!--Linked the CSS file for signup page-->
     <title>Signup</title>
