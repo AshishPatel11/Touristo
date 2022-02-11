@@ -3,8 +3,7 @@
 include 'signupBackend.php';
 
 ?>
-
-
+̥
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,7 +30,11 @@ include 'signupBackend.php';
                 <img src="./css/images/logo.png" class="logo-img" alt="">
                 <h1 class="logo">Touristo</h1>
                 <ul class="nav-ul">
+<<<<<<< HEAD
                     <li class="nav-option"><a href="login.php">Login</a></li>
+=======
+                    <li class="nav-option"><a href="login.html#login">Login</a></li>
+>>>>>>> c0307afc22b1cc4b999b54aa9fededacf9e59a3e
                     <li class="nav-option"><a href="#">Help?</a></li>
 
                 </ul>

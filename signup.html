@@ -8,9 +8,8 @@
     <link rel="stylesheet" href="./css/nav.css"><!--Linked the CSS File for navbar-->
     <link rel="stylesheet" href="/css/fonts/fonts.css"><!--Linked Fonts CSS File-->
     <link rel="stylesheet" href="./css/signup.css"><!--Linked the CSS file for signup page-->
-    <title>Login</title>
+    <title>Signup</title>
     <link rel="shortcut icon" href="./css/images/logo_title.png"><!--Linked the icon image will apear in title bar-->
-
 </head>
 
 <body>
@@ -21,7 +20,7 @@
                 <img src="./css/images/logo.png" class="logo-img" alt="">
                 <h1 class="logo">Touristo</h1>
                 <ul class="nav-ul">
-                    <li class="nav-option"><a href="signup.php" id="login">SignUp</a></li>
+                    <li class="nav-option"><a href="login.html#login">Login</a></li>
                     <li class="nav-option"><a href="#">Help?</a></li>
 
                 </ul>
@@ -263,40 +262,48 @@
             </div>
         </div>
     </section><!--End of the introduction section-->
-        <section class="sec2" id="login"><!--The second section which contains the Login Form-->
-            <div class="form-container login-form">
-                <form class="sign-form" action="login.php">
-                    <h1 class="form-title">Login</h1>
-                    <div class="input-box">
-                        <label for="email">E-mail</label>
-                        <input type="text" name="email" id="email" required>
-                    </div>
-                    <div class="input-box"><label for="passwd">Password</label>
-                        <input type="password" name="passwd" id="passwd" required>
-                    </div>
-                    <div class="input-btn">
-                        <input type="submit" value="Login" name="login">
-                    </div>
-                    <div class="login-link">
-                        <label for="login">Don't have an account?</label>
-                        <a href="signup.php">SignUp</a>
-                    </div>
-                    <div class="login-options">
-                        <p>Or login With</p>
-                        <img class="google" src="./css/images/google.png" alt="">
-                        <img class="facebook" src="./css/images/facebook-logo-2019.png" alt="">
-                    </div>
-                </form>
-            </div>
-        </section>
-    </section>
-    <script src="./js/gsap.min.js"></script>
-    <!--linked the gsap javascript file-->
-    <script src="./js/ScrollTrigger.min.js"></script>
-    <!--linked the scrollTrigger javascript file-->
-    <script src="./js/signup.js"></script>
-    <script src="/js/loader.js"></script>
-
+    <section class="sec2" id="signup"><!--The second section which contains the SignUp Form-->
+        <div class="form-container">
+            <form class="sign-form" action="signup.php">
+                <h1 class="form-title">Regisration</h1>
+                <div class="input-box">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" required>
+                </div>
+                <div class="input-box">
+                    <label for="email">E-mail</label>
+                    <input type="text" name="email" id="email" required>
+                </div>
+                <div class="input-box"><label for="contact">Phone No.</label>
+                    <input type="text" name="contact" id="contact" required>
+                </div>
+                <div class="input-box"><label for="passwd">Password</label>
+                    <input type="password" name="passwd" id="passwd" required>
+                </div>
+                <div class="input-box"><label for="cpasswd">Confirm Password</label>
+                    <input type="password" name="cpasswd" id="cpasswd" required>
+                </div>
+                <div class="input-box"><label for="otp">Enter OTP</label>
+                    <input type="password" name="otp" id="otp" required>
+                </div>
+                <div class="input-btn">
+                    <input type="submit" value="Sign Up" name="Signup">
+                </div>
+                <div class="login-link">
+                    <label for="login">Alredy Have An Account?</label>
+                    <a href="login.html">Login</a>
+                </div>
+                <div class="login-options">
+                    <p>Or login With</p>
+                    <img class="google" src="./css/images/google.png" alt="">
+                    <img class="facebook" src="./css/images/facebook-logo-2019.png" alt="">
+                </div>
+            </form>
+        </div>
+    </section><!--End of the SignUp Form section-->
+    <script src="./js/gsap.min.js"></script><!--linked the gsap javascript file-->
+    <script src="./js/ScrollTrigger.min.js"></script><!--linked the scrollTrigger javascript file-->
+    <script src="./js/signup.js"></script><!--Linked the manual javascript file-->
 </body>
 
 </html>

@@ -1,3 +1,4 @@
+/* Imported the font from web */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;500;600;800;900&display=swap");
 * {
@@ -16,17 +17,8 @@
   cursor: pointer;
 }
 .nav-container {
-  /* background-image: linear-gradient(
-    to bottom,
-    rgba(255, 181, 162, 0.753),
-    rgb(152, 203, 255)
-  ); */
-  /* box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.25); */
   width: 100%;
-  /* position: fixed;
-  top: 0px; */
   z-index: 10;
-  /* background-color: #332f2f; */
 }
 .navbar {
   width: 90%;
@@ -41,7 +33,6 @@
   outline: none;
   font-size: 36px;
   letter-spacing: 10px;
-  /* color: rgb(255, 255, 255); */
   flex: 2;
   margin: 0px 10px;
   -webkit-text-stroke: 1px rgba(74, 74, 74, 1);
@@ -64,7 +55,7 @@
   font-size: 22px;
   color: rgb(0, 0, 0);
 }
-.nav-option:hover {
+.nav-option a:hover {
   transform: scale(1.2);
   text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.25);
 }
@@ -103,7 +94,6 @@
     height: 88vh;
     top: 12vh;
     background-color: rgba(51, 47, 47, 1);
-    /* display: flex; */
     width: 30%;
     box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.25);
     flex-direction: column;
