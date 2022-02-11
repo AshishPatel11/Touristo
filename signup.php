@@ -1,9 +1,8 @@
 <?php
 
-include 'signupBackend.php';
+include './php/signupBackend.php';
 
 ?>
-̥
 <!DOCTYPE html>
 <html lang="en">
 
