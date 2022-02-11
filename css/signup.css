@@ -82,7 +82,7 @@ body {
   align-items: center;
   justify-content: left;
   padding-left: 70px;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
 }
 #login {
   height: 100vh;

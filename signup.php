@@ -22,7 +22,8 @@ include 'signupBackend.php';
     <title>Signup</title>
 </head>
 
-<body>
+<body class="main">
+
     <section class="sec">
         <div class="nav-container">
             <!--Division which will contain the navbar-->
@@ -149,7 +150,8 @@ include 'signupBackend.php';
             <form class="sign-form" action="signup.php" method="post">
                 <h1 class="form-title">Regisration</h1>
                 <div class="input-box">
-                    <label for="name">Name</label><span class="err"><?php $nameerr;?></span>
+                    <!-- <label for="name">Name</label>
+                    <span class="err"></span> -->
                     <input type="text" name="name" id="name" required>
                 </div>
                 <div class="input-box">
@@ -157,11 +159,11 @@ include 'signupBackend.php';
                     <input type="email" name="email" id="email" required>
                 </div>
                 <div class="input-box"><label for="contact">Phone No.</label>
-                <span class="err"><?php $phoneerr; ?></span>
+                <!-- <span class="err"></span> -->
                     <input type="text" name="contact" id="contact" required>
                 </div>
                 <div class="input-box"><label for="passwd">Password</label>
-                <span class="err"><?php $passwderr; ?></span>
+                <!-- <span class="err"></span> -->
                     <input type="password" name="passwd" id="passwd" required>
                 </div>
                 <div class="input-box"><label for="cpasswd">Confirm Password</label>
