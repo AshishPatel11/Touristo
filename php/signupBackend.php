@@ -51,7 +51,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
                 else{
                     echo 
                     "<script>
-                        alert(`Account Creation Failed $conn->error`);
+                        alert(`Account Creation Failed, Account already Exists`);
                         location.replce('signup.php');
                     </script>";
                 }
