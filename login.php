@@ -44,7 +44,7 @@ include './php/loginBackend.php';
             <div class="intro-text">
                 <h1 class="title">Welcome To Touristo</h1>
                 <h3 class="title-description">Journey of Thousand Miles Begins With Single Step.</h3>
-                <form>
+                <form action="home.php" method="post">
                     <input type="submit" class="intro-btn" value="Explore Now">
                 </form>
             </div>
