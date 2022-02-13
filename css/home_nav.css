@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Raleway:wght@400;500;600;700;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.logo-img {
+  width: 70px;
+  height: 70px;
+}
+.profile {
+  width: 55px;
+  height: 55px;
+}
+.nav-container {
+  width: 90vw;
+  margin: 0px auto;
+  padding: 10px 0px;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+}
+.logo-name {
+  flex: 1;
+  font-family: Raleway, sans-serif;
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: white;
+}
+.nav-option {
+  list-style: none;
+}
+.list-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex: 1;
+}
+.li-link {
+  font-family: Raleway, sans-serif;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 20px;
+  display: inline-block;
+  position: relative;
+}
+.li-link::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #0087ca;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+.li-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}

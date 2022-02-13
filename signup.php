@@ -10,18 +10,18 @@ include './php/signupBackend.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/nav.css">
     <!--Linked the CSS File for navbar-->
-    <link rel="stylesheet" href="/css/fonts/fonts.css">
+    <link rel="stylesheet" href="./css/nav.css">
     <!--Linked Fonts CSS File-->
+    <link rel="stylesheet" href="/css/fonts/fonts.css">
     <!-- Linked the googles icon from web👇 -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!--Linked the CSS file for signup page-->
     <link rel="stylesheet" href="./css/signup.css">
     <link rel="stylesheet" href="css/loading.css">
-    <link rel="shortcut icon" href="./css/images/logo_title.png">
     <!--Linked the icon image will apear in title bar-->
+    <link rel="shortcut icon" href="./css/images/logo_title.png">
 
-    <!--Linked the CSS file for signup page-->
     <title>Signup</title>
 </head>
 
