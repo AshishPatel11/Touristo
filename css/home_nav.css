@@ -69,3 +69,12 @@
   transform: scaleX(1);
   transform-origin: bottom left;
 }
+.logo-svg .logo-text,.plane > *, .location .Vector, .sndo > *{
+  fill: white !important;
+}
+.logo-svg .strok {
+  stroke: white !important;
+}
+.location .Vector_2 {
+  fill: black;
+}
