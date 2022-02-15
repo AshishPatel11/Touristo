@@ -83,6 +83,30 @@ let tl9 = gsap.timeline({
         scrub: 1,
     }
 });
+let tl18 = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.nav-container',
+        start: '0%',
+        end: '1%',
+        scrub: 1,
+    }
+});
+let tl19 = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.nav-container',
+        start: '0%',
+        end: '1%',
+        scrub: 1,
+    }
+});
+let tl20 = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.nav-container',
+        start: '0%',
+        end: '1%',
+        scrub: 1,
+    }
+});
 let tl10 = gsap.timeline({
     scrollTrigger: {
         trigger: '.nav-container',
@@ -124,5 +148,8 @@ tl9.fromTo(".nav-container", { y: 10 }, {
 tl10.to(".nav-option a", {
     color: "rgb(255, 255, 255)"
 });
-tl11.to(".burger div", {backgroundColor:"rgb(255, 255, 255)"})
+tl11.to(".burger div", { backgroundColor: "rgb(255, 255, 255)" });
+tl18.to(".location .Vector_2", { fill: "black" });
+tl19.to(".logo-svg .strok", { stroke: "white" });
+tl20.to(".logo-svg .logo-text,.plane > *, .location .Vector, .sndo > *", { fill: "white" });
 // ...............................................page transition...............................................
