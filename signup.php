@@ -20,7 +20,7 @@ include './php/signupBackend.php';
     <link rel="stylesheet" href="./css/signup.css">
     <link rel="stylesheet" href="css/loading.css">
     <!--Linked the icon image will apear in title bar-->
-    <link rel="shortcut icon" href="./css/images/logo_title.png">
+    <link rel="shortcut icon" href="./css/images/svg/title.svg">
 
     <title>Signup</title>
 </head>

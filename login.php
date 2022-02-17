@@ -18,7 +18,7 @@ include './php/loginBackend.php';
     <link rel="stylesheet" href="./css/signup.css">
     <!--Linked the CSS file for signup page-->
     <title>Login</title>
-    <link rel="shortcut icon" href="./css/images/logo_title.png">
+    <link rel="shortcut icon" href="./css/images/svg/title.svg">
     <!--Linked the icon image will apear in title bar-->
 
 </head>
