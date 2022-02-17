@@ -87,6 +87,55 @@ img {
   position: relative;
   margin-top: 1300px;
   z-index: -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.pic1 {
+  height: 270px;
+  margin: 15px;
+  background-image: url(./images/brihadishvara-g107a16dc6_1280.jpg);
+  background-size: cover;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: 270px;
+}
+.pic2 {
+  height: 270px;
+  margin: 15px;
+  background-image: url(./images/india-302.jpg);
+  flex-grow: 0;
+  background-size: cover;
+  flex-shrink: 1;
+  flex-basis: 270px;
+}
+.pic3 {
+  height: 270px;
+  margin: 15px;
+  background-size: cover;
+  background-image: url(./images/india-3639503_1920.jpg);
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: 270px;
+}
+.pic4 {
+  height: 270px;
+  margin: 15px;
+  background-size: cover;
+  background-image: url(./images/india-g9639d8906_1280.jpg);
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: 270px;
+}
+.pic5 {
+  height: 270px;
+  margin: 15px;
+  background-image: url(./images/sunset-1139293_1920.jpg);
+  flex-grow: 0;
+  flex-shrink: 1;
+  background-size: cover;
+  flex-basis: 270px;
 }
 .dot {
   width: 150px;
