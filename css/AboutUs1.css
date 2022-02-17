@@ -1,0 +1,103 @@
+@import url("http://fonts.cdnfonts.com/css/adobe-garamond-pro-bold");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
+img {
+  position: absolute;
+  width: 100%;
+  height: 90%;
+}
+.skew1 {
+  background-color: rgba(255, 221, 201, 1);
+
+  position: absolute;
+  transform: skewY(12deg);
+  height: 680px;
+  margin-top: 635px;
+  display: flex;
+  flex-direction: column;
+  width: 200vh;
+}
+.skew2 {
+  background-color: rgba(255, 221, 201, 1);
+  position: absolute;
+  transform: skewY(-12deg);
+  height: 680px;
+  margin-top: 635px;
+  display: flex;
+  flex-direction: column;
+  width: 200vh;
+}
+.skew3 {
+  background-color: rgba(255, 221, 201, 1);
+
+  position: absolute;
+  transform: skewY(12deg);
+  height: 680px;
+  display: flex;
+  flex-direction: column;
+  width: 200vh;
+}
+.skew4 {
+  background-color: rgba(255, 221, 201, 1);
+  position: absolute;
+  transform: skewY(-12deg);
+  height: 680px;
+  display: flex;
+  flex-direction: column;
+  width: 200vh;
+}
+.ab-us {
+  position: absolute;
+  margin-top: 100px;
+  margin-left: 44%;
+  width: 60%;
+  font-family: Adobe Garamond Pro Bold, sans-serif;
+  transform: skewY(12deg);
+  font-size: 50px;
+}
+.ab-us1 {
+  position: absolute;
+  margin-top: 145px;
+  margin-left: 28%;
+  width: 60%;
+  font-family: Adobe Garamond Pro Bold, sans-serif;
+  transform: skewY(12deg);
+  font-size: 40px;
+}
+.ab-us2 {
+  position: absolute;
+  margin-top: 220px;
+  margin-left: 21.5%;
+  width: 60%;
+  font-family: Adobe Garamond Pro Bold, sans-serif;
+  transform: skewY(12deg);
+  font-size: 30px;
+}
+.pic {
+  height: 650px;
+  width: 100%;
+  background-image: linear-gradient(
+    rgba(255, 0, 0, 0.47),
+    rgba(0, 67, 255, 0.43)
+  );
+  position: relative;
+  margin-top: 1300px;
+  z-index: -1;
+}
+.dot {
+  width: 150px;
+  height: 150px;
+  margin-top: 480px;
+  transform: skewY(12deg);
+}
+.dot1 {
+  width: 150px;
+  height: 150px;
+  margin-left: 1375px;
+  margin-top: 50px;
+  transform: skewY(12deg);
+}
