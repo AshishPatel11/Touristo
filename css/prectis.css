@@ -1,0 +1,112 @@
+@import url("http://fonts.cdnfonts.com/css/sedan-sc");
+* {
+  margin: 0%;
+  padding: 0%;
+  overflow-x: hidden;
+  font-family: Sedan SC, sans-serif;
+}
+.back {
+  height: auto;
+  width: 100%;
+}
+.ab-us {
+  position: absolute;
+  width: 60%;
+  font-size: 50px;
+  margin-top: 115vh;
+  margin-left: 87vh;
+}
+.ab-us1 {
+  position: absolute;
+  width: 60%;
+  font-size: 40px;
+  margin-top: 130vh;
+  margin-left: 53vh;
+}
+.ab-us2 {
+  position: absolute;
+  width: 70%;
+  font-size: 30px;
+  margin-top: 146vh;
+  margin-left: 32vh;
+}
+.ab-us3 {
+  position: absolute;
+  width: auto;
+  font-size: 55px;
+  margin-top: 325vh;
+  margin-left: 45vh;
+}
+.ab-us4 {
+  position: absolute;
+  width: auto;
+  font-size: 30px;
+  margin-top: 351vh;
+  margin-left: 38vh;
+}
+.ab-us5 {
+  position: absolute;
+  width: auto;
+  font-size: 18px;
+  margin-top: 356vh;
+  margin-left: 38vh;
+  opacity: 80%;
+}
+.ab-us6 {
+  position: absolute;
+  width: 200px;
+  font-size: 18px;
+  margin-top: 365vh;
+  margin-left: 26vh;
+}
+.ab-us7 {
+  position: absolute;
+  width: 200px;
+  font-size: 30px;
+  margin-top: 351vh;
+  margin-left: 98vh;
+}
+.ab-us8 {
+  position: absolute;
+  width: 200px;
+  font-size: 18px;
+  margin-top: 356vh;
+  margin-left: 98vh;
+  opacity: 80%;
+}
+.ab-us9 {
+  position: absolute;
+  width: 200px;
+  font-size: 18px;
+  margin-top: 365vh;
+  margin-left: 86vh;
+}
+.ab-us10 {
+  position: absolute;
+  width: 200px;
+  font-size: 30px;
+  margin-top: 351vh;
+  margin-left: 157vh;
+}
+.ab-us11 {
+  position: absolute;
+  width: 200px;
+  font-size: 18px;
+  margin-top: 356vh;
+  margin-left: 157vh;
+  opacity: 80%;
+}
+.ab-us12 {
+  position: absolute;
+  width: 200px;
+  font-size: 18px;
+  margin-top: 365vh;
+  margin-left: 146vh;
+}
+.ab-us13 {
+  position: absolute;
+  width: 310px;
+  font-size: 20px;
+  margin-top: 416vh;
+  margin-left: 23vh;
+}
