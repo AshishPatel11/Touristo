@@ -84,23 +84,35 @@
     </section>
     <section class="page2">
         <div class="temp-width">
-        <h1 class="title">
-            Recommanded Places:
-        </h1>
-        <div class="cards-container">
-            <div class="card1">
-                <p class="description">Explore the sign of true love<br>&<br>One of the seven wonders of world<br>“the taj mahal”</p>
-                <p>Agra</p>
+            <h1 class="title">
+                Recommanded Places:
+            </h1>
+            <div class="cards-container">
+                <div class="card1">
+                    <p class="description">Explore the sign of true love<br>&<br>One of the seven wonders of world<br>“the taj mahal”</p>
+                    <p>Agra</p>
+                </div>
+                <div class="card2">
+                    <p class="description">Find your way to "World Heritage City"<br>&<br>"The Pink City"<br>of India</p>
+                    <p>Jaipur</p>
+                </div>
+                <div class="card3">
+                    <p class="description">make your trip to the world's most visited place<br>"the Amritsar"<br>city of<br>"golden temple"</p>
+                    <p>Amritsar</p>
+                </div>
+                <div class="card1">
+                    <p class="description">Explore the sign of true love<br>&<br>One of the seven wonders of world<br>“the taj mahal”</p>
+                    <p>Agra</p>
+                </div>
+                <div class="card2">
+                    <p class="description">Find your way to "World Heritage City"<br>&<br>"The Pink City"<br>of India</p>
+                    <p>Jaipur</p>
+                </div>
+                <div class="card3">
+                    <p class="description">make your trip to the world's most visited place<br>"the Amritsar"<br>city of<br>"golden temple"</p>
+                    <p>Amritsar</p>
+                </div>
             </div>
-            <div class="card2">
-                <p class="description"></p>
-                <p>Jaipur</p>
-            </div>
-            <div class="card3">
-                <p class="description"></p>
-                <p>Amritsar</p>
-            </div>
-        </div>
         </div>
     </section>
 </body>
