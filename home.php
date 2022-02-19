@@ -170,10 +170,10 @@
                 </svg>
                 <p class="footer-txt">our Social Media:</p>
                 <div class="footer-icons">
-                    <a href="#"><img class="social-links" src="./css/images/svg/instagram.svg" alt=""></a>
+                    <a href="https://www.instagram.com/ashish_15.65_/"><img class="social-links" src="./css/images/svg/instagram.svg" alt=""></a>
                     <a href="#"><img class="social-links" src="./css/images/svg/faceboo.svg" alt=""></a>
                     <a href="#"><img class="social-links" src="./css/images/svg/twitter.svg" alt=""></a>
-                    <a href="#"><img class="social-links" src="./css/images/svg/gmail.svg" alt=""></a>
+                    <a href="mailto:ashishpatel287680@gmail.com"><img class="social-links" src="./css/images/svg/gmail.svg" alt=""></a>
                 </div>
                 <div class="address">
                     <img src="./css/images/svg/location.svg" alt="">
