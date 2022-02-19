@@ -100,17 +100,17 @@
                     <p class="description">make your trip to the world's most visited place<br>"the Amritsar"<br>city of<br>"golden temple"</p>
                     <p>Amritsar</p>
                 </div>
-                <div class="card1">
-                    <p class="description">Explore the sign of true love<br>&<br>One of the seven wonders of world<br>“the taj mahal”</p>
-                    <p>Agra</p>
+                <div class="card4">
+                    <p class="description">witness the ancient hand-carved<br>caves of<br>"ajanta & ellora caves"</p>
+                    <p>Ajanta & Ellora Caves</p>
                 </div>
-                <div class="card2">
-                    <p class="description">Find your way to "World Heritage City"<br>&<br>"The Pink City"<br>of India</p>
-                    <p>Jaipur</p>
+                <div class="card5">
+                    <p class="description">Fall into the<br>trap of nature<br>to find the<br>beauty of<br>"Kerala"</p>
+                    <p>Kerala</p>
                 </div>
-                <div class="card3">
-                    <p class="description">make your trip to the world's most visited place<br>"the Amritsar"<br>city of<br>"golden temple"</p>
-                    <p>Amritsar</p>
+                <div class="card6">
+                    <p class="description">"the cold desert"<br>of india<br>&<br>best place for hiking "ladakh"</p>
+                    <p>Ladakh</p>
                 </div>
             </div>
         </div>

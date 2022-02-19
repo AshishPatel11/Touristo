@@ -86,6 +86,8 @@ body {
   height: 100vh;
   background-image: url(./images/signbg.jpg);
   background-size: cover;
+  background-attachment: fixed;
+  z-index: 5;
   font-family: poppins;
   color: white;
   display: flex;
