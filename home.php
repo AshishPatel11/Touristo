@@ -13,7 +13,7 @@ include "php/connection.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <!--Linked the icon image will apear in title bar-->
-    <link rel="shortcut icon" href="./css/images/logo_title.png">
+    <link rel="shortcut icon" href="./css/images/svg/title.svg">
     <link rel="stylesheet" href="./css/home.css">
     <link rel="stylesheet" href="./css/home_nav.css">
 </head>
