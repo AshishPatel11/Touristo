@@ -1,8 +1,11 @@
 <?php
+
+session_start();
 include 'connection.php';
 $nameerr = "";
 $numerr = "";
 $passerr = "";
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     echo
     "<style>
@@ -31,9 +34,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if ($_POST['passwd'] != $_POST['cpasswd']) {
                 $passerr = "<i class=material-icons>warning</i>Passwords Did Not Matched!";
             } else {
-
+                $hash = password_hash($_POST['passwd'] , PASSWORD_DEFAULT);
                 $uid = rand(100000, 1000000);
-                $insert = "INSERT INTO `user_tbl`(uid, uname, emailid, phno,passwd) VALUES ('$uid','$_POST[name]','$_POST[email]','$_POST[contact]','$_POST[passwd]')";
+                $insert = "INSERT INTO `user_tbl`(uid, uname, emailid, phno,passwd) VALUES ('$uid','$_POST[name]','$_POST[email]','$_POST[contact]','$hash')";
 
                 $result = mysqli_query($conn, $insert);
 
