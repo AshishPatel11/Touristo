@@ -12,9 +12,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $data = $result->fetch_assoc();
 
     if (mysqli_num_rows($result) > 0 and $data['emailid'] === $_POST['email'] && $data['passwd'] === $_POST['passwd']) {
+        $login = true;
         echo "
             <script>
-                alert(`Login Successful!!Welcome $data[uname]`);
+                alert(`Login Successful!! Welcome $data[uname]`);
                 location.replace('home.php');
             </script>";
     } else {

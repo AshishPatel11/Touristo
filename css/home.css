@@ -55,6 +55,7 @@ input::placeholder {
   color: white;
   font-size: 16px;
   padding: 5px auto;
+  cursor: pointer;
   /* transform: translateY(2px); */
   /* margin: -1px 0px 0px -4px; */
 }
