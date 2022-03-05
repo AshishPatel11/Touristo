@@ -7,11 +7,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     $result = mysqli_query($conn, $select);
     $data = mysqli_fetch_assoc($result);
+    $count = mysqli_num_rows($result);
 
     // $result = $conn->query($select);
     // $data = $result->fetch_assoc();
 
-    if (mysqli_num_rows($result) > 0){
+    if ($count == 1){
         echo "
             <script>
                 alert(`Login Successful!! Welcome $data[uname]`);
