@@ -11,21 +11,24 @@
 </head>
 
 <body>
+    <nav class="navbar">
+        <h1>hello admin</h1>
+    </nav>
     <section class="home">
         <div class="card-container">
             <div class="card">
                 <img class="user-img" src="../css/images/svg/user.svg" alt="">
-                <p class="plus">+</p>
+                <img class="plus" src="../css/images/svg/plus.svg" alt="">
                 <p class="description">Add User</p>
             </div>
             <div class="card">
                 <img class="user-img" src="../css/images/svg/user.svg" alt="">
-                <p class="plus">+</p>
+                <img class="plus" src="../css/images/svg/plus.svg" alt="">
                 <p class="description">Add User</p>
             </div>
             <div class="card">
                 <img class="user-img" src="../css/images/svg/user.svg" alt="">
-                <p class="plus">+</p>
+                <img class="plus" src="../css/images/svg/plus.svg" alt="">
                 <p class="description">Add User</p>
             </div>
         </div>
