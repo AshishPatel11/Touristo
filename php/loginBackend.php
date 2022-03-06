@@ -8,6 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $result = $conn->query($select);
     $data = mysqli_fetch_assoc($result);
     $count = mysqli_num_rows($result);
+    
     if ($count == 1 and password_verify($_POST['passwd'],$data['passwd']))
     {
         echo "
