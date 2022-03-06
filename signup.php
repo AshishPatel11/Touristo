@@ -208,10 +208,12 @@ include './php/signupBackend.php';
                 <div class="input-box">
                     <label for="email">E-mail</label>
                     <input type="email" name="email" id="email" required>
+                    <span class="err"><?php echo "$emailerr"; ?></span>
                 </div>
                 <div class="input-box"><label for="contact">Phone No.</label>
                     <input type="text" name="contact" id="contact" required>
                     <span class="err"><?php echo "$numerr"; ?></span>
+                    <span class="err"><?php echo "$numduperr"; ?></span>
                 </div>
                 <div class="input-box"><label for="passwd">Password</label>
                     <input type="password" name="passwd" id="passwd" required>

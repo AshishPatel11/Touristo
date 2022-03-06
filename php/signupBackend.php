@@ -3,7 +3,9 @@
 session_start();
 include 'connection.php';
 $nameerr = "";
+$emailerr = "";
 $numerr = "";
+$numduperr = "";
 $passerr = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -25,33 +27,61 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             background-color: rgb(255, 255, 255);
         }
     </style>";
-    if (!preg_match("/^[a-zA-Z ]*$/", $_POST['name'])) {
+
+    $username = mysqli_real_escape_string($conn, $_POST['name']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $contact = mysqli_real_escape_string($conn, $_POST['contact']);
+    $pass = mysqli_real_escape_string($conn, $_POST['passwd']);
+    $cpass = mysqli_real_escape_string($conn, $_POST['cpasswd']);
+
+    // Password hashing
+    $phash = password_hash($pass, PASSWORD_BCRYPT);
+
+    $emailquery = "SELECT * FROM user_tbl WHERE emailid = '$email'";
+    $equery = mysqli_query($conn, $emailquery);
+    $ecount = mysqli_num_rows($equery);
+
+    $contactquery = "SELECT * FROM user_tbl WHERE phno = '$contact'";
+    $cquery = mysqli_query($conn, $contactquery);
+    $ccount = mysqli_num_rows($cquery);
+
+    if (!preg_match("/^[a-zA-Z ]*$/", $username)) {
         $nameerr = "<i class=material-icons>warning</i>Invalid Name!";
     } else {
-        if (!preg_match("/^[0-9]{10}+$/", $_POST['contact'])) {
-            $numerr = "<i class=material-icons>warning</i>Phone Number Must Be 10 Digits!";
+        if ($ecount > 0) {
+            $emailerr = "<i class=material-icons>warning</i>Email already Exist!";
         } else {
-            if ($_POST['passwd'] != $_POST['cpasswd']) {
-                $passerr = "<i class=material-icons>warning</i>Passwords Did Not Matched!";
+            if (!preg_match("/^[0-9]{10}+$/", $contact)) {
+                $numerr = "<i class=material-icons>warning</i>Phone Number Must Be 10 Digits!";
             } else {
-                $hash = password_hash($_POST['passwd'] , PASSWORD_DEFAULT);
-                $uid = rand(100000, 1000000);
-                $insert = "INSERT INTO `user_tbl`(uid, uname, emailid, phno,passwd) VALUES ('$uid','$_POST[name]','$_POST[email]','$_POST[contact]','$hash')";
+                if ($ccount > 0) {
+                    $numduperr = "<i class=material-icons>warning</i>Number already Exist!";
+                } else {
+                    if ($pass != $cpass) {
+                        $passerr = "<i class=material-icons>warning</i>Passwords are not Matching!";
+                    } else {
 
-                $result = mysqli_query($conn, $insert);
+                        // Generates random user id
+                        $uid = rand(100000, 1000000);
 
-                if ($result) {
-                    echo
-                    "<script>
+                        $insert = "INSERT INTO `user_tbl`(uid, uname, emailid, phno,passwd) VALUES ('$uid','$username','$email','$contact','$phash')";
+
+                        $result = mysqli_query($conn, $insert);
+
+                        if ($result) {
+                            echo
+                            "<script>
                         alert(`Account Created! Your UserId is : $uid`);
                         location.replace('login.php');
                     </script>";
-                } else {
-                    echo
-                    "<script>
+                        } else {
+                            echo
+                            "<script>
                         alert(`Account Creation Failed, $conn->error`);
                         location.replce('signup.php');
                     </script>";
+                        }
+                    }
                 }
             }
         }
