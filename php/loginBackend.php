@@ -3,16 +3,13 @@
 include 'connection.php';
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
-    $select = "SELECT * FROM `user_tbl` where emailid='$_POST[email]' and passwd='$_POST[passwd]';";
+    $select = "SELECT * FROM `user_tbl` where emailid='$_POST[email]';";
 
-    $result = mysqli_query($conn, $select);
+    $result = $conn->query($select);
     $data = mysqli_fetch_assoc($result);
     $count = mysqli_num_rows($result);
-
-    // $result = $conn->query($select);
-    // $data = $result->fetch_assoc();
-
-    if ($count == 1){
+    if ($count == 1 and password_verify($_POST['passwd'],$data['passwd']))
+    {
         echo "
             <script>
                 alert(`Login Successful!! Welcome $data[uname]`);
@@ -21,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     } else {
         echo "
             <script>
-                alert(`Invalid Credentials `);
+                alert(`Invalid Credentials, $conn->error`);
             </script>";
     }
 }
