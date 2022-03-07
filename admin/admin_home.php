@@ -8,6 +8,7 @@
     <title>Admin</title>
     <link rel="shortcut icon" href="../css/images/svg/title.svg">
     <link rel="stylesheet" href="./css/admin_home.css">
+    <link rel="stylesheet" href="./css/admin_nav.css">
 </head>
 
 <body>
@@ -63,6 +64,20 @@
                 </defs>
             </svg>
         <h1 class="welcome" >Welcome, Admin</h1>
+        <ul class="nav-ul">
+            <li class="nav-link1">User Settings <span>▼</span>
+            <ul class="options1">
+                <li class="option-link"><a href="admin_addUser.php" class="description">Add User</a></li>
+                <li class="option-link"><a href="admin_removeUser.php" class="description">Remove User</a></li>
+                <li class="option-link"><a href="admin_updateUser.php" class="description">Update User</a></li>
+            </ul></li>
+            <li class="nav-link2">Package Settings <span>▼</span>
+            <ul class="options2">
+                <li class="option-link"><a href="admin_addPack.php" class="description">Add Package</a></li>
+                <li class="option-link"><a href="admin_removePack.php" class="description">Remove Package</a></li>
+                <li class="option-link"><a href="admin_updatePack.php" class="description">Update Package</a></li>
+            </ul></li>
+        </ul>
     </nav>
     <section class="home">
         <div class="card-container">

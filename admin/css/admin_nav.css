@@ -1,0 +1,48 @@
+.navbar{
+  background-color: rgb(29, 29, 29);
+  display: block;
+  height: auto;
+  width: 20%;
+  min-width: 300px;
+}
+.nav-ul{
+    color: snow;
+    font-family: poppins,sans-serif ;
+    margin: 32px 24px;
+    list-style: none;
+    font-size: 1.5rem;
+    transition: 1s;
+}
+.options1,.options2{
+    margin-left: 18px;
+    color: rgb(29, 29, 29);
+    background-color: snow;
+    border-radius: 12px;
+    padding: 8px;
+    list-style: none;
+    text-align: left;
+    display: none;
+}
+.nav-link1,.nav-link2{
+    width: 100%;
+}
+.option-link{
+    font-size: 0.8rem !important;
+    margin: 5px;
+    width: 100%;
+}
+.nav-link1:hover,.nav-link2:hover{
+    cursor: pointer;
+}
+.nav-link1:hover .options1{
+    display: inline-block;
+}
+.nav-link2:hover .options2{
+    display: inline-block;
+}
+.nav-link1,.nav-link2{
+    margin: 32px 0px;
+}
+.nav-link1 span,.nav-link2 span{
+    font-size: 0.9rem;
+}

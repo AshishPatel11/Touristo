@@ -8,13 +8,6 @@ body{
   display: flex;
   background-color: rgb(255, 255, 255);
 }
-.navbar{
-  background-color: rgb(29, 29, 29);
-  display: block;
-  height: auto;
-  width: 20%;
-  min-width: 250px;
-}
 .welcome{
   color: snow;
   font-family: poppins,sans-serif;
