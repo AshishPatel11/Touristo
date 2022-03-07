@@ -222,9 +222,7 @@ include './php/signupBackend.php';
                     <input type="password" name="cpasswd" id="cpasswd" required>
                     <span class="err"><?php echo "$passerr"; ?></span>
                 </div>
-                <div class="input-box"><label for="otp">Enter OTP</label>
-                    <input type="password" name="otp" id="otp" required>
-                </div>
+
                 <div class="input-btn">
                     <input type="submit" value="Sign Up" name="Signup">
                 </div>
