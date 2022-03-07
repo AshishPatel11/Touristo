@@ -1,16 +1,6 @@
 <?php
 session_start();
 include "php/connection.php";
-
-if(!isset($_SESSION['uname'])){
-    ?>
-    <script>
-        alert(`Login First!`);
-        location.replace('login.php');
-    </script>
-    <?php
-}
-
 ?>
 
 <!DOCTYPE html>
