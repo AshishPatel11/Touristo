@@ -21,11 +21,24 @@ include './php/signupBackend.php';
     <link rel="stylesheet" href="css/loading.css">
     <!--Linked the icon image will apear in title bar-->
     <link rel="shortcut icon" href="./css/images/svg/title.svg">
+    <link rel="stylesheet" href="./css/loader.css">
 
     <title>Signup</title>
 </head>
 
 <body class="main">
+    <div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+
+    <script>
+        let spinnerwrapper = document.querySelector('.loader-wrapper');
+
+        window.addEventListener('load', function() {
+            spinnerwrapper.parentElement.removeChild(spinnerwrapper);
+            $(".loader-wrapper").fadeOut("slow");
+        });
+    </script>
 
     <div class="nav-container">
         <!--Division which will contain the navbar-->

@@ -10,16 +10,29 @@ include "php/connection.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Touristo - <?php if(isset($_SESSION['uname'])){
-        echo $_SESSION['uname'];
-    } ?></title>
+    <title>Touristo - <?php if (isset($_SESSION['uname'])) {
+                            echo $_SESSION['uname'];
+                        } ?></title>
     <!--Linked the icon image will apear in title bar-->
     <link rel="shortcut icon" href="./css/images/svg/title.svg">
     <link rel="stylesheet" href="./css/home.css">
     <link rel="stylesheet" href="./css/home_nav.css">
+    <link rel="stylesheet" href="./css/loader.css">
 </head>
 
 <body>
+    <div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+
+    <script>
+        let spinnerwrapper = document.querySelector('.loader-wrapper');
+
+        window.addEventListener('load', function() {
+            spinnerwrapper.parentElement.removeChild(spinnerwrapper);
+            $(".loader-wrapper").fadeOut("slow");
+        });
+    </script>
     <section class="page1">
         <div class="nav-container">
             <nav class="navbar">
