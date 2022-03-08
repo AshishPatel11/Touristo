@@ -5,6 +5,7 @@ body {
   height: 100vh;
   background-color: #eee;
 }
+
 .content {
   display: flex;
   justify-content: center;
