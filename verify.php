@@ -17,7 +17,7 @@ if (isset($_REQUEST['token'])) {
         echo "
         <script>
             alert(`Account verified succesfully!`);
-            locaiton.replace('login.php');
+            location.replace('login.php');
         </script>";
     } else {
         echo "
