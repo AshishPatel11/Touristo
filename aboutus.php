@@ -1,8 +1,3 @@
-<?php
-session_start();
-include "php/connection.php";
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,18 +5,16 @@ include "php/connection.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Touristo - <?php if (isset($_SESSION['uname'])) {
-                            echo $_SESSION['uname'];
-                        } ?></title>
-    <!--Linked the icon image will apear in title bar-->
-    <link rel="shortcut icon" href="./css/images/svg/title.svg">
-    <link rel="stylesheet" href="./css/home.css">
-    <link rel="stylesheet" href="./css/home_nav.css">
+    <title>Document</title>
     <link rel="stylesheet" href="./css/loader.css">
+    <link rel="stylesheet" href="css\aboutus.css">
+    <link rel="stylesheet" href="./css/home_nav.css">
+    <!-- ashish -->
 
 </head>
 
 <body>
+
     <div class="loader-wrapper">
         <span class="loader"><span class="loader-inner"></span></span>
     </div>
@@ -34,7 +27,7 @@ include "php/connection.php";
             $(".loader-wrapper").fadeOut("slow");
         });
     </script>
-    <section class="page1">
+    <div class="footer-container">
         <div class="nav-container">
             <nav class="navbar">
                 <svg class="logo-svg" width="202" height="75" viewBox="0 0 202 75" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -95,48 +88,7 @@ include "php/connection.php";
                 <img src="./css/images/profile.png" alt="" class="profile">
             </nav>
         </div>
-        <div class="search-container">
-            <form action="#" method="post">
-                <input type="text" name="searchbar" placeholder="Search Place Here....." class="search-box">
-                <input type="submit" value="Search" class="submit-btn">
-            </form>
-        </div>
-        <p class="comment">Scroll Down To Explore</p>
-    </section>
-    <section class="page2">
-        <div class="temp-width">
-            <h1 class="title">
-                Recommanded Places:
-            </h1>
-            <div class="cards-container">
-                <div class="card1">
-                    <p class="description">Explore the sign of true love<br>&<br>One of the seven wonders of world<br>“the taj mahal”</p>
-                    <p>Agra</p>
-                </div>
-                <div class="card2">
-                    <p class="description">Find your way to "World Heritage City"<br>&<br>"The Pink City"<br>of India</p>
-                    <p>Jaipur</p>
-                </div>
-                <div class="card3">
-                    <p class="description">make your trip to the world's most visited place<br>"the Amritsar"<br>city of<br>"golden temple"</p>
-                    <p>Amritsar</p>
-                </div>
-                <div class="card4">
-                    <p class="description">witness the ancient hand-carved<br>caves of<br>"ajanta & ellora caves"</p>
-                    <p>Ajanta & Ellora Caves</p>
-                </div>
-                <div class="card5">
-                    <p class="description">Fall into the<br>trap of nature<br>to find the<br>beauty of<br>"Kerala"</p>
-                    <p>Kerala</p>
-                </div>
-                <div class="card6">
-                    <p class="description">"the cold desert"<br>of india<br>&<br>best place for hiking "ladakh"</p>
-                    <p>Ladakh</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="footer-container">
+        <img class="back" src="css\images\svg\Frame 2.svg" alt="">
         <footer>
             <div class="part1">
                 <svg class="logo-svg" width="202" height="75" viewBox="0 0 202 75" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -207,6 +159,7 @@ include "php/connection.php";
             <p class="footer-txt">2022 copyright reserved</p>
         </div>
     </div>
+
 </body>
 
 </html>
