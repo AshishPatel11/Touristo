@@ -18,7 +18,7 @@ include "php/connection.php";
     <link rel="stylesheet" href="./css/home.css">
     <link rel="stylesheet" href="./css/home_nav.css">
     <link rel="stylesheet" href="./css/loader.css">
-
+    <script src="./js/jquery.min.js"></script>
 </head>
 
 <body>
@@ -30,8 +30,10 @@ include "php/connection.php";
         let spinnerwrapper = document.querySelector('.loader-wrapper');
 
         window.addEventListener('load', function() {
-            spinnerwrapper.parentElement.removeChild(spinnerwrapper);
-            $(".loader-wrapper").fadeOut("slow");
+            setTimeout(function() {
+                spinnerwrapper.parentElement.removeChild(spinnerwrapper);
+                $(".loader-wrapper").fadeOut('slow', function() {});
+            }, 1000);
         });
     </script>
     <section class="page1">

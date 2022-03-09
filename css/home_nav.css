@@ -9,7 +9,7 @@
   height: 55px;
   cursor: pointer;
 }
-.logo-svg{
+.logo-svg {
   cursor: pointer;
 }
 .nav-container {
@@ -62,7 +62,10 @@
   transform: scaleX(1);
   transform-origin: bottom left;
 }
-.logo-svg .logo-text,.plane > *, .location .Vector, .sndo > *{
+.logo-svg .logo-text,
+.plane > *,
+.location .Vector,
+.sndo > * {
   fill: white !important;
 }
 .logo-svg .strok {

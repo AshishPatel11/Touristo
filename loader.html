@@ -10,9 +10,18 @@
 </head>
 
 <body>
-    <div class="ring">Loading
-        <span></span>
+    <div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
     </div>
+
+    <script>
+        let spinnerwrapper = document.querySelector('.loader-wrapper');
+
+        window.addEventListener('load', function () {
+            spinnerwrapper.parentElement.removeChild(spinnerwrapper);
+            $(".loader-wrapper").fadeOut("slow");
+        });
+    </script>
 </body>
 
 </html>
