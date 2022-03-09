@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include './php/loginBackend.php';
 
 ?>
@@ -208,34 +208,44 @@ include './php/loginBackend.php';
                     </div>
                 </div>
             </div>
-        </section>
-        <!--End of the introduction section-->
-        <section class="sec2" id="login">
-            <!--The second section which contains the Login Form-->
-            <div class="form-container login-form">
-                <form class="sign-form" action="login.php" method="POST">
-                    <h1 class="form-title">Login</h1>
-                    <div class="input-box">
-                        <label for="email">E-mail</label>
-                        <input type="text" name="email" id="email" required>
-                    </div>
-                    <div class="input-box"><label for="passwd">Password</label>
-                        <input type="password" name="passwd" id="passwd" required>
-                    </div>
-                    <div class="input-btn">
-                        <input type="submit" value="Login" name="login">
-                    </div>
-                    <div class="login-link">
-                        <label for="login">Don't have an account?</label>
-                        <a href="signup.php">SignUp</a>
-                    </div>
-                    <div class="login-options">
-                        <p>Or login With</p>
-                        <img class="google" src="./css/images/google.png" alt="">
-                        <img class="facebook" src="./css/images/facebook-logo-2019.png" alt="">
-                    </div>
-                </form>
-            </div>
+        </div>
+    </section>
+    <!--End of the introduction section-->
+    <section class="sec2" id="login">
+        <!--The second section which contains the Login Form-->
+        <div class="form-container login-form">
+            <form class="sign-form" action="login.php" method="POST">
+                <h1 class="form-title">Login</h1>
+                
+                <div class="input-box">
+                    <label for="email">E-mail</label>
+                    <input type="text" name="email" id="email" required>
+                </div>
+                <div class="input-box"><label for="passwd">Password</label>
+                    <input type="password" name="passwd" id="passwd" required>
+                </div>
+                <div class="input-btn">
+                    <input type="submit" value="Login" name="login">
+                </div>
+                <div class="login-link">
+                    <label for="login">Don't have an account?</label>
+                    <a href="signup.php">SignUp</a>
+                </div>
+                <div class="login-options">
+                    <p>Or login With</p>
+                    <img class="google" src="./css/images/google.png" alt="">
+                    <img class="facebook" src="./css/images/facebook-logo-2019.png" alt="">
+                </div>
+            </form>
+        </div>
+    </section>
+    </section>
+    <script src="./js/gsap.min.js"></script>
+    <!--linked the gsap javascript file-->
+    <script src="./js/ScrollTrigger.min.js"></script>
+    <!--linked the scrollTrigger javascript file-->
+    <script src="./js/signup.js"></script>
+    <script src="/js/loader.js"></script>
         </section>
         </section>
         <script src="./js/gsap.min.js"></script>
