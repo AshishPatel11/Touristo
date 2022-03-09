@@ -1,11 +1,11 @@
 <?php
-$to_email = "varadixit@gmail.com";
-$subject = "Simple Email Test via PHP";
-$body = "Hi, This is test email send by PHP Script";
+
+$subject = "Email Verifivation - Touristo";
+$body = "Hi, $username! Click this link to verify your account : http://localhost/Touristo/verify.php?token=$token";
 $headers = "From: varadixit@gmail.com";
 
-if (mail($to_email, $subject, $body, $headers)) {
-    echo "Email successfully sent to $to_email...";
+if (mail($email, $subject, $body, $headers)) {
+    $_SESSION['msgbox'] = "Check your email $email to verify your account!";
 } else {
-    echo "Email sending failed...";
+    echo "Mail failed";
 }

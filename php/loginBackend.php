@@ -3,7 +3,7 @@
 include 'connection.php';
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
-    $select = "SELECT * FROM `user_tbl` where emailid='$_POST[email]';";
+    $select = "SELECT * FROM `user_tbl` WHERE emailid='$_POST[email]' AND statuss='verify';";
 
     $result = mysqli_query($conn, $select);
     $data = mysqli_fetch_assoc($result);
@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     
     if ($count == 1 and password_verify($_POST['passwd'],$data['passwd']))
     {
-        session_start();
+        // session_start();
         $_SESSION['uname'] = $data['uname'];
         echo "
             <script>

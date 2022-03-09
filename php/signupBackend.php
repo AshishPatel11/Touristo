@@ -37,6 +37,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Password hashing
     $phash = password_hash($pass, PASSWORD_BCRYPT);
 
+    $token = bin2hex(random_bytes(12));
+
     $emailquery = "SELECT * FROM user_tbl WHERE emailid = '$email'";
     $equery = mysqli_query($conn, $emailquery);
     $ecount = mysqli_num_rows($equery);
@@ -64,16 +66,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         // Generates random user id
                         $uid = rand(100000, 1000000);
 
-                        $insert = "INSERT INTO `user_tbl`(uid, uname, emailid, phno,passwd) VALUES ('$uid','$username','$email','$contact','$phash')";
+                        $insert = "INSERT INTO `user_tbl`(uid, uname, emailid, phno,passwd, token, statuss) VALUES ('$uid','$username','$email','$contact','$phash','$token','notverify')";
 
                         $result = mysqli_query($conn, $insert);
 
                         if ($result) {
-                            echo
-                            "<script>
-                        alert(`Account Created! Your UserId is : $uid`);
-                        location.replace('login.php');
-                    </script>";
+
+                            $subject = "Email Verifivation - Touristo";
+                            $body = "Hi, $username! Click this link to verify your account : http://localhost/Touristo/verify.php?token=$token";
+                            $headers = "From: varadixit@gmail.com";
+
+                            if (mail($email, $subject, $body, $headers)) {
+                    
+                                echo "
+                                <script>
+                                    alert(`Account created! Check your email to verify!`);
+                                    location.replace('login.php');
+                                </script>";
+
+                            } else {
+                        
+                                echo "
+                                <script>
+                                    alert(`Oops!Email failed.`);
+                                    location.replace('signup.php');
+                                </script>";
+                            }
                         } else {
                             echo
                             "<script>

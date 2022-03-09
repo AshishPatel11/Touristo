@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include './php/loginBackend.php';
 
 ?>
@@ -200,6 +200,7 @@ include './php/loginBackend.php';
         <div class="form-container login-form">
             <form class="sign-form" action="login.php" method="POST">
                 <h1 class="form-title">Login</h1>
+                
                 <div class="input-box">
                     <label for="email">E-mail</label>
                     <input type="text" name="email" id="email" required>
