@@ -23,8 +23,10 @@
         let spinnerwrapper = document.querySelector('.loader-wrapper');
 
         window.addEventListener('load', function() {
-            spinnerwrapper.parentElement.removeChild(spinnerwrapper);
-            $(".loader-wrapper").fadeOut("slow");
+            setTimeout(function() {
+                spinnerwrapper.parentElement.removeChild(spinnerwrapper);
+                $(".loader-wrapper").fadeOut('slow', function() {});
+            }, 3000);
         });
     </script>
     <div class="footer-container">
