@@ -21,21 +21,8 @@ include "php/connection.php";
     <script src="./js/jquery.min.js"></script>
 </head>
 
-<body>
-    <div class="loader-wrapper">
-        <span class="loader"><span class="loader-inner"></span></span>
-    </div>
-
-    <script>
-        let spinnerwrapper = document.querySelector('.loader-wrapper');
-
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                spinnerwrapper.parentElement.removeChild(spinnerwrapper);
-                $(".loader-wrapper").fadeOut('slow', function() {});
-            }, 1000);
-        });
-    </script>
+<body onload="myFunction()">
+    <div id="loader"></div>
     <section class="page1">
         <div class="nav-container">
             <nav class="navbar">
@@ -209,6 +196,13 @@ include "php/connection.php";
             <p class="footer-txt">2022 copyright reserved</p>
         </div>
     </div>
+    <script>
+        var preloader = document.getElementById('loader');
+
+        function myFunction() {
+            preloader.style.display = 'none';
+        }
+    </script>
 </body>
 
 </html>
