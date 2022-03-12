@@ -21,26 +21,8 @@ include "php/connection.php";
     <script src="./js/jquery.min.js"></script>
 </head>
 
-<<<<<<< HEAD
-<body>
-    <div class="loader-wrapper">
-        <span class="loader"><span class="loader-inner"></span></span>
-    </div>
-
-    <script>
-    let spinnerwrapper = document.querySelector('.loader-wrapper');
-
-    window.addEventListener('load', function() {
-        setTimeout(function() {
-            spinnerwrapper.parentElement.removeChild(spinnerwrapper);
-            $(".loader-wrapper").fadeOut('slow', function() {});
-        }, 1000);
-    });
-    </script>
-=======
 <body onload="myFunction()">
     <div id="loader"></div>
->>>>>>> 7e806da44de6c7f6bf65c6376ae9c2b83ff4217d
     <section class="page1">
         <div class="nav-container">
             <nav class="navbar">
