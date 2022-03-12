@@ -8,7 +8,15 @@
 
   font-family: Sedan SC, sans-serif;
 }
-
+#loader {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: rgb(0 10 43)
+    url("https://cdn.dribbble.com/users/348324/screenshots/2961364/media/6158ba03acf2ca74c0ae8b63a37787e9.gif")
+    no-repeat center;
+  z-index: 99999;
+}
 .back {
   height: auto;
   width: 100%;

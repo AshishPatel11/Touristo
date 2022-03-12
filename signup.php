@@ -26,20 +26,10 @@ include './php/signupBackend.php';
     <title>Signup</title>
 </head>
 
-<body class="main">
-    <div class="loader-wrapper">
-        <span class="loader"><span class="loader-inner"></span></span>
-    </div>
+<body class="main" onload="myFunction()">
 
-    <script>
-        let spinnerwrapper = document.querySelector('.loader-wrapper');
 
-        window.addEventListener('load', function() {
-            spinnerwrapper.parentElement.removeChild(spinnerwrapper);
-            $(".loader-wrapper").fadeOut("slow");
-        });
-    </script>
-
+    <div id="loader"></div>
     <div class="nav-container">
         <!--Division which will contain the navbar-->
         <nav class="navbar">
@@ -257,6 +247,16 @@ include './php/signupBackend.php';
     <!--linked the scrollTrigger javascript file-->
     <script src="./js/signup.js"></script>
     <script src="/js/loader.js"></script>
+    <script>
+        var preloader = document.getElementById('loader');
+        var delyeInMillisecond = 2000;
+
+        function myFunction() {
+            setTimeout(function() {
+                preloader.style.display = 'none';
+            }, 4000);
+        }
+    </script>
 </body>
 
 </html>

@@ -6,6 +6,15 @@
   padding: 0;
   box-sizing: border-box;
 }
+#loader {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: rgb(204 234 247)
+    url("https://i.pinimg.com/originals/cc/a5/02/cca5022c86f67861746d7cf2eb486de8.gif")
+    no-repeat center;
+  z-index: 99999;
+}
 .material-icons {
   margin: 0;
   padding: 0;
