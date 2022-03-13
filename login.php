@@ -20,13 +20,19 @@ include './php/loginBackend.php';
     <title>Login</title>
     <link rel="shortcut icon" href="./css/images/svg/title.svg">
     <!--Linked the icon image will apear in title bar-->
-    <link rel="stylesheet" href="./css/loader.css">
+    <link rel="stylesheet" href="./css/lode.css">
 
 </head>
 
 <body onload="myFunction()">
 
-    <div id="loader"></div>
+    <div class="loading" id="loader">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 
     <div class="nav-container">
         <!--Division which will contain the navbar-->
