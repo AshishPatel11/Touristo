@@ -145,7 +145,20 @@ include "php/connection.php";
                 </ul>
                 <img src="./css/images/profile.png" alt="" class="profile">
                 <div class="profile-container">
-                    
+                    <?php
+                        if (isset($_SESSION['uname'])) {
+                    ?>
+                    <form action="logout.php" method="post" class="logout-form">
+                        <input type="submit" class="logout-btn" value="Logout">
+                    </form>
+                    <?php
+                        }
+                        else{
+                    ?>
+                    <p>You are not logged in please login!</p>
+                    <?php
+                        }
+                    ?>
                 </div>
             </nav>
         </div>
@@ -333,6 +346,13 @@ include "php/connection.php";
         function myFunction() {
             preloader.style.display = 'none';
         }
+
+        $(".profile").click(function(){
+            $(".profile-container").fadeIn("slow");
+            $("p").click(function(){
+                $(".profile-container").fadeOut("slow");
+            });
+        });
     </script>
 </body>
 
