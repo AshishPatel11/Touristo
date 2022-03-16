@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/lode.css">
+    <link rel="stylesheet" href="css\lode1.css">
     <link rel="stylesheet" href="css\aboutus.css">
     <link rel="stylesheet" href="./css/home_nav.css">
     <!-- ashish -->
@@ -15,13 +15,10 @@
 
 <body onload="myFunction()">
 
-
-    <div class="loading" id="loader">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
+    <div class="spinner" id="loader">
+        <div class="dot1"></div>
+        <div class="dot2"></div>
+        <div class="dot3"></div>
     </div>
     <div class="footer-container">
         <div class="nav-container">
@@ -288,7 +285,8 @@
         function myFunction() {
             setTimeout(function () {
                 preloader.style.display = 'none';
-            }, 4000);
+            }, 2500);
+
         }
     </script>
 </body>
