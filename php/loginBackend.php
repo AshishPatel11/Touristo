@@ -20,6 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         } else {
 
             $_SESSION['uname'] = $data['uname'];
+            $_SESSION['uid'] = $data['uid'];
             echo "
             <script>
             alert(`Login Successful!! Welcome $_SESSION[uname]`);
