@@ -141,7 +141,7 @@ include "php/connection.php";
                 <ul class="list-container">
                     <li class="nav-option"><a class="li-link" href="#">Destionations</a></li>
                     <li class="nav-option"><a class="li-link" href="#">Wishlist</a></li>
-                    <li class="nav-option"><a class="li-link" href="aboutus.html">About Us</a></li>
+                    <li class="nav-option"><a class="li-link" href="aboutus.php">About Us</a></li>
                 </ul>
                 <img src="./css/images/profile.png" alt="" class="profile">
                 <div class="profile-container">
