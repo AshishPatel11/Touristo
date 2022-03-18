@@ -13,7 +13,7 @@
 
 <body>
     <?php
-        include_once "admin_nav.php";
+    include_once "admin_nav.php";
     ?>
     <section class="home">
         <div class="card-container">
@@ -24,27 +24,32 @@
             </div>
             <div class="card">
                 <img class="user-img" src="../css/images/svg/user.svg" alt="">
-                <img class="plus" src="../css/images/svg/minus.svg" alt="">
+                <a href="admin_removeUser.php">
+                    <img class="plus" src="../css/images/svg/minus.svg" alt=""></a>
                 <a href="admin_removeUser.php" class="description">Remove User</a>
             </div>
             <div class="card">
                 <img class="user-img" src="../css/images/svg/user.svg" alt="">
-                <img class="plus" src="../css/images/svg/edit.svg" alt="">
+                <a href="admin_updateUser.php">
+                    <img class="plus" src="../css/images/svg/edit.svg" alt=""></a>
                 <a href="admin_updateUser.php" class="description">Update User</a>
             </div>
             <div class="card">
                 <img class="user-img" src="../css/images/svg/mountains.svg" alt="">
-                <img class="plus" src="../css/images/svg/plus.svg" alt="">
+                <a href="admin_addPack.php">
+                    <img class="plus" src="../css/images/svg/plus.svg" alt=""></a>
                 <a href="admin_addPack.php" class="description">Add Package</a>
             </div>
             <div class="card">
                 <img class="user-img" src="../css/images/svg/mountains.svg" alt="">
-                <img class="plus" src="../css/images/svg/minus.svg" alt="">
+                <a href="admin_removePack.php">
+                    <img class="plus" src="../css/images/svg/minus.svg" alt=""></a>
                 <a href="admin_removePack.php" class="description">Remove Package</a>
             </div>
             <div class="card">
                 <img class="user-img" src="../css/images/svg/mountains.svg" alt="">
-                <img class="plus" src="../css/images/svg/edit.svg" alt="">
+                <a href="admin_updatePack.php">
+                    <img class="plus" src="../css/images/svg/edit.svg" alt=""></a>
                 <a href="admin_updatePack.php" class="description">Update Package</a>
             </div>
         </div>
