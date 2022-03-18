@@ -86,19 +86,48 @@ include "php/connection.php";
                     <li class="nav-option"><a class="li-link" href="#">Wishlist</a></li>
                     <li class="nav-option"><a class="li-link" href="aboutus.php">About Us</a></li>
                 </ul>
-                <img src="./css/images/profile.png" alt="" class="profile">
+                <?php
+                    if (isset($_SESSION['uname'])) {
+                        $profileAddress = './profiles/'. $_SESSION['uid'] . "." . "jpg";
+                        $fileExist = file_exists("$profileAddress");
+                        if($fileExist === true){
+                            echo "<img src=$profileAddress class=profile>";
+                        }else{
+                            echo "<img src=./css/images/profile.png class=profile>";
+                        }
+                    }
+                    else{
+                        echo "<img src=./css/images/profile.png class=profile>";
+                    }
+                ?>
                 <div class="profile-container">
+                    <img src="./css/images/svg/close.svg" class="close" width="30px" height="30px" alt="close">
                     <?php
                     if (isset($_SESSION['uname'])) {
-                    ?>
-                        <form action="logout.php" method="post" class="logout-form">
-                            <input type="submit" class="logout-btn" value="Logout">
-                        </form>
-                    <?php
+                        ?>
+                        <?php
+                    if (isset($_SESSION['uname'])) {
+                        $profileAddress = './profiles/'. $_SESSION['uid'] . "." . "jpg";
+                        $fileExist = file_exists("$profileAddress");
+                        if($fileExist === true){
+                            echo "<img src=$profileAddress class=profile>";
+                        }else{
+                            echo "<img src=./css/images/profile.png class=profile>";
+                        }
+                    }
+                    else{
+                        echo "<img src=./css/images/profile.png class=profile>";
+                    }
+                ?>
+                        <a href="changeprofile.php">change Profile image</a>
+                        <a href="logout.php" class="button">Logout</a>
+
+                        <?php
                     } else {
-                    ?>
+                        ?>
                         <p>You are not logged in please login!</p>
-                    <?php
+                        <a href="login.php#login" class="button">Login</a>
+                        <?php
                     }
                     ?>
                 </div>
@@ -229,6 +258,12 @@ include "php/connection.php";
             }, 2500);
 
         }
+        $(".profile").click(function(){
+            $(".profile-container").fadeIn("slow").css("display", "flex");
+            $(".close").click(function(){
+                $(".profile-container").fadeOut("slow");
+            });
+        });
     </script>
 </body>
 
