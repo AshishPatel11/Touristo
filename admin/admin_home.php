@@ -19,7 +19,7 @@
         <div class="card-container">
             <div class="card">
                 <img class="user-img" src="../css/images/svg/user.svg" alt="">
-                <img class="plus" src="../css/images/svg/plus.svg" alt="">
+                <a href="admin_addUser.php"><img class="plus" src="../css/images/svg/plus.svg" alt=""></a>
                 <a href="admin_addUser.php" class="description">Add User</a>
             </div>
             <div class="card">

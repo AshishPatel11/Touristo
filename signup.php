@@ -18,10 +18,10 @@ include './php/signupBackend.php';
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!--Linked the CSS file for signup page-->
     <link rel="stylesheet" href="./css/signup.css">
-    <link rel="stylesheet" href="css/loading.css">
+
     <!--Linked the icon image will apear in title bar-->
     <link rel="shortcut icon" href="./css/images/svg/title.svg">
-    <link rel="stylesheet" href="./css/loader.css">
+    <link rel="stylesheet" href="./css/lode1.css">
 
     <title>Signup</title>
 </head>
@@ -29,7 +29,22 @@ include './php/signupBackend.php';
 <body class="main" onload="myFunction()">
 
 
-    <div id="loader"></div>
+    <div class="spinner" id="loader">
+        <div class="dot1"></div>
+        <div class="dot2"></div>
+        <div class="dot3"></div>
+    </div>
+    <script>
+        var preloader = document.getElementById('loader');
+        var delyeInMillisecond = 2000;
+
+        function myFunction() {
+            setTimeout(function() {
+                preloader.style.display = 'none';
+            }, 2500);
+
+        }
+    </script>
     <div class="nav-container">
         <!--Division which will contain the navbar-->
         <nav class="navbar">
@@ -247,16 +262,6 @@ include './php/signupBackend.php';
     <!--linked the scrollTrigger javascript file-->
     <script src="./js/signup.js"></script>
     <script src="/js/loader.js"></script>
-    <script>
-        var preloader = document.getElementById('loader');
-        var delyeInMillisecond = 2000;
-
-        function myFunction() {
-            setTimeout(function() {
-                preloader.style.display = 'none';
-            }, 4000);
-        }
-    </script>
 </body>
 
 </html>

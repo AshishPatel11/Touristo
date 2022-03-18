@@ -20,13 +20,17 @@ include './php/loginBackend.php';
     <title>Login</title>
     <link rel="shortcut icon" href="./css/images/svg/title.svg">
     <!--Linked the icon image will apear in title bar-->
-    <link rel="stylesheet" href="./css/loader.css">
+    <link rel="stylesheet" href="./css/lode1.css">
 
 </head>
 
 <body onload="myFunction()">
 
-    <div id="loader"></div>
+    <div class="spinner" id="loader">
+        <div class="dot1"></div>
+        <div class="dot2"></div>
+        <div class="dot3"></div>
+    </div>
 
     <div class="nav-container">
         <!--Division which will contain the navbar-->
@@ -250,7 +254,8 @@ include './php/loginBackend.php';
         function myFunction() {
             setTimeout(function() {
                 preloader.style.display = 'none';
-            }, 4000);
+            }, 2500);
+
         }
     </script>
 </body>
