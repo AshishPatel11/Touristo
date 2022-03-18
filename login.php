@@ -21,6 +21,8 @@ include './php/loginBackend.php';
     <link rel="shortcut icon" href="./css/images/svg/title.svg">
     <!--Linked the icon image will apear in title bar-->
     <link rel="stylesheet" href="./css/lode1.css">
+    <!-- Linked the googles icon from web👇 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 </head>
 
@@ -216,6 +218,7 @@ include './php/loginBackend.php';
                 </div>
                 <div class="input-box"><label for="passwd">Password</label>
                     <input type="password" name="passwd" id="passwd" required>
+                    <span class="err"><?php echo "$loginerr"; ?></span>
                 </div>
                 <div class="input-btn">
                     <input type="submit" value="Login" name="login">

@@ -13,13 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $contact = mysqli_real_escape_string($conn, $_POST['contact']);
     $acctype = mysqli_real_escape_string($conn, $_POST['acctype']);
-    $password = mysqli_real_escape_string($conn, $_POST['password']);
-    $cpassword = mysqli_real_escape_string($conn, $_POST['cpassword']);
     $address = mysqli_real_escape_string($conn, $_POST['address']);
-
-
-    // Password hashing
-    $hash = password_hash($password, PASSWORD_BCRYPT);
+    $token = bin2hex(random_bytes(12));
 
     // Email fetching
     $emailquery = "SELECT * FROM user_tbl WHERE emailid='$email'";
@@ -44,36 +39,30 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 if ($ccount > 0) {
                     $contacterr = "Number already exist!";
                 } else {
-                    if ($password !== $cpassword) {
-                        $passworderr = "Password are not matching";
-                    } else {
-                        if (empty($acctype)) {
-                            $acctypeerr = "Please select account type!";
-                        } else {
+                    
+                        $insert = "INSERT INTO user_tbl(`uid`, `uname`, `emailid`, `phno`,`acc_typ`, `token`,`statuss`) VALUES ('$uid','$uname','$email','$contact','$acctype','$token','verify')";
 
-                            $insert = "INSERT INTO user_tbl(`uid`, `uname`, `emailid`, `phno`,`acc_type` `passwd`, `adrs`) VALUES ('$uid','$uname','$email','$contact','$acctype','$hash','$address')";
+                        $result = mysqli_query($conn, $insert);
 
-                            $result = mysqli_query($conn, $insert);
-
-                            if ($result) {
+                        if ($result) {
 ?>
-                                <script>
-                                    alert(`User added!`);
-                                </script>
+                            <script>
+                                alert(`User added!`);
+                            </script>
 <?php
-                            } else {
-                                echo
-                                "<script>
-                                    alert(`User adding Failed $conn->error`);
+                        } else {
+                            echo
+                            "<script>
+                                    alert(`User adding Failed! $conn->error`);
                                 </script>";
-                            }
                         }
                     }
                 }
             }
         }
     }
-}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -115,21 +104,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
             <div class="input-box">
                 <label for="acctype">Account Type </label>
-                <select name="acctype" id="acctype" id="">
-                    <option name="user" value="User">User</option>
-                    <option name="admin" value="Admin">Admin</option>
-                    <option name="guide" value="Guide">Guide</option>
-                    <option name="hotel" value="Hotel">Hotel</option>
+                <select name="acctype" id="acctype" id="" required>
+                    <option disabled selected>--Select A/C type--</option>
+                    <option value="user">User</option>
+                    <option value="admin">Admin</option>
+                    <option value="guide">Guide</option>
+                    <option value="hotel">Hotel</option>
                 </select>
-            </div>
-            <div class="input-box">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <div class="input-box">
-                <label for="cpassword">Confirm Password</label>
-                <input type="password" id="cpassword" name="cpassword" required>
-                <?php echo "$passworderr"; ?>
             </div>
             <div class="input-area">
                 <label for="address">Address</label>
