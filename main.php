@@ -119,6 +119,9 @@ include "php/connection.php";
                         echo "<img src=./css/images/profile.png class=profile>";
                     }
                 ?>
+                <?php if (isset($_SESSION['uname'])) {
+                            echo $_SESSION['uname'];
+                        } ?>
                         <a href="changeprofile.php">change Profile image</a>
                         <a href="logout.php" class="button">Logout</a>
 

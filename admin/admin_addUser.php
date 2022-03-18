@@ -16,6 +16,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $address = mysqli_real_escape_string($conn, $_POST['address']);
     $token = bin2hex(random_bytes(12));
 
+    // password hashing
+    $hash = password_hash('password', PASSWORD_BCRYPT);
+
     // Email fetching
     $emailquery = "SELECT * FROM user_tbl WHERE emailid='$email'";
     $eresult = mysqli_query($conn, $emailquery);
@@ -40,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $contacterr = "Number already exist!";
                 } else {
                     
-                        $insert = "INSERT INTO user_tbl(`uid`, `uname`, `emailid`, `phno`,`acc_typ`, `token`,`statuss`) VALUES ('$uid','$uname','$email','$contact','$acctype','$token','verify')";
+                        $insert = "INSERT INTO user_tbl(`uid`, `uname`, `emailid`, `phno`,`acc_typ`,`passwd`,`token`,`statuss`) VALUES ('$uid','$uname','$email','$contact','$acctype','$hash','$token','verify')";
 
                         $result = mysqli_query($conn, $insert);
 
