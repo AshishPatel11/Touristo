@@ -3,7 +3,7 @@
 include "../php/connection.php";
 
 // error variable declaration for printing error
-$unameerr = $emailerr = $contacterr = $passworderr = $addresserr = "";
+$unameerr = $emailerr = $contacterr = $passworderr = $addresserr = $acctypeerr = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -47,23 +47,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     if ($password !== $cpassword) {
                         $passworderr = "Password are not matching";
                     } else {
+                        if (empty($acctype)) {
+                            $acctypeerr = "Please select account type!";
+                        } else {
 
-                        $insert = "INSERT INTO user_tbl(`uid`, `uname`, `emailid`, `phno`,`acc_type` `passwd`, `adrs`) VALUES ('$uid','$uname','$email','$contact','$acctype','$hash','$address')";
+                            $insert = "INSERT INTO user_tbl(`uid`, `uname`, `emailid`, `phno`,`acc_type` `passwd`, `adrs`) VALUES ('$uid','$uname','$email','$contact','$acctype','$hash','$address')";
 
-                        $result = mysqli_query($conn, $insert);
+                            $result = mysqli_query($conn, $insert);
 
-                        if($result){
-                            ?>
+                            if ($result) {
+?>
                                 <script>
                                     alert(`User added!`);
                                 </script>
-                            <?php
-                        }
-                        else{
-                            echo 
+<?php
+                            } else {
+                                echo
                                 "<script>
                                     alert(`User adding Failed $conn->error`);
                                 </script>";
+                            }
                         }
                     }
                 }
@@ -71,7 +74,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -114,10 +116,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="input-box">
                 <label for="acctype">Account Type </label>
                 <select name="acctype" id="acctype" id="">
-                    <option name="user" value="User" selected>User</option>
-                    <option name="admin" value="Admin" selected>Admin</option>
-                    <option name="guide" value="Guide" selected>Guide</option>
-                    <option name="hotel" value="Hotel" selected>Hotel</option>
+                    <option name="user" value="User">User</option>
+                    <option name="admin" value="Admin">Admin</option>
+                    <option name="guide" value="Guide">Guide</option>
+                    <option name="hotel" value="Hotel">Hotel</option>
                 </select>
             </div>
             <div class="input-box">
