@@ -12,9 +12,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $uname = mysqli_real_escape_string($conn, $_POST['uname']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $contact = mysqli_real_escape_string($conn, $_POST['contact']);
+    $acctype = mysqli_real_escape_string($conn, $_POST['acctype']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
     $cpassword = mysqli_real_escape_string($conn, $_POST['cpassword']);
     $address = mysqli_real_escape_string($conn, $_POST['address']);
+
 
     // Password hashing
     $hash = password_hash($password, PASSWORD_BCRYPT);

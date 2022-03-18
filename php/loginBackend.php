@@ -1,5 +1,5 @@
 <?php
-
+// session_start();
 include 'connection.php';
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
@@ -10,11 +10,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $count = mysqli_num_rows($result);
 
     if ($count == 1 and password_verify($_POST['passwd'], $data['passwd'])) {
-        // session_start();
         if ($data['acc_typ'] == 'admin') {
             echo "
             <script>
-                alert(`Login Successful!! Welcome $_SESSION[uname]`);
+                alert(`Login Successful!! Welcome $data[uname]`);
                 location.replace('./admin/admin_home.php');
             </script>";
         } else {
