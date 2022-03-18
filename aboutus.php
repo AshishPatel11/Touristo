@@ -1,3 +1,7 @@
+<?php
+session_start();
+include "php/connection.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,10 +9,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Touristo - <?php if (isset($_SESSION['uname'])) {
+                            echo $_SESSION['uname'];
+                        } ?></title>
+    <link rel="stylesheet" href="./css/loader.css">
     <link rel="stylesheet" href="css\lode1.css">
     <link rel="stylesheet" href="css\aboutus.css">
     <link rel="stylesheet" href="./css/home_nav.css">
+    <script src="./js/jquery.min.js"></script>
     <!-- ashish -->
 
 </head>
@@ -143,6 +151,22 @@
                     <li class="nav-option"><a class="li-link" href="aboutus.html">About Us</a></li>
                 </ul>
                 <img src="./css/images/profile.png" alt="" class="profile">
+                <div class="profile-container">
+                    <?php
+                                        if (isset($_SESSION['uname'])) {
+                                    ?>
+                    <form action="logout.php" method="post" class="logout-form">
+                        <input type="submit" class="logout-btn" value="Logout">
+                    </form>
+                    <?php
+                                        }
+                                        else{
+                                    ?>
+                    <p>You are not logged in please login!</p>
+                    <?php
+                                        }
+                                    ?>
+                </div>
             </nav>
         </div>
         <img class="back" src="css\images\svg\Frame 2.svg" alt="">
@@ -288,6 +312,12 @@
             }, 2500);
 
         }
+        $(".profile").click(function(){
+            $(".profile-container").fadeIn("slow");
+            $("p").click(function(){
+                $(".profile-container").fadeOut("slow");
+            });
+        });
     </script>
 </body>
 
