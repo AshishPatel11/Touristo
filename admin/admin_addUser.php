@@ -20,12 +20,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $hash = password_hash($password, PASSWORD_BCRYPT);
 
     // Email fetching
-    $emailquery = "SELECT * FROM admin_tbl WHERE emailid='$email'";
+    $emailquery = "SELECT * FROM user_tbl WHERE emailid='$email'";
     $eresult = mysqli_query($conn, $emailquery);
     $ecount = mysqli_num_rows($eresult);
 
     // Phone no fetching
-    $contactquery = "SELECT * FROM admin_tbl WHERE phno='$contact'";
+    $contactquery = "SELECT * FROM user_tbl WHERE phno='$contact'";
     $cresult = mysqli_query($conn, $contactquery);
     $ccount = mysqli_num_rows($cresult);
 
@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         $passworderr = "Password are not matching";
                     } else {
 
-                        $insert = "INSERT INTO admin_tbl(`uid`, `uname`, `emailid`, `phno`, `passwd`, `adrs`) VALUES ('$uid','$uname','$email','$contact','$hash','$address')";
+                        $insert = "INSERT INTO user_tbl(`uid`, `uname`, `emailid`, `phno`,`acc_type` `passwd`, `adrs`) VALUES ('$uid','$uname','$email','$contact','$acctype','$hash','$address')";
 
                         $result = mysqli_query($conn, $insert);
 
@@ -108,6 +108,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <label for="contact">Phone no.</label>
                 <input type="text" id="contact" name="contact" required>
                 <?php echo "$contacterr"; ?>
+            </div>
+            <div class="input-box">
+                <label for="acctype">Account Type </label>
+                <select name="acctype" id="acctype" id="">
+                    <option name="user" value="User" selected>User</option>
+                    <option name="admin" value="Admin" selected>Admin</option>
+                    <option name="guide" value="Guide" selected>Guide</option>
+                    <option name="hotel" value="Hotel" selected>Hotel</option>
+                </select>
             </div>
             <div class="input-box">
                 <label for="password">Password</label>
