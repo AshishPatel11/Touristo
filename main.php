@@ -208,6 +208,8 @@ include "php/connection.php";
                     <a href="login.php#login" class="button">Login</a>
                     <?php
                     }
+                }
+            }
                     ?>
                 </div>
             </nav>
