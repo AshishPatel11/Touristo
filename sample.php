@@ -20,7 +20,6 @@
 
                 $fileDestination = 'profiles/'.$fileNameNew;
                 move_uploaded_file($fileTmpname, $fileDestination);
-                header("Location: main.php?profileImageChanged");
             }else
             {
                 echo "error uploading image";
@@ -28,7 +27,43 @@
         }else{
             echo "extension not matched";
         }
-    }
+
+
+
+        $packname = $_POST['name'];
+        $crtfile = fopen("packages/$packname.php", "w");
+        $content="<!DOCTYPE html>
+                    <html lang=en>
+                    <head>
+                        <meta charset=UTF-8>
+                        <meta http-equiv=X-UA-Compatible content=IE=edge>
+                        <meta name=viewport content=width=device-width, initial-scale=1.0>
+                        <title>ashish</title>
+                    </head>
+                    <body>
+        
+                <?php
+                    session_start();
+                    if (isset(\$_SESSION['uname'])) {
+                        \$profileAddress = '../profiles/'. \$_SESSION['uid'] . \".\" . \"jpg\";
+                        \$fileExist = file_exists(\"\$profileAddress\");
+                        if(\$fileExist === true){
+                            echo \"<img src=\$profileAddress class=profile>\";
+                        }else{
+                            echo \"<img src=../css/images/profile.png class=profile>\";
+                        }
+                    }
+                    else{
+                        echo \"<img src=../css/images/profile.png class=profile>\";
+                    }
+                ?>
+                </body>
+                </html>
+                ";
+                    fwrite($crtfile, $content);
+                    fclose($crtfile);
+                    header("Location: main.php?profileImageChanged");
+            }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -82,7 +117,8 @@
 </head>
 
 <body>
-    <form action="changeprofile.php" method="POST" enctype="multipart/form-data">
+    <form action="sample.php" method="POST" enctype="multipart/form-data">
+        <input type="text" name="name">
         <input type="file" class="button-7" name="profile">
         <button type="submit" name="submit">Upload</button>
     </form>
