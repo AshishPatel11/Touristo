@@ -1,6 +1,7 @@
 <?php
 // session_start();
 include 'connection.php';
+$loginerr = "";
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     $select = "SELECT * FROM `user_tbl` WHERE emailid='$_POST[email]' AND statuss='verify'";
@@ -27,9 +28,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             </script>";
         }
     } else {
-        echo "
-            <script>
-                alert(`Invalid Credentials`);
-            </script>";
+        $loginerr = "<i class=material-icons>warning</i>Wrong Emailid or Password!";
     }
 }

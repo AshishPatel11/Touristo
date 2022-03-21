@@ -180,8 +180,11 @@ include "php/connection.php";
                         echo "<img src=./css/images/profile.png class=profile>";
                     }
                 ?>
-                    <a href="changeprofile.php" class="change-link">Change Profile Image</a>
-                    <a href="logout.php" class="button lout-btn">Logout</a>
+                <?php if (isset($_SESSION['uname'])) {
+                            echo $_SESSION['uname'];
+                        } ?>
+                        <a href="changeprofile.php">change Profile image</a>
+                        <a href="logout.php" class="button">Logout</a>
 
                     <?php
                     } else {

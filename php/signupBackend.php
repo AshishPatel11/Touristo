@@ -37,6 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Password hashing
     $phash = password_hash($pass, PASSWORD_BCRYPT);
 
+    // Random token genrator
     $token = bin2hex(random_bytes(12));
 
     $emailquery = "SELECT * FROM user_tbl WHERE emailid = '$email'";
