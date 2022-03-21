@@ -44,13 +44,13 @@
                 <img class="user-img" src="../css/images/svg/mountains.svg" alt="">
                 <a href="admin_removePack.php">
                     <img class="plus" src="../css/images/svg/minus.svg" alt=""></a>
-                <a href="admin_removePack.php" class="description">Remove Package</a>
+                <a href="admin_removePack.php" class="description">Remove Pack</a>
             </div>
             <div class="card">
                 <img class="user-img" src="../css/images/svg/mountains.svg" alt="">
                 <a href="admin_updatePack.php">
                     <img class="plus" src="../css/images/svg/edit.svg" alt=""></a>
-                <a href="admin_updatePack.php" class="description">Update Package</a>
+                <a href="admin_updatePack.php" class="description">Update Pack</a>
             </div>
         </div>
     </section>

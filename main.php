@@ -87,50 +87,54 @@ include "php/connection.php";
                     <li class="nav-option"><a class="li-link" href="aboutus.php">About Us</a></li>
                 </ul>
                 <?php
-                    if (isset($_SESSION['uname'])) {
-                        $profileAddress = './profiles/'. $_SESSION['uid'] . "." . "jpg";
-                        $fileExist = file_exists("$profileAddress");
-                        if($fileExist === true){
-                            echo "<img src=$profileAddress class=profile>";
-                        }else{
-                            echo "<img src=./css/images/profile.png class=profile>";
-                        }
-                    }
-                    else{
+                if (isset($_SESSION['uname'])) {
+                    $profileAddress = './profiles/' . $_SESSION['uid'] . "." . "jpg";
+                    $fileExist = file_exists("$profileAddress");
+                    if ($fileExist === true) {
+                        echo "<img src=$profileAddress class=profile>";
+                    } else {
                         echo "<img src=./css/images/profile.png class=profile>";
                     }
+                } else {
+                    echo "<img src=./css/images/profile.png class=profile>";
+                }
                 ?>
                 <div class="profile-container">
                     <img src="./css/images/svg/close.svg" class="close" width="30px" height="30px" alt="close">
                     <?php
                     if (isset($_SESSION['uname'])) {
-                        ?>
+                    ?>
                         <?php
-                    if (isset($_SESSION['uname'])) {
-                        $profileAddress = './profiles/'. $_SESSION['uid'] . "." . "jpg";
-                        $fileExist = file_exists("$profileAddress");
-                        if($fileExist === true){
-                            echo "<img src=$profileAddress class=profile>";
-                        }else{
+                        if (isset($_SESSION['uname'])) {
+                            $profileAddress = './profiles/' . $_SESSION['uid'] . "." . "jpg";
+                            $fileExist = file_exists("$profileAddress");
+                            if ($fileExist === true) {
+                                echo "<img src=$profileAddress class=profile>";
+                            } else {
+                                echo "<img src=./css/images/profile.png class=profile>";
+                            }
+                        } else {
                             echo "<img src=./css/images/profile.png class=profile>";
                         }
-                    }
-                    else{
-                        echo "<img src=./css/images/profile.png class=profile>";
-                    }
-                ?>
-                <?php if (isset($_SESSION['uname'])) {
-                            echo $_SESSION['uname'];
+                        ?>
+                        <center>
+                            <?php if (isset($_SESSION['uname'])) {
+                                echo $_SESSION['uname'];
+                            } ?>
+                        </center>
+                        <br>
+                        <?php if (isset($_SESSION['uid'])) {
+                            echo "UserID : $_SESSION[uid]";
                         } ?>
                         <a href="changeprofile.php">change Profile image</a>
                         <a href="logout.php" class="button">Logout</a>
 
-                        <?php
+                    <?php
                     } else {
-                        ?>
+                    ?>
                         <p>You are not logged in please login!</p>
                         <a href="login.php#login" class="button">Login</a>
-                        <?php
+                    <?php
                     }
                     ?>
                 </div>
@@ -261,9 +265,9 @@ include "php/connection.php";
             }, 2500);
 
         }
-        $(".profile").click(function(){
+        $(".profile").click(function() {
             $(".profile-container").fadeIn("slow").css("display", "flex");
-            $(".close").click(function(){
+            $(".close").click(function() {
                 $(".profile-container").fadeOut("slow");
             });
         });
