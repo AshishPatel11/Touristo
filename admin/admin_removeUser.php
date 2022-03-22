@@ -43,6 +43,7 @@
     <div class="container">
         <center>
             <h1>Remove user</h1>
+            <br>
             <div>
                 <table class='styled-table'>
                     <thead>
@@ -74,7 +75,7 @@
                                     <td><?php echo $data['emailid']; ?> </td>
                                     <td><?php echo $data['phno']; ?> </td>
                                     <td><?php echo $data['acc_typ']; ?> </td>
-                                    <td><a href="deletedata.php?id=<?php echo $data['uid']; ?>"><input type="submit" value="Delete" name="delete" onclick =  'return deletedata()'></a></td>
+                                    <td><a href="deletedata.php?id=<?php echo $data['uid']; ?>"><input type="submit" value="Delete" name="delete" onclick='return deletedata()'></a></td>
                                 </tr>
                             <?php
                             }
@@ -96,7 +97,7 @@
     </div>
 
     <script>
-        function deletedata(){
+        function deletedata() {
             return confirm(`Are you sure you want to delete this data?`);
         }
     </script>
