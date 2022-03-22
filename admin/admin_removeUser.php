@@ -1,43 +1,3 @@
-<?php
-
-include '../php/connection.php';
-$searcherr = "";
-$userdetails = "";
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if (empty($_POST['search'])) {
-        $searcherr = "Enter UserID";
-    } else {
-        $search = "SELECT * FROM user_tbl WHERE uid='$_POST[search]'";
-        $result = mysqli_query($conn, $search);
-        $data = mysqli_fetch_assoc($result);
-        if ($result->num_rows > 0) {
-            $userdetails =
-                "<table class='styled-table'>
-                    <thead>
-                        <tr>
-                            <th>UserID</th>
-                            <th>Name</th>
-                            <th>EmailID</th>
-                            <th>Phone no.</th>
-                            <th>A/c type</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class='active-row'>
-                            <td>$data[uid]<td>
-                            <td>$data[uname]<td>
-                            <td>$data[emailid]<td>
-                            <td>$data[phno]<td>
-                            <td>$data[acc_typ]<td>
-                        </tr>
-                    </tbody>
-                </table>";
-        }
-    }
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,10 +7,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../css/images/svg/title.svg">
     <link rel="stylesheet" href="./css/admin_nav.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-    <!-- <link rel="stylesheet" href="./css/admin_home.css"> -->
     <title>Remove User</title>
-    
+
     <style>
         table {
             border-collapse: collapse;
@@ -83,15 +43,63 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="container">
         <center>
             <h1>Remove user</h1>
-            <form action="admin_removeUser.php" method="post">
-                <label for="uid">Enter UserID </label>
-                <input type="text" name="search" id=""><?php echo $searcherr; ?><br><br>
-                <input type="submit" value="Search">
-            </form>
+            <div>
+                <table class='styled-table'>
+                    <thead>
+                        <tr>
+                            <th>UserID</th>
+                            <th>Name</th>
+                            <th>EmailID</th>
+                            <th>Phone no.</th>
+                            <th>A/c type</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <?php
+
+                        include '../php/connection.php';
+
+                        $search = "SELECT * FROM `user_tbl`";
+                        $result = mysqli_query($conn, $search);
+
+                        if ($result->num_rows > 0) {
+
+                            while ($data = mysqli_fetch_array($result)) {
+                        ?>
+                                <tr class='active-row'>
+                                    <td><?php echo $data['uid']; ?> </td>
+                                    <td><?php echo $data['uname']; ?> </td>
+                                    <td><?php echo $data['emailid']; ?> </td>
+                                    <td><?php echo $data['phno']; ?> </td>
+                                    <td><?php echo $data['acc_typ']; ?> </td>
+                                    <td><a href="deletedata.php?id=<?php echo $data['uid']; ?>"><input type="submit" value="Delete" name="delete" onclick =  'return deletedata()'></a></td>
+                                </tr>
+                            <?php
+                            }
+                        } else {
+                            echo "No data found";
+                            ?>
+                            <script>
+                                alert(`No Data!`);
+                            </script>
+                        <?php
+                        }
+                        ?>
+                    </tbody>
+                </table>
+            </div>
         </center>
-        <?php echo $userdetails; ?>
+        <br>
+
     </div>
 
+    <script>
+        function deletedata(){
+            return confirm(`Are you sure you want to delete this data?`);
+        }
+    </script>
 </body>
 
 </html>
