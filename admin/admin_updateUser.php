@@ -55,11 +55,46 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php
 
+                    include '../php/connection.php';
+
+                    $search = "SELECT * FROM `user_tbl`";
+                    $result = mysqli_query($conn, $search);
+
+                    if ($result->num_rows > 0) {
+
+                        while ($data = mysqli_fetch_array($result)) {
+                    ?>
+                            <tr class='active-row'>
+                                <td><?php echo $data['uid']; ?> </td>
+                                <td><?php echo $data['uname']; ?> </td>
+                                <td><?php echo $data['emailid']; ?> </td>
+                                <td><?php echo $data['phno']; ?> </td>
+                                <td><?php echo $data['acc_typ']; ?> </td>
+                                <td><a href="updatedata.php?id=<?php echo $data['uid']; ?>&name=<?php echo $data['uname']; ?>&email=<?php echo $data['emailid']; ?>&phno=<?php echo $data['phno'];?>&acct=<?php echo $data['acc_typ']; ?>">
+                                <input type="submit" value="Update" name="update" onclick='return upadatedata()'></a></td>
+                            </tr>
+                        <?php
+                        }
+                    } else {
+                        echo "No data found";
+                        ?>
+                        <script>
+                            alert(`No Data!`);
+                        </script>
+                    <?php
+                    }
+                    ?>
                 </tbody>
             </table>
         </center>
     </div>
+    <script>
+        function updatedata() {
+            return confirm(`Are you sure you want to update this data?`);
+        }
+    </script>
 </body>
 
 </html>

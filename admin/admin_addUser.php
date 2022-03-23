@@ -3,7 +3,7 @@
 include "../php/connection.php";
 
 // error variable declaration for printing error
-$unameerr = $emailerr = $contacterr = $passworderr = $addresserr = $acctypeerr = "";
+$unameerr = $emailerr = $contacterr = $passworderr = $acctypeerr = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $contact = mysqli_real_escape_string($conn, $_POST['contact']);
     $acctype = mysqli_real_escape_string($conn, $_POST['acctype']);
-    $address = mysqli_real_escape_string($conn, $_POST['address']);
+    // $address = mysqli_real_escape_string($conn, $_POST['address']);
     $token = bin2hex(random_bytes(12));
 
     // password hashing
@@ -113,14 +113,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <option value="hotel">Hotel</option>
                 </select>
             </div>
-            <div class="input-area">
-                <label for="address">Address</label>
-                <textarea name="address" id="address" cols="30" rows="6" required></textarea>
-                <?php echo "$addresserr"; ?>
-            </div>
-            <div class="input-btn">
-                <input type="submit" value="Submit" name="submit">
-            </div>
+            <br>
+            <center>
+
+                <div class="input-btn">
+                    <input type="submit" value="Submit" name="submit">
+                </div>
+            </center>
         </form>
     </div>
 </body>
