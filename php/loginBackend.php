@@ -9,6 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $result = mysqli_query($conn, $select);
     $data = mysqli_fetch_assoc($result);
     $count = mysqli_num_rows($result);
+    $_SESSION['uid'] = $data['uid'];
 
     if ($count == 1 and password_verify($_POST['passwd'], $data['passwd'])) {
         if ($data['acc_typ'] == 'admin') {

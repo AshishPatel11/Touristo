@@ -42,29 +42,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 if ($ccount > 0) {
                     $contacterr = "Number already exist!";
                 } else {
-                    
-                        $insert = "INSERT INTO user_tbl(`uid`, `uname`, `emailid`, `phno`,`acc_typ`,`passwd`,`token`,`statuss`) VALUES ('$uid','$uname','$email','$contact','$acctype','$hash','$token','verify')";
+                    $insert = "INSERT INTO user_tbl(`uid`, `uname`, `emailid`, `phno`,`acc_typ`,`passwd`,`token`,`statuss`) VALUES ('$uid','$uname','$email','$contact','$acctype','$hash','$token','verify')";
 
-                        $result = mysqli_query($conn, $insert);
+                    $result = mysqli_query($conn, $insert);
 
-                        if ($result) {
+                    if ($result) {
 ?>
-                            <script>
-                                alert(`User added!`);
-                            </script>
+                        <script>
+                            alert(`User added!`);
+                        </script>
 <?php
-                        } else {
-                            echo
-                            "<script>
+                    } else {
+                        echo
+                        "<script>
                                     alert(`User adding Failed! $conn->error`);
                                 </script>";
-                        }
                     }
                 }
             }
         }
     }
-
+}
 
 ?>
 
@@ -107,7 +105,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
             <div class="input-box">
                 <label for="acctype">Account Type </label>
-                <select name="acctype" id="acctype" id="" required>
+                <select name="acctype" id="acctype" id="" required><?php echo $acctypeerr; ?>
                     <option disabled selected>--Select A/C type--</option>
                     <option value="user">User</option>
                     <option value="admin">Admin</option>
