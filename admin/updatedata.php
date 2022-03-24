@@ -57,64 +57,42 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="shortcut icon" href="../css/images/svg/title.svg">
-    <link rel="stylesheet" href="./css/admin_home.css">
+    <!-- <link rel="stylesheet" href="./css/admin_home.css"> -->
     <link rel="stylesheet" href="./css/admin_nav.css">
+    <link rel="stylesheet" href="./css/admin_addUser.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update data</title>
-    <style>
-        table {
-            border-collapse: collapse;
-        }
-
-        table th,
-        table td {
-            padding: 10px;
-        }
-
-        table,
-        th,
-        td {
-            border: 1px solid #000;
-        }
-
-        table th {
-            background-color: #272b33;
-            color: #fff;
-            vertical-align: middle;
-            padding-left: 10px;
-            padding: 20px;
-        }
-    </style>
 </head>
 
 <body>
-    <div class="container">
-        <form action="updatedata.php" method="post">
-            <div class="heading">
-                <h1>Update User</h1>
-            </div>
-            <br>
-            <div class="input">
-                <label for="uid">UserID</label>
-                <input type="text" name="uid" id="uid" required>
-            </div>
-            <div class="input">
-                <label for="uname">User name</label>
-                <input type="text" name="uname" id="uname" required>
-                <?php echo "$unameerr"; ?>
-            </div>
-            <div class="input">
-                <label for="email">Email</label>
-                <input required type="email" name="email" id="email">
-                <?php echo "$emailerr"; ?>
+    <div class="admin-container">
 
-            </div>
-            <div class="input">
-                <label for="phno">Phone no</label>
-                <input type="text" required name="phno" id="phno">
-                <?php echo "$contacterr"; ?>
+        <div class="form-container1">
+            <form action="updatedata.php" method="post">
+                <div class="heading">
+                    <h1>Update User</h1>
+                </div>
+                <div class="input-box">
+                    <label for="uid">UserID</label>
+                    <input type="text" name="uid" id="uid" required>
+                </div>
+                <div class="input-box">
+                    <label for="uname">User name</label>
+                    <input type="text" name="uname" id="uname" required>
+                    <?php echo "$unameerr"; ?>
+                </div>
+                <div class="input-box">
+                    <label for="email">Email</label>
+                    <input required type="email" name="email" id="email">
+                    <?php echo "$emailerr"; ?>
 
-                <div class="input">
+                </div>
+                <div class="input-box">
+                    <label for="phno">Phone no</label>
+                    <input type="text" required name="phno" id="phno">
+                    <?php echo "$contacterr"; ?>
+                </div>
+                <div class="input-box">
                     <label for="acctype"> New A/c type</label>
 
                     <select name="acctype" id="acctype" id="" required>
@@ -124,12 +102,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <option value="guide">Guide</option>
                         <option value="hotel">Hotel</option>
                     </select>
-    </div>
-                    <br>
-                    <div class="submit">
-                        <input type="submit" value="Update" name="update">
-                    </div>
-                <br>
+                </div>
+                <div class="input-btn">
+                    <input type="submit" value="Update" name="update">
+                </div>
                 <div class="table">
                     <h1>Old data</h1>
                     <table>
@@ -154,7 +130,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     </table>
 
                 </div>
-        </form>
+            </form>
+        </div>
     </div>
 </body>
 
