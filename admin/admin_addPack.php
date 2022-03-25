@@ -205,81 +205,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../css/images/svg/title.svg">
     <link rel="stylesheet" href="./css/admin_nav.css">
-    <!-- <link rel="stylesheet" href="./css/admin_home.css"> -->
+    <link rel="stylesheet" href="./css/admin_addUser.css">
     <title>Add Package</title>
-    <style>
-    form {
-        display: inline-flex;
-        flex-direction: column;
-    }
-    </style>
 </head>
 
 <body>
     <?php include_once "admin_nav.php";
     ?>
-    <form action="admin_addPack.php" method="post" class="package-form" enctype="multipart/form-data">
-        <label for="Pname">Package Name:</label>
-        <input type="text" name="name" id="Pname" required>
+    <div class="admin-container">
+        <div class="form-container3">
+            <form action="admin_addPack.php" method="post" class="package-form" enctype="multipart/form-data">
+                <div class="input-box">
+                    <label for="Pname">Package Name:</label>
+                    <input type="text" name="name" id="Pname" required>
+                </div>
 
-        <label for="pack-price">Package Price:</label>
-        <input type="text" name="price" id="pack-price" required>
+                <div class="input-box">
+                    <label for="pack-price">Package Price:</label>
+                    <input type="text" name="price" id="pack-price" required>
+                </div>
+                <div class="input-box">
+                    <label for="state">State:</label>
+                    <input type="text" name="state" id="state" required>
+                </div>
 
-        <label for="state">State:</label>
-        <input type="text" name="state" id="state" required>
+                <div class="upload-img">
+                    <label for="banner-img">Banner Image:</label>
+                    <input type="file" name="bannerImg" id="banner-img" required>
+                </div>
 
-        <label for="banner-img">Banner Image:</label>
-        <input type="file" name="bannerImg" id="banner-img" required>
+                <div class="input-box">
+                    <label for="main-desc">Main Paragraph:</label>
+                    <textarea name="mainParagraph" id="main-desc" cols="30" rows="5" required></textarea>
+                </div>
 
-        <label for="main-desc">Main Paragraph:</label>
-        <textarea name="mainParagraph" id="main-desc" cols="40" rows="5" required></textarea>
+                <div class="upload-img">
+                    <label for="place1-img">Place 1 Image:</label>
+                    <input type="file" name="place1Img" id="place1-img" required>
+                </div>
+                <div class="input-box">
+                    <label for="place1-desc">Description for Place 1:</label>
+                    <textarea name="place1Desc" id="place1-desc" cols="30" rows="5" required></textarea>
+                </div>
+                <div class="upload-img">
+                    <label for="place2-img">Place 2 Image:</label>
+                    <input type="file" name="place2Img" id="place2-img" required>
+                </div>
+                <div class="input-box">
+                    <label for="place2-desc">Description for Place 2:</label>
+                    <textarea name="place2Desc" id="place2-desc" cols="30" rows="5" required></textarea>
+                </div>
+                <div class="upload-img">
+                    <label for="place3-img">Place 3 Image:</label>
+                    <input type="file" name="place3Img" id="place3-img">
+                </div>
+                <div class="input-box">
+                    <label for="place3-desc">Description for Place 3:</label>
+                    <textarea name="place3Desc" id="place3-desc" cols="30" rows="5"></textarea>
+                </div>
 
-        <label for="place1-img">Place 1 Image:</label>
-        <input type="file" name="place1Img" id="place1-img" required>
+                <div class="upload-img">
+                    <label for="place4-img">Place 4 Image:</label>
+                    <input type="file" name="place4Img" id="place4-img">
+                </div>
 
-        <label for="place1-desc">Description for Place 1:</label>
-        <textarea name="place1Desc" id="place1-desc" cols="40" rows="5" required></textarea>
+                <div class="input-box">
+                    <label for="place4-desc">Description for Place 4:</label>
+                    <textarea name="place4Desc" id="place4-desc" cols="30" rows="5"></textarea>
+                </div>
+                <div class="upload-img">
+                    <label for="place5-img">Place 5 Image:</label>
+                    <input type="file" name="place5Img" id="place5-img">
+                </div>
 
+                <div class="input-box">
+                    <label for="place5-desc">Description for Place 5:</label>
+                    <textarea name="place5Desc" id="place5-desc" cols="30" rows="5"></textarea>
+                </div>
+                <div class="upload-img">
+                    <label for="place6-img">Place 6 Image:</label>
+                    <input type="file" name="place6Img" id="place6-img">
+                </div>
+                <div class="input-box">
+                    <label for="place6-desc">Description for Place 6:</label>
+                    <textarea name="place6Desc" id="place6-desc" cols="30" rows="5"></textarea>
+                </div>
+                <div class="input-box">
+                    <label for="tags">Relative Tags:</label>
+                    <textarea name="tags" id="tags" cols="30" rows="5"></textarea>
+                </div>
+                <div class="input-btn">
+                    <button type="submit" name="submit">Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
-        <label for="place2-img">Place 2 Image:</label>
-        <input type="file" name="place2Img" id="place2-img" required>
-
-        <label for="place2-desc">Description for Place 2:</label>
-        <textarea name="place2Desc" id="place2-desc" cols="40" rows="5" required></textarea>
-
-
-
-        <label for="place3-img">Place 3 Image:</label>
-        <input type="file" name="place3Img" id="place3-img">
-
-        <label for="place3-desc">Description for Place 3:</label>
-        <textarea name="place3Desc" id="place3-desc" cols="40" rows="5"></textarea>
-
-
-        <label for="place4-img">Place 4 Image:</label>
-        <input type="file" name="place4Img" id="place4-img">
-
-        <label for="place4-desc">Description for Place 4:</label>
-        <textarea name="place4Desc" id="place4-desc" cols="40" rows="5"></textarea>
-
-
-        <label for="place5-img">Place 5 Image:</label>
-        <input type="file" name="place5Img" id="place5-img">
-
-        <label for="place5-desc">Description for Place 5:</label>
-        <textarea name="place5Desc" id="place5-desc" cols="40" rows="5"></textarea>
-
-
-        <label for="place6-img">Place 6 Image:</label>
-        <input type="file" name="place6Img" id="place6-img">
-
-        <label for="place6-desc">Description for Place 6:</label>
-        <textarea name="place6Desc" id="place6-desc" cols="40" rows="5"></textarea>
-
-        <label for="tags">Relative Tags:</label>
-        <textarea name="tags" id="tags" cols="40" rows="5"></textarea>
-        <button type="submit" name="submit">Creat</button>
-    </form>
 </body>
 
 </html>
