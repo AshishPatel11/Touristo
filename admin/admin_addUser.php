@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/admin_addUser.css">
+    <link rel="stylesheet" href="./css/admin_addUser.css">
     <link rel="shortcut icon" href="../css/images/svg/title.svg">
     <link rel="stylesheet" href="./css/admin_nav.css">
     <!-- <link rel="stylesheet" href="./css/admin_home.css"> -->
@@ -86,41 +86,40 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     ?>
 
     <div class="admin-container">
-        <form action="admin_addUser.php" method="post">
-            <h1>Add User</h1>
-            <div class="input-box">
-                <label for="uname">Name</label>
-                <input type="text" id="uname" name="uname" required>
-                <?php echo "$unameerr"; ?>
-            </div>
-            <div class="input-box">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-                <?php echo "$emailerr"; ?>
-            </div>
-            <div class="input-box">
-                <label for="contact">Phone no.</label>
-                <input type="text" id="contact" name="contact" required>
-                <?php echo "$contacterr"; ?>
-            </div>
-            <div class="input-box">
-                <label for="acctype">Account Type </label>
-                <select name="acctype" id="acctype" id="" required><?php echo $acctypeerr; ?>
-                    <option disabled selected>--Select A/C type--</option>
-                    <option value="user">User</option>
-                    <option value="admin">Admin</option>
-                    <option value="guide">Guide</option>
-                    <option value="hotel">Hotel</option>
-                </select>
-            </div>
-            <br>
-            <center>
+        <div class="form-container">
+            <form action="admin_addUser.php" method="post">
+                <h1>Add User</h1>
+                <div class="input-box">
+                    <label for="uname">Name</label>
+                    <input type="text" id="uname" name="uname" required>
+                    <?php echo "$unameerr"; ?>
+                </div>
+                <div class="input-box">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                    <?php echo "$emailerr"; ?>
+                </div>
+                <div class="input-box">
+                    <label for="contact">Phone no.</label>
+                    <input type="text" id="contact" name="contact" required>
+                    <?php echo "$contacterr"; ?>
+                </div>
+                <div class="input-box">
+                    <label for="acctype">Account Type </label>
+                    <select name="acctype" id="acctype" id="" required><?php echo $acctypeerr; ?>
+                        <option disabled selected>--Select A/C type--</option>
+                        <option value="user">User</option>
+                        <option value="admin">Admin</option>
+                        <option value="guide">Guide</option>
+                        <option value="hotel">Hotel</option>
+                    </select>
+                </div>
 
                 <div class="input-btn">
                     <input type="submit" value="Submit" name="submit">
                 </div>
-            </center>
-        </form>
+            </form>
+        </div>
     </div>
 </body>
 

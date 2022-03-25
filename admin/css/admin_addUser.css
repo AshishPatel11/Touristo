@@ -1,5 +1,90 @@
-*{
-    margin: 0px;
-    padding: 0px;
+.input-box input,
+select {
+    width: 100%;
+    font-size: 15px;
+    padding: 5px 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
     box-sizing: border-box;
+}
+
+.input-btn [type=submit] {
+    width: 100%;
+    background-color: #2f333d;
+    color: white;
+    padding: 14px 20px;
+    font-size: 15px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #21242a;
+    border-radius: 4px;
+    color: white;
+}
+
+.form-container {
+    position: absolute;
+    top: 50%;
+    transform: translate(70%, -50%);
+    border-radius: 10px;
+    background-color: #f2f2f2;
+    padding: 10px 40px;
+}
+
+.form-container label {
+    font-size: 20px;
+}
+
+.form-container1 label {
+    font-size: 20px;
+}
+
+.form-container h1 {
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.form-container1 h1 {
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.form-container1 {
+    position: absolute;
+    top: 50%;
+    transform: translate(30%, -50%);
+    border-radius: 10px;
+    background-color: #f2f2f2;
+    padding: 10px 40px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table th,
+table td {
+    padding: 10px;
+}
+
+table,
+th,
+td {
+    border: 1px solid #000;
+}
+
+table th {
+    background-color: #2f333d;
+    color: #fff;
+    vertical-align: middle;
+    padding-left: 10px;
+    padding: 20px;
 }
