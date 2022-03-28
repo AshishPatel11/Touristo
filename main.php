@@ -18,6 +18,7 @@ include "php/connection.php";
     <link rel="stylesheet" href="./css/home.css">
     <link rel="stylesheet" href="./css/home_nav.css">
     <link rel="stylesheet" href="./css/lode1.css">
+    <link rel="stylesheet" href="./css/footer.css">
     <script src="./js/jquery.min.js"></script>
 </head>
 
@@ -273,5 +274,9 @@ include "php/connection.php";
         });
     </script>
 </body>
-
+<script src="./js/gsap.min.js"></script>
+<!--linked the gsap javascript file-->
+<script src="./js/ScrollTrigger.min.js"></script>
+<!--linked the scrollTrigger javascript file-->
+<script src="./js/nav.js"></script>
 </html>

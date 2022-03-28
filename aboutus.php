@@ -16,6 +16,7 @@ include "php/connection.php";
     <link rel="stylesheet" href="css\lode1.css">
     <link rel="stylesheet" href="css\aboutus.css">
     <link rel="stylesheet" href="./css/home_nav.css">
+    <link rel="stylesheet" href="./css/home.css">
     <script src="./js/jquery.min.js"></script>
     <!-- ashish -->
 
