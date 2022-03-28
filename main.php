@@ -23,11 +23,11 @@ include "php/connection.php";
 </head>
 
 <body onload="myFunction()">
-    <!-- <div class="spinner" id="loader">
+    <div class="spinner" id="loader">
         <div class="dot1"></div>
         <div class="dot2"></div>
         <div class="dot3"></div>
-    </div> -->
+    </div>
     <section class="page1">
         <div class="nav-container">
             <nav class="navbar">

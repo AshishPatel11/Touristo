@@ -205,11 +205,11 @@ div .close {
   /* body{
     display: none;
   } */
-
+  
   .li-link{
-    font-size: 16px;
+    font-size: 17px;
   }
-
+  
   .list-container{
     position: absolute;
     left: 0px;
@@ -224,11 +224,11 @@ div .close {
     transition: transform 0.5s ease-in;
     z-index: 5;
   }
-
+  
   .list-container li {
     opacity: 0;
   }
-
+  
   .burger {
     display: block;
   }  
@@ -236,28 +236,28 @@ div .close {
 
 .list-active {
   transform: translateX(0%);
-
+  
 }
 
-  @keyframes nav-optionFade {
-    from {
-      opacity: 0;
-      transform: translateX(50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0px);
-    }
-  }
-
-  .toggle .line1 {
-    transform: rotate(-45deg) translate(-5px, 5px);
-  }
-  
-  .toggle .line2 {
+@keyframes nav-optionFade {
+  from {
     opacity: 0;
+    transform: translateX(50px);
   }
-  
-  .toggle .line3 {
-    transform: rotate(45deg) translate(-5px, -5px);
+  to {
+    opacity: 1;
+    transform: translateX(0px);
   }
+}
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 5px);
+}
+
+.toggle .line2 {
+  opacity: 0;
+}
+
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -5px);
+}
