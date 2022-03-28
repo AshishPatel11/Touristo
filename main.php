@@ -23,14 +23,20 @@ include "php/connection.php";
 </head>
 
 <body onload="myFunction()">
-    <div class="spinner" id="loader">
+    <!-- <div class="spinner" id="loader">
         <div class="dot1"></div>
         <div class="dot2"></div>
         <div class="dot3"></div>
-    </div>
+    </div> -->
     <section class="page1">
         <div class="nav-container">
             <nav class="navbar">
+                <!-- Burger menu -->
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
                 <!--nav bar code starts here-->
                 <svg class="logo-svg" width="202" height="75" viewBox="0 0 202 75" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g class="logo">
@@ -132,6 +138,7 @@ include "php/connection.php";
                     <?php
                     }
                     ?>
+
                 </div>
             </nav>
         </div>
@@ -279,4 +286,5 @@ include "php/connection.php";
 <script src="./js/ScrollTrigger.min.js"></script>
 <!--linked the scrollTrigger javascript file-->
 <script src="./js/nav.js"></script>
+<script src="js/home_nav.js"></script>
 </html>
