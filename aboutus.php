@@ -23,7 +23,7 @@ include "php/connection.php";
 
 <body onload="myFunction()">
 
-    <div class="spinner" id="loader">
+    <div class="spinner" id="loader1">
         <div class="dot1"></div>
         <div class="dot2"></div>
         <div class="dot3"></div>
@@ -310,7 +310,7 @@ include "php/connection.php";
         </div>
     </div>
         <script>
-            var preloader = document.getElementById('loader');
+            var preloader = document.getElementById('loader1');
             var delyeInMillisecond = 2000;
             function myFunction() {
                 setTimeout(function () {
