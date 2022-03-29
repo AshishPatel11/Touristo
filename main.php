@@ -31,6 +31,12 @@ include "php/connection.php";
     <section class="page1">
         <div class="nav-container">
             <nav class="navbar">
+                <!-- Burger menu -->
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
                 <!--nav bar code starts here-->
                 <svg class="logo-svg" width="202" height="75" viewBox="0 0 202 75" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <a xlink:href="./main.php">
@@ -134,6 +140,7 @@ include "php/connection.php";
                     <?php
                     }
                     ?>
+
                 </div>
             </nav>
         </div>
@@ -283,4 +290,5 @@ include "php/connection.php";
 <script src="./js/ScrollTrigger.min.js"></script>
 <!--linked the scrollTrigger javascript file-->
 <script src="./js/nav.js"></script>
+<script src="js/home_nav.js"></script>
 </html>

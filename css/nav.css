@@ -97,7 +97,7 @@
 }
 
 .nav-active {
-  transform: translateX(0%);
+  transform: translateX(100%);
 }
 
 @keyframes nav-optionFade {
