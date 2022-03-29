@@ -36,7 +36,7 @@ input[type=submit]:hover {
 .form-container {
     position: absolute;
     top: 50%;
-    transform: translate(70%, -50%);
+    transform: translate(60%, -50%);
     border-radius: 10px;
     background-color: #f2f2f2;
     padding: 10px 40px;
@@ -65,7 +65,7 @@ input[type=submit]:hover {
 .form-container1 {
     position: absolute;
     top: 50%;
-    transform: translate(30%, -50%);
+    transform: translate(90%, -50%);
     border-radius: 10px;
     background-color: #f2f2f2;
     padding: 10px 40px;

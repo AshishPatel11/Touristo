@@ -12,7 +12,6 @@ include "php/connection.php";
     <title>Touristo - <?php if (isset($_SESSION['uname'])) {
                             echo $_SESSION['uname'];
                         } ?></title>
-    <link rel="stylesheet" href="./css/loader.css">
     <link rel="stylesheet" href="css\lode1.css">
     <link rel="stylesheet" href="css\aboutus.css">
     <link rel="stylesheet" href="./css/home_nav.css">
@@ -32,6 +31,12 @@ include "php/connection.php";
     <div class="footer-container">
         <div class="nav-container">
             <nav class="navbar">
+                <!-- Burger menu -->
+                <div class="burger">
+                        <div class="line1"></div>
+                        <div class="line2"></div>
+                        <div class="line3"></div>
+                    </div>
                 <svg class="logo-svg" width="202" height="75" viewBox="0 0 202 75" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <a xlink:href="./main.php">
@@ -304,22 +309,23 @@ include "php/connection.php";
             <p class="footer-txt">2022 copyright reserved</p>
         </div>
     </div>
-    <script>
-        var preloader = document.getElementById('loader');
-        var delyeInMillisecond = 2000;
-        function myFunction() {
-            setTimeout(function () {
-                preloader.style.display = 'none';
-            }, 2500);
+        <script>
+            var preloader = document.getElementById('loader');
+            var delyeInMillisecond = 2000;
+            function myFunction() {
+                setTimeout(function () {
+                    preloader.style.display = 'none';
+                }, 2500);
 
-        }
-        $(".profile").click(function(){
-            $(".profile-container").fadeIn("slow");
-            $("p").click(function(){
-                $(".profile-container").fadeOut("slow");
+            }
+            $(".profile").click(function(){
+                $(".profile-container").fadeIn("slow");
+                $("p").click(function(){
+                    $(".profile-container").fadeOut("slow");
+                });
             });
-        });
-    </script>
+        </script>
+        <script src="js/home_nav.js"></script>
 </body>
 
 </html>
