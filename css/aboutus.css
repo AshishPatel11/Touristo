@@ -78,15 +78,7 @@ footer {
   border-top: 2px solid black;
   padding: 16px;
 }
-<<<<<<< HEAD
-.back1{
-  display: none;
-}
-@media screen and (max-width: 800px) {
-.back1{
-display: block;
-}
-=======
+
 .responsive{
   display: none;
 }
@@ -97,5 +89,5 @@ display: block;
   .window{
     display: none;
   }
->>>>>>> 2ebaf137cc5d092a532526fc927455557ea2ba2c
+
 }
