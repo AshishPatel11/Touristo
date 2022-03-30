@@ -241,9 +241,10 @@ $filename = strtolower($files[0]);
             <div class="p6" style="background-image: url(./images/<?php echo $filename; ?>_place6.jpg);"></div>
             <?php } ?>
         </div>
-        <h1 class="packname gradient-border"><?php echo $filename; ?></h1>
+        <h1 class="packname"><?php echo $filename; ?></h1>
     </section>
     <section class="page2">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d113579.78745724715!2d77.90997186954814!3d27.176157105633415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39740d857c2f41d9%3A0x784aef38a9523b42!2sAgra%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1648539567075!5m2!1sen!2sin" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         <div class="place-container"></div>
         <div class="place-container"></div>
         <div class="place-container"></div>
