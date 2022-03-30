@@ -175,13 +175,11 @@ include "php/connection.php";
                 </div>
             </nav>
         </div>
-<<<<<<< HEAD
-        <img class="back" src="css\images\svg\Frame 2.svg" alt="">
-        <img class="back1" src="css\images\svg\mobiaboutus.svg" alt="">
-=======
+
+
         <img class="back window" src="css\images\svg\Frame 2.svg" alt="">
         <img src="css\images\svg\about us 2.svg" alt="" class="back responsive">
->>>>>>> 2ebaf137cc5d092a532526fc927455557ea2ba2c
+
         <footer>
             <div class="part1">
                 <svg class="logo-svg" width="202" height="75" viewBox="0 0 202 75" fill="none"
