@@ -28,7 +28,7 @@ include './php/loginBackend.php';
 
 <body onload="myFunction()">
 
-    <div class="spinner" id="loader">
+    <div class="spinner" id="loader1">
         <div class="dot1"></div>
         <div class="dot2"></div>
         <div class="dot3"></div>
@@ -251,7 +251,7 @@ include './php/loginBackend.php';
     <script src="./js/signup.js"></script>
     <script src="/js/loader.js"></script>
     <script>
-        var preloader = document.getElementById('loader');
+        var preloader = document.getElementById('loader1');
         var delyeInMillisecond = 2000;
 
         function myFunction() {
