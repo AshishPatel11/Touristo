@@ -78,3 +78,11 @@ footer {
   border-top: 2px solid black;
   padding: 16px;
 }
+.back1{
+  display: none;
+}
+@media screen and (max-width: 800px) {
+.back1{
+display: block;
+}
+}

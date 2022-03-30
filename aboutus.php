@@ -176,6 +176,7 @@ include "php/connection.php";
             </nav>
         </div>
         <img class="back" src="css\images\svg\Frame 2.svg" alt="">
+        <img class="back1" src="css\images\svg\mobiaboutus.svg" alt="">
         <footer>
             <div class="part1">
                 <svg class="logo-svg" width="202" height="75" viewBox="0 0 202 75" fill="none"
