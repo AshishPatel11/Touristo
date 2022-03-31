@@ -683,9 +683,10 @@ alert(`Error in Creating page`)
                     <label for="state">State:</label>
                     <input type="text" name="state" id="state" required>
                 </div>
-                <div class="input-box">
+                <div class="input-box tooltip">
                     <label for="G-map">Google Map Link:</label>
                     <textarea name="Gmap" id="G-map" cols="20" rows="5" required></textarea>
+                    <span class="tooltiptext">Select Embed a map from share option in Google Maps and copy the link and paste here</span>
                 </div>
                 <div class="upload-img">
                     <label for="banner-img">Banner Image:</label>
@@ -748,9 +749,10 @@ alert(`Error in Creating page`)
                     <label for="place6-desc">Description for Place 6:</label>
                     <textarea name="place6Desc" id="place6-desc" cols="30" rows="5"></textarea>
                 </div>
-                <div class="input-box">
+                <div class="input-box tooltip">
                     <label for="tags">Relative Tags:</label>
                     <textarea name="tags" id="tags" cols="30" rows="5"></textarea>
+                    <span class="tooltiptext">Add tags that are related with the packages for better searching results.</span>
                 </div>
                 <div class="input-btn">
                     <button type="submit" name="submit">Create</button>
