@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: poppins, sans-serif;
 }
 .profile {
   width: 55px;
@@ -92,6 +93,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: right;
+  font-family: poppins, sans-serif !important;
 }
 .warning {
   font-family: poppins, sans-serif;
@@ -215,7 +217,7 @@ div .close {
     left: 0px;
     height: 88vh;
     top: 12vh;
-    background-color: rgba(51, 47, 47, 1);
+    background-color: rgba(36, 36, 36, 1);
     width: 30%;
     box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.25);
     flex-direction: column;

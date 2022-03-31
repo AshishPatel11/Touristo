@@ -32,6 +32,7 @@ session_start();
 $basefilename = basename($_SERVER["PHP_SELF"]);
 $files = explode(".", $basefilename);
 $filename = strtolower($files[0]);
+$filenameimg = str_replace(" ","\ ",$filename);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -63,13 +64,13 @@ $filename = strtolower($files[0]);
 </head>
 
 <body onload="myFunction()">
-    <div class="spinner" id="loader">
+    <div class="spinner" id="loader1">
         <div class="dot1"></div>
         <div class="dot2"></div>
         <div class="dot3"></div>
     </div>
     <section class="page1">
-        <div class="banner-container" style="background-image: url(./images/<?php echo htmlspecialchars($filename); ?>_banner.jpg);">
+        <div class="banner-container" style="background-image: url(./images/<?php echo $filenameimg; ?>_banner.jpg);">
             <div class="nav-container">
                 <nav class="navbar">
                     <!--nav bar code starts here-->
@@ -242,38 +243,38 @@ $filename = strtolower($files[0]);
             </div>
         </div>
         <div class="place-images">
-            <div class="p1" style="background-image: url(./images/<?php echo htmlspecialchars($filename); ?>_place1.jpg);"></div>
-            <div class="p2" style="background-image: url(./images/<?php echo htmlspecialchars($filename); ?>_place2.jpg);"></div>
+            <div class="p1" style="background-image: url(./images/<?php echo $filenameimg; ?>_place1.jpg);"></div>
+            <div class="p2" style="background-image: url(./images/<?php echo $filenameimg; ?>_place2.jpg);"></div>
             <?php
                 $imgAddr = "./images/".$filename."_place3".".jpg";
                 $imgExist = file_exists("$imgAddr");
                 if($imgExist === true){
             ?>
-            <div class="p3" style="background-image: url(./images/<?php echo htmlspecialchars($filename); ?>_place3.jpg);"></div>
+            <div class="p3" style="background-image: url(./images/<?php echo $filenameimg; ?>_place3.jpg);"></div>
             <?php } ?>
             <?php
                 $imgAddr = "./images/".$filename."_place4".".jpg";
                 $imgExist = file_exists("$imgAddr");
                 if($imgExist === true){
             ?>
-            <div class="p4" style="background-image: url(./images/<?php echo htmlspecialchars($filename); ?>_place4.jpg);"></div>
+            <div class="p4" style="background-image: url(./images/<?php echo $filenameimg; ?>_place4.jpg);"></div>
             <?php } ?>
             <?php
                 $imgAddr = "./images/".$filename."_place5".".jpg";
                 $imgExist = file_exists("$imgAddr");
                 if($imgExist === true){
             ?>
-            <div class="p5" style="background-image: url(./images/<?php echo htmlspecialchars($filename); ?>_place5.jpg);"></div>
+            <div class="p5" style="background-image: url(./images/<?php echo $filenameimg; ?>_place5.jpg);"></div>
             <?php } ?>
             <?php
                 $imgAddr = "./images/".$filename."_place6".".jpg";
                 $imgExist = file_exists("$imgAddr");
                 if($imgExist === true){
             ?>
-            <div class="p6" style="background-image: url(./images/<?php echo htmlspecialchars($filename); ?>_place6.jpg);"></div>
+            <div class="p6" style="background-image: url(./images/<?php echo $filenameimg; ?>_place6.jpg);"></div>
             <?php } ?>
         </div>
-        <h1 class="packname gradient-border"><?php echo htmlspecialchars($filename); ?></h1>
+        <h1 class="packname gradient-border"><?php echo $filename; ?></h1>
     </section>
     <section class="page2">
         <div class="place-container"></div>
@@ -421,7 +422,7 @@ $filename = strtolower($files[0]);
     </div>
 </body>
 <script>
-var preloader = document.getElementById("loader");
+var preloader = document.getElementById("loader1");
 var delyeInMillisecond = 2000;
 
 function myFunction() {

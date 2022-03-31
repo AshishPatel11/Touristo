@@ -156,22 +156,52 @@ include "php/connection.php";
                     <li class="nav-option"><a class="li-link" href="#">Wishlist</a></li>
                     <li class="nav-option"><a class="li-link" href="aboutus.php">About Us</a></li>
                 </ul>
-                <img src="./css/images/profile.png" alt="" class="profile">
+                <?php
+                if (isset($_SESSION['uname'])) {
+                    $profileAddress = './profiles/' . $_SESSION['uid'] . "." . "jpg";
+                    $fileExist = file_exists("$profileAddress");
+                    if ($fileExist === true) {
+                        echo "<img src=$profileAddress class=profile>";
+                    } else {
+                        echo "<img src=./css/images/profile.png class=profile>";
+                    }
+                } else {
+                    echo "<img src=./css/images/profile.png class=profile>";
+                }
+                ?>
                 <div class="profile-container">
+                    <img src="./css/images/svg/close.svg" class="close" width="30px" height="30px" alt="close">
                     <?php
-                                        if (isset($_SESSION['uname'])) {
-                                    ?>
-                    <form action="logout.php" method="post" class="logout-form">
-                        <input type="submit" class="logout-btn" value="Logout">
-                    </form>
+                    if (isset($_SESSION['uname'])) {
+                        $profileAddress = './profiles/' . $_SESSION['uid'] . "." . "jpg";
+                        $fileExist = file_exists("$profileAddress");
+                        if ($fileExist === true) {
+                            echo "<img src=$profileAddress class=profile>";
+                        } else {
+                            echo "<img src=./css/images/profile.png class=profile>";
+                        }
+                    ?>
+                        <center>
+                            <?php if (isset($_SESSION['uname'])) {
+                                echo $_SESSION['uname'];
+                            } ?>
+                        </center>
+                        <br>
+                        <?php if (isset($_SESSION['uid'])) {
+                            echo "UserID : $_SESSION[uid]";
+                        } ?>
+                        <a href="changeprofile.php" class="change-link">change Profile image</a>
+                        <a href="logout.php" class="button">Logout</a>
+
                     <?php
-                                        }
-                                        else{
-                                    ?>
-                    <p class="warning">You are not logged in please login!</p>
+                    } else {
+                    ?>
+                        <p>You are not logged in please login!</p>
+                        <a href="login.php#login" class="button">Login</a>
                     <?php
-                                        }
-                                    ?>
+                    }
+                    ?>
+
                 </div>
             </nav>
         </div>
@@ -321,12 +351,18 @@ include "php/connection.php";
                 }, 2500);
 
             }
-            $(".profile").click(function(){
-                $(".profile-container").fadeIn("slow");
-                $("p").click(function(){
-                    $(".profile-container").fadeOut("slow");
-                });
+            $(".profile").click(function() {
+            $(".profile-container").fadeIn("slow").css("display", "flex");
+            $(".close").click(function() {
+                $(".profile-container").fadeOut("slow");
             });
+        });
+        $(".profile").click(function() {
+            $(".profile-container").fadeIn("slow").css("display", "flex");
+            $(".close").click(function() {
+                $(".profile-container").fadeOut("slow");
+            });
+        });
         </script>
         <script src="js/home_nav.js"></script>
 </body>
