@@ -223,14 +223,12 @@ include './php/loginBackend.php';
                 <div class="input-btn">
                     <input type="submit" value="Login" name="login">
                 </div>
+                <div class="login-options">
+                    <p>Forgot Password?</p>
+                </div>
                 <div class="login-link">
                     <label for="login">Don't have an account?</label>
                     <a href="signup.php">SignUp</a>
-                </div>
-                <div class="login-options">
-                    <p>Or login With</p>
-                    <img class="google" src="./css/images/google.png" alt="">
-                    <img class="facebook" src="./css/images/facebook-logo-2019.png" alt="">
                 </div>
             </form>
         </div>

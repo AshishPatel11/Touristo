@@ -12,6 +12,7 @@
 .back {
   height: auto;
   width: 100%;
+
 }
 
 .section::-webkit-scrollbar-thumb {
@@ -83,7 +84,7 @@ footer {
 }
 @media screen and (max-width: 700px){
   .responsive{
-    display: block;
+    display: initial;
   }
   .window{
     display: none;
