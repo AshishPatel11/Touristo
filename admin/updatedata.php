@@ -4,7 +4,7 @@ error_reporting(0);
 include '../php/connection.php';
 include '../admin/admin_nav.php';
 
-$unameerr = $emailerr = $contacterr = "";
+$unameerr = $emailerr = $contacterr = $err = "";
 
 $uid = $_GET['id'];
 $uname = $_GET['name'];
@@ -27,27 +27,31 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (!preg_match("/^[0-9]{10}+$/", $nphno)) {
             $contacterr = "Phone number must be 10 digits!";
         } else {
-            $update = "UPDATE `user_tbl` SET uname='$nname',emailid='$nemail',phno='$nphno',acc_typ='$nacctype' WHERE uid='$userid'";
-
-            $result = mysqli_query($conn, $update);
-
-            if ($result) {
-?>
-                <script>
-                    alert(`User data updated!`);
-                    location.replace('admin_updateUser.php');
-                </script>
-<?php
+            if (isset($acctype) && $acctype == "none") {
+                $err = "Please select A/c type!";
             } else {
-                echo
-                "<script>
+                $update = "UPDATE `user_tbl` SET uname='$nname',emailid='$nemail',phno='$nphno',acc_typ='$nacctype' WHERE uid='$userid'";
+
+                $result = mysqli_query($conn, $update);
+
+                if ($result) {
+?>
+                    <script>
+                        alert(`User data updated!`);
+                        location.replace('admin_modifyUser.php');
+                    </script>
+<?php
+                } else {
+                    echo
+                    "<script>
                         alert(`User updating Failed! $conn->error`);
+                        location.replace('admin_updatedata.php')
                 </script>";
+                }
             }
         }
     }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -79,29 +83,31 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <div class="input-box">
                     <label for="uname">User name</label>
                     <input type="text" name="uname" id="uname" required>
-                    <?php echo "$unameerr"; ?>
+                    <span class="err"><?php echo "$unameerr"; ?></span>
                 </div>
                 <div class="input-box">
                     <label for="email">Email</label>
                     <input required type="email" name="email" id="email">
-                    <?php echo "$emailerr"; ?>
+                    <span class="err"><?php echo "$emailerr"; ?></span>
 
                 </div>
                 <div class="input-box">
                     <label for="phno">Phone no</label>
                     <input type="text" required name="phno" id="phno">
-                    <?php echo "$contacterr"; ?>
+                    <span class="err"><?php echo "$contacterr"; ?></span>
                 </div>
                 <div class="input-box">
                     <label for="acctype"> New A/c type</label>
 
                     <select name="acctype" id="acctype" id="" required>
-                        <option disabled selected>--Select A/C type--</option>
+                        <option selected value="none"> --Select A/C type-- </option>
                         <option value="user">User</option>
                         <option value="admin">Admin</option>
                         <option value="guide">Guide</option>
                         <option value="hotel">Hotel</option>
                     </select>
+                    <span class="err"><?php echo "$err"; ?></span>
+
                 </div>
                 <div class="input-btn">
                     <input type="submit" value="Update" name="update">

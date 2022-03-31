@@ -28,7 +28,7 @@
                         <th>EmailID</th>
                         <th>Phone no.</th>
                         <th>A/c type</th>
-                        <th>Delete</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
 
@@ -50,7 +50,9 @@
                                 <td><?php echo $data['emailid']; ?> </td>
                                 <td><?php echo $data['phno']; ?> </td>
                                 <td><?php echo $data['acc_typ']; ?> </td>
-                                <td><a href="deletedata.php?id=<?php echo $data['uid']; ?>"><input type="submit" value="Delete" name="delete" onclick='return deletedata()'></a></td>
+                                <td><a href="deletedata.php?id=<?php echo $data['uid']; ?>"><input type="submit" value="Delete" name="delete" onclick='return deletedata()'></a>
+                                <a href="updatedata.php?id=<?php echo $data['uid']; ?>&name=<?php echo $data['uname']; ?>&email=<?php echo $data['emailid']; ?>&phno=<?php echo $data['phno']; ?>&acct=<?php echo $data['acc_typ']; ?>">
+                                        <input type="submit" value="Update" name="update" onclick='return upadatedata()'></a></td>
                             </tr>
                         <?php
                         }

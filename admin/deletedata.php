@@ -9,13 +9,14 @@ if ($query) {
 ?>
     <script>
         alert(`Record Deleted!`);
-        location.replace("admin_removeUser.php");
+        location.replace('admin_modifyUser.php');
     </script>
 <?php
 } else {
 ?>
     <script>
         alert(`Not Deleted!`);
+        location.replace('admin_modifyUser.php');
     </script>
 <?php
 }

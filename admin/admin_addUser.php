@@ -3,7 +3,7 @@
 include "../php/connection.php";
 
 // error variable declaration for printing error
-$unameerr = $emailerr = $contacterr = $passworderr = $acctypeerr = "";
+$unameerr = $emailerr = $contacterr = $passworderr = $selecterr = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -42,28 +42,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 if ($ccount > 0) {
                     $contacterr = "Number already exist!";
                 } else {
-                    $insert = "INSERT INTO user_tbl(`uid`, `uname`, `emailid`, `phno`,`acc_typ`,`passwd`,`token`,`statuss`) VALUES ('$uid','$uname','$email','$contact','$acctype','$hash','$token','verify')";
-
-                    $result = mysqli_query($conn, $insert);
-
-                    if ($result) {
-?>
-                        <script>
-                            alert(`User added!`);
-                        </script>
-<?php
+                    if (isset($acctype) && $acctype == "none") {
+                        $selecterr = "Please select A/c type!";
                     } else {
-                        echo
-                        "<script>
+                        $insert = "INSERT INTO user_tbl(`uid`, `uname`, `emailid`, `phno`,`acc_typ`,`passwd`,`token`,`statuss`) VALUES ('$uid','$uname','$email','$contact','$acctype','$hash','$token','verify')";
+
+                        $result = mysqli_query($conn, $insert);
+
+                        if ($result) {
+?>
+                            <script>
+                                alert(`User added!`);
+                                location.replace('admin_modifyUser.php');
+                            </script>
+<?php
+                        } else {
+                            echo
+                            "<script>
                                     alert(`User adding Failed! $conn->error`);
                                 </script>";
+                        }
                     }
                 }
             }
         }
     }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -92,27 +96,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <div class="input-box">
                     <label for="uname">Name</label>
                     <input type="text" id="uname" name="uname" required>
-                    <?php echo "$unameerr"; ?>
+                    <span class="err"><?php echo "$unameerr"; ?></span>
                 </div>
                 <div class="input-box">
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" required>
-                    <?php echo "$emailerr"; ?>
+                    <span class="err"><?php echo "$emailerr"; ?></span>
                 </div>
                 <div class="input-box">
                     <label for="contact">Phone no.</label>
                     <input type="text" id="contact" name="contact" required>
-                    <?php echo "$contacterr"; ?>
+                    <span class="err"><?php echo "$contacterr"; ?></span>
                 </div>
                 <div class="input-box">
                     <label for="acctype">Account Type </label>
-                    <select name="acctype" id="acctype" id="" required><?php echo $acctypeerr; ?>
-                        <option disabled selected>--Select A/C type--</option>
+                    <select name="acctype" id="acctype" id="" required>
+                        <option selected value="none"> --Select A/C type-- </option>
                         <option value="user">User</option>
                         <option value="admin">Admin</option>
                         <option value="guide">Guide</option>
                         <option value="hotel">Hotel</option>
                     </select>
+                    <span class="err"><?php echo "$selecterr"; ?></span>
                 </div>
 
                 <div class="input-btn">
