@@ -23,11 +23,11 @@ include "php/connection.php";
 </head>
 
 <body onload="myFunction()">
-    <div class="spinner" id="loader1">
+    <!-- <div class="spinner" id="loader1">
         <div class="dot1"></div>
         <div class="dot2"></div>
         <div class="dot3"></div>
-    </div>
+    </div> -->
     <section class="page1">
         <div class="nav-container">
             <nav class="navbar">
@@ -130,8 +130,11 @@ include "php/connection.php";
                             echo "UserID : $_SESSION[uid]";
                         } ?>
                         <a href="changeprofile.php" class="change-link">Change Profile image</a>
-                        <a href="logout.php" class="button">Logout</a>
                         <a href="changepass.php" class="button">Change Password</a>
+                        <a href="mytrips.php" class="button">My Trips</a>
+                        <a href="contactup.php" class="button">Contact Us</a>
+                        <a href="logout.php" class="button">Logout</a>
+
                     <?php
                     } else {
                     ?>

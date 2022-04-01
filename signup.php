@@ -26,12 +26,7 @@ include './php/signupBackend.php';
     <title>Signup</title>
 </head>
 
-<body class="main" onload="myFunction()">
-    <div class="spinner" id="loader1">
-        <div class="dot1"></div>
-        <div class="dot2"></div>
-        <div class="dot3"></div>
-    </div>
+<body class="main">
     <div class="nav-container">
         <!--Division which will contain the navbar-->
         <nav class="navbar">
@@ -245,7 +240,7 @@ include './php/signupBackend.php';
     <script src="./js/ScrollTrigger.min.js"></script>
     <!--linked the scrollTrigger javascript file-->
     <script src="./js/signup.js"></script>
-    <script>
+    <!-- <script>
         var preloader = document.getElementById('loader1');
         var delyeInMillisecond = 2000;
 
@@ -255,7 +250,7 @@ include './php/signupBackend.php';
             }, 2500);
 
         }
-    </script>
+    </script> -->
 </body>
 
 </html>
