@@ -34,6 +34,17 @@ $basefilename = basename($_SERVER["PHP_SELF"]);
 $files = explode(".", $basefilename);
 $filename = strtolower($files[0]);
 $filenameimg = str_replace(" ","\ ",$filename);
+
+include ("../php/connection.php");
+include_once ("./php/pack_backend.php");
+
+                    $packQuery = "SELECT * FROM `pckg_tbl` WHERE pckg_name=\'$filename\'";
+                    $result = $conn->query($packQuery);
+                    $data = $result->fetch_assoc();
+                    if ($result->num_rows > 0){}
+                    else{
+                        die("The page you are looking for doesnot exist");
+                    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -58,22 +69,32 @@ $filenameimg = str_replace(" ","\ ",$filename);
         height: 70vh;
         background-attachment: fixed;
         background-size: cover;
-        background-position: 0px -100px;
+        background-position: center center;
     }
     </style>
 
 </head>
 
 <body onload="myFunction()">
+
+
     <div class="spinner" id="loader1">
         <div class="dot1"></div>
         <div class="dot2"></div>
         <div class="dot3"></div>
     </div>
+
+
     <section class="page1">
         <div class="banner-container" style="background-image: url(./images/<?php echo $filenameimg; ?>_banner.jpg);">
             <div class="nav-container">
                 <nav class="navbar">
+                    <!-- Burger menu -->
+                    <div class="burger">
+                        <div class="line1"></div>
+                        <div class="line2"></div>
+                        <div class="line3"></div>
+                    </div>
                     <!--nav bar code starts here-->
                     <svg class="logo-svg" width="202" height="75" viewBox="0 0 202 75" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
@@ -192,7 +213,7 @@ $filenameimg = str_replace(" ","\ ",$filename);
                     <ul class="list-container">
                         <li class="nav-option"><a class="li-link" href="#">Destionations</a></li>
                         <li class="nav-option"><a class="li-link" href="#">Wishlist</a></li>
-                        <li class="nav-option"><a class="li-link" href="/aboutus.php">About Us</a></li>
+                        <li class="nav-option"><a class="li-link" href="../aboutus.php">About Us</a></li>
                     </ul>
                     <?php
                 if (isset($_SESSION["uname"])) {
@@ -275,16 +296,100 @@ $filenameimg = str_replace(" ","\ ",$filename);
             <div class="p6" style="background-image: url(./images/<?php echo $filenameimg; ?>_place6.jpg);"></div>
             <?php } ?>
         </div>
-        <h1 class="packname gradient-border"><?php echo $filename; ?></h1>
+        <h1 class="packname"><?php echo $filename; ?></h1>
     </section>
+
+
     <section class="page2">
-        <div class="place-container"></div>
-        <div class="place-container"></div>
-        <div class="place-container"></div>
-        <div class="place-container"></div>
-        <div class="place-container"></div>
-        <div class="place-container"></div>
+        <div class="search-container" style="background-image: url(./images/<?php echo $filenameimg; ?>_banner.jpg);">
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" class="search-place">
+                <input type="text" name="search" class="search-box"
+                    placeholder="Search over a million tour and travels, sight seeings,... ">
+                <input type="submit" name="submit" value="Search" class="search-btn">
+            </form>
+        </div>
+        <div class="pack-bar">
+            <h3 class="location">Location: <?php echo $data["state"] ?>, India</h3>
+            <h3 class="price">Price: ₹<?php echo $data["pckg_price"] ?></h3>
+            <h3 class="duration">Duration: 9 days/ 8 nights</h3>
+            <form action="#" class="book">
+                <button type="submit" class="search-btn">Book Now</button>
+            </form>
+        </div>
     </section>
+
+<section class="background" style="background-image: url(./images/<?php echo $filenameimg; ?>_banner.jpg);">
+    <section class="page3">
+        <div class="main-desc">
+            <?php
+                echo $data["maplink"];
+                ?>
+            <p class="main-desc-paragraph"><?php echo $data["pckg_para"] ?></p>
+        </div>
+        <div class="place-container1"><!-- place 1 Container -->
+                    <p class="place1-desc"><?php echo $data["sub_para1"]; ?></p>
+                    <img src="./images/<?php echo $filenameimg; ?>_place1.jpg" class="place1-img" alt="Image of First place">
+        </div>
+        <div class="place-container2"><!-- place 2 Container -->
+            <img src="./images/<?php echo $filenameimg; ?>_place2.jpg" class="place2-img" alt="Image of second place">
+            <p class="place2-desc"><?php echo $data["sub_para2"]; ?></p>
+        </div>
+        <?php
+                $imgAddr = "./images/".$filename."_place3".".jpg";
+                $imgExist = file_exists("$imgAddr");
+                if($imgExist === true){
+            ?>
+        <div class="place-container3"><!-- place 3 Container -->
+                    <p class="place3-desc"><?php echo $data["sub_para3"]; ?></p>
+                    <img src="./images/<?php echo $filenameimg; ?>_place3.jpg" class="place3-img" alt="Image of third place">
+        </div>
+        <?php } ?>
+        <?php
+                $imgAddr = "./images/".$filename."_place4".".jpg";
+                $imgExist = file_exists("$imgAddr");
+                if($imgExist === true){
+            ?>
+        <div class="place-container4"><!-- place 4 Container -->
+            <img src="./images/<?php echo $filenameimg; ?>_place4.jpg" class="place4-img" alt="Image of fourth place">
+            <p class="place4-desc"><?php echo $data["sub_para4"]; ?></p>
+        </div>
+        <?php } ?>
+        <?php
+                $imgAddr = "./images/".$filename."_place5".".jpg";
+                $imgExist = file_exists("$imgAddr");
+                if($imgExist === true){
+            ?>
+        <div class="place-container5"><!-- place 5 Container -->
+                    <p class="place5-desc"><?php echo $data["sub_para5"]; ?></p>
+                    <img src="./images/<?php echo $filenameimg; ?>_place5.jpg" class="place5-img" alt="Image of fifth place">
+        </div>
+        <?php } ?>
+        <?php
+                $imgAddr = "./images/".$filename."_place6".".jpg";
+                $imgExist = file_exists("$imgAddr");
+                if($imgExist === true){
+            ?>
+        <div class="place-container6"><!-- place 6 Container -->
+            <img src="./images/<?php echo $filenameimg; ?>_place6.jpg" class="place6-img" alt="Image of sixth place">
+            <p class="place6-desc"><?php echo $data["sub_para6"]; ?></p>
+        </div>
+        <?php } ?>
+
+
+        <div class="options-container">
+            <form action="#" method="post" class="wishlist-form">
+                <button type="submit" class="wish-btn"><span>Add To Wishliste</span></button>
+            </form>
+            <form action="#" method="post" class="Book-form">
+                <button type="submit" class="book-btn"><span>Book Now</span></button>
+            </form>
+        </div>
+    </section>
+    </section>
+
+
+
+
     <div class="footer-container">
         <footer>
             <div class="part1">
@@ -422,6 +527,8 @@ $filenameimg = str_replace(" ","\ ",$filename);
         </div>
     </div>
 </body>
+
+
 <script>
 var preloader = document.getElementById("loader1");
 var delyeInMillisecond = 2000;
@@ -445,6 +552,9 @@ $(".profile").click(function() {
     });
 });
 </script>
+
+
+<script src="../js/home_nav.js"></script>
 
 </html>';//this variable contains the data of the file that created above
 
