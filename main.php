@@ -129,9 +129,9 @@ include "php/connection.php";
                         <?php if (isset($_SESSION['uid'])) {
                             echo "UserID : $_SESSION[uid]";
                         } ?>
-                        <a href="changeprofile.php" class="change-link">change Profile image</a>
+                        <a href="changeprofile.php" class="change-link">Change Profile image</a>
                         <a href="logout.php" class="button">Logout</a>
-
+                        <a href="changepass.php" class="button">Change Password</a>
                     <?php
                     } else {
                     ?>
