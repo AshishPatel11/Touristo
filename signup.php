@@ -13,7 +13,7 @@ include './php/signupBackend.php';
     <!--Linked the CSS File for navbar-->
     <link rel="stylesheet" href="./css/nav.css">
     <!--Linked Fonts CSS File-->
-    <link rel="stylesheet" href="/css/fonts/fonts.css">
+    <!-- <link rel="stylesheet" href="/css/fonts/fonts.css"> -->
     <!-- Linked the googles icon from web👇 -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!--Linked the CSS file for signup page-->
@@ -27,8 +27,6 @@ include './php/signupBackend.php';
 </head>
 
 <body class="main" onload="myFunction()">
-
-
     <div class="spinner" id="loader1">
         <div class="dot1"></div>
         <div class="dot2"></div>
@@ -245,7 +243,6 @@ include './php/signupBackend.php';
     <script src="./js/ScrollTrigger.min.js"></script>
     <!--linked the scrollTrigger javascript file-->
     <script src="./js/signup.js"></script>
-    <script src="/js/loader.js"></script>
     <script>
         var preloader = document.getElementById('loader1');
         var delyeInMillisecond = 2000;
