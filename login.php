@@ -88,7 +88,7 @@ include './php/loginBackend.php';
             <ul class="nav-ul">
                 <li class="nav-option"><a href="signup.php" id="login">SignUp</a></li>
                 <li class="nav-option"><a href="help.php">Help</a></li>
-                <li class="nav-option"><a href="aboutup.php">About Us</a></li>
+                <li class="nav-option"><a href="aboutus.php">About Us</a></li>
             </ul>
             <img src="./css/images/profile.png" alt="" class="profile">
             <!-- Burger menu -->

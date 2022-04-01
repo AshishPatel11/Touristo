@@ -12,8 +12,8 @@ include "php/connection.php";
     <title>Touristo - <?php if (isset($_SESSION['uname'])) {
                             echo $_SESSION['uname'];
                         } ?></title>
-    <link rel="stylesheet" href="css\lode1.css">
-    <link rel="stylesheet" href="css\aboutus.css">
+    <link rel="stylesheet" href="css/lode1.css">
+    <link rel="stylesheet" href="css/aboutus.css">
     <link rel="stylesheet" href="./css/home_nav.css">
     <link rel="stylesheet" href="./css/home.css">
     <script src="./js/jquery.min.js"></script>
@@ -223,10 +223,7 @@ include "php/connection.php";
         var delyeInMillisecond = 2000;
 
         function myFunction() {
-            setTimeout(function() {
                 preloader.style.display = 'none';
-            }, 2500);
-
         }
         $(".profile").click(function() {
             $(".profile-container").fadeIn("slow").css("display", "flex");
