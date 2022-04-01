@@ -12,6 +12,7 @@ include './php/loginBackend.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/nav.css">
+    <link rel="stylesheet" href="./css/lode1.css">
     <!--Linked Fonts CSS File-->
     <link rel="stylesheet" href="./css/signup.css">
     <!--Linked the CSS file for signup page-->
@@ -22,7 +23,12 @@ include './php/loginBackend.php';
 
 </head>
 
-<body>
+<body onload="myFunction()">
+    <div class="spinner" id="loader1">
+        <div class="dot1"></div>
+        <div class="dot2"></div>
+        <div class="dot3"></div>
+    </div>
     <div class="nav-container">
         <!--Division which will contain the navbar-->
         <nav class="navbar">
@@ -239,17 +245,13 @@ include './php/loginBackend.php';
     <script src="./js/ScrollTrigger.min.js"></script>
     <!--linked the scrollTrigger javascript file-->
     <script src="./js/signup.js"></script>
-    <!-- <script>
+    <script>
         var preloader = document.getElementById('loader1');
-        var delyeInMillisecond = 2000;
 
         function myFunction() {
-            setTimeout(function() {
                 preloader.style.display = 'none';
-            }, 2500);
-
         }
-    </script> -->
+    </script>
 </body>
 
 </html>

@@ -78,7 +78,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             $headers = "From: varadixit@gmail.com";
 
                             if (mail($email, $subject, $body, $headers)) {
-
                                 echo "
                                 <script>
                                     alert(`Account created! Check your email to verify!`);

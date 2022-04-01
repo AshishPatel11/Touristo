@@ -329,10 +329,7 @@ $filename = strtolower($files[0]);
     var delyeInMillisecond = 2000;
 
     function myFunction() {
-        setTimeout(function () {
             preloader.style.display = "none";
-        }, 2500);
-
     }
     $(".profile").click(function () {
         $(".profile-container").fadeIn("slow").css("display", "flex");
