@@ -12,28 +12,17 @@ include './php/loginBackend.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/nav.css">
-    <!--Linked the CSS File for navbar-->
-    <link rel="stylesheet" href="/css/fonts/fonts.css">
     <!--Linked Fonts CSS File-->
     <link rel="stylesheet" href="./css/signup.css">
     <!--Linked the CSS file for signup page-->
     <title>Login</title>
     <link rel="shortcut icon" href="./css/images/svg/title.svg">
-    <!--Linked the icon image will apear in title bar-->
-    <link rel="stylesheet" href="./css/lode1.css">
     <!-- Linked the googles icon from web👇 -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 </head>
 
-<body onload="myFunction()">
-
-    <div class="spinner" id="loader1">
-        <div class="dot1"></div>
-        <div class="dot2"></div>
-        <div class="dot3"></div>
-    </div>
-
+<body>
     <div class="nav-container">
         <!--Division which will contain the navbar-->
         <nav class="navbar">
@@ -92,7 +81,8 @@ include './php/loginBackend.php';
 
             <ul class="nav-ul">
                 <li class="nav-option"><a href="signup.php" id="login">SignUp</a></li>
-                <li class="nav-option"><a href="#">Help?</a></li>
+                <li class="nav-option"><a href="help.php">Help</a></li>
+                <li class="nav-option"><a href="aboutup.php">About Us</a></li>
             </ul>
             <img src="./css/images/profile.png" alt="" class="profile">
             <!-- Burger menu -->
@@ -242,7 +232,6 @@ include './php/loginBackend.php';
     <script src="./js/ScrollTrigger.min.js"></script>
     <!--linked the scrollTrigger javascript file-->
     <script src="./js/signup.js"></script>
-    <script src="/js/loader.js"></script>
     </section>
     </section>
     <script src="./js/gsap.min.js"></script>
@@ -250,8 +239,7 @@ include './php/loginBackend.php';
     <script src="./js/ScrollTrigger.min.js"></script>
     <!--linked the scrollTrigger javascript file-->
     <script src="./js/signup.js"></script>
-    <script src="/js/loader.js"></script>
-    <script>
+    <!-- <script>
         var preloader = document.getElementById('loader1');
         var delyeInMillisecond = 2000;
 
@@ -261,7 +249,7 @@ include './php/loginBackend.php';
             }, 2500);
 
         }
-    </script>
+    </script> -->
 </body>
 
 </html>

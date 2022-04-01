@@ -26,12 +26,7 @@ include './php/signupBackend.php';
     <title>Signup</title>
 </head>
 
-<body class="main" onload="myFunction()">
-    <div class="spinner" id="loader1">
-        <div class="dot1"></div>
-        <div class="dot2"></div>
-        <div class="dot3"></div>
-    </div>
+<body class="main">
     <div class="nav-container">
         <!--Division which will contain the navbar-->
         <nav class="navbar">
@@ -89,10 +84,10 @@ include './php/signupBackend.php';
             </a>
             <ul class="nav-ul">
                 <li class="nav-option"><a href="login.php#login">Login</a></li>
-                <li class="nav-option"><a href="#">Help?</a></li>
+                <li class="nav-option"><a href="help.php">Help</a></li>
+                <li class="nav-option"><a href="aboutus.php">About Us</a></li>
 
             </ul>
-            <img src="./css/images/profile.png" alt="" class="profile">
             <!-- Burger menu -->
             <div class="burger">
                 <div class="line1"></div>
@@ -106,7 +101,9 @@ include './php/signupBackend.php';
             <div class="intro-text">
                 <h1 class="title">Welcome To Touristo</h1>
                 <h3 class="title-description">Journey of Thousand Miles Begins With Single Step.</h3>
-                <a href="main.php" class="intro-btn"> Explore Now</a>
+                <form action="main.php" method="post">
+                    <input type="submit" class="intro-btn" value="Explore Now">
+                </form>
             </div>
             <div class="intro-svg">
                 <svg width="508" height="486" class="tour-svg" viewBox="0 0 508 486" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -243,7 +240,7 @@ include './php/signupBackend.php';
     <script src="./js/ScrollTrigger.min.js"></script>
     <!--linked the scrollTrigger javascript file-->
     <script src="./js/signup.js"></script>
-    <script>
+    <!-- <script>
         var preloader = document.getElementById('loader1');
         var delyeInMillisecond = 2000;
 
@@ -253,7 +250,7 @@ include './php/signupBackend.php';
             }, 2500);
 
         }
-    </script>
+    </script> -->
 </body>
 
 </html>
