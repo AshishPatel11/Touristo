@@ -53,16 +53,34 @@
     </a>
     <h1 class="welcome">Welcome, Admin</h1>
     <ul class="nav-ul">
-        <li class="nav-link1">User Settings <span>▼</span>
+        <li class="nav-link1">Manage User<span>▼</span>
             <ul class="options1">
                 <li class="option-link"><a href="admin_addUser.php" class="description">Add User</a></li>
                 <li class="option-link"><a href="admin_modifyUser.php" class="description">Modify User</a></li>
             </ul>
         </li>
-        <li class="nav-link2">Package Settings <span>▼</span>
+        <li class="nav-link2">Manage Package<span>▼</span>
             <ul class="options2">
                 <li class="option-link"><a href="admin_addPack.php" class="description">Add Package</a></li>
                 <li class="option-link"><a href="admin_modifyPack.php" class="description">Modify Package</a></li>
+            </ul>
+        </li>
+        <li class="nav-link2">Manage Bookings<span>▼</span>
+            <ul class="options2">
+                <!-- <li class="option-link"><a href=".php" class="description">Add Package</a></li>
+                <li class="option-link"><a href="admin_modifyPack.php" class="description">Modify Package</a></li> -->
+            </ul>
+        </li>
+        <li class="nav-link2">Manage Issues<span>▼</span>
+            <ul class="options2">
+                <!-- <li class="option-link"><a href=".php" class="description">Add Package</a></li>
+                <li class="option-link"><a href="admin_modifyPack.php" class="description">Modify Package</a></li> -->
+            </ul>
+        </li>
+        <li class="nav-link2">Manage Enquiries<span>▼</span>
+            <ul class="options2">
+                <!-- <li class="option-link"><a href=".php" class="description">Add Package</a></li>
+                <li class="option-link"><a href="admin_modifyPack.php" class="description">Modify Package</a></li> -->
             </ul>
         </li>
     </ul>
