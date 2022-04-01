@@ -2,7 +2,6 @@
 error_reporting(0);
 
 include '../php/connection.php';
-include '../admin/admin_nav.php';
 
 $unameerr = $emailerr = $contacterr = $err = "";
 
@@ -69,6 +68,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 
 <body>
+    <?php
+        include '../admin/admin_nav.php';
+    ?>
     <div class="admin-container">
 
         <div class="form-container1">
