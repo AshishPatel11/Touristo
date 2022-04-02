@@ -26,7 +26,12 @@ include './php/signupBackend.php';
     <title>Signup</title>
 </head>
 
-<body class="main">
+<body class="main" onload="myFunction()">
+    <div class="spinner" id="loader1">
+        <div class="dot1"></div>
+        <div class="dot2"></div>
+        <div class="dot3"></div>
+    </div>
     <div class="nav-container">
         <!--Division which will contain the navbar-->
         <nav class="navbar">
@@ -83,7 +88,7 @@ include './php/signupBackend.php';
                 </svg>
             </a>
             <ul class="nav-ul">
-                <li class="nav-option"><a href="login.php#login">Login</a></li>
+                <li class="nav-option"><a href="login.php">Login</a></li>
                 <li class="nav-option"><a href="help.php">Help</a></li>
                 <li class="nav-option"><a href="aboutus.php">About Us</a></li>
 
@@ -240,17 +245,12 @@ include './php/signupBackend.php';
     <script src="./js/ScrollTrigger.min.js"></script>
     <!--linked the scrollTrigger javascript file-->
     <script src="./js/signup.js"></script>
-    <!-- <script>
+    <script>
         var preloader = document.getElementById('loader1');
-        var delyeInMillisecond = 2000;
-
         function myFunction() {
-            setTimeout(function() {
-                preloader.style.display = 'none';
-            }, 2500);
-
+            preloader.style.display = 'none';
         }
-    </script> -->
+    </script>
 </body>
 
 </html>

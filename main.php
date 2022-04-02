@@ -23,11 +23,11 @@ include "php/connection.php";
 </head>
 
 <body onload="myFunction()">
-    <!-- <div class="spinner" id="loader1">
+    <div class="spinner" id="loader1">
         <div class="dot1"></div>
         <div class="dot2"></div>
         <div class="dot3"></div>
-    </div> -->
+    </div>
     <section class="page1">
         <div class="nav-container">
             <nav class="navbar">
@@ -139,7 +139,7 @@ include "php/connection.php";
                     } else {
                     ?>
                         <p>You are not logged in please login!</p>
-                        <a href="login.php#login" class="button">Login</a>
+                        <a href="login.php" class="button">Login</a>
                     <?php
                     }
                     ?>
@@ -266,12 +266,12 @@ include "php/connection.php";
     </div>
     <script>
         var preloader = document.getElementById('loader1');
-        var delyeInMillisecond = 2000;
+        // var delyeInMillisecond = 2000;
 
         function myFunction() {
-            setTimeout(function() {
+            // setTimeout(function() {
                 preloader.style.display = 'none';
-            }, 2500);
+            // }, 2500);
 
         }
         $(".profile").click(function() {

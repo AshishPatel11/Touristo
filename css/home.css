@@ -48,6 +48,14 @@ input::placeholder {
   font-family: poppins, sans-serif;
   font-size: 16px;
 }
+
+#loader1{
+  width: 100vw;
+  height: 100vh;
+  background: #121212;
+  z-index: 99999;
+}
+
 .submit-btn {
   background-color: rgba(0, 0, 0, 0.42);
   height: 40px;
@@ -79,6 +87,7 @@ input::placeholder {
   );
   border-radius: 10px;
 }
+
 .page2 {
   background-image: url(./images/home_bg21.jpg);
   background-size: cover;
