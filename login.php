@@ -90,7 +90,6 @@ include './php/loginBackend.php';
                 <li class="nav-option"><a href="help.php">Help</a></li>
                 <li class="nav-option"><a href="aboutus.php">About Us</a></li>
             </ul>
-            <img src="./css/images/profile.png" alt="" class="profile">
             <!-- Burger menu -->
             <div class="burger">
                 <div class="line1"></div>
