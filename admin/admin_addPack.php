@@ -20,7 +20,14 @@
         $duplicatePackage = "SELECT `pckg_name` FROM `pckg_tbl` WHERE pckg_name = '$packname'";
         $duplQuery = mysqli_query($conn, $duplicatePackage);
         $duplCount = mysqli_num_rows($duplQuery);
-//the condition for checking the package exist or not
+
+        if($duplCount > 0){
+            ?> 
+                <script>
+                    alert(`The package already exist!!`)
+                </script>
+            <?php
+        }else{
             $packageQuery = "INSERT INTO `pckg_tbl`(`pckg_name`, `state`, `pckg_price`, `maplink`, `pckg_para`, `sub_para1`, `sub_para2`, `sub_para3`, `sub_para4`, `sub_para5`, `sub_para6`, `tags`) VALUES ('$packname','$state','$price','$gmap','$mainpara','$p1desc','$p2desc','$p3desc','$p4desc','$p5desc','$p6desc','$tags')";
 
             $result = mysqli_query($conn, $packageQuery); 
@@ -595,6 +602,34 @@ alert(`Error in Creating page`)
             }else{
                 echo "extension not matched";
             }
+
+            // storing the thumbnail image to the system through php
+            $thumb = $_FILES['thumbImg'];
+
+            $thumbName = $_FILES['thumbImg']['name'];
+            $thumbTmpname = $_FILES['thumbImg']['tmp_name'];
+            $thumbSize = $_FILES['thumbImg']['size'];
+            $thumbErr = $_FILES['thumbImg']['error'];
+            $thumbtype = $_FILES['thumbImg']['type'];
+
+            $thumbExt = explode('.', $thumbName);
+            $thumbActExt = strtolower(end($thumbExt));
+
+            $allowed = array('jpg', 'jpeg', 'png');
+
+            if(in_array($thumbActExt, $allowed)){
+                if($thumbErr === 0){
+                    $thumbNameNew = $_POST['name'] ."_thumb". ".jpg";
+
+                    $thumbDestination = '../packages/images/'.$thumbNameNew;
+                    move_uploaded_file($thumbTmpname, $thumbDestination);
+                }else
+                {
+                    echo "error uploading image";
+                }
+            }else{
+                echo "extension not matched";
+            }
             // Place 1 image file storing in the system through php
             $place1 = $_FILES['place1Img'];
 
@@ -761,6 +796,7 @@ alert(`Error in Creating page`)
                 }
             }
     }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -799,6 +835,14 @@ alert(`Error in Creating page`)
                     <textarea name="Gmap" id="G-map" cols="20" rows="5" required></textarea>
                     <span class="tooltiptext">Select Embed a map from share option in Google Maps and copy the link and paste here</span>
                 </div>
+
+
+                <div class="upload-img">
+                    <label for="thumbnail-img">Thumbnail Image:</label>
+                    <input type="file" name="thumbImg" id="thumbnail-img" required>
+                </div>
+
+
                 <div class="upload-img">
                     <label for="banner-img">Banner Image:</label>
                     <input type="file" name="bannerImg" id="banner-img" required>
