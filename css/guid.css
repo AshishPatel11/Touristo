@@ -1,83 +1,112 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: #4C5270;
-  }
-.container1
+
+*
 {
-    position:absolute;
-    width: 100%;
-    height: 100%;
+    background-color: rgba(201, 173, 167, 1);
 }
-.container2
+.image
+{
+position: absolute;
+width: 167px;
+height: 167px;
+left: 82px;
+top: 187px;
+background-color: rgb(255, 255, 255);
+border-radius: 50%;
+}
+.im1
 {
     position: absolute;
-    width: 565px;
-    height: 321px;
-    left: 100px;
-    top: 130px;
-    background: #F652A0;
-}
-.n1{
-position: absolute;
-width: 535px;
-height: 367px;
-left: 100px;
-top: 500px;
-display: inline-table;
+width: 253px;
+height: 36px;
+left: 45px;
+top: 385px;
 
 }
-label
+h3
 {
-font-family: 'PT Serif';
+font-family: 'Abhaya Libre';
 font-style: normal;
 font-weight: 400;
-font-size: 25px;
-line-height: 53px;
-text-transform: capitalize;
-color: #36EEE0;
+font-size: 36px;
+line-height: 42px;
+color: #22223B;
 }
-
-.t1
+.h
 {
-margin-left: 10px;
-margin-bottom:15px;
-width: 246px;
+    width: 400px;
+}
+.b
+{
+font-weight: bold;
+position: absolute;
+top: 277px;
+}
+hr 
+{ 
+    position: absolute;
+    width: 410px;
+    height: 0px;
+    top: 340px;
+    border: 5px solid #22223B;
+    border-radius: 5px;
+} 
+.ski
+{
+position: absolute;
+width: 400px;
+height: 422px;
+top: 360px;
+}
+.l
+{
+    position: absolute;
+    width: 188px;
+    height: 52px;
+    font-weight: bold;
+    top: 820px;
+}
+.hre
+{
+position: absolute;
+width: 410px;
+height: 0px;
+top: 886px;
+border: 5px solid #22223B;
+}
+.leng
+{
+    position: absolute;
+width: 150px;
 height: 55px;
-margin-left: 50px;
-top: 400px;
-border-radius: 5px;
-background-color:  white;
+left: 10px;
+top: 940px;
+background: #22223B;
+border-radius: 10px;
 }
-textarea{
-    border-radius: 5px;
-width: 351px;
-margin-left: 25px;
-height: 154px;
-left: 100px;
-top: 705px;
-background-color: white;
-}
-.t2
+.leng2
 {
-    border-radius: 5px;
-    margin-left: 10px;
-    margin-bottom:15px;
-    width: 246px;
-    height: 55px;
-    margin-left: 30px;
-    top: 400px;
-    background-color: white;
+position: absolute;
+width: 150px;
+height: 55px;
+left: 252px;
+top: 940px;
+background: #22223B;
+border-radius: 10px;
 }
-.t3
+.leng3
 {
-    border-radius: 5px;
-    margin-left: 10px;
-    margin-bottom:15px;
-    width: 246px;
-    height: 55px;
-    margin-left: 10px;
-    top: 400px;
-    background-color: white;
+    position: absolute;
+    left: 30px;
+    top: 948px;
+    background-color: #22223B;
+    color: rgba(201, 173, 167, 1);
+ 
+}
+.leng4
+{
+    position: absolute;
+    left: 284px;
+    top: 948px;
+    background-color: #22223B;
+    color: rgba(201, 173, 167, 1);
 }
