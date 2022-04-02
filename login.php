@@ -232,14 +232,6 @@ include './php/loginBackend.php';
             </form>
         </div>
     </section>
-    </section>
-    <script src="./js/gsap.min.js"></script>
-    <!--linked the gsap javascript file-->
-    <script src="./js/ScrollTrigger.min.js"></script>
-    <!--linked the scrollTrigger javascript file-->
-    <script src="./js/signup.js"></script>
-    </section>
-    </section>
     <script src="./js/gsap.min.js"></script>
     <!--linked the gsap javascript file-->
     <script src="./js/ScrollTrigger.min.js"></script>

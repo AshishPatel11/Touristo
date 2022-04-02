@@ -87,7 +87,8 @@ input::placeholder {
   );
   border-radius: 10px;
 }
-page2 {
+
+.page2 {
   background-image: url(./images/home_bg21.jpg);
   background-size: cover;
   background-position: bottom;

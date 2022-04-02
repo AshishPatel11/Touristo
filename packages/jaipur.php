@@ -5,8 +5,8 @@ $files = explode(".", $basefilename);
 $filename = strtolower($files[0]);
 $filenameimg = str_replace(" ","\ ",$filename);
 
-include ('../php/connection.php');
-include_once ('./php/pack_backend.php');
+include ("../php/connection.php");
+include_once ("./php/pack_backend.php");
 
                     $packQuery = "SELECT * FROM `pckg_tbl` WHERE pckg_name='$filename'";
                     $result = $conn->query($packQuery);
@@ -46,6 +46,8 @@ include_once ('./php/pack_backend.php');
 </head>
 
 <body onload="myFunction()">
+
+
     <div class="spinner" id="loader1">
         <div class="dot1"></div>
         <div class="dot2"></div>

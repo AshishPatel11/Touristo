@@ -1,6 +1,5 @@
-/* From cssbuttons.io by @Mike11jr */
-#loader {
-  /* position: fixed; */
+#loader1 {
+  position: fixed;
   width: 100vw;
   height: 100vh;
   background: #121212;
