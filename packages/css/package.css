@@ -166,8 +166,8 @@ iframe {
 .place6-img {
   width: 500px;
   height: 350px;
-  object-fit: cover;
-  object-position: center;
+  background-size: cover;
+  background-position: center;
 }
 
 .place-container1,

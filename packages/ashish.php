@@ -288,73 +288,85 @@ include_once ("./php/pack_backend.php");
         </div>
     </section>
 
-<section class="background" style="background-image: url(./images/<?php echo $filenameimg; ?>_banner.jpg);">
-    <section class="page3">
-        <div class="main-desc">
-            <?php
+    <section class="background" style="background-image: url(./images/<?php echo $filenameimg; ?>_banner.jpg);">
+        <section class="page3">
+            <div class="main-desc">
+                <?php
                 echo $data["maplink"];
                 ?>
-            <p class="main-desc-paragraph"><?php echo $data["pckg_para"] ?></p>
-        </div>
-        <div class="place-container1"><!-- place 1 Container -->
-                    <p class="place1-desc"><?php echo $data["sub_para1"]; ?></p>
-                    <img src="./images/<?php echo $filenameimg; ?>_place1.jpg" class="place1-img" alt="Image of First place">
-        </div>
-        <div class="place-container2"><!-- place 2 Container -->
-            <img src="./images/<?php echo $filenameimg; ?>_place2.jpg" class="place2-img" alt="Image of second place">
-            <p class="place2-desc"><?php echo $data["sub_para2"]; ?></p>
-        </div>
-        <?php
+                <p class="main-desc-paragraph"><?php echo $data["pckg_para"] ?></p>
+            </div>
+            <div class="place-container1">
+                <!-- place 1 Container -->
+                <p class="place1-desc"><?php echo $data["sub_para1"]; ?></p>
+                <div class="place1-img" style="background-image: url(./images/<?php echo $filenameimg; ?>_place1.jpg);">
+                </div>
+            </div>
+            <div class="place-container2">
+                <!-- place 2 Container -->
+                <div class="place2-img" style="background-image: url(./images/<?php echo $filenameimg; ?>_place2.jpg);">
+                </div>
+                <p class="place2-desc"><?php echo $data["sub_para2"]; ?></p>
+            </div>
+            <?php
                 $imgAddr = "./images/".$filename."_place3".".jpg";
                 $imgExist = file_exists("$imgAddr");
                 if($imgExist === true){
             ?>
-        <div class="place-container3"><!-- place 3 Container -->
-                    <p class="place3-desc"><?php echo $data["sub_para3"]; ?></p>
-                    <img src="./images/<?php echo $filenameimg; ?>_place3.jpg" class="place3-img" alt="Image of third place">
-        </div>
-        <?php } ?>
-        <?php
+            <div class="place-container3">
+                <!-- place 3 Container -->
+                <p class="place3-desc"><?php echo $data["sub_para3"]; ?></p>
+                <div class="place3-img" style="background-image: url(./images/<?php echo $filenameimg; ?>_place3.jpg);">
+                </div>
+            </div>
+            <?php } ?>
+            <?php
                 $imgAddr = "./images/".$filename."_place4".".jpg";
                 $imgExist = file_exists("$imgAddr");
                 if($imgExist === true){
             ?>
-        <div class="place-container4"><!-- place 4 Container -->
-            <img src="./images/<?php echo $filenameimg; ?>_place4.jpg" class="place4-img" alt="Image of fourth place">
-            <p class="place4-desc"><?php echo $data["sub_para4"]; ?></p>
-        </div>
-        <?php } ?>
-        <?php
+            <div class="place-container4">
+                <!-- place 4 Container -->
+                <div class="place4-img" style="background-image: url(./images/<?php echo $filenameimg; ?>_place4.jpg);">
+                </div>
+                <p class="place4-desc"><?php echo $data["sub_para4"]; ?></p>
+            </div>
+            <?php } ?>
+            <?php
                 $imgAddr = "./images/".$filename."_place5".".jpg";
                 $imgExist = file_exists("$imgAddr");
                 if($imgExist === true){
             ?>
-        <div class="place-container5"><!-- place 5 Container -->
-                    <p class="place5-desc"><?php echo $data["sub_para5"]; ?></p>
-                    <img src="./images/<?php echo $filenameimg; ?>_place5.jpg" class="place5-img" alt="Image of fifth place">
-        </div>
-        <?php } ?>
-        <?php
+            <div class="place-container5">
+                <!-- place 5 Container -->
+                <p class="place5-desc"><?php echo $data["sub_para5"]; ?></p>
+                <div class="place5-img" style="background-image: url(./images/<?php echo $filenameimg; ?>_place5.jpg);">
+                </div>
+            </div>
+            <?php } ?>
+            <?php
                 $imgAddr = "./images/".$filename."_place6".".jpg";
                 $imgExist = file_exists("$imgAddr");
                 if($imgExist === true){
             ?>
-        <div class="place-container6"><!-- place 6 Container -->
-            <img src="./images/<?php echo $filenameimg; ?>_place6.jpg" class="place6-img" alt="Image of sixth place">
-            <p class="place6-desc"><?php echo $data["sub_para6"]; ?></p>
-        </div>
-        <?php } ?>
+            <div class="place-container6">
+                <!-- place 6 Container -->
+                <div class="place6-img" style="background-image: url(./images/<?php echo $filenameimg; ?>_place6.jpg);">
+                </div>
+                <p class="place6-desc"><?php echo $data["sub_para6"]; ?></p>
+            </div>
+            <?php } ?>
 
 
-        <div class="options-container">
-            <form action="#" method="post" class="wishlist-form">
-                <button type="submit" class="wish-btn"><span>Add To Wishliste</span></button>
-            </form>
-            <form action="#" method="post" class="Book-form">
-                <button type="submit" class="book-btn"><span>Book Now</span></button>
-            </form>
-        </div>
-    </section>
+            <div class="options-container">
+                <form action="#" method="post" class="wishlist-form">
+                    <button type="submit" class="wish-btn"><span>Add To Wishliste</span></button>
+                </form>
+                <form action="#" method="post" class="Book-form">
+                    <button type="submit" class="book-btn"><span>Book Now</span></button>
+                </form>
+            </div>
+        </section>
     </section>
 
 

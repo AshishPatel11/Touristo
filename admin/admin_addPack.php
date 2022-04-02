@@ -2,6 +2,99 @@
     session_start();
     require_once "../php/connection.php";
     if(isset($_POST['submit'])){
+            
+            $banner = $_FILES['bannerImg'];
+
+            $bannerName = $_FILES['bannerImg']['name'];
+            $bannerTmpname = $_FILES['bannerImg']['tmp_name'];
+            $bannerSize = $_FILES['bannerImg']['size'];
+            $bannerErr = $_FILES['bannerImg']['error'];
+            $bannertype = $_FILES['bannerImg']['type'];
+
+            $bannerExt = explode('.', $bannerName);
+            $bannerActExt = strtolower(end($bannerExt));
+
+
+            $thumb = $_FILES['thumbImg'];
+
+            $thumbName = $_FILES['thumbImg']['name'];
+            $thumbTmpname = $_FILES['thumbImg']['tmp_name'];
+            $thumbSize = $_FILES['thumbImg']['size'];
+            $thumbErr = $_FILES['thumbImg']['error'];
+            $thumbtype = $_FILES['thumbImg']['type'];
+
+            $thumbExt = explode('.', $thumbName);
+            $thumbActExt = strtolower(end($thumbExt));
+
+            $place1 = $_FILES['place1Img'];
+
+            $place1Name = $_FILES['place1Img']['name'];
+            $place1Tmpname = $_FILES['place1Img']['tmp_name'];
+            $place1Size = $_FILES['place1Img']['size'];
+            $place1Err = $_FILES['place1Img']['error'];
+            $place1type = $_FILES['place1Img']['type'];
+
+            $place1Ext = explode('.', $place1Name);
+            $place1ActExt = strtolower(end($place1Ext));
+
+
+            $place2 = $_FILES['place2Img'];
+
+            $place2Name = $_FILES['place2Img']['name'];
+            $place2Tmpname = $_FILES['place2Img']['tmp_name'];
+            $place2Size = $_FILES['place2Img']['size'];
+            $place2Err = $_FILES['place2Img']['error'];
+            $place2type = $_FILES['place2Img']['type'];
+
+            $place2Ext = explode('.', $place2Name);
+            $place2ActExt = strtolower(end($place2Ext));
+
+
+            $place3 = $_FILES['place3Img'];
+
+            $place3Name = $_FILES['place3Img']['name'];
+            $place3Tmpname = $_FILES['place3Img']['tmp_name'];
+            $place3Size = $_FILES['place3Img']['size'];
+            $place3Err = $_FILES['place3Img']['error'];
+            $place3type = $_FILES['place3Img']['type'];
+
+            $place3Ext = explode('.', $place3Name);
+            $place3ActExt = strtolower(end($place3Ext));
+
+
+            $place4 = $_FILES['place4Img'];
+
+            $place4Name = $_FILES['place4Img']['name'];
+            $place4Tmpname = $_FILES['place4Img']['tmp_name'];
+            $place4Size = $_FILES['place4Img']['size'];
+            $place4Err = $_FILES['place4Img']['error'];
+            $place4type = $_FILES['place4Img']['type'];
+
+            $place4Ext = explode('.', $place4Name);
+            $place4ActExt = strtolower(end($place4Ext));
+
+
+            $place5 = $_FILES['place5Img'];
+
+            $place5Name = $_FILES['place5Img']['name'];
+            $place5Tmpname = $_FILES['place5Img']['tmp_name'];
+            $place5Size = $_FILES['place5Img']['size'];
+            $place5Err = $_FILES['place5Img']['error'];
+            $place5type = $_FILES['place5Img']['type'];
+
+            $place5Ext = explode('.', $place5Name);
+            $place5ActExt = strtolower(end($place5Ext));
+
+
+            $place6 = $_FILES['place6Img'];
+            $place6Name = $_FILES['place6Img']['name'];
+            $place6Tmpname = $_FILES['place6Img']['tmp_name'];
+            $place6Size = $_FILES['place6Img']['size'];
+            $place6Err = $_FILES['place6Img']['error'];
+            $place6type = $_FILES['place6Img']['type'];
+
+            $place6Ext = explode('.', $place6Name);
+            $place6ActExt = strtolower(end($place6Ext));
 
         $packname = $conn -> real_escape_string($_POST['name']);
         $price = $conn -> real_escape_string($_POST['price']);
@@ -14,7 +107,49 @@
         $p5desc = $conn -> real_escape_string($_POST['place5Desc']);
         $p6desc = $conn -> real_escape_string($_POST['place6Desc']);
         $gmap = $conn -> real_escape_string($_POST['Gmap']);
+        $tagline = $conn -> real_escape_string($_POST['tagline']);
         $tags = $conn -> real_escape_string($_POST['tags']);
+
+        //validation for place 3
+        if(($place3Name != "" && $p3desc === "") || ($p3desc != "" 
+        && $place3Name === "")){
+            die("
+                    <script>
+                        alert(`Image or description for place 3 is not completed!`);
+                        location.replace(`admin_addPack.php`);
+                    </script>
+            ");
+        }
+
+        //validation for place 4
+        if(($place4Name != "" && $p4desc === "") || ($p4desc != "" 
+        && $place4Name === "")){
+            die("
+                    <script>
+                        alert(`Image or description for place 4 is not completed!`);
+                        location.replace(`admin_addPack.php`);
+                    </script>
+            ");
+        }
+        if(($place5Name != "" && $p5desc === "") || ($p5desc != "" 
+        && $place5Name === "")){
+            die("
+                    <script>
+                        alert(`Image or description for place 5 is not completed!`);
+                        location.replace(`admin_addPack.php`);
+                    </script>
+            ");
+        }
+        if(($place6Name != "" && $p6desc === "") || ($p6desc != "" 
+        && $place6Name === "")){
+            die("
+                    <script>
+                        alert(`Image or description for place 6 is not completed!`);
+                        location.replace(`admin_addPack.php`);
+                    </script>
+            ");
+        }
+
 
         // checking th entered package already exist or not
         $duplicatePackage = "SELECT `pckg_name` FROM `pckg_tbl` WHERE pckg_name = '$packname'";
@@ -22,13 +157,13 @@
         $duplCount = mysqli_num_rows($duplQuery);
 
         if($duplCount > 0){
-            ?> 
-                <script>
-                    alert(`The package already exist!!`)
-                </script>
-            <?php
+            ?>
+<script>
+alert(`The package already exist!!`)
+</script>
+<?php
         }else{
-            $packageQuery = "INSERT INTO `pckg_tbl`(`pckg_name`, `state`, `pckg_price`, `maplink`, `pckg_para`, `sub_para1`, `sub_para2`, `sub_para3`, `sub_para4`, `sub_para5`, `sub_para6`, `tags`) VALUES ('$packname','$state','$price','$gmap','$mainpara','$p1desc','$p2desc','$p3desc','$p4desc','$p5desc','$p6desc','$tags')";
+            $packageQuery = "INSERT INTO `pckg_tbl`(`pckg_name`, `state`, `pckg_price`, `maplink`, `tagline`, `pckg_para`, `sub_para1`, `sub_para2`, `sub_para3`, `sub_para4`, `sub_para5`, `sub_para6`, `tags`) VALUES ('$packname','$state','$price','$gmap','$tagline','$mainpara','$p1desc','$p2desc','$p3desc','$p4desc','$p5desc','$p6desc','$tags')";
 
             $result = mysqli_query($conn, $packageQuery); 
 
@@ -325,73 +460,85 @@ include_once ("./php/pack_backend.php");
         </div>
     </section>
 
-<section class="background" style="background-image: url(./images/<?php echo $filenameimg; ?>_banner.jpg);">
-    <section class="page3">
-        <div class="main-desc">
-            <?php
+    <section class="background" style="background-image: url(./images/<?php echo $filenameimg; ?>_banner.jpg);">
+        <section class="page3">
+            <div class="main-desc">
+                <?php
                 echo $data["maplink"];
                 ?>
-            <p class="main-desc-paragraph"><?php echo $data["pckg_para"] ?></p>
-        </div>
-        <div class="place-container1"><!-- place 1 Container -->
-                    <p class="place1-desc"><?php echo $data["sub_para1"]; ?></p>
-                    <img src="./images/<?php echo $filenameimg; ?>_place1.jpg" class="place1-img" alt="Image of First place">
-        </div>
-        <div class="place-container2"><!-- place 2 Container -->
-            <img src="./images/<?php echo $filenameimg; ?>_place2.jpg" class="place2-img" alt="Image of second place">
-            <p class="place2-desc"><?php echo $data["sub_para2"]; ?></p>
-        </div>
-        <?php
+                <p class="main-desc-paragraph"><?php echo $data["pckg_para"] ?></p>
+            </div>
+            <div class="place-container1">
+                <!-- place 1 Container -->
+                <p class="place1-desc"><?php echo $data["sub_para1"]; ?></p>
+                <div class="place1-img" style="background-image: url(./images/<?php echo $filenameimg; ?>_place1.jpg);">
+                </div>
+            </div>
+            <div class="place-container2">
+                <!-- place 2 Container -->
+                <div class="place2-img" style="background-image: url(./images/<?php echo $filenameimg; ?>_place2.jpg);">
+                </div>
+                <p class="place2-desc"><?php echo $data["sub_para2"]; ?></p>
+            </div>
+            <?php
                 $imgAddr = "./images/".$filename."_place3".".jpg";
                 $imgExist = file_exists("$imgAddr");
                 if($imgExist === true){
             ?>
-        <div class="place-container3"><!-- place 3 Container -->
-                    <p class="place3-desc"><?php echo $data["sub_para3"]; ?></p>
-                    <img src="./images/<?php echo $filenameimg; ?>_place3.jpg" class="place3-img" alt="Image of third place">
-        </div>
-        <?php } ?>
-        <?php
+            <div class="place-container3">
+                <!-- place 3 Container -->
+                <p class="place3-desc"><?php echo $data["sub_para3"]; ?></p>
+                <div class="place3-img" style="background-image: url(./images/<?php echo $filenameimg; ?>_place3.jpg);">
+                </div>
+            </div>
+            <?php } ?>
+            <?php
                 $imgAddr = "./images/".$filename."_place4".".jpg";
                 $imgExist = file_exists("$imgAddr");
                 if($imgExist === true){
             ?>
-        <div class="place-container4"><!-- place 4 Container -->
-            <img src="./images/<?php echo $filenameimg; ?>_place4.jpg" class="place4-img" alt="Image of fourth place">
-            <p class="place4-desc"><?php echo $data["sub_para4"]; ?></p>
-        </div>
-        <?php } ?>
-        <?php
+            <div class="place-container4">
+                <!-- place 4 Container -->
+                <div class="place4-img" style="background-image: url(./images/<?php echo $filenameimg; ?>_place4.jpg);">
+                </div>
+                <p class="place4-desc"><?php echo $data["sub_para4"]; ?></p>
+            </div>
+            <?php } ?>
+            <?php
                 $imgAddr = "./images/".$filename."_place5".".jpg";
                 $imgExist = file_exists("$imgAddr");
                 if($imgExist === true){
             ?>
-        <div class="place-container5"><!-- place 5 Container -->
-                    <p class="place5-desc"><?php echo $data["sub_para5"]; ?></p>
-                    <img src="./images/<?php echo $filenameimg; ?>_place5.jpg" class="place5-img" alt="Image of fifth place">
-        </div>
-        <?php } ?>
-        <?php
+            <div class="place-container5">
+                <!-- place 5 Container -->
+                <p class="place5-desc"><?php echo $data["sub_para5"]; ?></p>
+                <div class="place5-img" style="background-image: url(./images/<?php echo $filenameimg; ?>_place5.jpg);">
+                </div>
+            </div>
+            <?php } ?>
+            <?php
                 $imgAddr = "./images/".$filename."_place6".".jpg";
                 $imgExist = file_exists("$imgAddr");
                 if($imgExist === true){
             ?>
-        <div class="place-container6"><!-- place 6 Container -->
-            <img src="./images/<?php echo $filenameimg; ?>_place6.jpg" class="place6-img" alt="Image of sixth place">
-            <p class="place6-desc"><?php echo $data["sub_para6"]; ?></p>
-        </div>
-        <?php } ?>
+            <div class="place-container6">
+                <!-- place 6 Container -->
+                <div class="place6-img" style="background-image: url(./images/<?php echo $filenameimg; ?>_place6.jpg);">
+                </div>
+                <p class="place6-desc"><?php echo $data["sub_para6"]; ?></p>
+            </div>
+            <?php } ?>
 
 
-        <div class="options-container">
-            <form action="#" method="post" class="wishlist-form">
-                <button type="submit" class="wish-btn"><span>Add To Wishliste</span></button>
-            </form>
-            <form action="#" method="post" class="Book-form">
-                <button type="submit" class="book-btn"><span>Book Now</span></button>
-            </form>
-        </div>
-    </section>
+            <div class="options-container">
+                <form action="#" method="post" class="wishlist-form">
+                    <button type="submit" class="wish-btn"><span>Add To Wishliste</span></button>
+                </form>
+                <form action="#" method="post" class="Book-form">
+                    <button type="submit" class="book-btn"><span>Book Now</span></button>
+                </form>
+            </div>
+        </section>
     </section>
 
 
@@ -576,16 +723,7 @@ alert(`Error in Creating page`)
 <?php
             }
             // banner image file storing in the system through php
-            $banner = $_FILES['bannerImg'];
-
-            $bannerName = $_FILES['bannerImg']['name'];
-            $bannerTmpname = $_FILES['bannerImg']['tmp_name'];
-            $bannerSize = $_FILES['bannerImg']['size'];
-            $bannerErr = $_FILES['bannerImg']['error'];
-            $bannertype = $_FILES['bannerImg']['type'];
-
-            $bannerExt = explode('.', $bannerName);
-            $bannerActExt = strtolower(end($bannerExt));
+            
 
             $allowed = array('jpg', 'jpeg', 'png');
 
@@ -604,16 +742,7 @@ alert(`Error in Creating page`)
             }
 
             // storing the thumbnail image to the system through php
-            $thumb = $_FILES['thumbImg'];
-
-            $thumbName = $_FILES['thumbImg']['name'];
-            $thumbTmpname = $_FILES['thumbImg']['tmp_name'];
-            $thumbSize = $_FILES['thumbImg']['size'];
-            $thumbErr = $_FILES['thumbImg']['error'];
-            $thumbtype = $_FILES['thumbImg']['type'];
-
-            $thumbExt = explode('.', $thumbName);
-            $thumbActExt = strtolower(end($thumbExt));
+            
 
             $allowed = array('jpg', 'jpeg', 'png');
 
@@ -631,16 +760,7 @@ alert(`Error in Creating page`)
                 echo "extension not matched";
             }
             // Place 1 image file storing in the system through php
-            $place1 = $_FILES['place1Img'];
-
-            $place1Name = $_FILES['place1Img']['name'];
-            $place1Tmpname = $_FILES['place1Img']['tmp_name'];
-            $place1Size = $_FILES['place1Img']['size'];
-            $place1Err = $_FILES['place1Img']['error'];
-            $place1type = $_FILES['place1Img']['type'];
-
-            $place1Ext = explode('.', $place1Name);
-            $place1ActExt = strtolower(end($place1Ext));
+            
 
             $allowed = array('jpg', 'jpeg', 'png');
 
@@ -658,16 +778,7 @@ alert(`Error in Creating page`)
                 echo "extension not matched";
             }
             // Place 2 image file storing in the system through php
-            $place2 = $_FILES['place2Img'];
-
-            $place2Name = $_FILES['place2Img']['name'];
-            $place2Tmpname = $_FILES['place2Img']['tmp_name'];
-            $place2Size = $_FILES['place2Img']['size'];
-            $place2Err = $_FILES['place2Img']['error'];
-            $place2type = $_FILES['place2Img']['type'];
-
-            $place2Ext = explode('.', $place2Name);
-            $place2ActExt = strtolower(end($place2Ext));
+            
 
             $allowed = array('jpg', 'jpeg', 'png');
 
@@ -685,16 +796,7 @@ alert(`Error in Creating page`)
                 echo "extension not matched";
             }
             // Place 3 image file storing in the system through php
-            $place3 = $_FILES['place3Img'];
-
-            $place3Name = $_FILES['place3Img']['name'];
-            $place3Tmpname = $_FILES['place3Img']['tmp_name'];
-            $place3Size = $_FILES['place3Img']['size'];
-            $place3Err = $_FILES['place3Img']['error'];
-            $place3type = $_FILES['place3Img']['type'];
-
-            $place3Ext = explode('.', $place3Name);
-            $place3ActExt = strtolower(end($place3Ext));
+            
 
             $allowed = array('jpg', 'jpeg', 'png');
             if(!empty($place3Name)){
@@ -713,16 +815,7 @@ alert(`Error in Creating page`)
             }
         }
             // Place 4 image storing in the system through php
-            $place4 = $_FILES['place4Img'];
-
-            $place4Name = $_FILES['place4Img']['name'];
-            $place4Tmpname = $_FILES['place4Img']['tmp_name'];
-            $place4Size = $_FILES['place4Img']['size'];
-            $place4Err = $_FILES['place4Img']['error'];
-            $place4type = $_FILES['place4Img']['type'];
-
-            $place4Ext = explode('.', $place4Name);
-            $place4ActExt = strtolower(end($place4Ext));
+            
 
             $allowed = array('jpg', 'jpeg', 'png');
             if(!empty($place4Name)){
@@ -741,16 +834,7 @@ alert(`Error in Creating page`)
             }
         }
             // Place 5 image file storing in the system through php
-            $place5 = $_FILES['place5Img'];
-
-            $place5Name = $_FILES['place5Img']['name'];
-            $place5Tmpname = $_FILES['place5Img']['tmp_name'];
-            $place5Size = $_FILES['place5Img']['size'];
-            $place5Err = $_FILES['place5Img']['error'];
-            $place5type = $_FILES['place5Img']['type'];
-
-            $place5Ext = explode('.', $place5Name);
-            $place5ActExt = strtolower(end($place5Ext));
+            
 
             $allowed = array('jpg', 'jpeg', 'png');
             if(!empty($place5Name)){
@@ -769,15 +853,7 @@ alert(`Error in Creating page`)
             }
         }
             // Place 6 imgage file storef in the system through php
-            $place6 = $_FILES['place6Img'];
-                $place6Name = $_FILES['place6Img']['name'];
-                $place6Tmpname = $_FILES['place6Img']['tmp_name'];
-                $place6Size = $_FILES['place6Img']['size'];
-                $place6Err = $_FILES['place6Img']['error'];
-                $place6type = $_FILES['place6Img']['type'];
-
-                $place6Ext = explode('.', $place6Name);
-                $place6ActExt = strtolower(end($place6Ext));
+            
 
                 $allowed = array('jpg', 'jpeg', 'png');
                 if(!empty($place6Name)){
@@ -795,6 +871,12 @@ alert(`Error in Creating page`)
                     echo "extension not matched";
                 }
             }
+            echo "
+                <script>
+                    alert(`The package has been created successfully!!`);
+                    location.replace(`packages/$packname.php`);
+                </script>
+            ";
     }
 }
 ?>
@@ -832,8 +914,16 @@ alert(`Error in Creating page`)
                 </div>
                 <div class="input-box tooltip">
                     <label for="G-map">Google Map Link:</label>
-                    <textarea name="Gmap" id="G-map" cols="20" rows="5" required></textarea>
-                    <span class="tooltiptext">Select Embed a map from share option in Google Maps and copy the link and paste here</span>
+                    <textarea name="Gmap" id="G-map" cols="30" rows="3" required></textarea>
+                    <span class="tooltiptext">Select Embed a map from share option in Google Maps and copy the link and
+                        paste here</span>
+                </div>
+
+
+                <div class="input-box tooltip">
+                    <label for="Tagline">Tagline: </label>
+                    <textarea name="tagline" id="Tagline" cols="30" rows="3" required></textarea>
+                    <span class="tooltiptext">Tagline will be displayed on Thumbnail</span>
                 </div>
 
 
@@ -906,8 +996,9 @@ alert(`Error in Creating page`)
                 </div>
                 <div class="input-box tooltip">
                     <label for="tags">Relative Tags:</label>
-                    <textarea name="tags" id="tags" cols="30" rows="5"></textarea>
-                    <span class="tooltiptext">Add tags that are related with the packages for better searching results.</span>
+                    <textarea name="tags" id="tags" cols="30" rows="5" required></textarea>
+                    <span class="tooltiptext">Add tags that are related with the packages for better searching
+                        results.</span>
                 </div>
                 <div class="input-btn">
                     <button type="submit" name="submit">Create</button>
