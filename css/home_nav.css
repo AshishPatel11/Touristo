@@ -7,6 +7,10 @@
   font-family: poppins, sans-serif;
 }
 
+nav{
+  background-color: #404040;
+}
+
 .profile {
   width: 55px;
   height: 55px;
@@ -225,10 +229,6 @@ div .close {
 ============================================================================== */
 
 @media screen and (max-width: 730px) {
-
-  /* body{
-    display: none;
-  } */
 
   .li-link {
     font-size: 17px;
