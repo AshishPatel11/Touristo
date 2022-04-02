@@ -28,8 +28,7 @@ include "php/connection.php";
         <div class="dot2"></div>
         <div class="dot3"></div>
     </div>
-    <div class="footer-container">
-        <div class="nav-container">
+        <div class="nav-container" style="position: absolute;">
             <nav class="navbar">
                 <!-- Burger menu -->
                 <div class="burger">
@@ -146,6 +145,7 @@ include "php/connection.php";
         </div>
         <img class="back window" src="css\images\svg\Frame 2.svg" alt="">
         <img src="css\images\svg\about us 2.svg" alt="" class="back responsive">
+    <div class="footer-container">
         <footer>
             <div class="part1">
                 <a xlink:href="./main.php">
@@ -237,7 +237,10 @@ include "php/connection.php";
                 $(".profile-container").fadeOut("slow");
             });
         });
-    </script>
+    </script><script src="./js/gsap.min.js"></script>
+<!--linked the gsap javascript file-->
+<script src="./js/ScrollTrigger.min.js"></script>
+<!--linked the scrollTrigger javascript file-->
     <script src="js/home_nav.js"></script>
 </body>
 

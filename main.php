@@ -29,6 +29,7 @@ include "php/connection.php";
         <div class="dot3"></div>
     </div>
     <section class="page1">
+        <!--nav bar code starts here-->
         <div class="nav-container">
             <nav class="navbar">
                 <!-- Burger menu -->
@@ -37,7 +38,6 @@ include "php/connection.php";
                     <div class="line2"></div>
                     <div class="line3"></div>
                 </div>
-                <!--nav bar code starts here-->
                 <svg class="logo-svg" width="202" height="75" viewBox="0 0 202 75" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <a xlink:href="./main.php">
                     <g class="logo">
