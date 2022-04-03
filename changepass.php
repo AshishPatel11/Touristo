@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     ?>
                 <script>
                     alert(`Password Changed!`);
-                    location.replace('main.php');
+                    location.replace('logout.php');
                 </script>
             <?php
             } else {
