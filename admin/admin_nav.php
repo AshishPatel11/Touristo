@@ -65,23 +65,8 @@
                 <li class="option-link"><a href="admin_modifyPack.php" class="description">Modify Package</a></li>
             </ul>
         </li>
-        <li class="nav-link2">Manage Bookings<span>▼</span>
-            <ul class="options2">
-                <!-- <li class="option-link"><a href=".php" class="description">Add Package</a></li>
-                <li class="option-link"><a href="admin_modifyPack.php" class="description">Modify Package</a></li> -->
-            </ul>
-        </li>
-        <li class="nav-link2">Manage Issues<span>▼</span>
-            <ul class="options2">
-                <!-- <li class="option-link"><a href=".php" class="description">Add Package</a></li>
-                <li class="option-link"><a href="admin_modifyPack.php" class="description">Modify Package</a></li> -->
-            </ul>
-        </li>
-        <li class="nav-link2">Manage Enquiries<span>▼</span>
-            <ul class="options2">
-                <!-- <li class="option-link"><a href=".php" class="description">Add Package</a></li>
-                <li class="option-link"><a href="admin_modifyPack.php" class="description">Modify Package</a></li> -->
-            </ul>
-        </li>
+        <a class="nav-link2">Manage Bookings</a>
+        <a class="nav-link2">Manage Issues</a>
+        <a class="nav-link2" href="manage_enquiries.php">Manage Enquiries</a>
     </ul>
 </nav>

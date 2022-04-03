@@ -37,7 +37,7 @@
 
                     include '../php/connection.php';
 
-                    $search = "SELECT * FROM `user_tbl`";
+                    $search = "SELECT * FROM `user_tbl` WHERE acc_typ = 'admin' OR acc_typ = 'hotel' OR acc_typ = 'guide'";
                     $result = mysqli_query($conn, $search);
 
                     if ($result->num_rows > 0) {
