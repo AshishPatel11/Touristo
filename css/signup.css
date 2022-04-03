@@ -1,0 +1,270 @@
+/* Imported fonts form web */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;500;600;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#loader1{
+  width: 100%;
+  height: 100vh;
+  z-index: 99999;
+  background-color: #121212;
+}
+
+.material-icons {
+  margin: 0;
+  padding: 0;
+  transform: translateY(2px);
+}
+body {
+  background-image: radial-gradient(rgb(219, 217, 217), rgb(248, 248, 248));
+}
+.err {
+  color: rgb(255, 17, 17);
+  font-weight: 600;
+  font-size: 15px;
+}
+.sec {
+  height: 90vh;
+}
+.intro-section {
+  font-family: poppins, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
+  height: 80%;
+}
+.title {
+  font-size: 46px;
+  font-family: poppins, sans-serif;
+  color: rgba(51, 47, 47, 1);
+  margin: 20px 0px;
+}
+.title-description {
+  color: rgba(77, 77, 77, 1);
+  font-weight: normal;
+  font-size: 26px;
+  width: 45%;
+}
+.intro-btn {
+  text-decoration: none;
+  font-family: poppins, sans-serif;
+  font-weight: bold;
+  color: rgba(51, 47, 47, 1);
+  border: 2px solid rgba(51, 47, 47, 1);
+  border-radius: 8px;
+  width: 150px;
+  height: 50px;
+  font-size: 18px;
+  margin: 20px 0px;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 181, 162, 0.849),
+    rgba(152, 203, 255, 0.897)
+  );
+  transition: 500ms;
+}
+.intro-btn:hover {
+  cursor: pointer;
+  box-shadow: 0px 3px 25px rgba(51, 47, 47, 1);
+}
+.intro-svg {
+  display: flex;
+  justify-content: right;
+}
+.tour-svg {
+  height: 80%;
+  width: 80%;
+}
+.wave img {
+  width: 100%;
+  position: absolute;
+  z-index: -2;
+  left: 0px;
+  bottom: 0px;
+  margin: 0px;
+  padding: 0px;
+}
+.sec2 {
+  height: 100vh;
+  background-image: url(./images/signbg.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  z-index: 5;
+  font-family: poppins;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding-left: 70px;
+  /* overflow-y: hidden; */
+}
+#login {
+  height: 100vh;
+}
+.input-box {
+  color: rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: column;
+}
+.input-box,
+.input-btn,
+.login-link,
+.form-title,
+.login-options {
+  margin: auto;
+  width: 70%;
+}
+.sign-form {
+  margin: 10px;
+  padding: 25px 0px;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(144, 144, 144, 0.924),
+    rgba(164, 164, 164, 0)
+  );
+  border: 2px solid black;
+  width: 400px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+}
+input {
+  background-color: rgba(196, 196, 196, 1);
+  border: none;
+  padding: 2px;
+  outline: none;
+  border-radius: 3px;
+}
+.google,
+.facebook {
+  width: 40px;
+  height: 40px;
+}
+.login-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 65%;
+}
+.login-options > * {
+  margin: 10px 0px;
+}
+.login-link a {
+  color: rgba(0, 255, 133, 1);
+  text-decoration: none;
+}
+.input-btn input {
+  width: 100%;
+  margin: 24px 0px;
+  height: 32px;
+  font-family: poppins;
+  border-radius: 7px;
+  color: rgb(85, 85, 85);
+  background-color: rgba(0, 255, 133, 1);
+  cursor: pointer;
+}
+.form-container {
+  border: 2px solid black;
+  display: inline-block;
+  border-radius: 21px;
+  background-color: rgba(241, 241, 241, 0.1);
+  box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.657);
+  transform: scale(0.95);
+}
+.form-title {
+  background: -webkit-radial-gradient(
+    rgba(72, 61, 194, 1),
+    rgba(198, 34, 63, 1)
+  );
+  text-align: center;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 40px;
+  font-weight: bolder;
+  font-family: poppins;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px gray;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(88, 80, 80);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(51, 47, 47);
+}
+/* ......................................responsive design below👇 ...................................... */
+@media screen and (max-width: 1000px) {
+  .title {
+    font-size: 38px;
+  }
+  .title-description {
+    font-size: 22px;
+  }
+  .intro-btn {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 830px) {
+  .title {
+    font-size: 30px;
+  }
+  .title-description {
+    font-size: 18px;
+  }
+  .intro-btn input {
+    font-size: 12px;
+    width: 40%;
+  }
+}
+@media screen and (max-width: 700px) {
+  .intro-section {
+    flex-direction: column;
+    align-items: self-end;
+    width: 100%;
+    margin: 0%;
+  }
+  .wave img {
+    display: none;
+    pointer-events: none;
+  }
+  .intro-svg {
+    align-self: center;
+    justify-content: center;
+  }
+  .title {
+    text-align: start;
+  }
+  .title-description {
+    text-align: center;
+  }
+  .tour-svg {
+    height: 90%;
+    width: 90%;
+  }
+  .intro-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+  }
+  .sec {
+    height: auto;
+  }
+  .sec2 {
+    background-image: url(./images/bg_rsp.jpg);
+    padding-left: 0;
+    justify-content: center;
+  }
+}

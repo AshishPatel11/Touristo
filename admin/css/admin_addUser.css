@@ -1,0 +1,198 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+* {
+    font-family: poppins, sans-serif;
+}
+
+.input-box input,
+select {
+    width: 100%;
+    font-size: 15px;
+    padding: 5px 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.input-btn [type=submit] {
+    width: 100%;
+    background-color: #2f333d;
+    color: white;
+    padding: 14px 20px;
+    font-size: 15px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #21242a;
+    border-radius: 4px;
+    color: white;
+}
+
+.form-container {
+    position: absolute;
+    top: 50%;
+    transform: translate(43%, -50%);
+    border-radius: 10px;
+    background-color: #f2f2f2;
+    padding: 10px 40px;
+}
+
+.form-container label {
+    font-size: 20px;
+}
+
+.form-container1 label {
+    font-size: 20px;
+}
+
+.form-container h1 {
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.form-container1 h1 {
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.form-container1 {
+    position: absolute;
+    top: 50%;
+    transform: translate(32%, -50%) scale(0.9);
+    border-radius: 10px;
+    background-color: #f2f2f2;
+    padding: 10px 40px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table th,
+table td {
+    padding: 10px;
+}
+
+table,
+th,
+td {
+    border: 1px solid #000;
+}
+
+table th {
+    background-color: #2f333d;
+    color: #fff;
+    vertical-align: middle;
+    padding-left: 10px;
+    padding: 20px;
+}
+
+.err{
+    color: red;
+}
+
+input::file-selector-button {
+    background-color: #0095ff;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.15385;
+    margin: 0;
+    outline: none;
+    padding: 8px .8em;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    white-space: nowrap;
+}
+
+input::file-selector-button:hover,
+input::file-selector-button:focus {
+    background-color: #07c;
+}
+
+input::file-selector-button:focus {
+    box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+}
+
+input::file-selector-button:active {
+    background-color: #0064bd;
+    box-shadow: none;
+}
+
+.form-container3 {
+    display: table-caption;
+    margin: 10px 40px;
+    width: 100%;
+}
+
+.upload-img {
+    margin: 10px 0px;
+}
+
+.package-form input,
+.package-form textarea {
+    margin: 0px 1px;
+}
+
+textarea {
+    resize: vertical;
+    width: 100%;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted rgb(73, 73, 73);
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 220px;
+    background-color: rgb(29, 29, 29);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    top: 25px;
+    left: 105%;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent rgb(29, 29, 29) transparent transparent;
+}
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+.tooltip:focus .tooltiptext{
+    visibility: visible;
+}
