@@ -194,7 +194,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="mainsection grid">
             <div class="firstcontainer">
                 <h2>Contact Us</h2>
-                <p>Need to get in touch with us?Fill out the form with your inquiry.Put your queries or suggestions in the message box.</p>
+                <p>Need to get in touch with us?Fill out the form with your inquiry.Put your queries, inquiries or suggestions in the message box.</p>
             </div>
             <div class="secondcontainer">
                 <form action="contactus.php" method="post">
