@@ -33,3 +33,4 @@ if (isset($_REQUEST['token'])) {
             location.replace('signup.php');
         </script>";
 }
+// dixit vara
