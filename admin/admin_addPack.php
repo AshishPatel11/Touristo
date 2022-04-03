@@ -878,7 +878,7 @@ alert(`Error in Creating page`)
             echo "
                 <script>
                     alert(`The package has been created successfully!!`);
-                    location.replace(`packages/$packname.php`);
+                    location.replace(`..packages/$packname.php`);
                 </script>
             ";
     }
