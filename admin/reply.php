@@ -1,17 +1,14 @@
 <?php
-error_reporting(0);
+session_start();
+// error_reporting(0);
 include '../php/connection.php';
 include '../admin/admin_nav.php';
 
-$sr = $_REQUEST['sr'];
-$user = $_REQUEST['name'];
-$err = "";
-
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
+if (isset($_POST['submit'])) {
 
     $reply = $_POST['reply'];
 
-    $into = "UPDATE contactus SET reply = '$reply' WHERE srno = '$sr'";
+    $into = "UPDATE `contactus` SET `reply`= '$reply' WHERE srno = '$_SESSION[inqSrno]'";
     $result = mysqli_query($conn, $into);
 
     if ($result) {
@@ -39,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <link rel="stylesheet" href="./css/admin_nav.css">
     <link rel="stylesheet" href="../css/lode1.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reply to <?php echo $user; ?></title>
+    <title>Reply to <?php echo $_SESSION['inqUsername']; ?></title>
 </head>
 
 <body onload="myFunction()">
@@ -50,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     </div>
     <div class="container">
         <div class="heading">
-            <h2>Reply to <?php echo $user; ?></h2>
+            <h2>Reply to <?php echo $_SESSION['inqUsername']; ?></h2>
         </div>
         <div class="form">
             <form action="reply.php" method="post">
@@ -59,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                     <textarea name="reply" id="reply" cols="30" rows="10" require></textarea>
                 </div>
                 <div class="btn">
-                    <input type="submit" value="submit">
+                    <input type="submit" name="submit" value="submit">
                 </div>
             </form>
         </div>
