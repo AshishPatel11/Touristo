@@ -24,10 +24,12 @@
   background-size: cover;
   background-position: center center;
   border: 3px white solid;
+  /* flex: 0 1 100%; */
 }
 
 .place-images {
   display: flex;
+  /* flex-wrap: wrap; */
   width: 100%;
   object-fit: cover;
 }
@@ -164,8 +166,8 @@ iframe {
 .place4-img,
 .place5-img,
 .place6-img {
-  width: 500px;
-  height: 350px;
+  min-width: 500px;
+  min-height: 350px;
   background-size: cover;
   background-position: center;
 }
