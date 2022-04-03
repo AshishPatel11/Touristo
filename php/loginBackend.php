@@ -22,7 +22,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         }
     </style>";
 
-    $select = "SELECT * FROM `user_tbl` WHERE emailid='$_POST[email]' AND statuss='verify'";
+    $_SESSION['email'] = $_POST['email'];
+
+    $select = "SELECT * FROM `user_tbl` WHERE emailid='$_SESSION[email]' AND statuss='verify'";
 
     $result = mysqli_query($conn, $select);
     $data = mysqli_fetch_assoc($result);

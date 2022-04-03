@@ -13,7 +13,9 @@
 
 <body>
     <?php
+    session_start();
     include_once "admin_nav.php";
+
     ?>
     <section class="home">
         <div class="card-container">

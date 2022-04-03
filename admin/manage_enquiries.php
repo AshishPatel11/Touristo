@@ -1,0 +1,84 @@
+<?php
+session_start();
+
+include '../php/connection.php';
+include 'admin_nav.php';
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/lode1.css">
+    <title>Manage Enquiries</title>
+    <link rel="stylesheet" href="./css/manage_enquiries.css">
+    <link rel="stylesheet" href="./css/admin_nav.css">
+</head>
+
+<body onload="myFunction()">
+    <div class="spinner" id="loader1">
+        <div class="dot1"></div>
+        <div class="dot2"></div>
+        <div class="dot3"></div>
+    </div>
+    <div class="form-container">
+
+        <h2>Manage Enquiries</h2>
+
+        <div>
+            <table class='styled-table'>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>EmailID</th>
+                        <th>Message</th>
+                        <th>Replay</th>
+
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <?php
+
+                    $search = "SELECT * FROM `contactus`";
+                    $result = mysqli_query($conn, $search);
+
+                    if ($result->num_rows > 0) {
+
+                        while ($data = mysqli_fetch_array($result)) {
+                    ?>
+                            <tr class='active-row'>
+                                <td><?php echo $data['user']; ?> </td>
+                                <td><?php echo $data['email']; ?> </td>
+                                <td><?php echo $data['message']; ?> </td>
+                                <td><a href="reply.php?sr=<?php echo $data['srno']; ?>&name=<?php echo $data['user']; ?> "><input type="submit" value="Reply" name="reply"></a></td>
+                            </tr>
+                        <?php
+                        }
+                    } else {
+                        echo "No data found";
+                        ?>
+                        <script>
+                            alert(`No Data!`);
+                        </script>
+                    <?php
+                    }
+                    ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+<script>
+    var preloader = document.getElementById('loader1');
+
+    function myFunction() {
+        preloader.style.display = 'none';
+    }
+</script>
+
+</html>
