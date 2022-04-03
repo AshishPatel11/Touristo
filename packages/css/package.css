@@ -164,8 +164,8 @@ iframe {
 .place4-img,
 .place5-img,
 .place6-img {
-  width: 500px;
-  height: 350px;
+  min-width: 500px;
+  min-height: 350px;
   background-size: cover;
   background-position: center;
 }
