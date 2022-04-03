@@ -146,44 +146,44 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     echo "<img src=./css/images/profile.png class=profile>";
                 }
                 ?>
-                <div class="profile-container">
-                    <img src="./css/images/svg/close.svg" class="close" width="30px" height="30px" alt="close">
-                    <?php
-                    if (isset($_SESSION['uname'])) {
-                        $profileAddress = './profiles/' . $_SESSION['uid'] . "." . "jpg";
-                        $fileExist = file_exists("$profileAddress");
-                        if ($fileExist === true) {
-                            echo "<img src=$profileAddress class=profile>";
-                        } else {
-                            echo "<img src=./css/images/profile.png class=profile>";
-                        }
-                    ?>
-                        <center>
-                            <?php if (isset($_SESSION['uname'])) {
-                                echo $_SESSION['uname'];
-                            } ?>
-                        </center>
-                        <br>
-                        <?php if (isset($_SESSION['uid'])) {
-                            echo "UserID : $_SESSION[uid]";
-                        } ?>
-                        <a href="changeprofile.php" class="change-link">Change Profile image</a>
-                        <a href="changepass.php" class="button">Change Password</a>
-                        <a href="mytrips.php" class="button">My Trips</a>
-                        <a href="contactus.php" class="button">Contact Us</a>
-                        <a href="logout.php" class="button">Logout</a>
-
-                    <?php
-                    } else {
-                    ?>
-                        <p>You are not logged in please login!</p>
-                        <a href="login.php" class="button">Login</a>
-                    <?php
-                    }
-                    ?>
-
-                </div>
             </nav>
+        </div>
+        <div class="profile-container">
+            <img src="./css/images/svg/close.svg" class="close" width="30px" height="30px" alt="close">
+            <?php
+            if (isset($_SESSION['uname'])) {
+                $profileAddress = './profiles/' . $_SESSION['uid'] . "." . "jpg";
+                $fileExist = file_exists("$profileAddress");
+                if ($fileExist === true) {
+                    echo "<img src=$profileAddress class=profile>";
+                } else {
+                    echo "<img src=./css/images/profile.png class=profile>";
+                }
+            ?>
+                <center>
+                    <?php if (isset($_SESSION['uname'])) {
+                        echo $_SESSION['uname'];
+                    } ?>
+                </center>
+                <br>
+                <?php if (isset($_SESSION['uid'])) {
+                    echo "UserID : $_SESSION[uid]";
+                } ?>
+                <a href="changeprofile.php" class="change-link">Change Profile image</a>
+                <a href="changepass.php" class="button">Change Password</a>
+                <a href="mytrips.php" class="button">My Trips</a>
+                <a href="contactus.php" class="button">Contact Us</a>
+                <a href="logout.php" class="button">Logout</a>
+
+            <?php
+            } else {
+            ?>
+                <p>You are not logged in please login!</p>
+                <a href="login.php" class="button">Login</a>
+            <?php
+            }
+            ?>
+
         </div>
     </section>
     <main>
@@ -194,7 +194,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="mainsection grid">
             <div class="firstcontainer">
                 <h2>Contact Us</h2>
-                <p>Need to get in touch with us?Fill out the form with your inquiry.Put your queries or suggestions in the message box.</p>
+                <p>Need to get in touch with us?Fill out the form with your inquiry.Put your queries, inquiries or suggestions in the message box.</p>
             </div>
             <div class="secondcontainer">
                 <form action="contactus.php" method="post">

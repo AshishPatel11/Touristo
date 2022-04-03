@@ -48,6 +48,10 @@
     font-size: 19px;
 }
 
+.txtbox input{
+    cursor: not-allowed;
+}
+
 .txtbox input,
 textarea {
     outline: none;

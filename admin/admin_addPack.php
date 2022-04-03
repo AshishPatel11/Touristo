@@ -370,41 +370,41 @@ include_once ("./php/pack_backend.php");
                     echo "<img src=../css/images/profile.png class=profile>";
                 }
                 ?>
-                    <div class="profile-container">
-                        <img src="../css/images/svg/close.svg" class="close" width="30px" height="30px" alt="close">
-                        <?php
-                    if (isset($_SESSION["uname"])) {
-                        $profileAddress = "../profiles/" . $_SESSION["uid"] . "." . "jpg";
-                        $fileExist = file_exists("$profileAddress");
-                        if ($fileExist === true) {
-                            echo "<img src=$profileAddress class=profile>";
-                        } else {
-                            echo "<img src=../css/images/profile.png class=profile>";
-                        }
-                    ?>
-                        <center>
-                            <?php if (isset($_SESSION["uname"])) {
-                                echo $_SESSION["uname"];
-                            } ?>
-                        </center>
-                        <br>
-                        <?php if (isset($_SESSION["uid"])) {
-                            echo "UserID : $_SESSION[uid]";
-                        } ?>
-                        <a href="changeprofile.php" class="change-link">change Profile image</a>
-                        <a href="../logout.php" class="button">Logout</a>
-
-                        <?php
-                    } else {
-                    ?>
-                        <p>You are not logged in please login!</p>
-                        <a href="../login.php#login" class="button">Login</a>
-                        <?php
-                    }
-                    ?>
-                    </div>
                 </nav>
-            </div>
+                </div>
+                <div class="profile-container">
+                    <img src="../css/images/svg/close.svg" class="close" width="30px" height="30px" alt="close">
+                    <?php
+                if (isset($_SESSION["uname"])) {
+                    $profileAddress = "../profiles/" . $_SESSION["uid"] . "." . "jpg";
+                    $fileExist = file_exists("$profileAddress");
+                    if ($fileExist === true) {
+                        echo "<img src=$profileAddress class=profile>";
+                    } else {
+                        echo "<img src=../css/images/profile.png class=profile>";
+                    }
+                ?>
+                    <center>
+                        <?php if (isset($_SESSION["uname"])) {
+                            echo $_SESSION["uname"];
+                        } ?>
+                    </center>
+                    <br>
+                    <?php if (isset($_SESSION["uid"])) {
+                        echo "UserID : $_SESSION[uid]";
+                    } ?>
+                    <a href="changeprofile.php" class="change-link">change Profile image</a>
+                    <a href="../logout.php" class="button">Logout</a>
+
+                    <?php
+                } else {
+                ?>
+                    <p>You are not logged in please login!</p>
+                    <a href="../login.php#login" class="button">Login</a>
+                    <?php
+                }
+                ?>
+                </div>
         </div>
         <div class="place-images">
             <div class="p1" style="background-image: url(./images/<?php echo $filenameimg; ?>_place1.jpg);"></div>
@@ -708,6 +708,10 @@ $(".profile").click(function() {
 </script>
 
 
+<script src="../js/gsap.min.js"></script>
+<!--linked the gsap javascript file-->
+<script src="../js/ScrollTrigger.min.js"></script>
+<!--linked the scrollTrigger javascript file-->
 <script src="../js/home_nav.js"></script>
 
 </html>';//this variable contains the data of the file that created above
