@@ -55,9 +55,11 @@ include 'admin_nav.php';
                                 <td><?php echo $data['user']; ?> </td>
                                 <td><?php echo $data['email']; ?> </td>
                                 <td><?php echo $data['message']; ?> </td>
-                                <td><a href="reply.php?sr=<?php echo $data['srno']; ?>&name=<?php echo $data['user']; ?> "><input type="submit" value="Reply" name="reply"></a></td>
+                                <td><a href="reply.php"><input type="submit" value="Reply" name="reply"></a></td>
                             </tr>
                         <?php
+                        $_SESSION['inqSrno'] = $data['srno'];
+                        $_SESSION['inqUsername'] = $data['user'];
                         }
                     } else {
                         echo "No data found";
