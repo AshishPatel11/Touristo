@@ -45,18 +45,28 @@ $enquiryCount = mysqli_num_rows($enquiryResult);
                 </a>
             </div>
             <div class="card">
-                <i class="material-icons">
-                    list_alt
-                </i>
+                <a href="">
+
+                    <i class="material-icons">
+                        list_alt
+                    </i>
+                </a>
                 <h2></h2>
-                <p>Bookings</p>
+                <a href="">
+                    <p>Bookings</p>
+                </a>
             </div>
             <div class="card">
-                <i class="material-icons">
-                    report_problem
-                </i>
+                <a href="">
+
+                    <i class="material-icons">
+                        report_problem
+                    </i>
+                </a>
                 <h2></h2>
-                <p>Issues</p>
+                <a href="">
+                    <p>Issues</p>
+                </a>
             </div>
             <div class="card">
                 <a href="manage_enquiries.php"><i class="material-icons">contact_support</i></a>
