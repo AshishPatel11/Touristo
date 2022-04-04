@@ -171,31 +171,6 @@ input::placeholder {
   background-size: cover;
   background-position: center;
 }
-.card2 {
-  /* background-image: url(./images/hawa.jpg); */
-  background-size: cover;
-  background-position: center;
-}
-.card3 {
-  /* background-image: url(./images/amritsar.jpg); */
-  background-size: cover;
-  background-position: center;
-}
-.card4 {
-  /* background-image: url(./images/elora.jpg); */
-  background-size: cover;
-  background-position: center;
-}
-.card5 {
-  /* background-image: url(./images/kerala.jpg); */
-  background-size: cover;
-  background-position: center;
-}
-.card6 {
-  /* background-image: url(./images/ladakh.jpg); */
-  background-size: cover;
-  background-position: center;
-}
 .p-link{
   text-decoration: none;
   margin: 20px 32px;
