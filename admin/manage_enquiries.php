@@ -15,6 +15,7 @@ include 'admin_nav.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/lode1.css">
     <title>Manage Enquiries</title>
+    <link rel="stylesheet" href="./css/admin_addUser.css">
     <link rel="stylesheet" href="./css/manage_enquiries.css">
     <link rel="stylesheet" href="./css/admin_nav.css">
 </head>
@@ -25,7 +26,7 @@ include 'admin_nav.php';
         <div class="dot2"></div>
         <div class="dot3"></div>
     </div>
-    <div class="form-container">
+    <div class="form-container4">
 
         <h2>Manage Enquiries</h2>
 
@@ -37,6 +38,7 @@ include 'admin_nav.php';
                         <th>EmailID</th>
                         <th>Message</th>
                         <th>Replay</th>
+                        <th>Action</th>
 
                     </tr>
                 </thead>
@@ -55,6 +57,7 @@ include 'admin_nav.php';
                                 <td><?php echo $data['user']; ?> </td>
                                 <td><?php echo $data['email']; ?> </td>
                                 <td><?php echo $data['message']; ?> </td>
+                                <td><?php echo $data['reply']; ?> </td>
                                 <td><a href="reply.php"><input type="submit" value="Reply" name="reply"></a></td>
                             </tr>
                         <?php
