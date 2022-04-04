@@ -105,3 +105,13 @@ body {
   font-family: poppins, sans-serif;
   font-weight: 300;
 }
+
+.nav-link3:visited{
+  color: white;
+}
+
+.a1, .a2, .a3, .a4{
+  text-decoration: none;
+}
+
+
