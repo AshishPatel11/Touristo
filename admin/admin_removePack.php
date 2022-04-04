@@ -1,3 +1,27 @@
+<?php
+session_start();
+include '../php/connection.php';
+
+if (!isset($_SESSION['uname']) && !isset($_SESSION['acctyp'])) {
+?>
+    <script>
+        alert(`Not Allowed login first!`);
+        location.replace('../login.php');
+    </script>
+    <?php
+} else {
+    if ($_SESSION['acctyp'] != 'admin') {
+    ?>
+        <script>
+            alert(`Not Allowed login first!`);
+            location.replace('../login.php');
+        </script>
+<?php
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

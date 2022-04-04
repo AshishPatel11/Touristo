@@ -1,3 +1,26 @@
+<?php
+session_start();
+include '../php/connection.php';
+
+if (!isset($_SESSION['uname']) && !isset($_SESSION['acctyp'])) {
+?>
+    <script>
+        alert(`Not Allowed login first!`);
+        location.replace('../login.php');
+    </script>
+    <?php
+} else {
+    if ($_SESSION['acctyp'] != 'admin') {
+    ?>
+        <script>
+            alert(`Not Allowed login first!`);
+            location.replace('../login.php');
+        </script>
+<?php
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,9 +33,7 @@
     <title>Reply to <?php echo $_SESSION['inqUsername']; ?></title>
 </head>
 <?php
-session_start();
-// error_reporting(0);
-include '../php/connection.php';
+
 include '../admin/admin_nav.php';
 
 if (isset($_POST['submit'])) {

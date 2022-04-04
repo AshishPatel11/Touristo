@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(0);
 include 'php/connection.php';
 
 if (isset($_REQUEST['token'])) {

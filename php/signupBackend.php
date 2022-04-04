@@ -58,45 +58,52 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $numerr = "<i class=material-icons>warning</i>Phone Number Must Be 10 Digits!";
             } else {
                 if ($ccount > 0) {
+
                     $numduperr = "<i class=material-icons>warning</i>Number already Exist!";
                 } else {
-                    if ($pass != $cpass) {
-                        $passerr = "<i class=material-icons>warning</i>Passwords are not Matching!";
+
+                    if (strlen($pass) < 8) {
+                        $passerr = "<i class=material-icons>warning</i>Passwords should have at least 8 characters!";
                     } else {
 
-                        // Generates random user id
-                        $uid = rand(100000, 1000000);
+                        if ($pass != $cpass) {
+                            $passerr = "<i class=material-icons>warning</i>Passwords are not Matching!";
+                        } else {
 
-                        $insert = "INSERT INTO `user_tbl`(uid, uname, emailid, phno,passwd, token, statuss) VALUES ('$uid','$username','$email','$contact','$phash','$token','notverify')";
+                            // Generates random user id
+                            $uid = rand(100000, 1000000);
 
-                        $result = mysqli_query($conn, $insert);
+                            $insert = "INSERT INTO `user_tbl`(uid, uname, emailid, phno,passwd, token, statuss) VALUES ('$uid','$username','$email','$contact','$phash','$token','notverify')";
 
-                        if ($result) {
+                            $result = mysqli_query($conn, $insert);
 
-                            $subject = "Email Verifivation - Touristo";
-                            $body = "Hi, $username! Click this link to verify your account : http://localhost/Touristo/verify.php?token=$token";
-                            $headers = "From: varadixit@gmail.com";
+                            if ($result) {
 
-                            if (mail($email, $subject, $body, $headers)) {
-                                echo "
+                                $subject = "Email Verifivation - Touristo";
+                                $body = "Hi, $username! Click this link to verify your account : http://localhost/Touristo/verify.php?token=$token";
+                                $headers = "From: varadixit@gmail.com";
+
+                                if (mail($email, $subject, $body, $headers)) {
+                                    echo "
                                 <script>
                                     alert(`Account created! Check your email to verify!`);
                                     location.replace('login.php');
                                 </script>";
-                            } else {
+                                } else {
 
-                                echo "
+                                    echo "
                                 <script>
                                     alert(`Oops!Email failed.`);
                                     location.replace('signup.php');
                                 </script>";
-                            }
-                        } else {
-                            echo
-                            "<script>
+                                }
+                            } else {
+                                echo
+                                "<script>
                         alert(`Account Creation Failed, $conn->error`);
                         location.replce('signup.php');
                     </script>";
+                            }
                         }
                     }
                 }

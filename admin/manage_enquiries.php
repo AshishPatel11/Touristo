@@ -1,8 +1,29 @@
 <?php
-session_start();
 
+session_start();
 include '../php/connection.php';
 include 'admin_nav.php';
+
+if (!isset($_SESSION['uname']) && !isset($_SESSION['acctyp'])) {
+?>
+    <script>
+        alert(`Not Allowed login first!`);
+        location.replace('../login.php');
+    </script>
+    <?php
+} else {
+    if ($_SESSION['acctyp'] != 'admin') {
+    ?>
+        <script>
+            alert(`Not Allowed login first!`);
+            location.replace('../login.php');
+        </script>
+<?php
+    }
+}
+
+
+
 
 ?>
 
@@ -15,7 +36,6 @@ include 'admin_nav.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/lode1.css">
     <title>Manage Enquiries</title>
-    <link rel="stylesheet" href="./css/admin_addUser.css">
     <link rel="stylesheet" href="./css/manage_enquiries.css">
     <link rel="stylesheet" href="./css/admin_nav.css">
 </head>
@@ -46,7 +66,7 @@ include 'admin_nav.php';
                 <tbody>
                     <?php
 
-                    $search = "SELECT * FROM `contactus`";
+                    $search = "SELECT * FROM `contactus` WHERE reply = ''";
                     $result = mysqli_query($conn, $search);
 
                     if ($result->num_rows > 0) {

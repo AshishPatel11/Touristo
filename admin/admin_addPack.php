@@ -1,5 +1,24 @@
 <?php
-    session_start();
+
+session_start();
+
+if (!isset($_SESSION['uname']) && !isset($_SESSION['acctyp'])) {
+?>
+    <script>
+        alert(`Not Allowed login first!`);
+        location.replace('../login.php');
+    </script>
+    <?php
+} else {
+    if ($_SESSION['acctyp'] != 'admin') {
+    ?>
+        <script>
+            alert(`Not Allowed login first!`);
+            location.replace('../login.php');
+        </script>
+<?php
+    }
+}
     require_once "../php/connection.php";
     if(isset($_POST['submit'])){
             

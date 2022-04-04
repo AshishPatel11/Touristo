@@ -68,14 +68,28 @@ input[type=submit]:hover {
     display: flex;
     justify-content: center;
 }
-
 .form-container1 {
-    /* height: 10vh; */
     position: absolute;
     top: 20%;
     transform: translate(43%, -50%) scale(0.9);
     border-radius: 10px;
-    /* background-color: #f2f2f2; */
+    padding: 10px 40px;
+}
+.form-container6 h1 {
+    font-size: 35px;
+    display: flex;
+    justify-content: center;
+}
+
+.form-container6 label {
+    font-size: 20px;
+}
+
+.form-container6 {
+    position: absolute;
+    top: 50%;
+    transform: translate(30%, -50%) scale(0.9);
+    border-radius: 10px;
     padding: 10px 40px;
 }
 
