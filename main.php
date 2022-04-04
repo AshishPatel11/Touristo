@@ -148,6 +148,18 @@ include "php/connection.php";
             ?>
 
         </div>
+
+
+            <?php
+                $packageFetch = "SELECT * FROM `pckg_tbl`";
+
+                $result = mysqli_query($conn, $packageFetch);
+                $data = mysqli_fetch_assoc($result);
+                $count = mysqli_num_rows($result);
+            ?>
+
+
+
         <div class="search-container">
             <form action="#" method="post">
                 <input type="text" name="searchbar" placeholder="Search Place Here....." class="search-box">
