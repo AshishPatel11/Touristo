@@ -135,7 +135,7 @@ include "php/connection.php";
                 <a href="changeprofile.php" class="change-link">Change Profile image</a>
                 <a href="changepass.php" class="button">Change Password</a>
                 <a href="mytrips.php" class="button">My Trips</a>
-                <a href="contactup.php" class="button">Contact Us</a>
+                <a href="contactus.php" class="button">Contact Us</a>
                 <a href="logout.php" class="button">Logout</a>
 
             <?php
