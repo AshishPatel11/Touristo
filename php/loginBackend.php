@@ -1,5 +1,6 @@
 <?php
-// session_start();
+session_start();
+
 include 'connection.php';
 $loginerr = "";
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
@@ -29,10 +30,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $result = mysqli_query($conn, $select);
     $data = mysqli_fetch_assoc($result);
     $count = mysqli_num_rows($result);
-    
+
     if ($count == 1 and password_verify($_POST['passwd'], $data['passwd'])) {
         $_SESSION['uid'] = $data['uid'];
-        if ($data['acc_typ'] == 'admin') {
+        $_SESSION['acctyp'] = $data['acc_typ'];
+        if ($_SESSION['acctyp'] == 'admin') {
+
             echo "
             <script>
                 alert(`Login Successful!! Welcome $data[uname]`);

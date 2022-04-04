@@ -1,6 +1,27 @@
 <?php
 
+session_start();
 include '../php/connection.php';
+
+if (!isset($_SESSION['uname']) && !isset($_SESSION['acctyp'])) {
+?>
+    <script>
+        alert(`Not Allowed login first!`);
+        location.replace('../login.php');
+    </script>
+    <?php
+} else {
+    if ($_SESSION['acctyp'] != 'admin') {
+    ?>
+        <script>
+            alert(`Not Allowed login first!`);
+            location.replace('../login.php');
+        </script>
+<?php
+    }
+}
+
+
 
 // User count for admin home
 $user = "SELECT * FROM user_tbl WHERE acc_typ = 'admin' OR acc_typ = 'guide' OR acc_typ = 'hotel'";
@@ -35,7 +56,7 @@ $enquiryCount = mysqli_num_rows($enquiryResult);
 
 <body>
     <?php
-    session_start();
+
     include_once "admin_nav.php";
 
     ?>

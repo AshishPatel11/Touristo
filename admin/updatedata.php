@@ -1,4 +1,25 @@
 <?php
+
+session_start();
+include '../php/connection.php';
+
+if (!isset($_SESSION['uname']) && !isset($_SESSION['acctyp'])) {
+?>
+    <script>
+        alert(`Not Allowed login first!`);
+        location.replace('../login.php');
+    </script>
+    <?php
+} else {
+    if ($_SESSION['acctyp'] != 'admin') {
+    ?>
+        <script>
+            alert(`Not Allowed login first!`);
+            location.replace('../login.php');
+        </script>
+<?php
+    }
+}
 error_reporting(0);
 
 include '../php/connection.php';
@@ -73,17 +94,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     ?>
     <div class="admin-container">
 
-        <div class="form-container1">
+        <div class="form-container6">
             <form action="updatedata.php" method="post">
                 <div class="heading">
                     <h1>Update User</h1>
                 </div>
                 <div class="input-box">
                     <label for="uid">UserID</label>
-                    <input type="text" name="uid" id="uid" required>
+                    <input type="text" name="uid" id="uid" required value="<?php echo $uid; ?>" disabled>
                 </div>
                 <div class="input-box">
-                    <label for="uname">User name</label>
+                    <label for="uname">Username</label>
                     <input type="text" name="uname" id="uname" required>
                     <span class="err"><?php echo "$unameerr"; ?></span>
                 </div>

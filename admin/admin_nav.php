@@ -68,5 +68,6 @@
         <a class="nav-link2">Manage Bookings</a>
         <a class="nav-link2">Manage Issues</a>
         <a class="nav-link2" href="manage_enquiries.php">Manage Enquiries</a>
+        <a class="nav-link2" href="../logout.php">Logout</a>
     </ul>
 </nav>

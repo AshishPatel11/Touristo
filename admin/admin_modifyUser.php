@@ -1,3 +1,28 @@
+<?php
+
+
+session_start();
+include '../php/connection.php';
+
+if (!isset($_SESSION['uname']) && !isset($_SESSION['acctyp'])) {
+?>
+    <script>
+        alert(`Not Allowed login first!`);
+        location.replace('../login.php');
+    </script>
+    <?php
+} else {
+    if ($_SESSION['acctyp'] != 'admin') {
+    ?>
+        <script>
+            alert(`Not Allowed login first!`);
+            location.replace('../login.php');
+        </script>
+<?php
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,8 +76,9 @@
                                 <td><?php echo $data['phno']; ?> </td>
                                 <td><?php echo $data['acc_typ']; ?> </td>
                                 <td><a href="deletedata.php?id=<?php echo $data['uid']; ?>"><input type="submit" value="Delete" name="delete" onclick='return deletedata()'></a>
-                                <a href="updatedata.php?id=<?php echo $data['uid']; ?>&name=<?php echo $data['uname']; ?>&email=<?php echo $data['emailid']; ?>&phno=<?php echo $data['phno']; ?>&acct=<?php echo $data['acc_typ']; ?>">
-                                        <input type="submit" value="Update" name="update" onclick='return upadatedata()'></a></td>
+                                    <a href="updatedata.php?id=<?php echo $data['uid']; ?>&name=<?php echo $data['uname']; ?>&email=<?php echo $data['emailid']; ?>&phno=<?php echo $data['phno']; ?>&acct=<?php echo $data['acc_typ']; ?>">
+                                        <input type="submit" value="Update" name="update" onclick='return upadatedata()'></a>
+                                </td>
                             </tr>
                         <?php
                         }

@@ -17,8 +17,15 @@
     justify-content: center;
 }
 
+.form-container4 h2 {
+    font-size: 35px;
+    display: flex;
+    justify-content: center;
+}
+
 table {
     border-collapse: collapse;
+    margin: 10px 30px;
 }
 
 table th,
