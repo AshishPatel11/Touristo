@@ -2,13 +2,18 @@
 
 include '../php/connection.php';
 
+// User count for admin home
+$user = "SELECT * FROM user_tbl WHERE acc_typ = 'admin' OR acc_typ = 'guide' OR acc_typ = 'hotel'";
+$userResult = mysqli_query($conn, $user);
+$userCount = mysqli_num_rows($userResult);
+
 // Package count for admin home
 $package = "SELECT * FROM pckg_tbl";
 $packageResult = mysqli_query($conn, $package);
 $packageCount = mysqli_num_rows($packageResult);
 
 // Enquiries count for admin home
-$enquiry = "SELECT * FROM contactus";
+$enquiry = "SELECT * FROM contactus WHERE reply = ''";
 $enquiryResult = mysqli_query($conn, $enquiry);
 $enquiryCount = mysqli_num_rows($enquiryResult);
 
@@ -37,8 +42,15 @@ $enquiryCount = mysqli_num_rows($enquiryResult);
     <section class="home">
         <div class="card-container">
             <div class="card">
+                <a href="admin_modifyUser.php"><i class="material-icons">account_circle
+                    </i></a>
+                <h2><?php echo $userCount; ?></h2>
+                <a href="admin_modifyUser.php">
+                    <p>Users</p>
+                </a>
+            </div>
+            <div class="card">
                 <a href="admin_modifyPack.php"><i class="material-icons">perm_media</i></a>
-
                 <h2><?php echo $packageCount; ?></h2>
                 <a href="admin_modifyPack.php">
                     <p>Packages</p>
