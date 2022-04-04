@@ -246,5 +246,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             });
         </script>
 </body>
-
+<script src="./js/home_nav.js"></script>
 </html>
