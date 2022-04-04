@@ -120,7 +120,6 @@ input::placeholder {
 .card4,
 .card5,
 .card6 {
-  margin: 20px 32px;
   height: 60vh;
   width: 45vh;
   flex: 0 1 45vh;
@@ -130,6 +129,7 @@ input::placeholder {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  text-decoration: none;
   border-radius: 40px;
   filter: drop-shadow(5px 25px 25px rgba(0, 0, 0, 0.767));
   padding: 10px;
@@ -150,9 +150,12 @@ input::placeholder {
   width: 70%;
   text-transform: capitalize;
   margin-top: 100px;
+  color: white;
+  text-decoration: none;
   opacity: 0;
   pointer-events: none;
   transition: opacity 700ms;
+  text-align: center;
 }
 .card1:hover .description,
 .card2:hover .description,
@@ -161,34 +164,39 @@ input::placeholder {
 .card5:hover .description,
 .card6:hover .description {
   opacity: 1;
+  text-decoration: none;
 }
 .card1 {
-  background-image: url(./images/taj-mahal.jpg);
+  /* background-image: url(./images/taj-mahal.jpg); */
   background-size: cover;
   background-position: center;
 }
 .card2 {
-  background-image: url(./images/hawa.jpg);
+  /* background-image: url(./images/hawa.jpg); */
   background-size: cover;
   background-position: center;
 }
 .card3 {
-  background-image: url(./images/amritsar.jpg);
+  /* background-image: url(./images/amritsar.jpg); */
   background-size: cover;
   background-position: center;
 }
 .card4 {
-  background-image: url(./images/elora.jpg);
+  /* background-image: url(./images/elora.jpg); */
   background-size: cover;
   background-position: center;
 }
 .card5 {
-  background-image: url(./images/kerala.jpg);
+  /* background-image: url(./images/kerala.jpg); */
   background-size: cover;
-  background-position: 400px center;
+  background-position: center;
 }
 .card6 {
-  background-image: url(./images/ladakh.jpg);
+  /* background-image: url(./images/ladakh.jpg); */
   background-size: cover;
-  background-position: 400px center;
+  background-position: center;
+}
+.p-link{
+  text-decoration: none;
+  margin: 20px 32px;
 }
