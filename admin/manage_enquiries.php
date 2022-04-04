@@ -37,6 +37,7 @@ include 'admin_nav.php';
                         <th>EmailID</th>
                         <th>Message</th>
                         <th>Replay</th>
+                        <th>Action</th>
 
                     </tr>
                 </thead>
@@ -55,6 +56,7 @@ include 'admin_nav.php';
                                 <td><?php echo $data['user']; ?> </td>
                                 <td><?php echo $data['email']; ?> </td>
                                 <td><?php echo $data['message']; ?> </td>
+                                <td><?php echo $data['reply']; ?> </td>
                                 <td><a href="reply.php"><input type="submit" value="Reply" name="reply"></a></td>
                             </tr>
                         <?php

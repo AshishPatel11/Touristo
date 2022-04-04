@@ -40,8 +40,13 @@ input[type=submit]:hover {
     top: 50%;
     transform: translate(43%, -50%);
     border-radius: 10px;
-    background-color: #f2f2f2;
     padding: 10px 40px;
+}
+
+.form-container input{
+    border: 1.5px solid #c0c0c1;
+    outline: none;
+    background-color: #ededed;
 }
 
 .form-container label {
@@ -65,11 +70,12 @@ input[type=submit]:hover {
 }
 
 .form-container1 {
+    /* height: 10vh; */
     position: absolute;
-    top: 50%;
-    transform: translate(32%, -50%) scale(0.9);
+    top: 20%;
+    transform: translate(43%, -50%) scale(0.9);
     border-radius: 10px;
-    background-color: #f2f2f2;
+    /* background-color: #f2f2f2; */
     padding: 10px 40px;
 }
 

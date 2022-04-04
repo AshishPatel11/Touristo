@@ -15,9 +15,9 @@
 <body>
     <?php include_once "admin_nav.php";
     ?>
-    <div class="form-container">
+    <div class="form-container1">
 
-        <h1>Remove user</h1>
+        <h1>Modify user</h1>
 
         <div>
             <table class='styled-table'>
