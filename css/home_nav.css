@@ -84,11 +84,11 @@ body{
 .plane>*,
 .location .Vector,
 .sndo>* {
-  fill: white !important;
+  fill: white ;
 }
 
 .logo-svg .strok {
-  stroke: white !important;
+  stroke: white;
 }
 
 .location .Vector_2 {
