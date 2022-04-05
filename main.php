@@ -221,9 +221,9 @@ include "php/connection.php";
 
 
         <div class="search-container">
-            <form action="#" method="post">
+            <form action="search.php" method="post">
                 <input type="text" name="searchbar" placeholder="Search Place Here....." class="search-box">
-                <input type="submit" value="Search" class="submit-btn">
+                <input type="submit" name="search" value="Search" class="submit-btn">
             </form>
         </div>
         <p class="comment">Scroll Down To Explore</p>
