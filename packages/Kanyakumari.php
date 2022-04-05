@@ -365,8 +365,8 @@ include_once ("./php/pack_backend.php");
                 <form action="#" method="post" class="wishlist-form">
                     <button type="submit" class="wish-btn"><span>Add To Wishliste</span></button>
                 </form>
-                <form action="../book.php" method="post" class="Book-form">
-                    <button type="submit" class="book-btn" value="book.php?srno=<?php echo $data['pckg_id']; ?>"><span>Book Now</span></button>
+                <form action="../book.php?srno=<?php echo $data['pckg_id']; ?>" method="post" class="Book-form">
+                    <button type="submit" class="book-btn" value="book.php"><span>Book Now</span></button>
                 </form>
             </div>
         </section>

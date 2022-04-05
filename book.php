@@ -2,6 +2,7 @@
 session_start();
 include './php/connection.php';
 
+$srno = $_GET['srno'];
 
 
 ?>
