@@ -69,9 +69,9 @@ input[type=submit]:hover {
     justify-content: center;
 }
 .form-container1 {
-    position: absolute;
+    /* position: absolute;
     top: 20%;
-    transform: translate(43%, -50%) scale(0.9);
+    transform: translate(43%, -50%) scale(0.9); */
     border-radius: 10px;
     padding: 10px 40px;
 }
@@ -232,6 +232,6 @@ textarea {
     display: flex;
     justify-content: center;
 }
-table * :not(input,a){
+table * :not(input,a,form){
     border: 2px solid black;
 }
