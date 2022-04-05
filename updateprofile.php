@@ -2,8 +2,49 @@
 session_start();
 include './php/connection.php';
 
+$sql = "SELECT phno FROM `user_tbl` WHERE emailid = '$_SESSION[email]'";
+$result = mysqli_query($conn, $sql);
 
+$query = "SELECT * FROM user_tbl";
+$result1 = mysqli_query($conn, $query);
 
+$phno = mysqli_fetch_assoc($result);
+$pcount = mysqli_num_rows($result1);
+
+$err = $err1 = "";
+
+if (isset($_POST['submit'])) {
+    $username = mysqli_real_escape_string($conn, $_POST['name']);
+    $phone = mysqli_real_escape_string($conn, $_POST['phno']);
+
+    if (!preg_match("/^[a-zA-Z ]*$/", $username)) {
+        $err = "Only letter and space allowed!";
+    } else {
+        if (!preg_match("/^[0-9]{10}+$/", $phone)) {
+            $err1 = "Phone number must be 10 digits!";
+        } else {
+
+            $update = "UPDATE `user_tbl` SET uname='$username',phno='$phone' WHERE emailid = '$_SESSION[email]'";
+            $run = mysqli_query($conn, $update);
+
+            if ($run) {
+?>
+                <script>
+                    alert(`Details updated!`);
+                    location.replace('main.php');
+                </script>
+            <?php
+            } else {
+            ?>
+                <script>
+                    alert(`Failed to update!`);
+                    location.replace('updateprofile.php');
+                </script>
+<?php
+            }
+        }
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -162,15 +203,20 @@ include './php/connection.php';
             <form action="updateprofile.php" method="post">
                 <div class="textbox">
                     <label for="name">Name</label>
-                    <input type="text" name="name" id="name">
+                    <input type="text" name="name" id="name" value="<?php echo $_SESSION['uname']; ?>" required><?php echo $err; ?>
                 </div>
+
                 <div class="textbox">
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="email">
+                    <input type="email" name="email" id="email" value="<?php echo $_SESSION['email']; ?>" disabled>
                 </div>
                 <div class="textbox">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email">
+                    <label for="phno">Phone no.</label>
+                    <input type="text" name="phno" id="phno" value="<?php echo $phno['phno']; ?>" required><?php echo $err1; ?>
+
+                </div>
+                <div class="textbox">
+                    <input type="submit" name="submit" value="Update">
                 </div>
             </form>
         </div>
