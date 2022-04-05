@@ -161,7 +161,7 @@ if (isset($_POST['submit'])) {
                         echo $_SESSION['uname'];
                     } ?>
                 </center>
-                <br>
+
                 <?php if (isset($_SESSION['uid'])) {
                     echo "UserID : $_SESSION[uid]";
                 } ?>

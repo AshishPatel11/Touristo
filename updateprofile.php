@@ -61,7 +61,55 @@ if (isset($_POST['submit'])) {
     <script src="./js/jquery.min.js"></script>
     <style>
         body {
-            background-color: gray;
+            background-color: #1A1A1A;
+        }
+
+        .heading h2 {
+            font-weight: 800;
+            font-size: 34px;
+            padding-bottom: 25px;
+            color: white;
+        }
+
+        .textbox label {
+            font-size: 19px;
+            color: white;
+        }
+
+        .textbox input {
+            outline: none;
+            font-size: 15px;
+            border: 1.5px solid #c0c0c1;
+            padding: 6px;
+            border-radius: 6px;
+            width: 24vw;
+            margin: 12px;
+            background-color: #ededed;
+        }
+
+        .btn input {
+            padding: 6px 15px;
+            margin-top: 8px;
+            font-size: 14px;
+            border: 1px solid black;
+            border-radius: 6px;
+            background-color: #404040;
+            cursor: pointer;
+            color: white;
+            transition: background-color 0.4s;
+        }
+
+        .btn input:hover {
+            color: black;
+            background-color: white;
+        }
+
+        .main-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 84vh;
         }
     </style>
 </head>
@@ -215,7 +263,7 @@ if (isset($_POST['submit'])) {
                     <input type="text" name="phno" id="phno" value="<?php echo $phno['phno']; ?>" required><?php echo $err1; ?>
 
                 </div>
-                <div class="textbox">
+                <div class="btn">
                     <input type="submit" name="submit" value="Update">
                 </div>
             </form>
