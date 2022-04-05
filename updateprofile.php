@@ -13,7 +13,7 @@ include './php/connection.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book package</title>
+    <title>Update profile</title>
     <link rel="stylesheet" href="./css/home_nav.css">
     <link rel="stylesheet" href="./css/lode1.css">
     <link rel="stylesheet" href="./css/footer.css">
@@ -156,34 +156,21 @@ include './php/connection.php';
     <!--==================================Formpart================================-->
     <div class="main-box">
         <div class="heading">
-            <h2>Book your package</h2>
+            <h2>Update your details</h2>
         </div>
         <div class="form">
-            <form action="book.php" method="post">
+            <form action="updateprofile.php" method="post">
                 <div class="textbox">
                     <label for="name">Name</label>
                     <input type="text" name="name" id="name">
                 </div>
                 <div class="textbox">
-                    <label for="email">EmailID</label>
+                    <label for="email">Email</label>
                     <input type="email" name="email" id="email">
                 </div>
                 <div class="textbox">
-                    <label for="packname">Pakage name</label>
-                    <input type="text" name="packname" id="packname">
-                </div>
-                <div class="textbox">
-                    <label for="packprice">Pakage price</label>
-                    <input type="text" name="packprice" id="packprice">
-                </div>
-                <div class="textbox">
-                    <label for="from">From</label>
-                    <input type="date" name="from" id="from">
-                    <label for="to">to</label>
-                    <input type="date" name="to" id="to">
-                </div>
-                <div class="btn">
-                    <input type="submit" value="Book now" name="">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email">
                 </div>
             </form>
         </div>
