@@ -54,11 +54,11 @@ if (!isset($_SESSION['uname']) && !isset($_SESSION['acctyp'])) {
             <table class='styled-table'>
                 <thead>
                     <tr>
-                        <th>UserID</th>
-                        <th>Name</th>
-                        <th>EmailID</th>
-                        <th>Phone no.</th>
-                        <th>A/c type</th>
+                        <th>Package ID</th>
+                        <th>Package Name</th>
+                        <th>Price</th>
+                        <th>State</th>
+                        <th>ratings</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -71,15 +71,15 @@ if (!isset($_SESSION['uname']) && !isset($_SESSION['acctyp'])) {
                         while ($data = mysqli_fetch_array($result)) {
                     ?>
                             <tr class='active-row'>
-                                <td><?php echo $data['uid']; ?> </td>
-                                <td><?php echo $data['uname']; ?> </td>
-                                <td><?php echo $data['emailid']; ?> </td>
-                                <td><?php echo $data['phno']; ?> </td>
-                                <td><?php echo $data['acc_typ']; ?> </td>
-                                <td><a href="deletedata.php?id=<?php echo $data['uid']; ?>"><input type="submit" value="Delete" name="delete" onclick='return deletedata()'></a>
-                                    <a href="updatedata.php?id=<?php echo $data['uid']; ?>&name=<?php echo $data['uname']; ?>&email=<?php echo $data['emailid']; ?>&phno=<?php echo $data['phno']; ?>&acct=<?php echo $data['acc_typ']; ?>">
-                                        <input type="submit" value="Update" name="update" onclick='return upadatedata()'></a>
-                                </td>
+                                <td><?php echo $data['pckg_id']; ?> </td>
+                                <td><?php echo $data['pckg_name']; ?> </td>
+                                <td><?php echo $data['pckg_price']; ?> </td>
+                                <td><?php echo $data['state']; ?> </td>
+                                <td><?php echo $data['ratings']; ?> </td>
+                                <td><form action="pckg_action.php?pkid" methof="post" class="delete">
+                                    <input type="submit" name="delete" value="delete">
+                                    <input type="submit" name="update" value="update">
+                                </form></td>
                             </tr>
                         <?php
                         }
