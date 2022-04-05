@@ -286,6 +286,7 @@ if (isset($_POST['submit'])) {
                     echo "UserID : $_SESSION[uid]";
                 } ?>
                 <a href="changeprofile.php" class="change-link">Change Profile image</a>
+                <a href="updateprofile.php" class="button">Update profile</a>
                 <a href="changepass.php" class="button">Change Password</a>
                 <a href="mytrips.php" class="button">My Trips</a>
                 <a href="contactup.php" class="button">Contact Us</a>
