@@ -11,10 +11,10 @@ include_once ("./php/pack_backend.php");
                     $packQuery = "SELECT * FROM `pckg_tbl` WHERE pckg_name='$filename'";
                     $result = $conn->query($packQuery);
                     $data = $result->fetch_assoc();
-                    if ($result->num_rows > 0){}
-                    else{
-                        die("The page you are looking for doesnot exist");
-                    }
+                    // if ($result->num_rows > 0){}
+                    // else{
+                    //     die("The page you are looking for doesnot exist");
+                    // }
 ?>
 <!DOCTYPE html>
 <html lang="en">
