@@ -275,10 +275,10 @@ include_once ("./php/pack_backend.php");
 
     <section class="page2">
         <div class="search-container" style="background-image: url(./images/<?php echo $filenameimg; ?>_banner.jpg);">
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" class="search-place">
-                <input type="text" name="search" class="search-box"
+            <form action="../search.php" method="post" class="search-place">
+                <input type="text" name="searchbar" class="search-box"
                     placeholder="Search over a million tour and travels, sight seeings,... ">
-                <input type="submit" name="submit" value="Search" class="search-btn">
+                <input type="submit" name="search" value="Search" class="search-btn">
             </form>
         </div>
         <div class="pack-bar">
