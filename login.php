@@ -220,12 +220,12 @@ include './php/loginBackend.php';
                 <div class="input-btn">
                     <input type="submit" value="Login" name="login">
                 </div>
-                <div class="login-options">
-                    <p>Forgot Password?</p>
+                <div class="login-link">
+                    <p><a href="forgetpassword.php">Forgot password?</a></p>
+                    
                 </div>
                 <div class="login-link">
-                    <label for="login">Don't have an account?</label>
-                    <a href="signup.php">SignUp</a>
+                    <a href="signup.php">Don't have an account?</a>
                 </div>
             </form>
         </div>
