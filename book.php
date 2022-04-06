@@ -11,14 +11,14 @@ if(!isset($_SESSION['uname'])){
 <?php
 }
 
-$srno = $_GET['srno'];
 
-$select = "SELECT * FROM pckg_tbl WHERE pckg_id = '$srno'";
+
+$select = "SELECT * FROM pckg_tbl WHERE pckg_id = '$_SESSION[pcsrno]'";
 $query = mysqli_query($conn, $select);
 $detail = mysqli_fetch_assoc($query);
 
-if(isset($_POST['submit'])){
-    $insert = "INSERT INTO `book_tbl`(`name`,`emailid`, `packname`, `packprice`, `datefrom`, `dateto`) VALUES ('$_SESSION[uname]','$_SESSION[email]','$detail[packname]','$detail[packprice]','$_POST[from]','$_POST[to]')";
+if(isset($_POST['submitbook'])){
+    $insert = "INSERT INTO `book_tbl`(`name`,`emailid`, `pckg_name`, `pckg_price`, `datefrom`, `dateto`) VALUES ('$_SESSION[uname]','$_SESSION[email]','$detail[pckg_name]','$detail[pckg_price]','$_POST[from]','$_POST[to]')";
 
     $run = mysqli_query($conn, $insert);
 
@@ -219,7 +219,7 @@ if(isset($_POST['submit'])){
                     <input type="date" name="to" id="to" required>
                 </div>
                 <div class="btn">
-                    <input type="submit" value="Book now" name="submit">
+                    <input type="submit" value="Book now" name="submitbook">
                 </div>
             </form>
         </div>

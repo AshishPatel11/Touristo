@@ -76,7 +76,7 @@ if (!isset($_SESSION['uname']) && !isset($_SESSION['acctyp'])) {
                                 <td><?php echo $data['pckg_price']; ?> </td>
                                 <td><?php echo $data['state']; ?> </td>
                                 <td><?php echo $data['ratings']; ?> </td>
-                                <td><form action="pckg_action.php?pkid" methof="post" class="delete">
+                                <td><form action="pckg_action.php?pkid=" methof="post" class="delete">
                                     <input type="submit" name="delete" value="delete">
                                     <input type="submit" name="update" value="update">
                                 </form></td>
