@@ -11,8 +11,6 @@ if(!isset($_SESSION['uname'])){
 <?php
 }
 
-
-
 $select = "SELECT * FROM pckg_tbl WHERE pckg_id = '$_SESSION[pcsrno]'";
 $query = mysqli_query($conn, $select);
 $detail = mysqli_fetch_assoc($query);
@@ -51,15 +49,11 @@ if(isset($_POST['submitbook'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book package</title>
+    <link rel="stylesheet" href="./css/book.css">
     <link rel="stylesheet" href="./css/home_nav.css">
     <link rel="stylesheet" href="./css/lode1.css">
     <link rel="stylesheet" href="./css/footer.css">
     <script src="./js/jquery.min.js"></script>
-    <style>
-        body {
-            background-color: gray;
-        }
-    </style>
 </head>
 
 <body onload="myFunction()">
