@@ -169,8 +169,11 @@ include './php/connection.php';
                     <input type="email" name="email" id="email">
                 </div>
                 <div class="textbox">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email">
+                    <label for="phno">Phone no.</label>
+                    <input type="text" name="phno" id="phno">
+                </div>
+                <div class="textbox">
+                    <input type="submit" name="submit" value="Update">
                 </div>
             </form>
         </div>
