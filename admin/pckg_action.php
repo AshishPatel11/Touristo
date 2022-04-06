@@ -415,13 +415,13 @@ if(isset($_POST['updateSubmit'])){
 
                 <div class="upload-img">
                     <label for="thumbnail-img">Thumbnail Image:</label>
-                    <input type="file" name="thumbImg" id="thumbnail-img" required>
+                    <input type="file" name="thumbImg" id="thumbnail-img" >
                 </div>
 
 
                 <div class="upload-img">
                     <label for="banner-img">Banner Image:</label>
-                    <input type="file" name="bannerImg" id="banner-img" required>
+                    <input type="file" name="bannerImg" id="banner-img" >
                 </div>
 
                 <div class="input-box">
@@ -431,7 +431,7 @@ if(isset($_POST['updateSubmit'])){
 
                 <div class="upload-img">
                     <label for="place1-img">Place 1 Image:</label>
-                    <input type="file" name="place1Img" id="place1-img" required>
+                    <input type="file" name="place1Img" id="place1-img" >
                 </div>
                 <div class="input-box">
                     <label for="place1-desc">Description for Place 1:</label>
@@ -439,7 +439,7 @@ if(isset($_POST['updateSubmit'])){
                 </div>
                 <div class="upload-img">
                     <label for="place2-img">Place 2 Image:</label>
-                    <input type="file" name="place2Img" id="place2-img" required>
+                    <input type="file" name="place2Img" id="place2-img" >
                 </div>
                 <div class="input-box">
                     <label for="place2-desc">Description for Place 2:</label>
