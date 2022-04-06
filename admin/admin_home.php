@@ -33,6 +33,11 @@ $package = "SELECT * FROM pckg_tbl";
 $packageResult = mysqli_query($conn, $package);
 $packageCount = mysqli_num_rows($packageResult);
 
+// Booking count for admin home
+$book = "SELECT * FROM book_tbl WHERE status = 'pending'";
+$bookResult = mysqli_query($conn, $book);
+$bookCount = mysqli_num_rows($bookResult);
+
 // Enquiries count for admin home
 $enquiry = "SELECT * FROM contactus WHERE reply = ''";
 $enquiryResult = mysqli_query($conn, $enquiry);
@@ -84,21 +89,9 @@ $enquiryCount = mysqli_num_rows($enquiryResult);
                         list_alt
                     </i>
                 </a>
-                <h2></h2>
-                <a href="">
+                <h2><?php echo $bookCount; ?></h2>
+                <a href="manage_book.php">
                     <p>Bookings</p>
-                </a>
-            </div>
-            <div class="card">
-                <a href="">
-
-                    <i class="material-icons">
-                        report_problem
-                    </i>
-                </a>
-                <h2></h2>
-                <a href="">
-                    <p>Issues</p>
                 </a>
             </div>
             <div class="card">
