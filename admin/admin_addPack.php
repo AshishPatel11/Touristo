@@ -557,6 +557,7 @@ include_once ("./php/pack_backend.php");
                     <button type="submit" class="wish-btn"><span>Add To Wishliste</span></button>
                 </form>
                 <form action="book.php?srno=<?php echo $data[\'pckg_id\']; ?>" method="post" class="Book-form">
+                <?php $_SESSION[\'pcsrno\'] = $data[\'pckg_id\']; ?>
                     <button type="submit" class="book-btn"><span>Book Now</span></button>
                 </form>
             </div>

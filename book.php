@@ -2,6 +2,42 @@
 session_start();
 include './php/connection.php';
 
+if(!isset($_SESSION['uname'])){
+?>
+    <script>
+        alert(`Login to book your pack!`);
+        location.replace('login.php');
+    </script>
+<?php
+}
+
+
+
+$select = "SELECT * FROM pckg_tbl WHERE pckg_id = '$_SESSION[pcsrno]'";
+$query = mysqli_query($conn, $select);
+$detail = mysqli_fetch_assoc($query);
+
+if(isset($_POST['submitbook'])){
+    $insert = "INSERT INTO `book_tbl`(`name`,`emailid`, `pckg_name`, `pckg_price`, `datefrom`, `dateto`) VALUES ('$_SESSION[uname]','$_SESSION[email]','$detail[pckg_name]','$detail[pckg_price]','$_POST[from]','$_POST[to]')";
+
+    $run = mysqli_query($conn, $insert);
+
+    if($run){
+        ?>
+            <script>
+                alert(`Your package has been booked!`);
+            </script>
+        <?php
+    }
+    else{
+        ?>
+            <script>
+                alert(`Something went wrong try again later!`);
+            </script>
+        <?php
+    }
+
+}
 
 
 ?>
@@ -162,28 +198,28 @@ include './php/connection.php';
             <form action="book.php" method="post">
                 <div class="textbox">
                     <label for="name">Name</label>
-                    <input type="text" name="name" id="name">
+                    <input type="text" name="name" id="name" value="<?php echo $_SESSION['uname']; ?>" disabled>
                 </div>
                 <div class="textbox">
                     <label for="email">EmailID</label>
-                    <input type="email" name="email" id="email">
+                    <input type="email" name="email" id="email" value="<?php echo $_SESSION['email']; ?>" disabled>
                 </div>
                 <div class="textbox">
                     <label for="packname">Pakage name</label>
-                    <input type="text" name="packname" id="packname">
+                    <input type="text" name="packname" id="packname" value="<?php echo $detail['pckg_name']; ?>" disabled>
                 </div>
                 <div class="textbox">
                     <label for="packprice">Pakage price</label>
-                    <input type="text" name="packprice" id="packprice">
+                    <input type="text" name="packprice" id="packprice" value="<?php echo $detail['pckg_price']; ?>" disabled>
                 </div>
                 <div class="textbox">
                     <label for="from">From</label>
-                    <input type="date" name="from" id="from">
+                    <input type="date" name="from" id="from" required>
                     <label for="to">to</label>
-                    <input type="date" name="to" id="to">
+                    <input type="date" name="to" id="to" required>
                 </div>
                 <div class="btn">
-                    <input type="submit" value="Book now" name="">
+                    <input type="submit" value="Book now" name="submitbook">
                 </div>
             </form>
         </div>
