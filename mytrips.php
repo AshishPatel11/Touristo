@@ -209,7 +209,7 @@ include_once './php/connection.php';
                             <td><?php echo $data['dateto'] ?></td>
                             <td><?php echo $data['status'] ?></td>
                             <?php
-                            if ($data['status'] == 'cancelled' or $data['status'] == 'confirmed') {
+                            if ($data['status'] != 'pending') {
                             ?>
                                 <td>N/A</td>
                             <?php
