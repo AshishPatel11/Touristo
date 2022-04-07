@@ -28,6 +28,7 @@ if (!isset($_SESSION['uname']) && !isset($_SESSION['acctyp'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="./css/admin_nav.css">
+    <link rel="stylesheet" href="./css/admin_addUser.css">
     <link rel="stylesheet" href="../css/lode1.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reply to <?php echo $_SESSION['inqUsername']; ?></title>
@@ -72,7 +73,7 @@ if (isset($_POST['submit'])) {
         </div>
         <div class="form">
             <form action="reply.php" method="post">
-                <div class="input">
+                <div class="input-box">
                     <label for="reply">Reply</label>
                     <textarea name="reply" id="reply" cols="30" rows="10" require></textarea>
                 </div>

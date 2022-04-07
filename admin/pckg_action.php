@@ -132,7 +132,7 @@ if(isset($_POST['updateSubmit'])){
         $tags = $conn -> real_escape_string($_POST['tags']);
 
         
-        $packageQuery = "UPDATE `pckg_tbl` SET `pckg_name`='$packname',`state`='$state',`pckg_price`='$price',`maplink`='$gmap',`tagline`='tagline',`pckg_para`='$mainpara',`sub_para1`='$p1desc',`sub_para2`='$p2desc',`sub_para3`='$p3desc',`sub_para4`='$p4desc',`sub_para5`='$p5desc',`sub_para6`='$p6desc',`tags`='$tags' WHERE pckg_id = '$_POST[pckg_id]'";
+        $packageQuery = "UPDATE `pckg_tbl` SET `pckg_name`='$packname',`state`='$state',`pckg_price`='$price',`maplink`='$gmap',`tagline`='$tagline',`pckg_para`='$mainpara',`sub_para1`='$p1desc',`sub_para2`='$p2desc',`sub_para3`='$p3desc',`sub_para4`='$p4desc',`sub_para5`='$p5desc',`sub_para6`='$p6desc',`tags`='$tags' WHERE pckg_id = '$_POST[pckg_id]'";
 
         $result = mysqli_query($conn, $packageQuery);
         if($result){
