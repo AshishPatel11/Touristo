@@ -131,63 +131,18 @@ if(isset($_POST['updateSubmit'])){
         $tagline = $conn -> real_escape_string($_POST['tagline']);
         $tags = $conn -> real_escape_string($_POST['tags']);
 
-        //validation for place 3
-        if(($place3Name != "" && $p3desc === "") || ($p3desc != "" 
-        && $place3Name === "")){
-            die("
-                    <script>
-                        alert(`Image or description for place 3 is not completed!`);
-                        location.replace(`admin_addPack.php`);
-                    </script>
-            ");
-        }
-
-        //validation for place 4
-        if(($place4Name != "" && $p4desc === "") || ($p4desc != "" 
-        && $place4Name === "")){
-            die("
-                    <script>
-                        alert(`Image or description for place 4 is not completed!`);
-                        location.replace(`admin_addPack.php`);
-                    </script>
-            ");
-        }
-        if(($place5Name != "" && $p5desc === "") || ($p5desc != "" 
-        && $place5Name === "")){
-            die("
-                    <script>
-                        alert(`Image or description for place 5 is not completed!`);
-                        location.replace(`admin_addPack.php`);
-                    </script>
-            ");
-        }
-        if(($place6Name != "" && $p6desc === "") || ($p6desc != "" 
-        && $place6Name === "")){
-            die("
-                    <script>
-                        alert(`Image or description for place 6 is not completed!`);
-                        location.replace(`admin_addPack.php`);
-                    </script>
-            ");
-        }
-
-
-
-        $packageQuery = "UPDATE `pckg_tbl` SET `pckg_name`='$_POST[name]',`state`='$_POST[state]',`pckg_price`='$_POST[price]',`maplink`='$_POST[Gmap]',`tagline`='$_POST[tagline]',`pckg_para`='$_POST[mainParagraph]',`sub_para1`='$_POST[place1Desc]',`sub_para2`='$_POST[place2Desc]',`sub_para3`='$_POST[place3Desc]'',`sub_para4`='$_POST[place4Desc]',`sub_para5`='$_POST[place5Desc]',`sub_para6`='$_POST[place6Desc]',`tags`='$_POST[tags]' WHERE pckg_id = $_POST[pckgid]";
+        
+        $packageQuery = "UPDATE `pckg_tbl` SET `pckg_name`='$packname',`state`='$state',`pckg_price`='$price',`maplink`='$gmap',`tagline`='tagline',`pckg_para`='$mainpara',`sub_para1`='$p1desc',`sub_para2`='$p2desc',`sub_para3`='$p3desc',`sub_para4`='$p4desc',`sub_para5`='$p5desc',`sub_para6`='$p6desc',`tags`='$tags' WHERE pckg_id = '$_POST[pckg_id]'";
 
         $result = mysqli_query($conn, $packageQuery);
         if($result){
-            ?>
-            <script>
-                alert( `package is updated successfully!`);
-                loction.replace(`http://localhost/Touristo/packages/<?php echo $_POST[name] ?>.php`);
-            </script>
-            <?php
+
+            
              // banner image file storing in the system through php
             
 
             $allowed = array('jpg', 'jpeg', 'png');
-
+            if(!empty($banner3Name)){
             if(in_array($bannerActExt, $allowed)){
                 if($bannerErr === 0){
                     $bannerNameNew = $_POST['name'] ."_banner". ".jpg";
@@ -201,12 +156,12 @@ if(isset($_POST['updateSubmit'])){
             }else{
                 echo "extension not matched";
             }
-
+        }
             // storing the thumbnail image to the system through php
             
 
             $allowed = array('jpg', 'jpeg', 'png');
-
+            if(!empty($thumbName)){
             if(in_array($thumbActExt, $allowed)){
                 if($thumbErr === 0){
                     $thumbNameNew = $_POST['name'] ."_thumb". ".jpg";
@@ -220,11 +175,12 @@ if(isset($_POST['updateSubmit'])){
             }else{
                 echo "extension not matched";
             }
+        }
             // Place 1 image file storing in the system through php
             
 
             $allowed = array('jpg', 'jpeg', 'png');
-
+            if(!empty($place1Name)){
             if(in_array($place1ActExt, $allowed)){
                 if($place1Err === 0){
                     $place1NameNew = $_POST['name'] ."_place1". ".jpg";
@@ -238,11 +194,12 @@ if(isset($_POST['updateSubmit'])){
             }else{
                 echo "extension not matched";
             }
+        }
             // Place 2 image file storing in the system through php
             
 
             $allowed = array('jpg', 'jpeg', 'png');
-
+            if(!empty($place2Name)){
             if(in_array($place2ActExt, $allowed)){
                 if($place2Err === 0){
                     $place2NameNew = $_POST['name'] ."_place2". ".jpg";
@@ -256,6 +213,7 @@ if(isset($_POST['updateSubmit'])){
             }else{
                 echo "extension not matched";
             }
+        }
             // Place 3 image file storing in the system through php
             
 
@@ -333,6 +291,13 @@ if(isset($_POST['updateSubmit'])){
                 }
             }
 
+
+            echo "
+            <script>
+                alert( `package is updated successfully!`);
+                location.replace(`http://localhost/Touristo/packages/$packname.php`);
+            </script>";
+
         }else{
             ?>
             <script>
@@ -346,11 +311,14 @@ if(isset($_POST['updateSubmit'])){
 ?>
 
 <?php
+
+                if(isset($_GET['pkid'])){
                 $pkid = $_GET['pkid'];
                 $packageFetch = "SELECT * FROM `pckg_tbl` WHERE pckg_id = $pkid";
                 $result = mysqli_query($conn, $packageFetch);
                 $count = mysqli_num_rows($result);
                 $data = mysqli_fetch_assoc($result);
+}
 ?>
 
 
@@ -379,10 +347,10 @@ if(isset($_POST['updateSubmit'])){
     ?>
     <div class="admin-container">
         <div class="form-container3">
-            <form action="admin_addPack.php" method="post" class="package-form" enctype="multipart/form-data">
+            <form action="pckg_action.php" method="post" class="package-form" enctype="multipart/form-data">
                 <div class="input-box">
                     <label for="Pid">Package ID:</label>
-                    <input type="text" name="pckg_id" value="<?php echo $data['pckg_id']; ?>" id="Pid" required disabled class="disable">
+                    <input type="text" name="pckg_id" value="<?php echo $data['pckg_id']; ?>" id="Pid" required  class="disable">
                 </div>
 
                 <div class="input-box">
