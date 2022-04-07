@@ -1,0 +1,69 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.main-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+    height: 80vh;
+}
+
+.textbox input{
+    outline: none;
+    font-size: 15px;
+    border: 1.5px solid #c0c0c1;
+    padding: 6px;
+    width: 100%;
+    border-radius: 6px;
+    background-color: #ededed;
+}
+
+.textbox label {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.btn input {
+    padding: 6px 15px;
+    margin-top: 8px;
+    font-size: 14px;
+    border: 1px solid black;
+    border-radius: 6px;
+    background-color: #404040;
+    cursor: pointer;
+    color: white;
+    transition: background-color 0.4s;
+}
+
+.btn input:hover {
+    color: black;
+    background-color: white;
+    font-weight: 500;
+}
+
+.heading h2 {
+    font-weight: 800;
+    font-size: 34px;
+    color: black;
+}
+
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body{
+    background: url("./images/bg_rsp.jpg");
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    overflow: hidden;
+}

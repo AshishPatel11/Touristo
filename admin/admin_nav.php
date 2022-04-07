@@ -76,8 +76,7 @@
                     <li class="option-link"><a href="admin_modifyPack.php" class="description">Modify Package</a></li>
                 </ul>
             </li>
-            <a class="nav-link3 a1" href="">Manage Bookings</a>
-            <a class="nav-link3 a2" href="">Manage Issues</a>
+            <a class="nav-link3 a1" href="manage_book.php">Manage Bookings</a>
             <a class="nav-link3 a3" href="manage_enquiries.php">Manage Enquiries</a>
             <a class="nav-link3 a4" href="../changepass.php">Change Password</a>
             <a class="nav-link3 a4" href="../logout.php">Logout</a>

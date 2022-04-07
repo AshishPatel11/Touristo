@@ -162,7 +162,7 @@ include '../php/connection.php';
                         <tbody>
                             <?php
 
-                            $search = "SELECT * FROM `book_tbl` WHERE status = 'canceled'";
+                            $search = "SELECT * FROM `book_tbl` WHERE status = 'cancelled'";
                             $result = mysqli_query($conn, $search);
 
                             if ($result->num_rows > 0) {
