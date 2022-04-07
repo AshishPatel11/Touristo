@@ -11,7 +11,7 @@ $run = mysqli_query($conn, $update);
 if($run){
     ?>
     <script>
-        alert(`Your booking canceled!`);
+        alert(`Your booking cancelled!`);
         location.replace('mytrips.php');
     </script>
     <?php

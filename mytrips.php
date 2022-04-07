@@ -37,6 +37,7 @@ include_once './php/connection.php';
             padding-left: 10px;
             padding: 20px;
         }
+
         table * :not(input, a, form) {
             border: 2px solid black;
         }
@@ -195,7 +196,7 @@ include_once './php/connection.php';
                     </script>
                     <?php
                 } else {
-                    $display = "SELECT * FROM book_tbl WHERE emailid = '$_SESSION[email]'";
+                    $display = "SELECT * FROM book_tbl WHERE emailid = '$_SESSION[email]' ORDER BY bookingdate DESC";
                     $run = mysqli_query($conn, $display);
 
                     while ($data = mysqli_fetch_array($run)) {
@@ -207,12 +208,20 @@ include_once './php/connection.php';
                             <td><?php echo $data['datefrom'] ?></td>
                             <td><?php echo $data['dateto'] ?></td>
                             <td><?php echo $data['status'] ?></td>
-                            <td><a href="cancelbook.php?srno=<?php echo $data['srno']; ?>">Cancel</a></td>
+                            <?php
+                            if ($data['status'] == 'cancelled' or $data['status'] == 'confirmed') {
+                            ?>
+                                <td>N/A</td>
+                            <?php
+                            } else {
+                            ?>
+                                <td><a href="cancelbook.php?srno=<?php echo $data['srno']; ?>">Cancel</a></td>
                         </tr>
-                <?php
+            <?php
+                            }
+                        }
                     }
-                }
-                ?>
+            ?>
 
             </tbody>
         </table>

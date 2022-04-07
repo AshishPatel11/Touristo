@@ -24,7 +24,7 @@ if(isset($_POST['submitbook'])){
         ?>
             <script>
                 alert(`Your package has been booked!`);
-                location.replace('main.php');
+                location.replace('mytrips.php');
             </script>
         <?php
     }
