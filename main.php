@@ -1,10 +1,11 @@
 <?php
 session_start();
 include "php/connection.php";
-
+if(isset($_SESSION['uname'])){
 $query = " SELECT * FROM contactus WHERE reply != '' AND status = 'unseen' AND email = '$_SESSION[email]'";
 $bhag = mysqli_query($conn, $query);
 $count = mysqli_num_rows($bhag);
+}
 
 ?>
 
@@ -97,7 +98,14 @@ $count = mysqli_num_rows($bhag);
                     </svg>
                 </a>
                 <ul class="list-container">
+                    <?php
+                    if(isset($_SESSION['uname'])){?>
                     <li class="nav-option"><a class="li-link noti">Notification(<?php echo $count; ?>)</a></li>
+                    <?php }else{ ?>
+                    <li class="nav-option"><a class="li-link noti">Notification(0)</a></li>
+                    <?php } ?>
+
+                    ?>
                     <li class="nav-option"><a class="li-link" href="#">Wishlist</a></li>
                     <li class="nav-option"><a class="li-link" href="aboutus.php">About Us</a></li>
                 </ul>
