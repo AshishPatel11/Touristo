@@ -2,7 +2,11 @@
 session_start();
 include '../php/connection.php';
 
+
+
+if(isset($_GET['sr'])){
 $sr = $_GET['sr'];
+}
 
 if (!isset($_SESSION['uname']) && !isset($_SESSION['acctyp'])) {
 ?>
@@ -42,8 +46,9 @@ include '../admin/admin_nav.php';
 if (isset($_POST['submit'])) {
 
     $reply = $_POST['reply'];
+    $srnop = $_POST['srnop'];
 
-    $into = "UPDATE `contactus` SET `reply`= '$reply' WHERE srno = $sr";
+    $into = "UPDATE `contactus` SET `reply`= '$reply' WHERE `srno` = '$srnop' ";
     $result = mysqli_query($conn, $into);
 
     if ($result) {
@@ -75,6 +80,9 @@ if (isset($_POST['submit'])) {
         </div>
         <div class="form">
             <form action="reply.php" method="post">
+                <div class="input-box" style="pointer-events: none; opacity: 0;" >
+                    <input type="text" name="srnop" value="<?php echo $sr;?>" required >
+                </div>
                 <div class="input-box">
                     <label for="reply">Reply</label>
                     <textarea name="reply" id="reply" cols="30" rows="10" require></textarea>
