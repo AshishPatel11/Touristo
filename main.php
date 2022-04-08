@@ -1,6 +1,11 @@
 <?php
 session_start();
 include "php/connection.php";
+
+$query = " SELECT * FROM contactus WHERE reply != '' AND status = 'unseen' ";
+$bhag = mysqli_query($conn, $query);
+$count = mysqli_num_rows($bhag);
+
 ?>
 
 <!DOCTYPE html>
@@ -92,7 +97,7 @@ include "php/connection.php";
                     </svg>
                 </a>
                 <ul class="list-container">
-                    <li class="nav-option"><a class="li-link noti">Notification</a></li>
+                    <li class="nav-option"><a class="li-link noti">Notification(<?php echo $count; ?>)</a></li>
                     <li class="nav-option"><a class="li-link" href="#">Wishlist</a></li>
                     <li class="nav-option"><a class="li-link" href="aboutus.php">About Us</a></li>
                 </ul>
@@ -114,6 +119,32 @@ include "php/connection.php";
         </div>
         <div class="notification-div">
             <img src="./css/images/svg/close.svg" class="close" width="30px" height="30px" alt="close">
+            <?php
+            if (!isset($_SESSION['email'])) {
+            ?>
+                <p>You are not logged in please login!</p>
+                <a href="login.php" class="button">Login</a>
+                <?php
+            } else {
+
+                $select = "SELECT * FROM contactus WHERE email = '$_SESSION[email]'";
+                $run = mysqli_query($conn, $select);
+                while ($show = mysqli_fetch_array($run)) {
+
+                    if($show['status'] == 'unseen' && !empty($show['reply'])){
+                        
+                        echo "Your message: $show[message]<br>
+                        From Admin: $show[reply]";
+                ?>
+                        <a href="ok.php?serial=<?php echo $show['srno'] ?>">
+                            <input type='submit' name='ok' value='Ok'>
+                        </a>
+            <?php
+                    }
+                }
+            }
+
+            ?>
         </div>
         <div class="profile-container">
             <img src="./css/images/svg/close.svg" class="close" width="30px" height="30px" alt="close">
