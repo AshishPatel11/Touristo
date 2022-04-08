@@ -75,7 +75,7 @@
                     </svg>
                 </a>
                 <ul class="list-container">
-                    <li class="nav-option"><a class="li-link" href="#">Destionations</a></li>
+                    <li class="nav-option"><a class="li-link" href="notification.php">Notification</a></li>
                     <li class="nav-option"><a class="li-link" href="#">Wishlist</a></li>
                     <li class="nav-option"><a class="li-link" href="aboutus.php">About Us</a></li>
                 </ul>
@@ -134,12 +134,6 @@
     </section>
 </body>
 <script>
-    $(".profile").click(function() {
-        $(".profile-container").fadeIn("slow").css("display", "flex");
-        $(".close").click(function() {
-            $(".profile-container").fadeOut("slow");
-        });
-    });
     $(".profile").click(function() {
         $(".profile-container").fadeIn("slow").css("display", "flex");
         $(".close").click(function() {
