@@ -78,11 +78,9 @@ if (!isset($_SESSION['uname']) && !isset($_SESSION['acctyp'])) {
                                 <td><?php echo $data['email']; ?> </td>
                                 <td><?php echo $data['message']; ?> </td>
                                 <td><?php echo $data['reply']; ?> </td>
-                                <td><a href="reply.php"><input type="submit" value="Reply" name="reply"></a></td>
+                                <td><a href="reply.php?sr=<?php echo $data['srno']; ?>"><input type="submit" value="Reply" name="reply"></a></td>
                             </tr>
                         <?php
-                        $_SESSION['inqSrno'] = $data['srno'];
-                        $_SESSION['inqUsername'] = $data['user'];
                         }
                     } else {
                         echo "No data found";

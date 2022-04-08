@@ -2,7 +2,7 @@
 session_start();
 include "php/connection.php";
 
-$query = " SELECT * FROM contactus WHERE reply != '' AND status = 'unseen' ";
+$query = " SELECT * FROM contactus WHERE reply != '' AND status = 'unseen' AND email = '$_SESSION[email]'";
 $bhag = mysqli_query($conn, $query);
 $count = mysqli_num_rows($bhag);
 

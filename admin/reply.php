@@ -2,6 +2,8 @@
 session_start();
 include '../php/connection.php';
 
+$sr = $_GET['sr'];
+
 if (!isset($_SESSION['uname']) && !isset($_SESSION['acctyp'])) {
 ?>
     <script>
@@ -31,7 +33,7 @@ if (!isset($_SESSION['uname']) && !isset($_SESSION['acctyp'])) {
     <link rel="stylesheet" href="./css/admin_addUser.css">
     <link rel="stylesheet" href="../css/lode1.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reply to <?php echo $_SESSION['inqUsername']; ?></title>
+    <title>Reply</title>
 </head>
 <?php
 
@@ -41,7 +43,7 @@ if (isset($_POST['submit'])) {
 
     $reply = $_POST['reply'];
 
-    $into = "UPDATE `contactus` SET `reply`= '$reply' WHERE srno = '$_SESSION[inqSrno]'";
+    $into = "UPDATE `contactus` SET `reply`= '$reply' WHERE srno = $sr";
     $result = mysqli_query($conn, $into);
 
     if ($result) {
@@ -69,7 +71,7 @@ if (isset($_POST['submit'])) {
     </div>
     <div class="container">
         <div class="heading">
-            <h2>Reply to <?php echo $_SESSION['inqUsername']; ?></h2>
+            <h2>Reply</h2>
         </div>
         <div class="form">
             <form action="reply.php" method="post">
