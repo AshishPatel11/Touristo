@@ -43,7 +43,7 @@ if (isset($_POST['submit'])) {
 
     $reply = $_POST['reply'];
 
-    $into = "UPDATE `contactus` SET `reply`= '$reply' WHERE srno = $sr";
+    $into = "UPDATE `contactus` SET `reply`= '$reply' WHERE srno = '$sr'";
     $result = mysqli_query($conn, $into);
 
     if ($result) {
