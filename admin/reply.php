@@ -4,8 +4,8 @@ include '../php/connection.php';
 
 
 
-if(isset($_GET['sr'])){
-$sr = $_GET['sr'];
+if (isset($_GET['sr'])) {
+    $sr = $_GET['sr'];
 }
 
 if (!isset($_SESSION['uname']) && !isset($_SESSION['acctyp'])) {
@@ -80,8 +80,8 @@ if (isset($_POST['submit'])) {
         </div>
         <div class="form">
             <form action="reply.php" method="post">
-                <div class="input-box" style="pointer-events: none; opacity: 0;" >
-                    <input type="text" name="srnop" value="<?php echo $sr;?>" required >
+                <div class="input-box" style="pointer-events: none; opacity: 0;">
+                    <input type="text" name="srnop" value="<?php echo $sr; ?>" required>
                 </div>
                 <div class="input-box">
                     <label for="reply">Reply</label>

@@ -104,7 +104,7 @@ $count = mysqli_num_rows($bhag);
                     <?php }else{ ?>
                     <li class="nav-option"><a class="li-link noti">Notification(0)</a></li>
                     <?php } ?>
-                    <li class="nav-option"><a class="li-link" href="#">Wishlist</a></li>
+                    <li class="nav-option"><a class="li-link" href="wishlist.ph">Wishlist</a></li>
                     <li class="nav-option"><a class="li-link" href="aboutus.php">About Us</a></li>
                 </ul>
 
