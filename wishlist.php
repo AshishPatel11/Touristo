@@ -67,6 +67,7 @@ $count = mysqli_num_rows($wishlistdataRun);
         <h1 class="title">
             Your Wishlist ⋙
         </h1>
+        <div class="cards-container">
         <?php
             if ($wishlistdataRun->num_rows > 0) {
 
@@ -75,7 +76,6 @@ $count = mysqli_num_rows($wishlistdataRun);
                         $packdataresult = mysqli_query($conn, $packdataquery);
                         ?>
 
-        <div class="cards-container">
 
             <?php
                         while ($data = mysqli_fetch_array($packdataresult)) {
@@ -89,12 +89,9 @@ $count = mysqli_num_rows($wishlistdataRun);
             </a>
             <?php
                         }
-                        ?>
-        </div>
-
-        <?php
             }
         ?>
+        </div>
     </section> <?php
         }
         else{
