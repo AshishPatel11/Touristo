@@ -92,10 +92,11 @@ include "php/connection.php";
                     </svg>
                 </a>
                 <ul class="list-container">
-                    <li class="nav-option"><a class="li-link" href="notification.php">Notification</a></li>
+                    <li class="nav-option"><a class="li-link noti">Notification</a></li>
                     <li class="nav-option"><a class="li-link" href="#">Wishlist</a></li>
                     <li class="nav-option"><a class="li-link" href="aboutus.php">About Us</a></li>
                 </ul>
+
                 <?php
                 if (isset($_SESSION['uname'])) {
                     $profileAddress = './profiles/' . $_SESSION['uid'] . "." . "jpg";
@@ -110,6 +111,9 @@ include "php/connection.php";
                 }
                 ?>
             </nav>
+        </div>
+        <div class="notification-div">
+            <img src="./css/images/svg/close.svg" class="close" width="30px" height="30px" alt="close">
         </div>
         <div class="profile-container">
             <img src="./css/images/svg/close.svg" class="close" width="30px" height="30px" alt="close">
@@ -272,6 +276,12 @@ include "php/connection.php";
             $(".profile-container").fadeIn("slow").css("display", "flex");
             $(".close").click(function() {
                 $(".profile-container").fadeOut("slow");
+            });
+        });
+        $(".noti").click(function() {
+            $(".notification-div").fadeIn("slow").css("display", "flex");
+            $(".close").click(function() {
+                $(".notification-div").fadeOut("slow");
             });
         });
     </script>
