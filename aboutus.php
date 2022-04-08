@@ -15,13 +15,17 @@ include "php/connection.php";
     <link rel="stylesheet" href="css/lode1.css">
     <link rel="stylesheet" href="css/aboutus.css">
     <script src="./js/jquery.min.js"></script>
+    <style>
+        .nav-container{
+            position: absolute;
+        }
+    </style>
 
 </head>
 
 <body onload="myFunction()">
     <?php
-
-    include_once 'main_nav.php';
+        include_once 'main_nav.php';
     ?>
     <img class="back window" src="css\images\svg\Frame 2.svg" alt="">
     <img src="css\images\svg\about us 2.svg" alt="" class="back responsive">

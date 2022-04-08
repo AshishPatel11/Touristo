@@ -285,9 +285,10 @@ include_once ("./php/pack_backend.php");
             <h3 class="location">Location: <?php echo $data["state"] ?>, India</h3>
             <h3 class="price">Price: ₹<?php echo $data["pckg_price"] ?></h3>
             <h3 class="duration">Duration: 9 days/ 8 nights</h3>
-            <form action="#" class="book">
-                <button type="submit" class="search-btn">Book Now</button>
-            </form>
+            <form action="../book.php?srno=<?php echo $data['pckg_id']; ?>" method="post" class="Book-form">
+                <?php $_SESSION['pcsrno'] = $data['pckg_id']; ?>
+                    <button type="submit" class="book-btn" value="book.php"><span>Book Now</span></button>
+                </form>
         </div>
     </section>
 

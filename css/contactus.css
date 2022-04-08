@@ -3,7 +3,9 @@
     padding: 0px;
     box-sizing: border-box;
 }
-
+body{
+    overflow: hidden;
+}
 .mainsection {
     display: grid;
     gap: 5rem;
@@ -99,7 +101,24 @@ textarea {
     top: 16%;
     right: 10%;
 }
+.logo-svg .logo-text,
+.plane>*,
+.location .Vector,
+.sndo>* {
+    fill: black !important;
+}
 
+.logo-svg .strok {
+    stroke: black !important;
+}
+
+.location .Vector_2 {
+    fill: white !important;
+}
+
+.li-link {
+    color: black !important;
+}
 /*<==================================ResponsiveCSS===================================>*/
 
 @media screen and (max-width: 730px) {
