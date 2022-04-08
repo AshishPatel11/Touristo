@@ -76,7 +76,7 @@
                 </a>
                 <ul class="list-container">
                     <li class="nav-option"><a class="li-link noti">Notification</a></li>
-                    <li class="nav-option"><a class="li-link" href="#">Wishlist</a></li>
+                    <li class="nav-option"><a class="li-link" href="wishlist.php">Wishlist</a></li>
                     <li class="nav-option"><a class="li-link" href="aboutus.php">About Us</a></li>
                 </ul>
                 <?php
@@ -134,7 +134,6 @@
             ?>
 
         </div>
-    </section>
 </body>
 <script>
     $(".profile").click(function() {

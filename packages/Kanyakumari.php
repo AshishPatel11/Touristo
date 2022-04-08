@@ -363,8 +363,9 @@ include_once ("./php/pack_backend.php");
 
 
             <div class="options-container">
-                <form action="#" method="post" class="wishlist-form">
-                    <button type="submit" class="wish-btn"><span>Add To Wishliste</span></button>
+                <form action="../addwishlist.php?srno=<?php echo $data['pckg_id']; ?>" method="post" class="wishlist-form">
+                <?php $_SESSION['pcsrno'] = $data['pckg_id']; ?>
+                    <button type="submit" name="addwish" class="wish-btn" value="addwishlist.php"><span>Add to Wishlist</span></button>
                 </form>
                 <form action="../book.php?srno=<?php echo $data['pckg_id']; ?>" method="post" class="Book-form">
                 <?php $_SESSION['pcsrno'] = $data['pckg_id']; ?>    

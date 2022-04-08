@@ -37,16 +37,14 @@ if (isset($_POST['search'])) {
     </head>
 
     <body onload="myFunction()">
-        <?php
-
-        include_once 'main_nav.php';
-        ?>
         <div class="spinner" id="loader1">
             <div class="dot1"></div>
             <div class="dot2"></div>
             <div class="dot3"></div>
         </div>
-
+        <?php
+        include_once 'main_nav.php';
+        ?>
         <div class="search-container">
             <form action="search.php" method="post">
                 <input type="text" name="searchbar" placeholder="Search Place Here....." class="search-box">
