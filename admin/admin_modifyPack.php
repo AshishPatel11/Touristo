@@ -59,7 +59,7 @@ if (!isset($_SESSION['uname']) && !isset($_SESSION['acctyp'])) {
                         <th>Price</th>
                         <th>State</th>
                         <th>ratings</th>
-                        <th>Actions</th>
+                        <th style="width: 20%;">Actions</th>
                     </tr>
                 </thead>
 
@@ -76,10 +76,14 @@ if (!isset($_SESSION['uname']) && !isset($_SESSION['acctyp'])) {
                                 <td><?php echo $data['pckg_price']; ?> </td>
                                 <td><?php echo $data['state']; ?> </td>
                                 <td><?php echo $data['ratings']; ?> </td>
-                                <td><form action="pckg_action.php?pkid=<?php echo $data['pckg_id']; ?>" method="post" class="delete">
+                                <td style="display: flex; border: none; justify-content: space-evenly;">
+                                <form action="pckg_delete.php?pkid=<?php echo $data['pckg_id']; ?>" method="post" class="delete">
                                     <input type="submit" name="delete" value="delete">
+                                </form>
+                                <form action="pckg_action.php?pkid=<?php echo $data['pckg_id']; ?>" method="post" class="delete">
                                     <input type="submit" name="update" value="update">
-                                </form></td>
+                                </form>
+                            </td>
                             </tr>
                         <?php
                         }
