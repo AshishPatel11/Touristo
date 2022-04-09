@@ -31,3 +31,19 @@ if(isset($_POST['addwish'])){
     }
 }
 ?>
+
+
+<?php
+if(isset($_POST['removewish'])){
+    $rmvwish = "DELETE FROM `wishlist_tbl` WHERE `pckg_id` = '$_SESSION[pcsrno]' AND `uid` = '$_SESSION[uid]'";
+    $rmvwishrun = mysqli_query($conn, $rmvwish);
+    if($rmvwishrun){
+        ?>
+            <script>
+                alert(`Package Has Been Removed From Your Wishlist!`);
+                location.replace('main.php');
+            </script>
+        <?php
+    }
+}
+?>

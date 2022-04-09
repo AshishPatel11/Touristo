@@ -300,12 +300,25 @@ if ($result->num_rows > 0) {
 
 
             <div class="options-container">
-                <form action="../addwishlist.php?srno=<?php echo $data['pckg_id']; ?>" method="post" class="wishlist-form">
-                <?php $_SESSION['pcsrno'] = $data['pckg_id']; ?>
-                    <button type="submit" name="addwish" class="wish-btn" value="addwishlist.php"><span>Add to Wishlist</span></button>
-                </form>
+                <?php
+                    $wishlistdata = "SELECT * FROM `wishlist_tbl` WHERE `uid` = '$_SESSION[uid]'";
+                    $wishlistdataRun = mysqli_query($conn, $wishlistdata);
+                        if ($wishlistdataRun->num_rows > 0) {?>
+                                <form action="../addwishlist.php?srno=<?php echo $data['pckg_id']; ?>" method="post"
+                                    class="wishlist-form">
+                                    <?php $_SESSION['pcsrno'] = $data['pckg_id']; ?>
+                                    <button type="submit" name="removewish" class="wish-btn" value="addwishlist.php" style="width: 250px;"><span>Remove form Wishlist</span></button>
+                                </form><?php
+                            }else{
+                ?>
+                <form action="../addwishlist.php?srno=<?php echo $data['pckg_id']; ?>" method="post"
+                    class="wishlist-form">
+                    <?php $_SESSION['pcsrno'] = $data['pckg_id']; ?>
+                    <button type="submit" name="addwish" class="wish-btn" value="addwishlist.php"><span>Add to
+                            Wishlist</span></button>
+                </form><?php } ?>
                 <form action="../book.php?srno=<?php echo $data['pckg_id']; ?>" method="post" class="Book-form">
-                <?php $_SESSION['pcsrno'] = $data['pckg_id']; ?>
+                    <?php $_SESSION['pcsrno'] = $data['pckg_id']; ?>
                     <button type="submit" class="book-btn" value="book.php"><span>Book Now</span></button>
                 </form>
             </div>
