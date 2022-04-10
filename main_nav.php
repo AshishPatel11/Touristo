@@ -112,6 +112,32 @@ $count = mysqli_num_rows($bhag);
         </div>
         <div class="notification-div">
             <img src="./css/images/svg/close.svg" class="close" width="30px" height="30px" alt="close">
+            <?php
+            if (!isset($_SESSION['email'])) {
+            ?>
+                <p>You are not logged in please login!</p>
+                <a href="login.php" class="button">Login</a>
+                <?php
+            } else {
+
+                $select = "SELECT * FROM contactus WHERE email = '$_SESSION[email]'";
+                $run = mysqli_query($conn, $select);
+                while ($show = mysqli_fetch_array($run)) {
+
+                    if($show['status'] == 'unseen' && !empty($show['reply'])){
+                        
+                        echo "Your message: $show[message]<br>
+                        From Admin: $show[reply]";
+                ?>
+                        <a href="ok.php?serial=<?php echo $show['srno'] ?>">
+                            <input type='submit' name='ok' value='Ok'>
+                        </a>
+            <?php
+                    }
+                }
+            }
+
+            ?>
         </div>
         <div class="profile-container">
             <img src="./css/images/svg/close.svg" class="close" width="30px" height="30px" alt="close">

@@ -15,6 +15,11 @@ include_once ("./php/pack_backend.php");
                     else{
                         die("The page you are looking for doesnot exist");
                     }
+if(isset($_SESSION['uname'])){
+$query = " SELECT * FROM contactus WHERE reply != '' AND status = 'unseen' AND email = '$_SESSION[email]'";
+$bhag = mysqli_query($conn, $query);
+$count = mysqli_num_rows($bhag);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -181,8 +186,13 @@ include_once ("./php/pack_backend.php");
                     </svg>
                     </a>
                     <ul class="list-container">
-                        <li class="nav-option"><a class="li-link" href="#">Destionations</a></li>
-                        <li class="nav-option"><a class="li-link" href="#">Wishlist</a></li>
+                        <?php
+                    if(isset($_SESSION['uname'])){?>
+                        <li class="nav-option"><a class="li-link noti">Notification(<?php echo $count; ?>)</a></li>
+                        <?php }else{ ?>
+                        <li class="nav-option"><a class="li-link noti">Notification(0)</a></li>
+                        <?php } ?>
+                        <li class="nav-option"><a class="li-link" href="../wishlist.php">Wishlist</a></li>
                         <li class="nav-option"><a class="li-link" href="../aboutus.php">About Us</a></li>
                     </ul>
                     <?php
@@ -199,6 +209,64 @@ include_once ("./php/pack_backend.php");
                 }
                 ?>
                 </nav>
+            </div>
+            <div class="notification-div">
+                <img src="./css/images/svg/close.svg" class="close" width="30px" height="30px" alt="close">
+                <?php
+            if (!isset($_SESSION['email'])) {
+            ?>
+                <p>You are not logged in please login!</p>
+                <a href="../login.php" class="button">Login</a>
+                <?php
+            } else {
+
+                $select = "SELECT * FROM contactus WHERE email = '$_SESSION[email]'";
+                $run = mysqli_query($conn, $select);
+                while ($show = mysqli_fetch_array($run)) {
+
+                    if($show['status'] == 'unseen' && !empty($show['reply'])){
+                        
+                        echo "Your message: $show[message]<br>
+                        From Admin: $show[reply]";
+                ?>
+                <a href="../ok.php?serial=<?php echo $show['srno'] ?>">
+                    <input type='submit' name='ok' value='Ok'>
+                </a>
+                <?php
+                    }
+                }
+            }
+
+            ?>
+            </div>
+            <div class="notification-div">
+                <img src="../css/images/svg/close.svg" class="close" width="30px" height="30px" alt="close">
+                <?php
+            if (!isset($_SESSION['email'])) {
+            ?>
+                <p>You are not logged in please login!</p>
+                <a href="../login.php" class="button">Login</a>
+                <?php
+            } else {
+
+                $select = "SELECT * FROM contactus WHERE email = '$_SESSION[email]'";
+                $run = mysqli_query($conn, $select);
+                while ($show = mysqli_fetch_array($run)) {
+
+                    if($show['status'] == 'unseen' && !empty($show['reply'])){
+                        
+                        echo "Your message: $show[message]<br>
+                        From Admin: $show[reply]";
+                ?>
+                <a href="../ok.php?serial=<?php echo $show['srno'] ?>">
+                    <input type='submit' name='ok' value='Ok'>
+                </a>
+                <?php
+                    }
+                }
+            }
+
+            ?>
             </div>
             <div class="profile-container">
                 <img src="../css/images/svg/close.svg" class="close" width="30px" height="30px" alt="close">
@@ -284,7 +352,24 @@ include_once ("./php/pack_backend.php");
         <div class="pack-bar">
             <h3 class="location">Location: <?php echo $data["state"] ?>, India</h3>
             <h3 class="price">Price: ₹<?php echo $data["pckg_price"] ?></h3>
-            <h3 class="duration">Duration: 9 days/ 8 nights</h3>
+            <?php
+                    $wishlistdata = "SELECT * FROM `wishlist_tbl` WHERE `uid` = '$_SESSION[uid]' AND `pckg_id` = '$data[pckg_id]'";
+                    $wishlistdataRun = mysqli_query($conn, $wishlistdata);
+                        if ($wishlistdataRun->num_rows > 0) {?>
+                <form action="../addwishlist.php?srno=<?php echo $data['pckg_id']; ?>" method="post"
+                    class="wishlist-form">
+                    <?php $_SESSION['pcsrno'] = $data['pckg_id']; ?>
+                    <button type="submit" name="removewish" class="wish-btn" value="addwishlist.php"
+                        style="width: 250px;"><span>Remove form Wishlist</span></button>
+                </form><?php
+                            }else{
+                ?>
+                <form action="../addwishlist.php?srno=<?php echo $data['pckg_id']; ?>" method="post"
+                    class="wishlist-form">
+                    <?php $_SESSION['pcsrno'] = $data['pckg_id']; ?>
+                    <button type="submit" name="addwish" class="wish-btn" value="addwishlist.php"><span>Add to
+                            Wishlist</span></button>
+                </form><?php } ?>
             <form action="../book.php?srno=<?php echo $data['pckg_id']; ?>" method="post" class="Book-form">
                 <?php $_SESSION['pcsrno'] = $data['pckg_id']; ?>
                 <button type="submit" class="book-btn" value="book.php"><span>Book Now</span></button>
@@ -545,12 +630,12 @@ $(".profile").click(function() {
         $(".profile-container").fadeOut("slow");
     });
 });
-$(".profile").click(function() {
-    $(".profile-container").fadeIn("slow").css("display", "flex");
-    $(".close").click(function() {
-        $(".profile-container").fadeOut("slow");
+$(".noti").click(function() {
+        $(".notification-div").fadeIn("slow").css("display", "flex");
+        $(".close").click(function() {
+            $(".notification-div").fadeOut("slow");
+        });
     });
-});
 </script>
 
 
