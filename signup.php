@@ -88,8 +88,8 @@ include './php/signupBackend.php';
                 </svg>
             </a>
             <ul class="nav-ul">
+                <li class="nav-option"><a href="main.php" id="login">Home</a></li>
                 <li class="nav-option"><a href="login.php">Login</a></li>
-                <li class="nav-option"><a href="help.php">Help</a></li>
                 <li class="nav-option"><a href="aboutus.php">About Us</a></li>
 
             </ul>
@@ -247,6 +247,7 @@ include './php/signupBackend.php';
     <script src="./js/signup.js"></script>
     <script>
         var preloader = document.getElementById('loader1');
+
         function myFunction() {
             preloader.style.display = 'none';
         }

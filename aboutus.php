@@ -16,7 +16,7 @@ include "php/connection.php";
     <link rel="stylesheet" href="css/aboutus.css">
     <script src="./js/jquery.min.js"></script>
     <style>
-        .nav-container{
+        .nav-container {
             position: absolute;
         }
     </style>
@@ -24,8 +24,13 @@ include "php/connection.php";
 </head>
 
 <body onload="myFunction()">
+    <div class="spinner" id="loader1">
+        <div class="dot1"></div>
+        <div class="dot2"></div>
+        <div class="dot3"></div>
+    </div>
     <?php
-        include_once 'main_nav.php';
+    include_once 'main_nav.php';
     ?>
     <img class="back window" src="css\images\svg\Frame 2.svg" alt="">
     <img src="css\images\svg\Frame 8.svg" alt="" class="back responsive">
