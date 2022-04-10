@@ -364,7 +364,7 @@ include_once ("./php/pack_backend.php");
 
            <div class="options-container">
                 <?php
-                    $wishlistdata = "SELECT * FROM `wishlist_tbl` WHERE `uid` = '$_SESSION[uid]'";
+                    $wishlistdata = "SELECT * FROM `wishlist_tbl` WHERE `uid` = '$_SESSION[uid]' AND `pckg_id` = '$data[pckg_id]'";
                     $wishlistdataRun = mysqli_query($conn, $wishlistdata);
                         if ($wishlistdataRun->num_rows > 0) {?>
                                 <form action="../addwishlist.php?srno=<?php echo $data['pckg_id']; ?>" method="post"
