@@ -30,6 +30,49 @@ if(isset($_POST['delete'])){
     $deletepackresult = mysqli_query($conn, $deletepackqry);
     if($deletepackresult){
         unlink("../packages/$pckg_name.php");
+        unlink("../packages/images/$pckg_name"."_thumb.jpg");
+        unlink("../packages/images/$pckg_name"."_banner.jpg");
+        unlink("../packages/images/$pckg_name"."_place1.jpg");
+        unlink("../packages/images/$pckg_name"."_place2.jpg");
+
+        $imgAddr = "./images/" . $pckg_name . "_place3" . ".jpg";
+        $imgExist = file_exists("$imgAddr");
+        if ($imgExist === true) {
+            unlink("../packages/images/$pckg_name"."_place3.jpg");
+        }
+        
+        $imgAddr = "./images/" . $pckg_name . "_place4" . ".jpg";
+        $imgExist = file_exists("$imgAddr");
+        if ($imgExist === true) {
+            unlink("../packages/images/$pckg_name"."_place4.jpg");
+        }
+
+        $imgAddr = "./images/" . $pckg_name . "_place5" . ".jpg";
+        $imgExist = file_exists("$imgAddr");
+        if ($imgExist === true) {
+            unlink("../packages/images/$pckg_name"."_place5.jpg");
+        }
+
+        $imgAddr = "./images/" . $pckg_name . "_place6" . ".jpg";
+        $imgExist = file_exists("$imgAddr");
+        if ($imgExist === true) {
+            unlink("../packages/images/$pckg_name"."_place6.jpg");
+        }
+
+        ?>
+            <script>
+                alert(`Package Deleted Successfully!`);
+                location.replace(`admin_modifyPack.php`);
+            </script>
+        <?php
+
+    }else{
+        ?>
+            <script>
+                alert(`Error deleting package!`);
+                location.replace(`admin_modifyPack.php`);
+            </script>
+        <?php
     }
 }
 ?>
