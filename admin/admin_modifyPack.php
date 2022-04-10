@@ -48,7 +48,7 @@ if (!isset($_SESSION['uname']) && !isset($_SESSION['acctyp'])) {
 ?>
 <div class="form-container1">
 
-        <h1>Modify user</h1>
+        <h1>Modify Package</h1>
 
         <div>
             <table class='styled-table'>
