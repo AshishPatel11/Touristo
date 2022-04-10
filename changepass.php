@@ -13,7 +13,7 @@ if (isset($_SESSION['uid'])) {
     </script>
     <?php
 }
-$err = $oerr = "";
+$err = $oerr = $perr = "";
 
 $passwordquery = " SELECT passwd FROM user_tbl WHERE uid = '$uid'";
 $result = mysqli_query($conn, $passwordquery);
@@ -32,25 +32,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!password_verify($oldpass, $data['passwd'])) {
         $oerr = 'Please enter correct password!';
     } else {
-        if ($newpass !== $cpass) {
-            $err = 'Password are not matching!';
+        if (!strlen($newpass) > 8) {
+            $perr = "Enter at least 8 characters!";
         } else {
-            $update = " UPDATE `user_tbl` SET `passwd`='$hashnew' WHERE uid = '$uid' ";
-            $updateresult = mysqli_query($conn, $update);
-
-            if ($updateresult) {
-    ?>
-                <script>
-                    alert(`Password Changed!`);
-                    location.replace('logout.php');
-                </script>
-            <?php
+            if ($newpass !== $cpass) {
+                $err = 'Password are not matching!';
             } else {
-            ?>
-                <script>
-                    alert(`Password Changing Failed!`);
-                </script>
+                $update = " UPDATE `user_tbl` SET `passwd`='$hashnew' WHERE uid = '$uid' ";
+                $updateresult = mysqli_query($conn, $update);
+
+                if ($updateresult) {
+    ?>
+                    <script>
+                        alert(`Password Changed!`);
+                        location.replace('logout.php');
+                    </script>
+                <?php
+                } else {
+                ?>
+                    <script>
+                        alert(`Password Changing Failed!`);
+                    </script>
 <?php
+                }
             }
         }
     }
@@ -76,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 
 <body onload="myFunction()">
-<?php include_once 'main_nav.php';?>
+    <?php include_once 'main_nav.php'; ?>
     <div class="spinner" id="loader1">
         <div class="dot1"></div>
         <div class="dot2"></div>
@@ -97,6 +101,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <label for="newpass">New Password</label>
                 <input type="password" name="newpass" id="newpass" required>
             </div>
+            <p class='err'><?php echo $perr; ?></p>
             <div class="textbox">
                 <label for="cpass">Confirm Password</label>
                 <input type="password" name="cpass" id="cpass" required>
