@@ -1,4 +1,5 @@
 <?php
+// session_start();
 include "php/connection.php";
 if(isset($_SESSION['uname'])){
 $query = " SELECT * FROM contactus WHERE reply != '' AND status = 'unseen' AND email = '$_SESSION[email]'";

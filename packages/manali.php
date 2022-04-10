@@ -199,10 +199,10 @@ include_once ("./php/pack_backend.php");
                 }
                 ?>
                 </nav>
-                </div>
-                <div class="profile-container">
-                    <img src="../css/images/svg/close.svg" class="close" width="30px" height="30px" alt="close">
-                    <?php
+            </div>
+            <div class="profile-container">
+                <img src="../css/images/svg/close.svg" class="close" width="30px" height="30px" alt="close">
+                <?php
                 if (isset($_SESSION["uname"])) {
                     $profileAddress = "../profiles/" . $_SESSION["uid"] . "." . "jpg";
                     $fileExist = file_exists("$profileAddress");
@@ -212,30 +212,30 @@ include_once ("./php/pack_backend.php");
                         echo "<img src=../css/images/profile.png class=profile>";
                     }
                 ?>
-                    <center>
-                        <?php if (isset($_SESSION["uname"])) {
+                <center>
+                    <?php if (isset($_SESSION["uname"])) {
                             echo $_SESSION["uname"];
                         } ?>
-                    </center>
-                    <?php if (isset($_SESSION["uid"])) {
+                </center>
+                <?php if (isset($_SESSION["uid"])) {
                         echo "UserID : $_SESSION[uid]";
                     } ?>
-                    <a href="../changeprofile.php" class="change-link">change Profile image</a>
-                    <a href="../updateprofile.php" class="button">Update profile</a>
-                    <a href="../changepass.php" class="button">Change Password</a>
-                    <a href="../mytrips.php" class="button">My Trips</a>
-                    <a href="../contactus.php" class="button">Contact Us</a>
-                    <a href="../logout.php" class="button">Logout</a>
+                <a href="../changeprofile.php" class="change-link">change Profile image</a>
+                <a href="../updateprofile.php" class="button">Update profile</a>
+                <a href="../changepass.php" class="button">Change Password</a>
+                <a href="../mytrips.php" class="button">My Trips</a>
+                <a href="../contactus.php" class="button">Contact Us</a>
+                <a href="../logout.php" class="button">Logout</a>
 
-                    <?php
+                <?php
                 } else {
                 ?>
-                    <p>You are not logged in please login!</p>
-                    <a href="../login.php#login" class="button">Login</a>
-                    <?php
+                <p>You are not logged in please login!</p>
+                <a href="../login.php#login" class="button">Login</a>
+                <?php
                 }
                 ?>
-                </div>
+            </div>
         </div>
         <div class="place-images">
             <div class="p1" style="background-image: url(./images/<?php echo $filenameimg; ?>_place1.jpg);"></div>
@@ -287,8 +287,8 @@ include_once ("./php/pack_backend.php");
             <h3 class="duration">Duration: 9 days/ 8 nights</h3>
             <form action="../book.php?srno=<?php echo $data['pckg_id']; ?>" method="post" class="Book-form">
                 <?php $_SESSION['pcsrno'] = $data['pckg_id']; ?>
-                    <button type="submit" class="book-btn" value="book.php"><span>Book Now</span></button>
-                </form>
+                <button type="submit" class="book-btn" value="book.php"><span>Book Now</span></button>
+            </form>
         </div>
     </section>
 
@@ -363,13 +363,26 @@ include_once ("./php/pack_backend.php");
 
 
             <div class="options-container">
-                <form action="../addwishlist.php?srno=<?php echo $data['pckg_id']; ?>" method="post" class="wishlist-form">
-                <?php $_SESSION['pcsrno'] = $data['pckg_id']; ?>
-                    <button type="submit" name="addwish" class="wish-btn" value="addwishlist.php"><span>Add to Wishlist</span></button>
-                </form>
+                <?php
+                    $wishlistdata = "SELECT * FROM `wishlist_tbl` WHERE `uid` = '$_SESSION[uid]'";
+                    $wishlistdataRun = mysqli_query($conn, $wishlistdata);
+                        if ($wishlistdataRun->num_rows > 0) {?>
+                                <form action="../addwishlist.php?srno=<?php echo $data['pckg_id']; ?>" method="post"
+                                    class="wishlist-form">
+                                    <?php $_SESSION['pcsrno'] = $data['pckg_id']; ?>
+                                    <button type="submit" name="removewish" class="wish-btn" value="addwishlist.php" style="width: 250px;"><span>Remove form Wishlist</span></button>
+                                </form><?php
+                            }else{
+                ?>
+                <form action="../addwishlist.php?srno=<?php echo $data['pckg_id']; ?>" method="post"
+                    class="wishlist-form">
+                    <?php $_SESSION['pcsrno'] = $data['pckg_id']; ?>
+                    <button type="submit" name="addwish" class="wish-btn" value="addwishlist.php"><span>Add to
+                            Wishlist</span></button>
+                </form><?php } ?>
                 <form action="../book.php?srno=<?php echo $data['pckg_id']; ?>" method="post" class="Book-form">
-                <?php $_SESSION['pcsrno'] = $data['pckg_id']; ?>    
-                <button type="submit" class="book-btn" value="book.php"><span>Book Now</span></button>
+                    <?php $_SESSION['pcsrno'] = $data['pckg_id']; ?>
+                    <button type="submit" class="book-btn" value="book.php"><span>Book Now</span></button>
                 </form>
             </div>
         </section>
@@ -522,7 +535,7 @@ var preloader = document.getElementById("loader1");
 
 function myFunction() {
 
-        preloader.style.display = "none";
+    preloader.style.display = "none";
 
 
 }

@@ -68,7 +68,7 @@ $count = mysqli_num_rows($wishlistdataRun);
             Your Wishlist ⋙
         </h1>
         <div class="cards-container">
-        <?php
+            <?php
             if ($wishlistdataRun->num_rows > 0) {
 
                     while ($wishdata = mysqli_fetch_array($wishlistdataRun)) {
@@ -92,11 +92,10 @@ $count = mysqli_num_rows($wishlistdataRun);
             }
         ?>
         </div>
-    </section> <?php
+<?php
         }
         else{
             ?>
-    <section class="page2">
         <div class="temp-width">
             <h1 class="title err">
                 You don't have any package in your wishlist!
@@ -105,7 +104,6 @@ $count = mysqli_num_rows($wishlistdataRun);
     </section>
     <?php
         }
-
 ?>
     <div class="footer-container">
         <footer>
