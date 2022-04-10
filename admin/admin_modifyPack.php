@@ -77,7 +77,7 @@ if (!isset($_SESSION['uname']) && !isset($_SESSION['acctyp'])) {
                                 <td><?php echo $data['state']; ?> </td>
                                 <td><?php echo $data['ratings']; ?> </td>
                                 <td style="display: flex; border: none; justify-content: space-evenly;">
-                                <form action="pckg_delete.php?pkid=<?php echo $data['pckg_id']; ?>" method="post" class="delete">
+                                <form action="pckg_delete.php?pkid=<?php echo $data['pckg_id']; ?>&pkname=<?php echo $data['pckg_name']; ?>" method="post" class="delete">
                                     <input type="submit" name="delete" value="delete">
                                 </form>
                                 <form action="pckg_action.php?pkid=<?php echo $data['pckg_id']; ?>" method="post" class="delete">
