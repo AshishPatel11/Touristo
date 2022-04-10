@@ -28,7 +28,7 @@ include "php/connection.php";
         include_once 'main_nav.php';
     ?>
     <img class="back window" src="css\images\svg\Frame 2.svg" alt="">
-    <img src="css\images\svg\about us 2.svg" alt="" class="back responsive">
+    <img src="css\images\svg\Frame 8.svg" alt="" class="back responsive">
     <div class="footer-container">
         <footer>
             <div class="part1">
