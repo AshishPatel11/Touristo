@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!password_verify($oldpass, $data['passwd'])) {
         $oerr = 'Please enter correct password!';
     } else {
-        if (!strlen($newpass) > 8) {
+        if (strlen($newpass) < 8) {
             $perr = "Enter at least 8 characters!";
         } else {
             if ($newpass !== $cpass) {
