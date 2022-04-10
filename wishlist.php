@@ -27,8 +27,7 @@ $count = mysqli_num_rows($wishlistdataRun);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Touristo - <?php if (isset($_SESSION['uname'])) {
                                 echo $_SESSION['uname'];
-                            }
-                            echo " search - $_POST[searchbar]"; ?></title>
+                            }?></title>
     <!--Linked the icon image will apear in title bar-->
     <link rel="shortcut icon" href="./css/images/svg/title.svg">
     <link rel="stylesheet" href="./css/home.css">
