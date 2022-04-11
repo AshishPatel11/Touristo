@@ -60,7 +60,10 @@ if (isset($_POST['submit'])) {
     <script src="./js/jquery.min.js"></script>
     <style>
         body {
-            background-color: #1A1A1A;
+            background-image: url(./css/images/mytripsbg.jpg);
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center center;
         }
 
         .heading h2 {
