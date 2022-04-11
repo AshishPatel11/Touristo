@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 session_start();
 include '../php/connection.php';
@@ -22,308 +22,298 @@ if (!isset($_SESSION['uname']) && !isset($_SESSION['acctyp'])) {
 }
 ?>
 <?php
-if(isset($_POST['updateSubmit'])){
-            
-            $banner = $_FILES['bannerImg'];
+if (isset($_POST['updateSubmit'])) {
 
-            $bannerName = $_FILES['bannerImg']['name'];
-            $bannerTmpname = $_FILES['bannerImg']['tmp_name'];
-            $bannerSize = $_FILES['bannerImg']['size'];
-            $bannerErr = $_FILES['bannerImg']['error'];
-            $bannertype = $_FILES['bannerImg']['type'];
+    $banner = $_FILES['bannerImg'];
 
-            $bannerExt = explode('.', $bannerName);
-            $bannerActExt = strtolower(end($bannerExt));
+    $bannerName = $_FILES['bannerImg']['name'];
+    $bannerTmpname = $_FILES['bannerImg']['tmp_name'];
+    $bannerSize = $_FILES['bannerImg']['size'];
+    $bannerErr = $_FILES['bannerImg']['error'];
+    $bannertype = $_FILES['bannerImg']['type'];
 
-
-            $thumb = $_FILES['thumbImg'];
-
-            $thumbName = $_FILES['thumbImg']['name'];
-            $thumbTmpname = $_FILES['thumbImg']['tmp_name'];
-            $thumbSize = $_FILES['thumbImg']['size'];
-            $thumbErr = $_FILES['thumbImg']['error'];
-            $thumbtype = $_FILES['thumbImg']['type'];
-
-            $thumbExt = explode('.', $thumbName);
-            $thumbActExt = strtolower(end($thumbExt));
-
-            $place1 = $_FILES['place1Img'];
-
-            $place1Name = $_FILES['place1Img']['name'];
-            $place1Tmpname = $_FILES['place1Img']['tmp_name'];
-            $place1Size = $_FILES['place1Img']['size'];
-            $place1Err = $_FILES['place1Img']['error'];
-            $place1type = $_FILES['place1Img']['type'];
-
-            $place1Ext = explode('.', $place1Name);
-            $place1ActExt = strtolower(end($place1Ext));
+    $bannerExt = explode('.', $bannerName);
+    $bannerActExt = strtolower(end($bannerExt));
 
 
-            $place2 = $_FILES['place2Img'];
+    $thumb = $_FILES['thumbImg'];
 
-            $place2Name = $_FILES['place2Img']['name'];
-            $place2Tmpname = $_FILES['place2Img']['tmp_name'];
-            $place2Size = $_FILES['place2Img']['size'];
-            $place2Err = $_FILES['place2Img']['error'];
-            $place2type = $_FILES['place2Img']['type'];
+    $thumbName = $_FILES['thumbImg']['name'];
+    $thumbTmpname = $_FILES['thumbImg']['tmp_name'];
+    $thumbSize = $_FILES['thumbImg']['size'];
+    $thumbErr = $_FILES['thumbImg']['error'];
+    $thumbtype = $_FILES['thumbImg']['type'];
 
-            $place2Ext = explode('.', $place2Name);
-            $place2ActExt = strtolower(end($place2Ext));
+    $thumbExt = explode('.', $thumbName);
+    $thumbActExt = strtolower(end($thumbExt));
 
+    $place1 = $_FILES['place1Img'];
 
-            $place3 = $_FILES['place3Img'];
+    $place1Name = $_FILES['place1Img']['name'];
+    $place1Tmpname = $_FILES['place1Img']['tmp_name'];
+    $place1Size = $_FILES['place1Img']['size'];
+    $place1Err = $_FILES['place1Img']['error'];
+    $place1type = $_FILES['place1Img']['type'];
 
-            $place3Name = $_FILES['place3Img']['name'];
-            $place3Tmpname = $_FILES['place3Img']['tmp_name'];
-            $place3Size = $_FILES['place3Img']['size'];
-            $place3Err = $_FILES['place3Img']['error'];
-            $place3type = $_FILES['place3Img']['type'];
-
-            $place3Ext = explode('.', $place3Name);
-            $place3ActExt = strtolower(end($place3Ext));
-
-
-            $place4 = $_FILES['place4Img'];
-
-            $place4Name = $_FILES['place4Img']['name'];
-            $place4Tmpname = $_FILES['place4Img']['tmp_name'];
-            $place4Size = $_FILES['place4Img']['size'];
-            $place4Err = $_FILES['place4Img']['error'];
-            $place4type = $_FILES['place4Img']['type'];
-
-            $place4Ext = explode('.', $place4Name);
-            $place4ActExt = strtolower(end($place4Ext));
+    $place1Ext = explode('.', $place1Name);
+    $place1ActExt = strtolower(end($place1Ext));
 
 
-            $place5 = $_FILES['place5Img'];
+    $place2 = $_FILES['place2Img'];
 
-            $place5Name = $_FILES['place5Img']['name'];
-            $place5Tmpname = $_FILES['place5Img']['tmp_name'];
-            $place5Size = $_FILES['place5Img']['size'];
-            $place5Err = $_FILES['place5Img']['error'];
-            $place5type = $_FILES['place5Img']['type'];
+    $place2Name = $_FILES['place2Img']['name'];
+    $place2Tmpname = $_FILES['place2Img']['tmp_name'];
+    $place2Size = $_FILES['place2Img']['size'];
+    $place2Err = $_FILES['place2Img']['error'];
+    $place2type = $_FILES['place2Img']['type'];
 
-            $place5Ext = explode('.', $place5Name);
-            $place5ActExt = strtolower(end($place5Ext));
+    $place2Ext = explode('.', $place2Name);
+    $place2ActExt = strtolower(end($place2Ext));
 
 
-            $place6 = $_FILES['place6Img'];
-            $place6Name = $_FILES['place6Img']['name'];
-            $place6Tmpname = $_FILES['place6Img']['tmp_name'];
-            $place6Size = $_FILES['place6Img']['size'];
-            $place6Err = $_FILES['place6Img']['error'];
-            $place6type = $_FILES['place6Img']['type'];
+    $place3 = $_FILES['place3Img'];
 
-            $place6Ext = explode('.', $place6Name);
-            $place6ActExt = strtolower(end($place6Ext));
+    $place3Name = $_FILES['place3Img']['name'];
+    $place3Tmpname = $_FILES['place3Img']['tmp_name'];
+    $place3Size = $_FILES['place3Img']['size'];
+    $place3Err = $_FILES['place3Img']['error'];
+    $place3type = $_FILES['place3Img']['type'];
 
-        $packname = $conn -> real_escape_string($_POST['name']);
-        $price = $conn -> real_escape_string($_POST['price']);
-        $state = $conn -> real_escape_string($_POST['state']);
-        $mainpara = $conn -> real_escape_string($_POST['mainParagraph']);
-        $p1desc = $conn -> real_escape_string($_POST['place1Desc']);
-        $p2desc =$conn -> real_escape_string($_POST['place2Desc']);
-        $p3desc = $conn -> real_escape_string($_POST['place3Desc']);
-        $p4desc = $conn -> real_escape_string($_POST['place4Desc']);
-        $p5desc = $conn -> real_escape_string($_POST['place5Desc']);
-        $p6desc = $conn -> real_escape_string($_POST['place6Desc']);
-        $gmap = $conn -> real_escape_string($_POST['Gmap']);
-        $tagline = $conn -> real_escape_string($_POST['tagline']);
-        $tags = $conn -> real_escape_string($_POST['tags']);
-        $p1name = $conn-> real_escape_string($_POST['p1name']);
-        $p2name = $conn-> real_escape_string($_POST['p2name']);
-        $p3name = $conn-> real_escape_string($_POST['p3name']);
-        $p4name = $conn-> real_escape_string($_POST['p4name']);
-        $p5name = $conn-> real_escape_string($_POST['p5name']);
-        $p6name = $conn-> real_escape_string($_POST['p6name']);
+    $place3Ext = explode('.', $place3Name);
+    $place3ActExt = strtolower(end($place3Ext));
 
-        
-        $packageQuery = "UPDATE `pckg_tbl` SET `pckg_name`='$packname',`state`='$state',`pckg_price`='$price',`maplink`='$gmap',`tagline`='$tagline',`pckg_para`='$mainpara',`p1name`='$p1name',`sub_para1`='$p1desc',`p2name`='$p2name',`sub_para2`='$p2desc',`p3name`='$p3name',`sub_para3`='$p3desc',`p4name`='$p4name',`sub_para4`='$p4desc',`p5name`='$p5name',`sub_para5`='$p5desc',`p6name`='$p6name',`sub_para6`='$p6desc',`tags`='$tags' WHERE pckg_id = '$_POST[pckg_id]'";
 
-        $result = mysqli_query($conn, $packageQuery);
-        if($result){
+    $place4 = $_FILES['place4Img'];
 
-            
-             // banner image file storing in the system through php
-            
+    $place4Name = $_FILES['place4Img']['name'];
+    $place4Tmpname = $_FILES['place4Img']['tmp_name'];
+    $place4Size = $_FILES['place4Img']['size'];
+    $place4Err = $_FILES['place4Img']['error'];
+    $place4type = $_FILES['place4Img']['type'];
 
-            $allowed = array('jpg', 'jpeg', 'png');
-            if(!empty($banner3Name)){
-            if(in_array($bannerActExt, $allowed)){
-                if($bannerErr === 0){
-                    $bannerNameNew = $_POST['name'] ."_banner". ".jpg";
+    $place4Ext = explode('.', $place4Name);
+    $place4ActExt = strtolower(end($place4Ext));
 
-                    $bannerDestination = '../packages/images/'.$bannerNameNew;
+
+    $place5 = $_FILES['place5Img'];
+
+    $place5Name = $_FILES['place5Img']['name'];
+    $place5Tmpname = $_FILES['place5Img']['tmp_name'];
+    $place5Size = $_FILES['place5Img']['size'];
+    $place5Err = $_FILES['place5Img']['error'];
+    $place5type = $_FILES['place5Img']['type'];
+
+    $place5Ext = explode('.', $place5Name);
+    $place5ActExt = strtolower(end($place5Ext));
+
+
+    $place6 = $_FILES['place6Img'];
+    $place6Name = $_FILES['place6Img']['name'];
+    $place6Tmpname = $_FILES['place6Img']['tmp_name'];
+    $place6Size = $_FILES['place6Img']['size'];
+    $place6Err = $_FILES['place6Img']['error'];
+    $place6type = $_FILES['place6Img']['type'];
+
+    $place6Ext = explode('.', $place6Name);
+    $place6ActExt = strtolower(end($place6Ext));
+
+    $packname = $conn->real_escape_string($_POST['name']);
+    $price = $conn->real_escape_string($_POST['price']);
+    $state = $conn->real_escape_string($_POST['state']);
+    $mainpara = $conn->real_escape_string($_POST['mainParagraph']);
+    $p1desc = $conn->real_escape_string($_POST['place1Desc']);
+    $p2desc = $conn->real_escape_string($_POST['place2Desc']);
+    $p3desc = $conn->real_escape_string($_POST['place3Desc']);
+    $p4desc = $conn->real_escape_string($_POST['place4Desc']);
+    $p5desc = $conn->real_escape_string($_POST['place5Desc']);
+    $p6desc = $conn->real_escape_string($_POST['place6Desc']);
+    $gmap = $conn->real_escape_string($_POST['Gmap']);
+    $tagline = $conn->real_escape_string($_POST['tagline']);
+    $tags = $conn->real_escape_string($_POST['tags']);
+    $p1name = $conn->real_escape_string($_POST['p1name']);
+    $p2name = $conn->real_escape_string($_POST['p2name']);
+    $p3name = $conn->real_escape_string($_POST['p3name']);
+    $p4name = $conn->real_escape_string($_POST['p4name']);
+    $p5name = $conn->real_escape_string($_POST['p5name']);
+    $p6name = $conn->real_escape_string($_POST['p6name']);
+
+
+    $packageQuery = "UPDATE `pckg_tbl` SET `pckg_name`='$packname',`state`='$state',`pckg_price`='$price',`maplink`='$gmap',`tagline`='$tagline',`pckg_para`='$mainpara',`p1name`='$p1name',`sub_para1`='$p1desc',`p2name`='$p2name',`sub_para2`='$p2desc',`p3name`='$p3name',`sub_para3`='$p3desc',`p4name`='$p4name',`sub_para4`='$p4desc',`p5name`='$p5name',`sub_para5`='$p5desc',`p6name`='$p6name',`sub_para6`='$p6desc',`tags`='$tags' WHERE pckg_id = '$_POST[pckg_id]'";
+
+    $result = mysqli_query($conn, $packageQuery);
+    if ($result) {
+
+
+        // banner image file storing in the system through php
+
+
+        $allowed = array('jpg', 'jpeg', 'png');
+        if (!empty($banner3Name)) {
+            if (in_array($bannerActExt, $allowed)) {
+                if ($bannerErr === 0) {
+                    $bannerNameNew = $_POST['name'] . "_banner" . ".jpg";
+
+                    $bannerDestination = '../packages/images/' . $bannerNameNew;
                     move_uploaded_file($bannerTmpname, $bannerDestination);
-                }else
-                {
+                } else {
                     echo "error uploading image";
                 }
-            }else{
+            } else {
                 echo "extension not matched";
             }
         }
-            // storing the thumbnail image to the system through php
-            
+        // storing the thumbnail image to the system through php
 
-            $allowed = array('jpg', 'jpeg', 'png');
-            if(!empty($thumbName)){
-            if(in_array($thumbActExt, $allowed)){
-                if($thumbErr === 0){
-                    $thumbNameNew = $_POST['name'] ."_thumb". ".jpg";
 
-                    $thumbDestination = '../packages/images/'.$thumbNameNew;
+        $allowed = array('jpg', 'jpeg', 'png');
+        if (!empty($thumbName)) {
+            if (in_array($thumbActExt, $allowed)) {
+                if ($thumbErr === 0) {
+                    $thumbNameNew = $_POST['name'] . "_thumb" . ".jpg";
+
+                    $thumbDestination = '../packages/images/' . $thumbNameNew;
                     move_uploaded_file($thumbTmpname, $thumbDestination);
-                }else
-                {
+                } else {
                     echo "error uploading image";
                 }
-            }else{
+            } else {
                 echo "extension not matched";
             }
         }
-            // Place 1 image file storing in the system through php
-            
+        // Place 1 image file storing in the system through php
 
-            $allowed = array('jpg', 'jpeg', 'png');
-            if(!empty($place1Name)){
-            if(in_array($place1ActExt, $allowed)){
-                if($place1Err === 0){
-                    $place1NameNew = $_POST['name'] ."_place1". ".jpg";
 
-                    $place1Destination = '../packages/images/'.$place1NameNew;
+        $allowed = array('jpg', 'jpeg', 'png');
+        if (!empty($place1Name)) {
+            if (in_array($place1ActExt, $allowed)) {
+                if ($place1Err === 0) {
+                    $place1NameNew = $_POST['name'] . "_place1" . ".jpg";
+
+                    $place1Destination = '../packages/images/' . $place1NameNew;
                     move_uploaded_file($place1Tmpname, $place1Destination);
-                }else
-                {
+                } else {
                     echo "error uploading image";
                 }
-            }else{
+            } else {
                 echo "extension not matched";
             }
         }
-            // Place 2 image file storing in the system through php
-            
+        // Place 2 image file storing in the system through php
 
-            $allowed = array('jpg', 'jpeg', 'png');
-            if(!empty($place2Name)){
-            if(in_array($place2ActExt, $allowed)){
-                if($place2Err === 0){
-                    $place2NameNew = $_POST['name'] ."_place2". ".jpg";
 
-                    $place2Destination = '../packages/images/'.$place2NameNew;
+        $allowed = array('jpg', 'jpeg', 'png');
+        if (!empty($place2Name)) {
+            if (in_array($place2ActExt, $allowed)) {
+                if ($place2Err === 0) {
+                    $place2NameNew = $_POST['name'] . "_place2" . ".jpg";
+
+                    $place2Destination = '../packages/images/' . $place2NameNew;
                     move_uploaded_file($place2Tmpname, $place2Destination);
-                }else
-                {
+                } else {
                     echo "error uploading image";
                 }
-            }else{
+            } else {
                 echo "extension not matched";
             }
         }
-            // Place 3 image file storing in the system through php
-            
+        // Place 3 image file storing in the system through php
 
-            $allowed = array('jpg', 'jpeg', 'png');
-            if(!empty($place3Name)){
-            if(in_array($place3ActExt, $allowed)){
-                if($place3Err === 0){
-                    $place3NameNew = $_POST['name'] ."_place3". ".jpg";
 
-                    $place3Destination = '../packages/images/'.$place3NameNew;
+        $allowed = array('jpg', 'jpeg', 'png');
+        if (!empty($place3Name)) {
+            if (in_array($place3ActExt, $allowed)) {
+                if ($place3Err === 0) {
+                    $place3NameNew = $_POST['name'] . "_place3" . ".jpg";
+
+                    $place3Destination = '../packages/images/' . $place3NameNew;
                     move_uploaded_file($place3Tmpname, $place3Destination);
-                }else
-                {
+                } else {
                     echo "error uploading image";
                 }
-            }else{
+            } else {
                 echo "extension not matched";
             }
         }
-            // Place 4 image storing in the system through php
-            
+        // Place 4 image storing in the system through php
 
-            $allowed = array('jpg', 'jpeg', 'png');
-            if(!empty($place4Name)){
-            if(in_array($place4ActExt, $allowed)){
-                if($place4Err === 0){
-                    $place4NameNew = $_POST['name'] ."_place4". ".jpg";
 
-                    $place4Destination = '../packages/images/'.$place4NameNew;
+        $allowed = array('jpg', 'jpeg', 'png');
+        if (!empty($place4Name)) {
+            if (in_array($place4ActExt, $allowed)) {
+                if ($place4Err === 0) {
+                    $place4NameNew = $_POST['name'] . "_place4" . ".jpg";
+
+                    $place4Destination = '../packages/images/' . $place4NameNew;
                     move_uploaded_file($place4Tmpname, $place4Destination);
-                }else
-                {
+                } else {
                     echo "error uploading image";
                 }
-            }else{
+            } else {
                 echo "extension not matched";
             }
         }
-            // Place 5 image file storing in the system through php
-            
+        // Place 5 image file storing in the system through php
 
-            $allowed = array('jpg', 'jpeg', 'png');
-            if(!empty($place5Name)){
-            if(in_array($place5ActExt, $allowed)){
-                if($place5Err === 0){
-                    $place5NameNew = $_POST['name'] ."_place5". ".jpg";
 
-                    $place5Destination = '../packages/images/'.$place5NameNew;
+        $allowed = array('jpg', 'jpeg', 'png');
+        if (!empty($place5Name)) {
+            if (in_array($place5ActExt, $allowed)) {
+                if ($place5Err === 0) {
+                    $place5NameNew = $_POST['name'] . "_place5" . ".jpg";
+
+                    $place5Destination = '../packages/images/' . $place5NameNew;
                     move_uploaded_file($place5Tmpname, $place5Destination);
-                }else
-                {
+                } else {
                     echo "error uploading image";
                 }
-            }else{
+            } else {
                 echo "extension not matched";
             }
         }
-            // Place 6 imgage file storef in the system through php
-            
+        // Place 6 imgage file storef in the system through php
 
-                $allowed = array('jpg', 'jpeg', 'png');
-                if(!empty($place6Name)){
-                if(in_array($place6ActExt, $allowed)){
-                    if($place6Err === 0){
-                        $place6NameNew = $_POST['name'] ."_place6". ".jpg";
 
-                        $place6Destination = '../packages/images/'.$place6NameNew;
-                        move_uploaded_file($place6Tmpname, $place6Destination);
-                    }else
-                    {
-                        echo "error uploading image";
-                    }
-                }else{
-                    echo "extension not matched";
+        $allowed = array('jpg', 'jpeg', 'png');
+        if (!empty($place6Name)) {
+            if (in_array($place6ActExt, $allowed)) {
+                if ($place6Err === 0) {
+                    $place6NameNew = $_POST['name'] . "_place6" . ".jpg";
+
+                    $place6Destination = '../packages/images/' . $place6NameNew;
+                    move_uploaded_file($place6Tmpname, $place6Destination);
+                } else {
+                    echo "error uploading image";
                 }
+            } else {
+                echo "extension not matched";
             }
+        }
 
 
-            echo "
+        echo "
             <script>
                 alert( `package is updated successfully!`);
                 location.replace(`http://localhost/Touristo/packages/$packname.php`);
             </script>";
-
-        }else{
-            ?>
-            <script>
-                alert( `Error in Updating Package`);
-            </script>
-            <?php
-        }
-
+    } else {
+?>
+        <script>
+            alert(`Error in Updating Package`);
+        </script>
+<?php
+    }
 }
 
 ?>
 
 <?php
 
-                if(isset($_GET['pkid'])){
-                $pkid = $_GET['pkid'];
-                $packageFetch = "SELECT * FROM `pckg_tbl` WHERE pckg_id = $pkid";
-                $result = mysqli_query($conn, $packageFetch);
-                $count = mysqli_num_rows($result);
-                $data = mysqli_fetch_assoc($result);
+if (isset($_GET['pkid'])) {
+    $pkid = $_GET['pkid'];
+    $packageFetch = "SELECT * FROM `pckg_tbl` WHERE pckg_id = $pkid";
+    $result = mysqli_query($conn, $packageFetch);
+    $count = mysqli_num_rows($result);
+    $data = mysqli_fetch_assoc($result);
 }
 ?>
 
@@ -342,7 +332,7 @@ if(isset($_POST['updateSubmit'])){
     <link rel="stylesheet" href="./css/admin_addUser.css">
     <title>Add Package</title>
     <style>
-        .disable{
+        .disable {
             cursor: not-allowed;
         }
     </style>
@@ -356,7 +346,7 @@ if(isset($_POST['updateSubmit'])){
             <form action="pckg_action.php" method="post" class="package-form" enctype="multipart/form-data">
                 <div class="input-box">
                     <label for="Pid">Package ID:</label>
-                    <input type="text" name="pckg_id" value="<?php echo $data['pckg_id']; ?>" id="Pid" required  class="disable">
+                    <input type="text" name="pckg_id" value="<?php echo $data['pckg_id']; ?>" id="Pid" required class="disable">
                 </div>
 
                 <div class="input-box">
@@ -389,13 +379,13 @@ if(isset($_POST['updateSubmit'])){
 
                 <div class="upload-img">
                     <label for="thumbnail-img">Thumbnail Image:</label>
-                    <input type="file" name="thumbImg" id="thumbnail-img" >
+                    <input type="file" name="thumbImg" id="thumbnail-img">
                 </div>
 
 
                 <div class="upload-img">
                     <label for="banner-img">Banner Image:</label>
-                    <input type="file" name="bannerImg" id="banner-img" >
+                    <input type="file" name="bannerImg" id="banner-img">
                 </div>
 
                 <div class="input-box">
@@ -410,7 +400,7 @@ if(isset($_POST['updateSubmit'])){
 
                 <div class="upload-img">
                     <label for="place1-img">Place 1 Image:</label>
-                    <input type="file" name="place1Img" id="place1-img" >
+                    <input type="file" name="place1Img" id="place1-img">
                 </div>
                 <div class="input-box">
                     <label for="place1-desc">Description for Place 1:</label>
@@ -424,7 +414,7 @@ if(isset($_POST['updateSubmit'])){
 
                 <div class="upload-img">
                     <label for="place2-img">Place 2 Image:</label>
-                    <input type="file" name="place2Img" id="place2-img" >
+                    <input type="file" name="place2Img" id="place2-img">
                 </div>
                 <div class="input-box">
                     <label for="place2-desc">Description for Place 2:</label>

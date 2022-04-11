@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 session_start();
 include '../php/connection.php';
@@ -24,6 +24,7 @@ if (!isset($_SESSION['uname']) && !isset($_SESSION['acctyp'])) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,48 +36,49 @@ if (!isset($_SESSION['uname']) && !isset($_SESSION['acctyp'])) {
     <!-- <link rel="stylesheet" href="./css/admin_home.css"> -->
     <title>Update Package</title>
 </head>
+
 <body>
     <?php include_once "admin_nav.php";
     ?>
 </body>
 <?php
-                $packageFetch = "SELECT * FROM `pckg_tbl`";
+$packageFetch = "SELECT * FROM `pckg_tbl`";
 
-                $result = mysqli_query($conn, $packageFetch);
-                $count = mysqli_num_rows($result);
+$result = mysqli_query($conn, $packageFetch);
+$count = mysqli_num_rows($result);
 
 ?>
 <div class="form-container1">
 
-        <h1>Modify Package</h1>
+    <h1>Modify Package</h1>
 
-        <div>
-            <table class='styled-table'>
-                <thead>
-                    <tr>
-                        <th>Package ID</th>
-                        <th>Package Name</th>
-                        <th>Price</th>
-                        <th>State</th>
-                        <th>ratings</th>
-                        <th style="width: 20%;">Actions</th>
-                    </tr>
-                </thead>
+    <div>
+        <table class='styled-table'>
+            <thead>
+                <tr>
+                    <th>Package ID</th>
+                    <th>Package Name</th>
+                    <th>Price</th>
+                    <th>State</th>
+                    <th>ratings</th>
+                    <th style="width: 20%;">Actions</th>
+                </tr>
+            </thead>
 
-                <tbody>
-                    <?php
+            <tbody>
+                <?php
 
-                    if ($result->num_rows > 0) {
+                if ($result->num_rows > 0) {
 
-                        while ($data = mysqli_fetch_array($result)) {
-                    ?>
-                            <tr class='active-row'>
-                                <td><?php echo $data['pckg_id']; ?> </td>
-                                <td><?php echo $data['pckg_name']; ?> </td>
-                                <td><?php echo $data['pckg_price']; ?> </td>
-                                <td><?php echo $data['state']; ?> </td>
-                                <td><?php echo $data['ratings']; ?> </td>
-                                <td style="display: flex; border: none; justify-content: space-evenly;">
+                    while ($data = mysqli_fetch_array($result)) {
+                ?>
+                        <tr class='active-row'>
+                            <td><?php echo $data['pckg_id']; ?> </td>
+                            <td><?php echo $data['pckg_name']; ?> </td>
+                            <td><?php echo $data['pckg_price']; ?> </td>
+                            <td><?php echo $data['state']; ?> </td>
+                            <td><?php echo $data['ratings']; ?> </td>
+                            <td style="display: flex; border: none; justify-content: space-evenly;">
                                 <form action="pckg_delete.php?pkid=<?php echo $data['pckg_id']; ?>&pkname=<?php echo $data['pckg_name']; ?>" method="post" class="delete">
                                     <input type="submit" name="delete" value="delete">
                                 </form>
@@ -84,20 +86,21 @@ if (!isset($_SESSION['uname']) && !isset($_SESSION['acctyp'])) {
                                     <input type="submit" name="update" value="update">
                                 </form>
                             </td>
-                            </tr>
-                        <?php
-                        }
-                    } else {
-                        echo "No data found";
-                        ?>
-                        <script>
-                            alert(`No Data!`);
-                        </script>
+                        </tr>
                     <?php
                     }
+                } else {
+                    echo "No data found";
                     ?>
-                </tbody>
-            </table>
-        </div>
+                    <script>
+                        alert(`No Data!`);
+                    </script>
+                <?php
+                }
+                ?>
+            </tbody>
+        </table>
     </div>
+</div>
+
 </html>

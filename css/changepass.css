@@ -5,7 +5,7 @@
     font-family: poppins, sans-serif;
 }
 
-.textbox input{
+.textbox input {
     width: 100%;
     font-size: 15px;
     padding: 5px 10px;
@@ -22,11 +22,11 @@
     color: white;
     padding: 14px 20px;
     font-size: 15px;
-    margin: 8px 0px 20px 0  px;
+    margin: 8px 0px 20px 0 px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    
+
 }
 
 input[type=submit]:hover {
@@ -47,7 +47,7 @@ input[type=submit]:hover {
     justify-content: center;
     flex-direction: column;
     border-radius: 10px;
-    background-color: white; 
+    background-color: white;
     padding: 20px 40px;
 }
 
@@ -61,11 +61,11 @@ input[type=submit]:hover {
     justify-content: center;
 }
 
-.err{
+.err {
     color: red;
 }
 
-body{
+body {
     background-image: url("./images/bg_rsp.jpg");
     background-repeat: no-repeat;
     width: 100vw;
@@ -79,31 +79,31 @@ body{
 ============================================================================== */
 
 @media screen and (max-width: 900px) {
-    .container{
+    .container {
         /* position: absolute; */
         width: 60vw;
         margin: 5% 20%;
     }
-    
+
 
 }
 
 @media screen and (max-width: 730px) {
-    .container{
+    .container {
         /* position: absolute; */
         width: 60vw;
         margin: 10% 20%;
     }
 
-    .container h2{
+    .container h2 {
         font-size: 20px;
     }
 
-    .container label{
+    .container label {
         font-size: 15px;
     }
 
-    .button1 input[type=submit]{
+    .button1 input[type=submit] {
         font-size: 0.8rem;
     }
 }

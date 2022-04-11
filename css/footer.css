@@ -2,35 +2,42 @@
 .footer-container {
   background-color: rgba(36, 36, 36, 1);
 }
+
 footer {
   /* height: 45vh; */
   width: 90%;
   margin: 0px auto;
 }
+
 .social-links {
   width: 32px;
   height: 32px;
 }
+
 .part1 {
   display: inline-block;
 }
+
 .footer-icons {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 16px 0px;
 }
+
 .footer-txt {
   color: white;
   font-family: poppins, sans-serif;
   text-transform: capitalize;
 }
+
 .address {
   display: flex;
   width: 200px;
   align-items: flex-start;
   margin: 16px 0px;
 }
+
 .copyright {
   display: flex;
   width: 100%;

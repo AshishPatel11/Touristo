@@ -43,7 +43,7 @@ input[type=submit]:hover {
     padding: 10px 40px;
 }
 
-.form-container input{
+.form-container input {
     border: 1.5px solid #c0c0c1;
     outline: none;
     background-color: #ededed;
@@ -68,6 +68,7 @@ input[type=submit]:hover {
     display: flex;
     justify-content: center;
 }
+
 .form-container1 {
     /* position: absolute;
     top: 20%;
@@ -75,6 +76,7 @@ input[type=submit]:hover {
     border-radius: 10px;
     padding: 10px 40px;
 }
+
 .form-container6 h1 {
     font-size: 35px;
     display: flex;
@@ -116,7 +118,7 @@ table th {
     padding: 20px;
 }
 
-.err{
+.err {
     color: red;
 }
 
@@ -200,6 +202,7 @@ textarea {
     position: absolute;
     z-index: 1;
 }
+
 .tooltip .tooltiptext::after {
     content: "";
     position: absolute;
@@ -210,10 +213,12 @@ textarea {
     border-style: solid;
     border-color: transparent rgb(29, 29, 29) transparent transparent;
 }
+
 .tooltip:hover .tooltiptext {
     visibility: visible;
 }
-.tooltip:focus .tooltiptext{
+
+.tooltip:focus .tooltiptext {
     visibility: visible;
 }
 
@@ -232,6 +237,7 @@ textarea {
     display: flex;
     justify-content: center;
 }
-table * :not(input,a,form){
+
+table * :not(input, a, form) {
     border: 2px solid black;
 }

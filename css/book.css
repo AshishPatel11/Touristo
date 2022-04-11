@@ -1,10 +1,10 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
 
-.main-box{
+.main-box {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -14,7 +14,7 @@
     height: 80vh;
 }
 
-.textbox input{
+.textbox input {
     outline: none;
     font-size: 15px;
     border: 1.5px solid #c0c0c1;
@@ -53,13 +53,13 @@
     color: black;
 }
 
-.btn{
+.btn {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-body{
+body {
     background: url("./images/bg_rsp.jpg");
     background-repeat: no-repeat;
     width: 100%;

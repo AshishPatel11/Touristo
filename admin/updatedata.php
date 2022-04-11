@@ -17,7 +17,7 @@ if (!isset($_SESSION['uname']) && !isset($_SESSION['acctyp'])) {
             alert(`Not Allowed login first!`);
             location.replace('../login.php');
         </script>
-<?php
+        <?php
     }
 }
 error_reporting(0);
@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $result = mysqli_query($conn, $update);
 
                 if ($result) {
-?>
+        ?>
                     <script>
                         alert(`User data updated!`);
                         location.replace('admin_modifyUser.php');
@@ -90,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <body>
     <?php
-        include '../admin/admin_nav.php';
+    include '../admin/admin_nav.php';
     ?>
     <div class="admin-container">
 

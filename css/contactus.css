@@ -3,9 +3,11 @@
     padding: 0px;
     box-sizing: border-box;
 }
-body{
+
+body {
     overflow: hidden;
 }
+
 .mainsection {
     display: grid;
     gap: 5rem;
@@ -50,7 +52,7 @@ body{
     font-size: 19px;
 }
 
-.txtbox input{
+.txtbox input {
     cursor: not-allowed;
 }
 
@@ -101,6 +103,7 @@ textarea {
     top: 16%;
     right: 10%;
 }
+
 .logo-svg .logo-text,
 .plane>*,
 .location .Vector,
@@ -119,37 +122,42 @@ textarea {
 .li-link {
     color: black !important;
 }
+
 /*<==================================ResponsiveCSS===================================>*/
 
 @media screen and (max-width: 730px) {
 
-    .mainsection{
+    .mainsection {
         display: flex;
         flex-direction: column;
         justify-content: center;
         height: 120vh;
     }
 
-    .firstcontainer{
+    .firstcontainer {
         display: flex;
         align-items: center;
         justify-content: center;
         padding-top: 1%;
     }
 
-    .secondcontainer{
+    .secondcontainer {
         display: flex;
 
     }
-    .dots1, .dots2{
+
+    .dots1,
+    .dots2 {
         width: 30vw;
         height: 50vh;
     }
-    .dots1{
+
+    .dots1 {
         bottom: -7%;
         left: -3%;
     }
-    .dots2{
+
+    .dots2 {
         top: -2%;
         right: -3%;
     }
