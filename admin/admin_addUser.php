@@ -15,7 +15,7 @@ if (!isset($_SESSION['uname']) && !isset($_SESSION['acctyp'])) {
             alert(`Not Allowed login first!`);
             location.replace('../login.php');
         </script>
-<?php
+        <?php
     }
 }
 
@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         $result = mysqli_query($conn, $insert);
 
                         if ($result) {
-?>
+        ?>
                             <script>
                                 alert(`User added!`);
                                 location.replace('admin_modifyUser.php');

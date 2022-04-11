@@ -24,6 +24,7 @@ if (!isset($_SESSION['uname']) && !isset($_SESSION['acctyp'])) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,8 +34,10 @@ if (!isset($_SESSION['uname']) && !isset($_SESSION['acctyp'])) {
     <!-- <link rel="stylesheet" href="./css/admin_home.css"> -->
     <title>Remove Package</title>
 </head>
+
 <body>
     <?php include_once "admin_nav.php";
     ?>
 </body>
+
 </html>

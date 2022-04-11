@@ -4,192 +4,198 @@ session_start();
 
 if (!isset($_SESSION['uname']) && !isset($_SESSION['acctyp'])) {
 ?>
-<script>
-alert(`Not Allowed login first!`);
-location.replace('../login.php');
-</script>
-<?php
+    <script>
+        alert(`Not Allowed login first!`);
+        location.replace('../login.php');
+    </script>
+    <?php
 } else {
     if ($_SESSION['acctyp'] != 'admin') {
     ?>
-<script>
-alert(`Not Allowed login first!`);
-location.replace('../login.php');
-</script>
-<?php
+        <script>
+            alert(`Not Allowed login first!`);
+            location.replace('../login.php');
+        </script>
+    <?php
     }
 }
-    require_once "../php/connection.php";
-    if(isset($_POST['submit'])){
-            
-            $banner = $_FILES['bannerImg'];
+require_once "../php/connection.php";
+if (isset($_POST['submit'])) {
 
-            $bannerName = $_FILES['bannerImg']['name'];
-            $bannerTmpname = $_FILES['bannerImg']['tmp_name'];
-            $bannerSize = $_FILES['bannerImg']['size'];
-            $bannerErr = $_FILES['bannerImg']['error'];
-            $bannertype = $_FILES['bannerImg']['type'];
+    $banner = $_FILES['bannerImg'];
 
-            $bannerExt = explode('.', $bannerName);
-            $bannerActExt = strtolower(end($bannerExt));
+    $bannerName = $_FILES['bannerImg']['name'];
+    $bannerTmpname = $_FILES['bannerImg']['tmp_name'];
+    $bannerSize = $_FILES['bannerImg']['size'];
+    $bannerErr = $_FILES['bannerImg']['error'];
+    $bannertype = $_FILES['bannerImg']['type'];
 
-
-            $thumb = $_FILES['thumbImg'];
-
-            $thumbName = $_FILES['thumbImg']['name'];
-            $thumbTmpname = $_FILES['thumbImg']['tmp_name'];
-            $thumbSize = $_FILES['thumbImg']['size'];
-            $thumbErr = $_FILES['thumbImg']['error'];
-            $thumbtype = $_FILES['thumbImg']['type'];
-
-            $thumbExt = explode('.', $thumbName);
-            $thumbActExt = strtolower(end($thumbExt));
-
-            $place1 = $_FILES['place1Img'];
-
-            $place1Name = $_FILES['place1Img']['name'];
-            $place1Tmpname = $_FILES['place1Img']['tmp_name'];
-            $place1Size = $_FILES['place1Img']['size'];
-            $place1Err = $_FILES['place1Img']['error'];
-            $place1type = $_FILES['place1Img']['type'];
-
-            $place1Ext = explode('.', $place1Name);
-            $place1ActExt = strtolower(end($place1Ext));
+    $bannerExt = explode('.', $bannerName);
+    $bannerActExt = strtolower(end($bannerExt));
 
 
-            $place2 = $_FILES['place2Img'];
+    $thumb = $_FILES['thumbImg'];
 
-            $place2Name = $_FILES['place2Img']['name'];
-            $place2Tmpname = $_FILES['place2Img']['tmp_name'];
-            $place2Size = $_FILES['place2Img']['size'];
-            $place2Err = $_FILES['place2Img']['error'];
-            $place2type = $_FILES['place2Img']['type'];
+    $thumbName = $_FILES['thumbImg']['name'];
+    $thumbTmpname = $_FILES['thumbImg']['tmp_name'];
+    $thumbSize = $_FILES['thumbImg']['size'];
+    $thumbErr = $_FILES['thumbImg']['error'];
+    $thumbtype = $_FILES['thumbImg']['type'];
 
-            $place2Ext = explode('.', $place2Name);
-            $place2ActExt = strtolower(end($place2Ext));
+    $thumbExt = explode('.', $thumbName);
+    $thumbActExt = strtolower(end($thumbExt));
 
+    $place1 = $_FILES['place1Img'];
 
-            $place3 = $_FILES['place3Img'];
+    $place1Name = $_FILES['place1Img']['name'];
+    $place1Tmpname = $_FILES['place1Img']['tmp_name'];
+    $place1Size = $_FILES['place1Img']['size'];
+    $place1Err = $_FILES['place1Img']['error'];
+    $place1type = $_FILES['place1Img']['type'];
 
-            $place3Name = $_FILES['place3Img']['name'];
-            $place3Tmpname = $_FILES['place3Img']['tmp_name'];
-            $place3Size = $_FILES['place3Img']['size'];
-            $place3Err = $_FILES['place3Img']['error'];
-            $place3type = $_FILES['place3Img']['type'];
-
-            $place3Ext = explode('.', $place3Name);
-            $place3ActExt = strtolower(end($place3Ext));
-
-
-            $place4 = $_FILES['place4Img'];
-
-            $place4Name = $_FILES['place4Img']['name'];
-            $place4Tmpname = $_FILES['place4Img']['tmp_name'];
-            $place4Size = $_FILES['place4Img']['size'];
-            $place4Err = $_FILES['place4Img']['error'];
-            $place4type = $_FILES['place4Img']['type'];
-
-            $place4Ext = explode('.', $place4Name);
-            $place4ActExt = strtolower(end($place4Ext));
+    $place1Ext = explode('.', $place1Name);
+    $place1ActExt = strtolower(end($place1Ext));
 
 
-            $place5 = $_FILES['place5Img'];
+    $place2 = $_FILES['place2Img'];
 
-            $place5Name = $_FILES['place5Img']['name'];
-            $place5Tmpname = $_FILES['place5Img']['tmp_name'];
-            $place5Size = $_FILES['place5Img']['size'];
-            $place5Err = $_FILES['place5Img']['error'];
-            $place5type = $_FILES['place5Img']['type'];
+    $place2Name = $_FILES['place2Img']['name'];
+    $place2Tmpname = $_FILES['place2Img']['tmp_name'];
+    $place2Size = $_FILES['place2Img']['size'];
+    $place2Err = $_FILES['place2Img']['error'];
+    $place2type = $_FILES['place2Img']['type'];
 
-            $place5Ext = explode('.', $place5Name);
-            $place5ActExt = strtolower(end($place5Ext));
+    $place2Ext = explode('.', $place2Name);
+    $place2ActExt = strtolower(end($place2Ext));
 
 
-            $place6 = $_FILES['place6Img'];
-            $place6Name = $_FILES['place6Img']['name'];
-            $place6Tmpname = $_FILES['place6Img']['tmp_name'];
-            $place6Size = $_FILES['place6Img']['size'];
-            $place6Err = $_FILES['place6Img']['error'];
-            $place6type = $_FILES['place6Img']['type'];
+    $place3 = $_FILES['place3Img'];
 
-            $place6Ext = explode('.', $place6Name);
-            $place6ActExt = strtolower(end($place6Ext));
+    $place3Name = $_FILES['place3Img']['name'];
+    $place3Tmpname = $_FILES['place3Img']['tmp_name'];
+    $place3Size = $_FILES['place3Img']['size'];
+    $place3Err = $_FILES['place3Img']['error'];
+    $place3type = $_FILES['place3Img']['type'];
 
-        $packname = $conn -> real_escape_string($_POST['name']);
-        $price = $conn -> real_escape_string($_POST['price']);
-        $state = $conn -> real_escape_string($_POST['state']);
-        $mainpara = $conn -> real_escape_string($_POST['mainParagraph']);
-        $p1desc = $conn -> real_escape_string($_POST['place1Desc']);
-        $p2desc =$conn -> real_escape_string($_POST['place2Desc']);
-        $p3desc = $conn -> real_escape_string($_POST['place3Desc']);
-        $p4desc = $conn -> real_escape_string($_POST['place4Desc']);
-        $p5desc = $conn -> real_escape_string($_POST['place5Desc']);
-        $p6desc = $conn -> real_escape_string($_POST['place6Desc']);
-        $gmap = $conn -> real_escape_string($_POST['Gmap']);
-        $tagline = $conn -> real_escape_string($_POST['tagline']);
-        $tags = $conn -> real_escape_string($_POST['tags']);
+    $place3Ext = explode('.', $place3Name);
+    $place3ActExt = strtolower(end($place3Ext));
 
-        //validation for place 3
-        if(($place3Name != "" && $p3desc === "") || ($p3desc != "" 
-        && $place3Name === "")){
-            die("
+
+    $place4 = $_FILES['place4Img'];
+
+    $place4Name = $_FILES['place4Img']['name'];
+    $place4Tmpname = $_FILES['place4Img']['tmp_name'];
+    $place4Size = $_FILES['place4Img']['size'];
+    $place4Err = $_FILES['place4Img']['error'];
+    $place4type = $_FILES['place4Img']['type'];
+
+    $place4Ext = explode('.', $place4Name);
+    $place4ActExt = strtolower(end($place4Ext));
+
+
+    $place5 = $_FILES['place5Img'];
+
+    $place5Name = $_FILES['place5Img']['name'];
+    $place5Tmpname = $_FILES['place5Img']['tmp_name'];
+    $place5Size = $_FILES['place5Img']['size'];
+    $place5Err = $_FILES['place5Img']['error'];
+    $place5type = $_FILES['place5Img']['type'];
+
+    $place5Ext = explode('.', $place5Name);
+    $place5ActExt = strtolower(end($place5Ext));
+
+
+    $place6 = $_FILES['place6Img'];
+    $place6Name = $_FILES['place6Img']['name'];
+    $place6Tmpname = $_FILES['place6Img']['tmp_name'];
+    $place6Size = $_FILES['place6Img']['size'];
+    $place6Err = $_FILES['place6Img']['error'];
+    $place6type = $_FILES['place6Img']['type'];
+
+    $place6Ext = explode('.', $place6Name);
+    $place6ActExt = strtolower(end($place6Ext));
+
+    $packname = $conn->real_escape_string($_POST['name']);
+    $price = $conn->real_escape_string($_POST['price']);
+    $state = $conn->real_escape_string($_POST['state']);
+    $mainpara = $conn->real_escape_string($_POST['mainParagraph']);
+    $p1desc = $conn->real_escape_string($_POST['place1Desc']);
+    $p2desc = $conn->real_escape_string($_POST['place2Desc']);
+    $p3desc = $conn->real_escape_string($_POST['place3Desc']);
+    $p4desc = $conn->real_escape_string($_POST['place4Desc']);
+    $p5desc = $conn->real_escape_string($_POST['place5Desc']);
+    $p6desc = $conn->real_escape_string($_POST['place6Desc']);
+    $gmap = $conn->real_escape_string($_POST['Gmap']);
+    $tagline = $conn->real_escape_string($_POST['tagline']);
+    $tags = $conn->real_escape_string($_POST['tags']);
+    $p1name = $conn->real_escape_string($_POST['p1name']);
+    $p2name = $conn->real_escape_string($_POST['p2name']);
+    $p3name = $conn->real_escape_string($_POST['p3name']);
+    $p4name = $conn->real_escape_string($_POST['p4name']);
+    $p5name = $conn->real_escape_string($_POST['p5name']);
+    $p6name = $conn->real_escape_string($_POST['p6name']);
+
+    //validation for place 3
+    if (($place3Name != "" && $p3desc === "") || ($p3desc != ""
+        && $place3Name === "")) {
+        die("
                     <script>
                         alert(`Image or description for place 3 is not completed!`);
                         location.replace(`admin_addPack.php`);
                     </script>
             ");
-        }
+    }
 
-        //validation for place 4
-        if(($place4Name != "" && $p4desc === "") || ($p4desc != "" 
-        && $place4Name === "")){
-            die("
+    //validation for place 4
+    if (($place4Name != "" && $p4desc === "") || ($p4desc != ""
+        && $place4Name === "")) {
+        die("
                     <script>
                         alert(`Image or description for place 4 is not completed!`);
                         location.replace(`admin_addPack.php`);
                     </script>
             ");
-        }
-        if(($place5Name != "" && $p5desc === "") || ($p5desc != "" 
-        && $place5Name === "")){
-            die("
+    }
+    if (($place5Name != "" && $p5desc === "") || ($p5desc != ""
+        && $place5Name === "")) {
+        die("
                     <script>
                         alert(`Image or description for place 5 is not completed!`);
                         location.replace(`admin_addPack.php`);
                     </script>
             ");
-        }
-        if(($place6Name != "" && $p6desc === "") || ($p6desc != "" 
-        && $place6Name === "")){
-            die("
+    }
+    if (($place6Name != "" && $p6desc === "") || ($p6desc != ""
+        && $place6Name === "")) {
+        die("
                     <script>
                         alert(`Image or description for place 6 is not completed!`);
                         location.replace(`admin_addPack.php`);
                     </script>
             ");
-        }
+    }
 
 
-        // checking th entered package already exist or not
-        $duplicatePackage = "SELECT `pckg_name` FROM `pckg_tbl` WHERE pckg_name = '$packname'";
-        $duplQuery = mysqli_query($conn, $duplicatePackage);
-        $duplCount = mysqli_num_rows($duplQuery);
+    // checking th entered package already exist or not
+    $duplicatePackage = "SELECT `pckg_name` FROM `pckg_tbl` WHERE pckg_name = '$packname'";
+    $duplQuery = mysqli_query($conn, $duplicatePackage);
+    $duplCount = mysqli_num_rows($duplQuery);
 
-        if($duplCount > 0){
-            ?>
-<script>
-alert(`The package already exist!!`)
-</script>
-<?php
-        }else{
-            $packageQuery = "INSERT INTO `pckg_tbl`(`pckg_name`, `state`, `pckg_price`, `maplink`, `tagline`, `pckg_para`, `sub_para1`, `sub_para2`, `sub_para3`, `sub_para4`, `sub_para5`, `sub_para6`, `tags`) VALUES ('$packname','$state','$price','$gmap','$tagline','$mainpara','$p1desc','$p2desc','$p3desc','$p4desc','$p5desc','$p6desc','$tags')";
+    if ($duplCount > 0) {
+    ?>
+        <script>
+            alert(`The package already exist!!`)
+        </script>
+        <?php
+    } else {
+        $packageQuery = "INSERT INTO `pckg_tbl`(`pckg_name`, `state`, `pckg_price`, `maplink`, `tagline`, `pckg_para`, `p1name`, `sub_para1`, `p2name`, `sub_para2`, `p3name`, `sub_para3`, `p4name`, `sub_para4`, `p5name`, `sub_para5`, `p6name`, `sub_para6`, `tags`) VALUES ('$packname','$state','$price','$gmap','$tagline','$mainpara','$p1name','$p1desc','$p2name','$p2desc','$p3name','$p3desc','$p4name','$p4desc','$p5name','$p5desc','$p6name','$p6desc','$tags')";
 
-            $result = mysqli_query($conn, $packageQuery); 
+        $result = mysqli_query($conn, $packageQuery);
 
-            if($result){
+        if ($result) {
 
-                $createPack = fopen("../packages/$packname.php","w") ;//creating the package file entered by the admin
-                $packageContent = '<?php
+            $createPack = fopen("../packages/$packname.php", "w"); //creating the package file entered by the admin
+            $packageContent = '<?php
 session_start();
 $basefilename = basename($_SERVER["PHP_SELF"]);
 $files = explode(".", $basefilename);
@@ -231,12 +237,12 @@ include_once ("./php/pack_backend.php");
     <link rel="stylesheet" href="../css/footer.css">
     <script src="../js/jquery.min.js"></script>
     <style>
-    .banner-container {
-        height: 70vh;
-        background-attachment: fixed;
-        background-size: cover;
-        background-position: center center;
-    }
+        .banner-container {
+            height: 70vh;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center center;
+        }
     </style>
 
 </head>
@@ -379,7 +385,9 @@ include_once ("./php/pack_backend.php");
                     <ul class="list-container">
                         <?php
                     if(isset($_SESSION[\'uname\'])){?>
-                        <li class="nav-option"><a class="li-link noti">Notification(<?php echo $count; ?>)</a></li>
+                        <li class="nav-option"><a class="li-link noti">Notification(
+                                <?php echo $count; ?>)
+                            </a></li>
                         <?php }else{ ?>
                         <li class="nav-option"><a class="li-link noti">Notification(0)</a></li>
                         <?php } ?>
@@ -499,7 +507,9 @@ include_once ("./php/pack_backend.php");
             <div class="p6" style="background-image: url(./images/<?php echo $filenameimg; ?>_place6.jpg);"></div>
             <?php } ?>
         </div>
-        <h1 class="packname"><?php echo $filename; ?></h1>
+        <h1 class="packname">
+            <?php echo $filename; ?>
+        </h1>
     </section>
 
 
@@ -512,26 +522,42 @@ include_once ("./php/pack_backend.php");
             </form>
         </div>
         <div class="pack-bar">
-            <h3 class="location">Location: <?php echo $data["state"] ?>, India</h3>
-            <h3 class="price">Price: ₹<?php echo $data["pckg_price"] ?></h3>
+            <h3 class="location">Location:
+                <?php echo $data["state"] ?>, India
+            </h3>
+            <h3 class="price">Price: ₹
+                <?php echo $data["pckg_price"] ?>
+            </h3>
             <?php
+                    if(isset($_SESSION[\'uid\'])){
                     $wishlistdata = "SELECT * FROM `wishlist_tbl` WHERE `uid` = \'$_SESSION[uid]\' AND `pckg_id` = \'$data[pckg_id]\'";
                     $wishlistdataRun = mysqli_query($conn, $wishlistdata);
                         if ($wishlistdataRun->num_rows > 0) {?>
-                <form action="../addwishlist.php?srno=<?php echo $data[\'pckg_id\']; ?>" method="post"
-                    class="wishlist-form">
-                    <?php $_SESSION[\'pcsrno\'] = $data[\'pckg_id\']; ?>
-                    <button type="submit" name="removewish" class="wish-btn" value="addwishlist.php"
-                        style="width: 250px;"><span>Remove form Wishlist</span></button>
-                </form><?php
+                        <form action="../addwishlist.php?srno=<?php echo $data[\'pckg_id\']; ?>" method="post"
+                            class="wishlist-form">
+                            <?php $_SESSION[\'pcsrno\'] = $data[\'pckg_id\']; ?>
+                            <button type="submit" name="removewish" class="wish-btn" value="addwishlist.php"
+                                style="width: 250px;"><span>Remove form Wishlist</span></button>
+                        </form>
+                        <?php
                             }else{
                 ?>
-                <form action="../addwishlist.php?srno=<?php echo $data[\'pckg_id\']; ?>" method="post"
+                        <form action="../addwishlist.php?srno=<?php echo $data[\'pckg_id\']; ?>" method="post"
+                            class="wishlist-form">
+                            <?php $_SESSION[\'pcsrno\'] = $data[\'pckg_id\']; ?>
+                            <button type="submit" name="addwish" class="wish-btn" value="addwishlist.php"><span>Add to
+                                    Wishlist</span></button>
+                        </form>
+                        <?php }}else{?> 
+
+                    <form action="../addwishlist.php?srno=<?php echo $data[\'pckg_id\']; ?>" method="post"
                     class="wishlist-form">
                     <?php $_SESSION[\'pcsrno\'] = $data[\'pckg_id\']; ?>
                     <button type="submit" name="addwish" class="wish-btn" value="addwishlist.php"><span>Add to
                             Wishlist</span></button>
-                </form><?php } ?>
+                </form>
+                    
+                    <?php } ?>
             <form action="book.php?srno=<?php echo $data[\'pckg_id\']; ?>" method="post" class="Book-form">
                 <?php $_SESSION[\'pcsrno\'] = $data[\'pckg_id\']; ?>
                 <button type="submit" class="book-btn"><span>Book Now</span></button>
@@ -545,19 +571,37 @@ include_once ("./php/pack_backend.php");
                 <?php
                 echo $data["maplink"];
                 ?>
-                <p class="main-desc-paragraph"><?php echo $data["pckg_para"] ?></p>
+                <p class="main-desc-paragraph">
+                    <?php echo $data["pckg_para"] ?>
+                </p>
             </div>
             <div class="place-container1">
                 <!-- place 1 Container -->
-                <p class="place1-desc"><?php echo $data["sub_para1"]; ?></p>
-                <div class="place1-img" style="background-image: url(./images/<?php echo $filenameimg; ?>_place1.jpg);">
+                <h2 class="pname">
+                    <?php echo $data["p1name"]; ?>
+                </h2>
+                <div class="temp">
+                    <p class="place1-desc">
+                        <?php echo $data["sub_para1"]; ?>
+                    </p>
+                    <div class="place1-img"
+                        style="background-image: url(./images/<?php echo $filenameimg; ?>_place1.jpg);">
+                    </div>
                 </div>
             </div>
             <div class="place-container2">
                 <!-- place 2 Container -->
-                <div class="place2-img" style="background-image: url(./images/<?php echo $filenameimg; ?>_place2.jpg);">
+                <h2 class="pname">
+                    <?php echo $data["p2name"]; ?>
+                </h2>
+                <div class="temp">
+                    <div class="place2-img"
+                        style="background-image: url(./images/<?php echo $filenameimg; ?>_place2.jpg);">
+                    </div>
+                    <p class="place2-desc">
+                        <?php echo $data["sub_para2"]; ?>
+                    </p>
                 </div>
-                <p class="place2-desc"><?php echo $data["sub_para2"]; ?></p>
             </div>
             <?php
                 $imgAddr = "./images/".$filename."_place3".".jpg";
@@ -566,8 +610,16 @@ include_once ("./php/pack_backend.php");
             ?>
             <div class="place-container3">
                 <!-- place 3 Container -->
-                <p class="place3-desc"><?php echo $data["sub_para3"]; ?></p>
-                <div class="place3-img" style="background-image: url(./images/<?php echo $filenameimg; ?>_place3.jpg);">
+                <h2 class="pname">
+                    <?php echo $data["p3name"]; ?>
+                </h2>
+                <div class="temp">
+                    <p class="place3-desc">
+                        <?php echo $data["sub_para3"]; ?>
+                    </p>
+                    <div class="place3-img"
+                        style="background-image: url(./images/<?php echo $filenameimg; ?>_place3.jpg);">
+                    </div>
                 </div>
             </div>
             <?php } ?>
@@ -578,61 +630,97 @@ include_once ("./php/pack_backend.php");
             ?>
             <div class="place-container4">
                 <!-- place 4 Container -->
-                <div class="place4-img" style="background-image: url(./images/<?php echo $filenameimg; ?>_place4.jpg);">
+                <h2 class="pname">
+                    <?php echo $data["p4name"]; ?>
+                </h2>
+                <div class="temp">
+                    <div class="place4-img"
+                        style="background-image: url(./images/<?php echo $filenameimg; ?>_place4.jpg);">
+                    </div>
+                    <p class="place4-desc">
+                        <?php echo $data["sub_para4"]; ?>
+                    </p>
                 </div>
-                <p class="place4-desc"><?php echo $data["sub_para4"]; ?></p>
             </div>
-            <?php } ?>
-            <?php
+                    <?php } ?>
+                    <?php
                 $imgAddr = "./images/".$filename."_place5".".jpg";
                 $imgExist = file_exists("$imgAddr");
                 if($imgExist === true){
             ?>
-            <div class="place-container5">
-                <!-- place 5 Container -->
-                <p class="place5-desc"><?php echo $data["sub_para5"]; ?></p>
-                <div class="place5-img" style="background-image: url(./images/<?php echo $filenameimg; ?>_place5.jpg);">
-                </div>
-            </div>
-            <?php } ?>
-            <?php
+                    <div class="place-container5">
+                        <!-- place 5 Container -->
+                        <h2 class="pname">
+                            <?php echo $data["p5name"]; ?>
+                        </h2>
+                        <div class="temp">
+                            <p class="place5-desc">
+                                <?php echo $data["sub_para5"]; ?>
+                            </p>
+                            <div class="place5-img"
+                                style="background-image: url(./images/<?php echo $filenameimg; ?>_place5.jpg);">
+                            </div>
+                        </div>
+                    </div>
+                    <?php } ?>
+                    <?php
                 $imgAddr = "./images/".$filename."_place6".".jpg";
                 $imgExist = file_exists("$imgAddr");
                 if($imgExist === true){
             ?>
-            <div class="place-container6">
-                <!-- place 6 Container -->
-                <div class="place6-img" style="background-image: url(./images/<?php echo $filenameimg; ?>_place6.jpg);">
-                </div>
-                <p class="place6-desc"><?php echo $data["sub_para6"]; ?></p>
-            </div>
-            <?php } ?>
+                    <div class="place-container6">
+                        <!-- place 6 Container -->
+                        <h2 class="pname">
+                            <?php echo $data["p6name"]; ?>
+                        </h2>
+                        <div class="temp">
+                            <div class="place6-img"
+                                style="background-image: url(./images/<?php echo $filenameimg; ?>_place6.jpg);">
+                            </div>
+                            <p class="place6-desc">
+                                <?php echo $data["sub_para6"]; ?>
+                            </p>
+                        </div>
+                    </div>
+                    <?php } ?>
 
 
-            <div class="options-container">
-                <?php
+                    <div class="options-container">
+                        <?php
+                        if(isset($_SESSION[\'uid\'])){
                     $wishlistdata = "SELECT * FROM `wishlist_tbl` WHERE `uid` = \'$_SESSION[uid]\' AND `pckg_id` = \'$data[pckg_id]\'";
                     $wishlistdataRun = mysqli_query($conn, $wishlistdata);
                         if ($wishlistdataRun->num_rows > 0) {?>
-                <form action="../addwishlist.php?srno=<?php echo $data[\'pckg_id\']; ?>" method="post"
-                    class="wishlist-form">
-                    <?php $_SESSION[\'pcsrno\'] = $data[\'pckg_id\']; ?>
-                    <button type="submit" name="removewish" class="wish-btn" value="addwishlist.php"
-                        style="width: 250px;"><span>Remove form Wishlist</span></button>
-                </form><?php
+                        <form action="../addwishlist.php?srno=<?php echo $data[\'pckg_id\']; ?>" method="post"
+                            class="wishlist-form">
+                            <?php $_SESSION[\'pcsrno\'] = $data[\'pckg_id\']; ?>
+                            <button type="submit" name="removewish" class="wish-btn" value="addwishlist.php"
+                                style="width: 250px;"><span>Remove form Wishlist</span></button>
+                        </form>
+                        <?php
                             }else{
                 ?>
-                <form action="../addwishlist.php?srno=<?php echo $data[\'pckg_id\']; ?>" method="post"
+                        <form action="../addwishlist.php?srno=<?php echo $data[\'pckg_id\']; ?>" method="post"
+                            class="wishlist-form">
+                            <?php $_SESSION[\'pcsrno\'] = $data[\'pckg_id\']; ?>
+                            <button type="submit" name="addwish" class="wish-btn" value="addwishlist.php"><span>Add to
+                                    Wishlist</span></button>
+                        </form>
+                        <?php }}else{?> 
+
+                    <form action="../addwishlist.php?srno=<?php echo $data[\'pckg_id\']; ?>" method="post"
                     class="wishlist-form">
                     <?php $_SESSION[\'pcsrno\'] = $data[\'pckg_id\']; ?>
                     <button type="submit" name="addwish" class="wish-btn" value="addwishlist.php"><span>Add to
                             Wishlist</span></button>
-                </form><?php } ?>
-                <form action="book.php?srno=<?php echo $data[\'pckg_id\']; ?>" method="post" class="Book-form">
-                    <?php $_SESSION[\'pcsrno\'] = $data[\'pckg_id\']; ?>
-                    <button type="submit" class="book-btn"><span>Book Now</span></button>
                 </form>
-            </div>
+                    
+                    <?php } ?>
+                        <form action="book.php?srno=<?php echo $data[\'pckg_id\']; ?>" method="post" class="Book-form">
+                            <?php $_SESSION[\'pcsrno\'] = $data[\'pckg_id\']; ?>
+                            <button type="submit" class="book-btn"><span>Book Now</span></button>
+                        </form>
+                    </div>
         </section>
     </section>
 
@@ -769,6 +857,29 @@ include_once ("./php/pack_backend.php");
                     <p class="footer-txt">91,krishna nagar, opp. jyoti gym, vijalpore, navsari, gujarat, 396445</p>
                 </div>
             </div>
+            <div class="part2">
+                <div class="s1">
+                    <h3 class="foot-title">Destinations</h3>
+                    <a href="./Agra.php" class="foot-links">Agra</a>
+                    <a href="./Amritsar.php" class="foot-links">Amritsar</a>
+                    <a href="./Goa.php" class="foot-links">Goa</a>
+                    <a href="./Jaipur.php" class="foot-links">Jaipur</a>
+                    <a href="./Kerala.php" class="foot-links">Kerala</a>
+                    <a href="./manali.php" class="foot-links">Manali</a>
+                </div>
+                <div class="s1">
+                    <h3 class="foot-title">Explore</h3>
+                    <a href="../aboutus.php" class="foot-links">About Us</a>
+                    <a href="../contactus.php" class="foot-links">Contact Us</a>
+                </div>
+                <div class="s1">
+                    <h3 class="foot-title">Account</h3>
+                    <a href="../mytrips.php" class="foot-links">My Trips</a>
+                    <a href="../updateprofile.php" class="foot-links">Update profile</a>
+                    <a href="../changepass.php" class="foot-links">Change Password</a>
+                    <a href="../logout.php" class="button">Logout</a>                    
+                </div>
+            </div>
         </footer>
         <div class="copyright">
             <img src="../css/images/svg/copyright.svg" alt="">
@@ -779,24 +890,24 @@ include_once ("./php/pack_backend.php");
 
 
 <script>
-var preloader = document.getElementById("loader1");
-var delyeInMillisecond = 2000;
+    var preloader = document.getElementById("loader1");
+    var delyeInMillisecond = 2000;
 
-function myFunction() {
-    setTimeout(function() {
-        preloader.style.display = "none";
-    }, 2500);
+    function myFunction() {
+        setTimeout(function () {
+            preloader.style.display = "none";
+        }, 2500);
 
-}
-$(".profile").click(function() {
-    $(".profile-container").fadeIn("slow").css("display", "flex");
-    $(".close").click(function() {
-        $(".profile-container").fadeOut("slow");
+    }
+    $(".profile").click(function () {
+        $(".profile-container").fadeIn("slow").css("display", "flex");
+        $(".close").click(function () {
+            $(".profile-container").fadeOut("slow");
+        });
     });
-});
-$(".noti").click(function() {
+    $(".noti").click(function () {
         $(".notification-div").fadeIn("slow").css("display", "flex");
-        $(".close").click(function() {
+        $(".close").click(function () {
             $(".notification-div").fadeOut("slow");
         });
     });
@@ -809,168 +920,159 @@ $(".noti").click(function() {
 <!--linked the scrollTrigger javascript file-->
 <script src="../js/home_nav.js"></script>
 
-</html>';//this variable contains the data of the file that created above
+</html>'; //this variable contains the data of the file that created above
 
-fwrite($createPack, $packageContent);
-fclose($createPack);
-}
-else{
-?>
-<script>
-alert(`Error in Creating page`)
-</script>
+            fwrite($createPack, $packageContent);
+            fclose($createPack);
+        } else {
+        ?>
+            <script>
+                alert(`Error in Creating page`)
+            </script>
 <?php
+        }
+        // banner image file storing in the system through php
+
+
+        $allowed = array('jpg', 'jpeg', 'png');
+
+        if (in_array($bannerActExt, $allowed)) {
+            if ($bannerErr === 0) {
+                $bannerNameNew = $_POST['name'] . "_banner" . ".jpg";
+
+                $bannerDestination = '../packages/images/' . $bannerNameNew;
+                move_uploaded_file($bannerTmpname, $bannerDestination);
+            } else {
+                echo "error uploading image";
             }
-            // banner image file storing in the system through php
-            
+        } else {
+            echo "extension not matched";
+        }
 
-            $allowed = array('jpg', 'jpeg', 'png');
+        // storing the thumbnail image to the system through php
 
-            if(in_array($bannerActExt, $allowed)){
-                if($bannerErr === 0){
-                    $bannerNameNew = $_POST['name'] ."_banner". ".jpg";
 
-                    $bannerDestination = '../packages/images/'.$bannerNameNew;
-                    move_uploaded_file($bannerTmpname, $bannerDestination);
-                }else
-                {
-                    echo "error uploading image";
-                }
-            }else{
-                echo "extension not matched";
+        $allowed = array('jpg', 'jpeg', 'png');
+
+        if (in_array($thumbActExt, $allowed)) {
+            if ($thumbErr === 0) {
+                $thumbNameNew = $_POST['name'] . "_thumb" . ".jpg";
+
+                $thumbDestination = '../packages/images/' . $thumbNameNew;
+                move_uploaded_file($thumbTmpname, $thumbDestination);
+            } else {
+                echo "error uploading image";
             }
+        } else {
+            echo "extension not matched";
+        }
+        // Place 1 image file storing in the system through php
 
-            // storing the thumbnail image to the system through php
-            
 
-            $allowed = array('jpg', 'jpeg', 'png');
+        $allowed = array('jpg', 'jpeg', 'png');
 
-            if(in_array($thumbActExt, $allowed)){
-                if($thumbErr === 0){
-                    $thumbNameNew = $_POST['name'] ."_thumb". ".jpg";
+        if (in_array($place1ActExt, $allowed)) {
+            if ($place1Err === 0) {
+                $place1NameNew = $_POST['name'] . "_place1" . ".jpg";
 
-                    $thumbDestination = '../packages/images/'.$thumbNameNew;
-                    move_uploaded_file($thumbTmpname, $thumbDestination);
-                }else
-                {
-                    echo "error uploading image";
-                }
-            }else{
-                echo "extension not matched";
+                $place1Destination = '../packages/images/' . $place1NameNew;
+                move_uploaded_file($place1Tmpname, $place1Destination);
+            } else {
+                echo "error uploading image";
             }
-            // Place 1 image file storing in the system through php
-            
+        } else {
+            echo "extension not matched";
+        }
+        // Place 2 image file storing in the system through php
 
-            $allowed = array('jpg', 'jpeg', 'png');
 
-            if(in_array($place1ActExt, $allowed)){
-                if($place1Err === 0){
-                    $place1NameNew = $_POST['name'] ."_place1". ".jpg";
+        $allowed = array('jpg', 'jpeg', 'png');
 
-                    $place1Destination = '../packages/images/'.$place1NameNew;
-                    move_uploaded_file($place1Tmpname, $place1Destination);
-                }else
-                {
-                    echo "error uploading image";
-                }
-            }else{
-                echo "extension not matched";
+        if (in_array($place2ActExt, $allowed)) {
+            if ($place2Err === 0) {
+                $place2NameNew = $_POST['name'] . "_place2" . ".jpg";
+
+                $place2Destination = '../packages/images/' . $place2NameNew;
+                move_uploaded_file($place2Tmpname, $place2Destination);
+            } else {
+                echo "error uploading image";
             }
-            // Place 2 image file storing in the system through php
-            
+        } else {
+            echo "extension not matched";
+        }
+        // Place 3 image file storing in the system through php
 
-            $allowed = array('jpg', 'jpeg', 'png');
 
-            if(in_array($place2ActExt, $allowed)){
-                if($place2Err === 0){
-                    $place2NameNew = $_POST['name'] ."_place2". ".jpg";
+        $allowed = array('jpg', 'jpeg', 'png');
+        if (!empty($place3Name)) {
+            if (in_array($place3ActExt, $allowed)) {
+                if ($place3Err === 0) {
+                    $place3NameNew = $_POST['name'] . "_place3" . ".jpg";
 
-                    $place2Destination = '../packages/images/'.$place2NameNew;
-                    move_uploaded_file($place2Tmpname, $place2Destination);
-                }else
-                {
-                    echo "error uploading image";
-                }
-            }else{
-                echo "extension not matched";
-            }
-            // Place 3 image file storing in the system through php
-            
-
-            $allowed = array('jpg', 'jpeg', 'png');
-            if(!empty($place3Name)){
-            if(in_array($place3ActExt, $allowed)){
-                if($place3Err === 0){
-                    $place3NameNew = $_POST['name'] ."_place3". ".jpg";
-
-                    $place3Destination = '../packages/images/'.$place3NameNew;
+                    $place3Destination = '../packages/images/' . $place3NameNew;
                     move_uploaded_file($place3Tmpname, $place3Destination);
-                }else
-                {
+                } else {
                     echo "error uploading image";
                 }
-            }else{
+            } else {
                 echo "extension not matched";
             }
         }
-            // Place 4 image storing in the system through php
-            
+        // Place 4 image storing in the system through php
 
-            $allowed = array('jpg', 'jpeg', 'png');
-            if(!empty($place4Name)){
-            if(in_array($place4ActExt, $allowed)){
-                if($place4Err === 0){
-                    $place4NameNew = $_POST['name'] ."_place4". ".jpg";
 
-                    $place4Destination = '../packages/images/'.$place4NameNew;
+        $allowed = array('jpg', 'jpeg', 'png');
+        if (!empty($place4Name)) {
+            if (in_array($place4ActExt, $allowed)) {
+                if ($place4Err === 0) {
+                    $place4NameNew = $_POST['name'] . "_place4" . ".jpg";
+
+                    $place4Destination = '../packages/images/' . $place4NameNew;
                     move_uploaded_file($place4Tmpname, $place4Destination);
-                }else
-                {
+                } else {
                     echo "error uploading image";
                 }
-            }else{
+            } else {
                 echo "extension not matched";
             }
         }
-            // Place 5 image file storing in the system through php
-            
+        // Place 5 image file storing in the system through php
 
-            $allowed = array('jpg', 'jpeg', 'png');
-            if(!empty($place5Name)){
-            if(in_array($place5ActExt, $allowed)){
-                if($place5Err === 0){
-                    $place5NameNew = $_POST['name'] ."_place5". ".jpg";
 
-                    $place5Destination = '../packages/images/'.$place5NameNew;
+        $allowed = array('jpg', 'jpeg', 'png');
+        if (!empty($place5Name)) {
+            if (in_array($place5ActExt, $allowed)) {
+                if ($place5Err === 0) {
+                    $place5NameNew = $_POST['name'] . "_place5" . ".jpg";
+
+                    $place5Destination = '../packages/images/' . $place5NameNew;
                     move_uploaded_file($place5Tmpname, $place5Destination);
-                }else
-                {
+                } else {
                     echo "error uploading image";
                 }
-            }else{
+            } else {
                 echo "extension not matched";
             }
         }
-            // Place 6 imgage file storef in the system through php
-            
+        // Place 6 imgage file storef in the system through php
 
-                $allowed = array('jpg', 'jpeg', 'png');
-                if(!empty($place6Name)){
-                if(in_array($place6ActExt, $allowed)){
-                    if($place6Err === 0){
-                        $place6NameNew = $_POST['name'] ."_place6". ".jpg";
 
-                        $place6Destination = '../packages/images/'.$place6NameNew;
-                        move_uploaded_file($place6Tmpname, $place6Destination);
-                    }else
-                    {
-                        echo "error uploading image";
-                    }
-                }else{
-                    echo "extension not matched";
+        $allowed = array('jpg', 'jpeg', 'png');
+        if (!empty($place6Name)) {
+            if (in_array($place6ActExt, $allowed)) {
+                if ($place6Err === 0) {
+                    $place6NameNew = $_POST['name'] . "_place6" . ".jpg";
+
+                    $place6Destination = '../packages/images/' . $place6NameNew;
+                    move_uploaded_file($place6Tmpname, $place6Destination);
+                } else {
+                    echo "error uploading image";
                 }
+            } else {
+                echo "extension not matched";
             }
-            echo "
+        }
+        echo "
                 <script>
                     alert(`The package has been created successfully!!`);
                     loction.replace(`http://localhost/Touristo/packages/$packname.php`);
@@ -1042,6 +1144,11 @@ alert(`Error in Creating page`)
                     <textarea name="mainParagraph" id="main-desc" cols="30" rows="5" required></textarea>
                 </div>
 
+                <div class="input-box">
+                    <label for="P1Name">Place 1 Name:</label>
+                    <input type="text" name="p1name" id="P1Name" required>
+                </div>
+
                 <div class="upload-img">
                     <label for="place1-img">Place 1 Image:</label>
                     <input type="file" name="place1Img" id="place1-img" required>
@@ -1050,6 +1157,12 @@ alert(`Error in Creating page`)
                     <label for="place1-desc">Description for Place 1:</label>
                     <textarea name="place1Desc" id="place1-desc" cols="30" rows="5" required></textarea>
                 </div>
+
+                <div class="input-box">
+                    <label for="P2Name">Place 2 Name:</label>
+                    <input type="text" name="p2name" id="P2Name" required>
+                </div>
+
                 <div class="upload-img">
                     <label for="place2-img">Place 2 Image:</label>
                     <input type="file" name="place2Img" id="place2-img" required>
@@ -1058,6 +1171,12 @@ alert(`Error in Creating page`)
                     <label for="place2-desc">Description for Place 2:</label>
                     <textarea name="place2Desc" id="place2-desc" cols="30" rows="5" required></textarea>
                 </div>
+
+                <div class="input-box">
+                    <label for="P3Name">Place 3 Name:</label>
+                    <input type="text" name="p3name" id="P3Name">
+                </div>
+
                 <div class="upload-img">
                     <label for="place3-img">Place 3 Image:</label>
                     <input type="file" name="place3Img" id="place3-img">
@@ -1065,6 +1184,11 @@ alert(`Error in Creating page`)
                 <div class="input-box">
                     <label for="place3-desc">Description for Place 3:</label>
                     <textarea name="place3Desc" id="place3-desc" cols="30" rows="5"></textarea>
+                </div>
+
+                <div class="input-box">
+                    <label for="P4Name">Place 4 Name:</label>
+                    <input type="text" name="p4name" id="P4Name">
                 </div>
 
                 <div class="upload-img">
@@ -1076,6 +1200,12 @@ alert(`Error in Creating page`)
                     <label for="place4-desc">Description for Place 4:</label>
                     <textarea name="place4Desc" id="place4-desc" cols="30" rows="5"></textarea>
                 </div>
+
+                <div class="input-box">
+                    <label for="P5Name">Place 5 Name:</label>
+                    <input type="text" name="p5name" id="P5Name">
+                </div>
+
                 <div class="upload-img">
                     <label for="place5-img">Place 5 Image:</label>
                     <input type="file" name="place5Img" id="place5-img">
@@ -1085,6 +1215,12 @@ alert(`Error in Creating page`)
                     <label for="place5-desc">Description for Place 5:</label>
                     <textarea name="place5Desc" id="place5-desc" cols="30" rows="5"></textarea>
                 </div>
+
+                <div class="input-box">
+                    <label for="P6Name">Place 6 Name:</label>
+                    <input type="text" name="p6name" id="P6Name">
+                </div>
+
                 <div class="upload-img">
                     <label for="place6-img">Place 6 Image:</label>
                     <input type="file" name="place6Img" id="place6-img">

@@ -7,10 +7,9 @@
   padding: 0;
   box-sizing: border-box;
   font-family: poppins, sans-serif;
-}
-
+} 
 .page1 {
-  height: 100vh;
+  height: 100%;
 }
 
 .p1,
@@ -29,6 +28,7 @@
 .place-images {
   display: flex;
   width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -57,6 +57,7 @@
   justify-content: center;
   background-position: center;
   background-attachment: fixed;
+  background-size: cover;
 }
 
 .search-place {
@@ -155,6 +156,7 @@ iframe {
   width: 600px;
   margin-left: 16px;
   text-align: justify;
+  text-indent: 30%;
   /* flex: 0.5 0 370px; */
 }
 
@@ -176,14 +178,18 @@ iframe {
 .place-container4,
 .place-container5,
 .place-container6 {
-  display: flex;
-  align-items: center;
-  /* flex-wrap: wrap; */
-  justify-content: space-between;
   width: 100%;
   background-color: white;
   padding: 5px 5%;
   margin: 100px 0px;
+}
+
+.temp {
+  display: flex;
+  align-items: center;
+  /* flex-wrap: wrap; */
+  justify-content: space-between;
+
 }
 
 .place1-desc,
@@ -191,72 +197,231 @@ iframe {
 .place3-desc,
 .place4-desc,
 .place5-desc,
-.place6-desc
-  {
-    margin: 0px 16px;
-    text-align: justify;
+.place6-desc {
+  margin: 0px 16px;
+  text-align: justify;
+  text-indent: 30%;
+}
+
+.options-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 100px;
+}
+
+.wish-btn {
+  width: 200px;
+}
+
+.wish-btn,
+.book-btn {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #3d405b;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 17px;
+  padding: 16px;
+  min-width: 130px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.wish-btn span,
+.book-btn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.wish-btn span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -15px;
+  transition: 0.5s;
+}
+
+.book-btn span:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -15px;
+  transition: 0.5s;
+}
+
+.wish-btn:hover span,
+.book-btn:hover span {
+  padding-right: 15px;
+}
+
+.wish-btn:hover span:after,
+.book-btn:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.background {
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.pname {
+  margin: 0 16px;
+}
+
+.right {
+  text-align: left;
+}
+
+.left {
+  text-align: right;
+}
+
+@media screen and (max-width: 830px) {
+  .place-images {
+    flex-direction: column;
+    height: 100%;
   }
-  .options-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 100px;
+
+  .banner-container {
+    width: 100%;
   }
-  .wish-btn{
-    width: 200px;
+
+  .search-btn {
+    font-size: 14px;
+    padding: 5px;
   }
-  .wish-btn,.book-btn {
-    display: inline-block;
-    border-radius: 4px;
-    background-color: #3d405b;
-    border: none;
-    color: #FFFFFF;
+
+  .pack-bar>* {
+    font-size: 12px;
+    margin: 2px;
+  }
+
+  .wish-btn,
+  .book-btn {
+    padding: 8px;
+    width: 130px;
+    font-size: 12px;
+  }
+  .main-desc{
+    flex-direction: column;
+    height: 100%;
+  }
+  .main-desc-paragraph{
+    width: 100%; 
+    margin: 16px; 
+  }
+  iframe{
+    margin: 16px;
+    width: 100%;
+  }
+  .pname{
+    width: 80vw;
+  }
+  /* .place-container1,
+  .place-container2,
+  .place-container3,
+  .place-container4,
+  .place-container5,
+  .place-container6 {
+    width: 100vw;
+  } */
+  .temp{
+    display: grid;
+    width: 80vw;
+    grid-template-rows: 1fr 1fr;
+    height: 100%;
+    margin: 16px;
+  }
+  .left,.right{
     text-align: center;
-    font-size: 17px;
-    padding: 16px;
-    min-width: 130px;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin: 5px;
+  }
+  .place1-desc,
+  .place2-desc,
+  .place3-desc,
+  .place4-desc,
+  .place5-desc,
+  .place6-desc{
+    grid-row-start: 2;
+    grid-row-end: 3;
+    width: 80vw;
+    margin: 0 16px;
+  }
+  .place1-img,
+  .place2-img,
+  .place3-img,
+  .place4-img,
+  .place5-img,
+  .place6-img{
+    grid-row-start: 1;
+    grid-row-end: 2;
+    min-width: 0;
+    width: 80vw;
+    margin: 0px 16px;
+  }
+}
+@media screen and (max-width: 1100px){
+  .temp {
+    display: grid;
+    width: 80vw;
+    grid-template-rows: 1fr 1fr;
+    height: 100%;
+    margin: 16px;
   }
   
-  .wish-btn span,
-  .book-btn span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
+  .left,
+  .right {
+    text-align: center;
   }
   
-  .wish-btn span:after{
-    content: '»';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -15px;
-    transition: 0.5s;
-  }
-  .book-btn span:after {
-    content: '»';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -15px;
-    transition: 0.5s;
+  .place1-desc,
+  .place2-desc,
+  .place3-desc,
+  .place4-desc,
+  .place5-desc,
+  .place6-desc {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    width: 80vw;
+    margin: 0 16px;
   }
   
-  .wish-btn:hover span,
-  .book-btn:hover span {
-    padding-right: 15px;
+  .place1-img,
+  .place2-img,
+  .place3-img,
+  .place4-img,
+  .place5-img,
+  .place6-img {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    min-width: 0;
+    width: 80vw;
+    margin: 0px 16px;
   }
-  
-  .wish-btn:hover span:after,
-  .book-btn:hover span:after {
-    opacity: 1;
-    right: 0;
-  }
-  .background{
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-  }
+    .main-desc {
+      flex-direction: column;
+      height: 100%;
+    }
+    
+    .main-desc-paragraph {
+      width: 100%;
+      margin: 16px;
+    }
+    
+    iframe {
+      margin: 16px;
+      width: 100%;
+    }
+    
+    .pname {
+      width: 80vw;
+    }
+}

@@ -60,7 +60,10 @@ if (isset($_POST['submit'])) {
     <script src="./js/jquery.min.js"></script>
     <style>
         body {
-            background-color: #1A1A1A;
+            background-image: url(./css/images/mytripsbg.jpg);
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center center;
         }
 
         .heading h2 {
@@ -70,12 +73,12 @@ if (isset($_POST['submit'])) {
             color: white;
         }
 
-        .textbox label {
+        label {
             font-size: 19px;
             color: white;
         }
 
-        .textbox input {
+        input:not(.in-btn) {
             outline: none;
             font-size: 15px;
             border: 1.5px solid #c0c0c1;
@@ -96,6 +99,7 @@ if (isset($_POST['submit'])) {
             cursor: pointer;
             color: white;
             transition: background-color 0.4s;
+
         }
 
         .btn input:hover {
@@ -132,22 +136,40 @@ if (isset($_POST['submit'])) {
         </div>
         <div class="form">
             <form action="updateprofile.php" method="post">
+                <table>
+                    <tr>
                 <div class="textbox">
-                    <label for="name">Name</label>
-                    <input type="text" name="name" id="name" value="<?php echo $_SESSION['uname']; ?>" required><?php echo $err; ?>
+                    <td>
+                        <label for="name">Name</label>
+                    </td>
+                    <td>
+                        <input type="text" name="name" id="name" value="<?php echo $_SESSION['uname']; ?>" required><?php echo $err; ?>
+                    </td>
                 </div>
-
+                    </tr>
+                    <tr>
                 <div class="textbox">
-                    <label for="email">Email</label>
-                    <input type="email" name="email" id="email" value="<?php echo $_SESSION['email']; ?>" disabled>
+                    <td>
+                        <label for="email">Email</label>
+                    </td>
+                    <td>
+                        <input type="email" name="email" id="email" value="<?php echo $_SESSION['email']; ?>" disabled>
+                    </td>
                 </div>
-                <div class="textbox">
-                    <label for="phno">Phone no.</label>
-                    <input type="text" name="phno" id="phno" value="<?php echo $phno['phno']; ?>" required><?php echo $err1; ?>
-
+                    </tr>
+                    <tr>
+                <div clas="textbox">
+                    <td>
+                        <label for="phno">Phone no.</label>
+                    </td>
+                    <td>
+                        <input type="text" name="phno" id="phno" value="<?php echo $phno['phno']; ?>" required><?php echo $err1; ?>
+                    </td>
                 </div>
+                    </tr>
+            </table>
                 <div class="btn">
-                    <input type="submit" name="submit" value="Update">
+                    <input type="submit" name="submit" class="in-btn" value="Update">
                 </div>
             </form>
         </div>
