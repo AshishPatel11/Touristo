@@ -7,6 +7,9 @@ footer {
   /* height: 45vh; */
   width: 90%;
   margin: 0px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .social-links {
@@ -45,4 +48,31 @@ footer {
   align-items: center;
   border-top: 2px solid black;
   padding: 16px;
+}
+.part2{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.s1{
+  display: flex;
+  flex-direction: column;
+  color: snow;
+}
+.s1 .foot-title{
+  margin: 16px 0px;
+}
+.s1 .foot-links{
+  color: snow;
+  text-decoration: none;
+}
+.s1 .button{
+  color: snow;
+}
+@media screen and (max-width: 650px){
+footer{
+  flex-direction: column;
+}
+
 }

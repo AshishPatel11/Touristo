@@ -857,6 +857,29 @@ include_once ("./php/pack_backend.php");
                     <p class="footer-txt">91,krishna nagar, opp. jyoti gym, vijalpore, navsari, gujarat, 396445</p>
                 </div>
             </div>
+            <div class="part2">
+                <div class="s1">
+                    <h3 class="foot-title">Destinations</h3>
+                    <a href="./Agra.php" class="foot-links">Agra</a>
+                    <a href="./Amritsar.php" class="foot-links">Amritsar</a>
+                    <a href="./Goa.php" class="foot-links">Goa</a>
+                    <a href="./Jaipur.php" class="foot-links">Jaipur</a>
+                    <a href="./Kerala.php" class="foot-links">Kerala</a>
+                    <a href="./manali.php" class="foot-links">Manali</a>
+                </div>
+                <div class="s1">
+                    <h3 class="foot-title">Explore</h3>
+                    <a href="../aboutus.php" class="foot-links">About Us</a>
+                    <a href="../contactus.php" class="foot-links">Contact Us</a>
+                </div>
+                <div class="s1">
+                    <h3 class="foot-title">Account</h3>
+                    <a href="../mytrips.php" class="foot-links">My Trips</a>
+                    <a href="../updateprofile.php" class="foot-links">Update profile</a>
+                    <a href="../changepass.php" class="foot-links">Change Password</a>
+                    <a href="../logout.php" class="button">Logout</a>                    
+                </div>
+            </div>
         </footer>
         <div class="copyright">
             <img src="../css/images/svg/copyright.svg" alt="">

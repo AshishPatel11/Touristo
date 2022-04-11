@@ -127,6 +127,9 @@ textarea {
 
 @media screen and (max-width: 730px) {
 
+    body{
+        overflow: scroll;
+    }
     .mainsection {
         display: flex;
         flex-direction: column;
