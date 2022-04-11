@@ -14,6 +14,7 @@ include "php/connection.php";
                         } ?></title>
     <link rel="stylesheet" href="css/lode1.css">
     <link rel="stylesheet" href="css/aboutus.css">
+    <link rel="stylesheet" href="css/footer.css">
     <script src="./js/jquery.min.js"></script>
     <style>
         .nav-container{
