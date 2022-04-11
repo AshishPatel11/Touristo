@@ -133,8 +133,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <option selected value="none"> --Select A/C type-- </option>
                         <option value="user">User</option>
                         <option value="admin">Admin</option>
-                        <option value="guide">Guide</option>
-                        <option value="hotel">Hotel</option>
+                        <!-- <option value="guide">Guide</option>
+                        <option value="hotel">Hotel</option> -->
                     </select>
                     <span class="err"><?php echo "$selecterr"; ?></span>
                 </div>
