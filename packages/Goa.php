@@ -209,8 +209,37 @@ $count = mysqli_num_rows($bhag);
                 }
                 ?>
                 </nav>
-                </div>
-                <div class="notification-div">
+            </div>
+            <div class="notification-div">
+                <img src="./css/images/svg/close.svg" class="close" width="30px" height="30px" alt="close">
+                <?php
+            if (!isset($_SESSION['email'])) {
+            ?>
+                <p>You are not logged in please login!</p>
+                <a href="../login.php" class="button">Login</a>
+                <?php
+            } else {
+
+                $select = "SELECT * FROM contactus WHERE email = '$_SESSION[email]'";
+                $run = mysqli_query($conn, $select);
+                while ($show = mysqli_fetch_array($run)) {
+
+                    if($show['status'] == 'unseen' && !empty($show['reply'])){
+                        
+                        echo "Your message: $show[message]<br>
+                        From Admin: $show[reply]";
+                ?>
+                <a href="../ok.php?serial=<?php echo $show['srno'] ?>">
+                    <input type='submit' name='ok' value='Ok'>
+                </a>
+                <?php
+                    }
+                }
+            }
+
+            ?>
+            </div>
+            <div class="notification-div">
                 <img src="../css/images/svg/close.svg" class="close" width="30px" height="30px" alt="close">
                 <?php
             if (!isset($_SESSION['email'])) {
@@ -239,9 +268,9 @@ $count = mysqli_num_rows($bhag);
 
             ?>
             </div>
-                <div class="profile-container">
-                    <img src="../css/images/svg/close.svg" class="close" width="30px" height="30px" alt="close">
-                    <?php
+            <div class="profile-container">
+                <img src="../css/images/svg/close.svg" class="close" width="30px" height="30px" alt="close">
+                <?php
                 if (isset($_SESSION["uname"])) {
                     $profileAddress = "../profiles/" . $_SESSION["uid"] . "." . "jpg";
                     $fileExist = file_exists("$profileAddress");
@@ -251,30 +280,30 @@ $count = mysqli_num_rows($bhag);
                         echo "<img src=../css/images/profile.png class=profile>";
                     }
                 ?>
-                    <center>
-                        <?php if (isset($_SESSION["uname"])) {
+                <center>
+                    <?php if (isset($_SESSION["uname"])) {
                             echo $_SESSION["uname"];
                         } ?>
-                    </center>
-                    <?php if (isset($_SESSION["uid"])) {
+                </center>
+                <?php if (isset($_SESSION["uid"])) {
                         echo "UserID : $_SESSION[uid]";
                     } ?>
-                    <a href="../changeprofile.php" class="change-link">change Profile image</a>
-                    <a href="../updateprofile.php" class="button">Update profile</a>
-                    <a href="../changepass.php" class="button">Change Password</a>
-                    <a href="../mytrips.php" class="button">My Trips</a>
-                    <a href="../contactus.php" class="button">Contact Us</a>
-                    <a href="../logout.php" class="button">Logout</a>
+                <a href="../changeprofile.php" class="change-link">change Profile image</a>
+                <a href="../updateprofile.php" class="button">Update profile</a>
+                <a href="../changepass.php" class="button">Change Password</a>
+                <a href="../mytrips.php" class="button">My Trips</a>
+                <a href="../contactus.php" class="button">Contact Us</a>
+                <a href="../logout.php" class="button">Logout</a>
 
-                    <?php
+                <?php
                 } else {
                 ?>
-                    <p>You are not logged in please login!</p>
-                    <a href="../login.php#login" class="button">Login</a>
-                    <?php
+                <p>You are not logged in please login!</p>
+                <a href="../login.php#login" class="button">Login</a>
+                <?php
                 }
                 ?>
-                </div>
+            </div>
         </div>
         <div class="place-images">
             <div class="p1" style="background-image: url(./images/<?php echo $filenameimg; ?>_place1.jpg);"></div>
@@ -324,6 +353,7 @@ $count = mysqli_num_rows($bhag);
             <h3 class="location">Location: <?php echo $data["state"] ?>, India</h3>
             <h3 class="price">Price: ₹<?php echo $data["pckg_price"] ?></h3>
             <?php
+                    if(isset($_SESSION['uid'])){
                     $wishlistdata = "SELECT * FROM `wishlist_tbl` WHERE `uid` = '$_SESSION[uid]' AND `pckg_id` = '$data[pckg_id]'";
                     $wishlistdataRun = mysqli_query($conn, $wishlistdata);
                         if ($wishlistdataRun->num_rows > 0) {?>
@@ -340,11 +370,20 @@ $count = mysqli_num_rows($bhag);
                     <?php $_SESSION['pcsrno'] = $data['pckg_id']; ?>
                     <button type="submit" name="addwish" class="wish-btn" value="addwishlist.php"><span>Add to
                             Wishlist</span></button>
-                </form><?php } ?>
+                </form><?php } }else{?> 
+                    
+                    <form action="../addwishlist.php?srno=<?php echo $data['pckg_id']; ?>" method="post"
+                    class="wishlist-form">
+                    <?php $_SESSION['pcsrno'] = $data['pckg_id']; ?>
+                    <button type="submit" name="addwish" class="wish-btn" value="addwishlist.php"><span>Add to
+                            Wishlist</span></button>
+                </form>
+                    
+                    <?php } ?>
             <form action="../book.php?srno=<?php echo $data['pckg_id']; ?>" method="post" class="Book-form">
                 <?php $_SESSION['pcsrno'] = $data['pckg_id']; ?>
-                    <button type="submit" class="book-btn" value="book.php"><span>Book Now</span></button>
-                </form>
+                <button type="submit" class="book-btn" value="book.php"><span>Book Now</span></button>
+            </form>
         </div>
     </section>
 
@@ -358,15 +397,22 @@ $count = mysqli_num_rows($bhag);
             </div>
             <div class="place-container1">
                 <!-- place 1 Container -->
-                <p class="place1-desc"><?php echo $data["sub_para1"]; ?></p>
-                <div class="place1-img" style="background-image: url(./images/<?php echo $filenameimg; ?>_place1.jpg);">
+                <h2 class="pname"><?php echo $data["p1name"]; ?></h2>
+                <div class="temp">
+                    <p class="place1-desc"><?php echo $data["sub_para1"]; ?></p>
+                    <div class="place1-img"
+                        style="background-image: url(./images/<?php echo $filenameimg; ?>_place1.jpg);"></div>
                 </div>
             </div>
             <div class="place-container2">
                 <!-- place 2 Container -->
-                <div class="place2-img" style="background-image: url(./images/<?php echo $filenameimg; ?>_place2.jpg);">
+                <h2 class="pname"><?php echo $data["p2name"]; ?></h2>
+                <div class="temp">
+                    <div class="place2-img"
+                        style="background-image: url(./images/<?php echo $filenameimg; ?>_place2.jpg);">
+                    </div>
+                    <p class="place2-desc"><?php echo $data["sub_para2"]; ?></p>
                 </div>
-                <p class="place2-desc"><?php echo $data["sub_para2"]; ?></p>
             </div>
             <?php
                 $imgAddr = "./images/".$filename."_place3".".jpg";
@@ -375,8 +421,11 @@ $count = mysqli_num_rows($bhag);
             ?>
             <div class="place-container3">
                 <!-- place 3 Container -->
+                <h2 class="pname"><?php echo $data["p3name"]; ?></h2>
+                <div class="temp">
                 <p class="place3-desc"><?php echo $data["sub_para3"]; ?></p>
                 <div class="place3-img" style="background-image: url(./images/<?php echo $filenameimg; ?>_place3.jpg);">
+                </div>
                 </div>
             </div>
             <?php } ?>
@@ -387,9 +436,12 @@ $count = mysqli_num_rows($bhag);
             ?>
             <div class="place-container4">
                 <!-- place 4 Container -->
+                <h2 class="pname"><?php echo $data["p4name"]; ?></h2>
+                <div class="temp">
                 <div class="place4-img" style="background-image: url(./images/<?php echo $filenameimg; ?>_place4.jpg);">
                 </div>
                 <p class="place4-desc"><?php echo $data["sub_para4"]; ?></p>
+            </div>
             </div>
             <?php } ?>
             <?php
@@ -399,8 +451,11 @@ $count = mysqli_num_rows($bhag);
             ?>
             <div class="place-container5">
                 <!-- place 5 Container -->
+                <h2 class="pname"><?php echo $data["p5name"]; ?></h2>
+                <div class="temp">
                 <p class="place5-desc"><?php echo $data["sub_para5"]; ?></p>
                 <div class="place5-img" style="background-image: url(./images/<?php echo $filenameimg; ?>_place5.jpg);">
+                </div>
                 </div>
             </div>
             <?php } ?>
@@ -411,23 +466,28 @@ $count = mysqli_num_rows($bhag);
             ?>
             <div class="place-container6">
                 <!-- place 6 Container -->
+                <h2 class="pname"><?php echo $data["p6name"]; ?></h2>
+                <div class="temp">
                 <div class="place6-img" style="background-image: url(./images/<?php echo $filenameimg; ?>_place6.jpg);">
                 </div>
                 <p class="place6-desc"><?php echo $data["sub_para6"]; ?></p>
             </div>
+            </div>  
             <?php } ?>
 
 
             <div class="options-container">
                 <?php
+                if(isset($_SESSION['uid'])){
                     $wishlistdata = "SELECT * FROM `wishlist_tbl` WHERE `uid` = '$_SESSION[uid]' AND `pckg_id` = '$data[pckg_id]'";
                     $wishlistdataRun = mysqli_query($conn, $wishlistdata);
                         if ($wishlistdataRun->num_rows > 0) {?>
-                                <form action="../addwishlist.php?srno=<?php echo $data['pckg_id']; ?>" method="post"
-                                    class="wishlist-form">
-                                    <?php $_SESSION['pcsrno'] = $data['pckg_id']; ?>
-                                    <button type="submit" name="removewish" class="wish-btn" value="addwishlist.php" style="width: 250px;"><span>Remove form Wishlist</span></button>
-                                </form><?php
+                <form action="../addwishlist.php?srno=<?php echo $data['pckg_id']; ?>" method="post"
+                    class="wishlist-form">
+                    <?php $_SESSION['pcsrno'] = $data['pckg_id']; ?>
+                    <button type="submit" name="removewish" class="wish-btn" value="addwishlist.php"
+                        style="width: 250px;"><span>Remove form Wishlist</span></button>
+                </form><?php
                             }else{
                 ?>
                 <form action="../addwishlist.php?srno=<?php echo $data['pckg_id']; ?>" method="post"
@@ -435,7 +495,16 @@ $count = mysqli_num_rows($bhag);
                     <?php $_SESSION['pcsrno'] = $data['pckg_id']; ?>
                     <button type="submit" name="addwish" class="wish-btn" value="addwishlist.php"><span>Add to
                             Wishlist</span></button>
-                </form><?php } ?>
+                </form><?php } }else{?> 
+
+                    <form action="../addwishlist.php?srno=<?php echo $data['pckg_id']; ?>" method="post"
+                    class="wishlist-form">
+                    <?php $_SESSION['pcsrno'] = $data['pckg_id']; ?>
+                    <button type="submit" name="addwish" class="wish-btn" value="addwishlist.php"><span>Add to
+                            Wishlist</span></button>
+                </form>
+                    
+                    <?php } ?>
                 <form action="../book.php?srno=<?php echo $data['pckg_id']; ?>" method="post" class="Book-form">
                     <?php $_SESSION['pcsrno'] = $data['pckg_id']; ?>
                     <button type="submit" class="book-btn" value="book.php"><span>Book Now</span></button>
@@ -590,7 +659,9 @@ $count = mysqli_num_rows($bhag);
 var preloader = document.getElementById("loader1");
 
 function myFunction() {
-        preloader.style.display = "none";
+
+    preloader.style.display = "none";
+
 
 }
 $(".profile").click(function() {
@@ -600,11 +671,11 @@ $(".profile").click(function() {
     });
 });
 $(".noti").click(function() {
-        $(".notification-div").fadeIn("slow").css("display", "flex");
-        $(".close").click(function() {
-            $(".notification-div").fadeOut("slow");
-        });
+    $(".notification-div").fadeIn("slow").css("display", "flex");
+    $(".close").click(function() {
+        $(".notification-div").fadeOut("slow");
     });
+});
 </script>
 
 

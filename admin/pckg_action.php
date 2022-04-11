@@ -130,9 +130,15 @@ if(isset($_POST['updateSubmit'])){
         $gmap = $conn -> real_escape_string($_POST['Gmap']);
         $tagline = $conn -> real_escape_string($_POST['tagline']);
         $tags = $conn -> real_escape_string($_POST['tags']);
+        $p1name = $conn-> real_escape_string($_POST['p1name']);
+        $p2name = $conn-> real_escape_string($_POST['p2name']);
+        $p3name = $conn-> real_escape_string($_POST['p3name']);
+        $p4name = $conn-> real_escape_string($_POST['p4name']);
+        $p5name = $conn-> real_escape_string($_POST['p5name']);
+        $p6name = $conn-> real_escape_string($_POST['p6name']);
 
         
-        $packageQuery = "UPDATE `pckg_tbl` SET `pckg_name`='$packname',`state`='$state',`pckg_price`='$price',`maplink`='$gmap',`tagline`='$tagline',`pckg_para`='$mainpara',`sub_para1`='$p1desc',`sub_para2`='$p2desc',`sub_para3`='$p3desc',`sub_para4`='$p4desc',`sub_para5`='$p5desc',`sub_para6`='$p6desc',`tags`='$tags' WHERE pckg_id = '$_POST[pckg_id]'";
+        $packageQuery = "UPDATE `pckg_tbl` SET `pckg_name`='$packname',`state`='$state',`pckg_price`='$price',`maplink`='$gmap',`tagline`='$tagline',`pckg_para`='$mainpara',`p1name`='$p1name',`sub_para1`='$p1desc',`p2name`='$p2name',`sub_para2`='$p2desc',`p3name`='$p3name',`sub_para3`='$p3desc',`p4name`='$p4name',`sub_para4`='$p4desc',`p5name`='$p5name',`sub_para5`='$p5desc',`p6name`='$p6name',`sub_para6`='$p6desc',`tags`='$tags' WHERE pckg_id = '$_POST[pckg_id]'";
 
         $result = mysqli_query($conn, $packageQuery);
         if($result){
@@ -397,6 +403,11 @@ if(isset($_POST['updateSubmit'])){
                     <textarea name="mainParagraph" id="main-desc" cols="30" rows="5" required><?php echo $data['pckg_para']; ?></textarea>
                 </div>
 
+                <div class="input-box">
+                    <label for="P1Name">Place 1 Name:</label>
+                    <input type="text" name="p1name" value="<?php echo $data['p1name']; ?>" id="P1Name">
+                </div>
+
                 <div class="upload-img">
                     <label for="place1-img">Place 1 Image:</label>
                     <input type="file" name="place1Img" id="place1-img" >
@@ -405,6 +416,12 @@ if(isset($_POST['updateSubmit'])){
                     <label for="place1-desc">Description for Place 1:</label>
                     <textarea name="place1Desc" id="place1-desc" cols="30" rows="5" required><?php echo $data['sub_para1']; ?></textarea>
                 </div>
+
+                <div class="input-box">
+                    <label for="P2Name">Place 2 Name:</label>
+                    <input type="text" name="p2name" value="<?php echo $data['p2name']; ?>" id="P2Name">
+                </div>
+
                 <div class="upload-img">
                     <label for="place2-img">Place 2 Image:</label>
                     <input type="file" name="place2Img" id="place2-img" >
@@ -413,6 +430,12 @@ if(isset($_POST['updateSubmit'])){
                     <label for="place2-desc">Description for Place 2:</label>
                     <textarea name="place2Desc" id="place2-desc" cols="30" rows="5" required><?php echo $data['sub_para2']; ?></textarea>
                 </div>
+
+                <div class="input-box">
+                    <label for="P3Name">Place 3 Name:</label>
+                    <input type="text" name="p3name" value="<?php echo $data['p3name']; ?>" id="P3Name">
+                </div>
+
                 <div class="upload-img">
                     <label for="place3-img">Place 3 Image:</label>
                     <input type="file" name="place3Img" id="place3-img">
@@ -420,6 +443,11 @@ if(isset($_POST['updateSubmit'])){
                 <div class="input-box">
                     <label for="place3-desc">Description for Place 3:</label>
                     <textarea name="place3Desc" id="place3-desc" cols="30" rows="5"><?php echo $data['sub_para3']; ?></textarea>
+                </div>
+
+                <div class="input-box">
+                    <label for="P4Name">Place 4 Name:</label>
+                    <input type="text" name="p4name" value="<?php echo $data['p4name']; ?>" id="P4Name">
                 </div>
 
                 <div class="upload-img">
@@ -431,6 +459,12 @@ if(isset($_POST['updateSubmit'])){
                     <label for="place4-desc">Description for Place 4:</label>
                     <textarea name="place4Desc" id="place4-desc" cols="30" rows="5"><?php echo $data['sub_para4']; ?></textarea>
                 </div>
+
+                <div class="input-box">
+                    <label for="P5Name">Place 5 Name:</label>
+                    <input type="text" name="p5name" value="<?php echo $data['p5name']; ?>" id="P5Name">
+                </div>
+
                 <div class="upload-img">
                     <label for="place5-img">Place 5 Image:</label>
                     <input type="file" name="place5Img" id="place5-img">
@@ -440,6 +474,12 @@ if(isset($_POST['updateSubmit'])){
                     <label for="place5-desc">Description for Place 5:</label>
                     <textarea name="place5Desc" id="place5-desc" cols="30" rows="5"><?php echo $data['sub_para5']; ?></textarea>
                 </div>
+
+                <div class="input-box">
+                    <label for="P6Name">Place 6 Name:</label>
+                    <input type="text" name="p6name" value="<?php echo $data['p6name']; ?>" id="P6Name">
+                </div>
+
                 <div class="upload-img">
                     <label for="place6-img">Place 6 Image:</label>
                     <input type="file" name="place6Img" id="place6-img">
