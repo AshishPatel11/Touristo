@@ -31,7 +31,7 @@ if (isset($_POST['submit'])) {
 ?>
                 <script>
                     alert(`Details updated!`);
-                    location.replace('main.php');
+                    location.replace('logout.php');
                 </script>
             <?php
             } else {
