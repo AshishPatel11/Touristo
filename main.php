@@ -351,5 +351,6 @@ $count = mysqli_num_rows($bhag);
 <script src="./js/ScrollTrigger.min.js"></script>
 <!--linked the scrollTrigger javascript file-->
 <script src="js/home_nav.js"></script>
+<script src="js/main.js"></script>
 
 </html>

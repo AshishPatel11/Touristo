@@ -16,7 +16,7 @@ $query = mysqli_query($conn, $select);
 $detail = mysqli_fetch_assoc($query);
 
 if(isset($_POST['submitbook'])){
-    $insert = "INSERT INTO `book_tbl`(`name`,`emailid`, `pckg_name`, `pckg_price`, `datefrom`, `dateto`) VALUES ('$_SESSION[uname]','$_SESSION[email]','$detail[pckg_name]','$detail[pckg_price]','$_POST[from]','$_POST[to]');     ";
+    $insert = "INSERT INTO `book_tbl`(`name`,`emailid`, `pckg_name`, `pckg_price`, `pcount`, `datefrom`, `dateto`) VALUES ('$_SESSION[uname]','$_SESSION[email]','$detail[pckg_name]','$detail[pckg_price]','$_POST[mcount]','$_POST[from]','$_POST[to]');     ";
 
     $run = mysqli_query($conn, $insert);
 

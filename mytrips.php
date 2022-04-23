@@ -110,6 +110,7 @@ include_once './php/connection.php';
                     <th>Pack name</th>
                     <th>Pack price</th>
                     <th>Booking date</th>
+                    <th>Family Member</th>
                     <th>Trip date</th>
                     <th>Trip end date</th>
                     <th>Status</th>
@@ -140,6 +141,9 @@ include_once './php/connection.php';
                             </td>
                             <td>
                                 <?php echo $data['bookingdate'] ?>
+                            </td>
+                            <td>
+                                <?php echo $data['pcount'] ?>
                             </td>
                             <td>
                                 <?php echo $data['datefrom'] ?>
