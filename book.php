@@ -92,6 +92,10 @@ if(isset($_POST['submitbook'])){
                     <label for="to">to</label>
                     <input type="date" name="to" id="to" required>
                 </div>
+                <div class="textbox">
+                    <label for="person">How many Members:</label>
+                    <input type="number" name="mcount" id="person" required>
+                </div>
                 <div class="btn">
                     <input type="submit" value="Book now" name="submitbook">
                 </div>

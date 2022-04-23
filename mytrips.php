@@ -52,6 +52,7 @@ include_once './php/connection.php';
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            
         }
 
         .cancelbtn {
@@ -77,6 +78,14 @@ include_once './php/connection.php';
             box-shadow: rgb(201, 46, 70) 0px 0px 0px 0px;
             transform: translateY(5px);
             transition: 200ms;
+        }
+        @media screen and (max-width: 800px){
+            .table{
+                overflow-x: scroll;
+                display: flex;
+                align-items: flex-start;
+                justify-content: center;
+            }
         }
     </style>
 </head>
