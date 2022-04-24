@@ -2,9 +2,9 @@
 error_reporting(0);
 include 'php/connection.php';
 
-if (isset($_REQUEST['token'])) {
+if (isset($_GET['token'])) {
 
-    $token = $_REQUEST['token'];
+    $token = $_GET['token'];
 
     $select = " SELECT * FROM user_tbl WHERE token = '$token' ";
     $tquery = mysqli_query($conn, $select);

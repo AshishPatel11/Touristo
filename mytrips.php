@@ -52,6 +52,7 @@ include_once './php/connection.php';
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            
         }
 
         .cancelbtn {
@@ -78,6 +79,14 @@ include_once './php/connection.php';
             transform: translateY(5px);
             transition: 200ms;
         }
+        @media screen and (max-width: 800px){
+            .table{
+                overflow-x: scroll;
+                display: flex;
+                align-items: flex-start;
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 
@@ -101,6 +110,7 @@ include_once './php/connection.php';
                     <th>Pack name</th>
                     <th>Pack price</th>
                     <th>Booking date</th>
+                    <th>Family Member</th>
                     <th>Trip date</th>
                     <th>Trip end date</th>
                     <th>Status</th>
@@ -131,6 +141,9 @@ include_once './php/connection.php';
                             </td>
                             <td>
                                 <?php echo $data['bookingdate'] ?>
+                            </td>
+                            <td>
+                                <?php echo $data['pcount'] ?>
                             </td>
                             <td>
                                 <?php echo $data['datefrom'] ?>
