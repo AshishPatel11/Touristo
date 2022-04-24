@@ -2,7 +2,7 @@
 session_start();
 
 include 'connection.php';
-$loginerr = "";
+$loginerr = $emailerr = "";
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     echo
     "<style>
@@ -25,33 +25,37 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     $_SESSION['email'] = $_POST['email'];
 
-    $select = "SELECT * FROM `user_tbl` WHERE emailid='$_SESSION[email]' AND statuss='verify'";
+    $select = "SELECT * FROM `user_tbl` WHERE emailid='$_SESSION[email]'";
 
     $result = mysqli_query($conn, $select);
     $data = mysqli_fetch_assoc($result);
     $count = mysqli_num_rows($result);
 
-    if ($count == 1 and password_verify($_POST['passwd'], $data['passwd'])) {
-        $_SESSION['uid'] = $data['uid'];
-        $_SESSION['acctyp'] = $data['acc_typ'];
-        if ($_SESSION['acctyp'] == 'admin') {
+    if ($data['statuss'] == 'notverify') {
+        $emailerr = "<i class=material-icons>warning</i>Your account is not verified!";
+    } else {
+        if ($count == 1 AND password_verify($_POST['passwd'], $data['passwd']) AND $data['statuss'] == 'verify' AND $_SESSION['email'] === $data['emailid'] ) {
+            $_SESSION['uid'] = $data['uid'];
+            $_SESSION['acctyp'] = $data['acc_typ'];
+            if ($_SESSION['acctyp'] == 'admin') {
 
-            echo "
+                echo "
             <script>
                 alert(`Login Successful!! Welcome $data[uname]`);
                 location.replace('./admin/admin_home.php');
             </script>";
-        } else {
+            } else {
 
-            $_SESSION['uname'] = $data['uname'];
-            $_SESSION['uid'] = $data['uid'];
-            echo "
+                $_SESSION['uname'] = $data['uname'];
+                $_SESSION['uid'] = $data['uid'];
+                echo "
             <script>
             alert(`Login Successful!! Welcome $_SESSION[uname]`);
             location.replace('main.php');
             </script>";
+            }
+        } else {
+            $loginerr = "<i class=material-icons>warning</i>Wrong Emailid or Password!";
         }
-    } else {
-        $loginerr = "<i class=material-icons>warning</i>Wrong Emailid or Password!";
     }
 }

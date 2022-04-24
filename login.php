@@ -12,7 +12,7 @@ include './php/loginBackend.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/nav.css">
     <link rel="stylesheet" href="./css/lode1.css">
-    <!--Linked Fonts CSS File-->
+
     <link rel="stylesheet" href="./css/signup.css">
     <!--Linked the CSS file for signup page-->
     <title>Login</title>
@@ -211,7 +211,8 @@ include './php/loginBackend.php';
 
                 <div class="input-box">
                     <label for="email">E-mail</label>
-                    <input type="text" name="email" id="email" required>
+                    <input type="email" name="email" id="email" required>
+                    <span class="err"><?php echo "$emailerr"; ?></span>
                 </div>
                 <div class="input-box"><label for="passwd">Password</label>
                     <input type="password" name="passwd" id="passwd" required>
@@ -222,6 +223,10 @@ include './php/loginBackend.php';
                 </div>
                 <div class="login-link">
                     <p><a href="forgetpassword.php">Forgot password?</a></p>
+                    
+                </div>
+                <div class="login-link">
+                    <p><a href="verifyacc.php">Verify account?</a></p>
                     
                 </div>
                 <div class="login-link">
